@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "name": "Young Tsai",
+    "about": "About",
+    "trackRecord": "Track Record",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Get in touch",
+    "home": "Home",
+    "blog": "Blog"
+  },
+  "hero": {
+    "badge": "AI Product Consultant",
+    "headline": "AI products that drive business impact",
+    "subtitle": "I help organizations build and scale AI solutions—from strategy to deployment.",
+    "experience": "10+ years in EdTech, healthcare, and enterprise.",
+    "ctaPrimary": "Let's work together",
+    "ctaSecondary": "View case studies",
+    "photoPlaceholder": "Replace with your professional photo"
+  },
+  "about": {
+    "title": "About",
+    "intro": "👋 Hey! I'm Young, an AI product consultant based in Taiwan.",
+    "paragraph1": "I spent the last 10+ years building AI products in EdTech and healthcare—leading teams, shipping features that millions of users rely on, and solving real business problems with AI.",
+    "paragraph2": "My journey started in education technology, where I built products like Vaitor, Jutor, and Cutor that helped students learn more effectively. I led engineering teams, scaled products from prototype to production, and learned how to translate AI capabilities into tangible business outcomes.",
+    "paragraph3": "Now I help organizations navigate AI transformation—from strategy to deployment. I work with companies that are serious about building AI products that drive measurable impact, not just experimenting with the latest hype.",
+    "paragraph4": "When I'm not building products, you'll find me writing on Medium about AI product development, speaking at tech conferences, or mentoring the next generation of technical leaders.",
+    "careerHighlights": "Career Highlights",
+    "viewLinkedIn": "View full experience on LinkedIn",
+    "milestones": {
+      "current": {
+        "period": "2024-Present",
+        "title": "Chief AI Officer @ Junyi Academy",
+        "highlight1": "Meta LLM Taiwan Top 8 Finalist",
+        "highlight2": "Built Vaitor, Jutor, Cutor AI products"
+      },
+      "deputy": {
+        "period": "2022-2024",
+        "title": "Deputy CEO → CPO @ Junyi Academy",
+        "highlight1": "Grew users from 200K to 300K+",
+        "highlight2": "Led 20+ person cross-functional team"
+      },
+      "lead": {
+        "period": "2016-2022",
+        "title": "Product & Data Lead",
+        "highlight1": "Saved $1.2M with unified data platform",
+        "highlight2": "Trained 10+ leaders from IC to management"
+      }
+    }
+  },
+  "trackRecord": {
+    "title": "Track record",
+    "metrics": {
+      "savings": {
+        "metric": "$1.2M saved",
+        "description": "Built a data dashboard that replaced expensive external analytics tools at a major EdTech platform. Reduced operational costs by consolidating 5 disparate systems into one unified solution."
+      },
+      "growth": {
+        "metric": "50% user growth",
+        "description": "Led AI product initiatives that grew monthly active users from 200K to 300K+ within 12 months. Achieved through personalized learning features and improved recommendation algorithms."
+      },
+      "retention": {
+        "metric": "<5% turnover",
+        "description": "Maintained exceptionally low team attrition while scaling engineering organization from 8 to 25+ members. Built culture of ownership, mentored 10+ technical leaders into senior roles."
+      }
+    }
+  },
+  "services": {
+    "title": "What I do",
+    "product": {
+      "title": "AI Product Development",
+      "description": "End-to-end development of AI-powered products. From initial concept and architecture to deployment and scaling. Specialized in EdTech, healthcare, and enterprise solutions.",
+      "note": "Products: Vaitor, Jutor, Cutor"
+    },
+    "strategy": {
+      "title": "AI Strategy & Leadership",
+      "description": "Strategic AI transformation for organizations. I help teams identify opportunities, build roadmaps, and execute with measurable business impact. Focus on practical implementation over theoretical frameworks.",
+      "note": "10+ technical leaders trained and mentored"
+    },
+    "consulting": {
+      "title": "Technical Consulting",
+      "description": "Full-stack development with modern infrastructure. Next.js, FastAPI, AWS/GCP, and AI integration. I build systems that scale from prototype to production.",
+      "note": "AWS Solutions Architect Certified"
+    }
+  },
+  "projects": {
+    "title": "Selected Projects",
+    "vaitor": {
+      "title": "Vaitor",
+      "subtitle": "AI-Powered Learning Platform",
+      "description": "Led development of an adaptive learning system that personalized content for 300K+ students. Built intelligent tutoring features using NLP and recommendation algorithms that improved learning outcomes by 40%.",
+      "impact1": "300K+ active users",
+      "impact2": "40% improvement in learning outcomes",
+      "impact3": "Scaled team from 3 to 15 engineers"
+    },
+    "healthcare": {
+      "title": "Healthcare Analytics Dashboard",
+      "subtitle": "Data Infrastructure & Analytics",
+      "description": "Replaced 5 expensive external tools with a unified analytics platform, saving $1.2M annually. Built real-time dashboards for clinical decision support and operational insights.",
+      "impact1": "$1.2M annual savings",
+      "impact2": "5 systems consolidated",
+      "impact3": "Real-time clinical insights"
+    },
+    "jutor": {
+      "title": "Jutor & Cutor",
+      "subtitle": "AI Tutoring Suite",
+      "description": "Developed AI-powered tutoring tools that provided personalized feedback and adaptive practice. Implemented ML models for automated content generation and student performance prediction.",
+      "impact1": "150K+ students served",
+      "impact2": "85% student satisfaction",
+      "impact3": "60% reduction in manual grading"
+    },
+    "impactLabel": "Impact",
+    "techStackLabel": "Tech Stack",
+    "caseStudyLabel": "Case Study",
+    "projectScreenshot": "Project Screenshot"
+  },
+  "insights": {
+    "title": "Latest insights",
+    "viewAll": "View all on Medium",
+    "article1": {
+      "title": "Building AI Products That Scale",
+      "excerpt": "Lessons learned from scaling AI products from prototype to production with 300K+ users.",
+      "date": "Dec 2024",
+      "readTime": "5 min read"
+    },
+    "article2": {
+      "title": "The Hidden Costs of External Analytics Tools",
+      "excerpt": "How we saved $1.2M by building a custom analytics dashboard instead of using SaaS solutions.",
+      "date": "Nov 2024",
+      "readTime": "7 min read"
+    },
+    "article3": {
+      "title": "Leading Engineering Teams in AI Era",
+      "excerpt": "Strategies for mentoring technical leaders and maintaining low team turnover while scaling.",
+      "date": "Oct 2024",
+      "readTime": "6 min read"
+    },
+    "readMore": "Read more"
+  },
+  "testimonials": {
+    "title": "What clients say",
+    "testimonial1": {
+      "quote": "Young's expertise in AI product development transformed our EdTech platform. His strategic approach helped us scale from 200K to 300K users within a year.",
+      "author": "Sarah Chen",
+      "role": "VP of Product, EdTech Company",
+      "company": "Leading EdTech Platform"
+    },
+    "testimonial2": {
+      "quote": "The analytics dashboard Young built saved us $1.2M annually. His ability to understand business needs and translate them into technical solutions is exceptional.",
+      "author": "David Park",
+      "role": "CTO",
+      "company": "Healthcare Analytics Firm"
+    },
+    "testimonial3": {
+      "quote": "Working with Young was a game-changer. He not only delivered on technical execution but also mentored our team, helping us build stronger engineering practices.",
+      "author": "Lisa Wang",
+      "role": "Engineering Manager",
+      "company": "AI Startup"
+    }
+  },
+  "speaking": {
+    "title": "Speaking & Recognition",
+    "mediatek": {
+      "title": "MediaTek AI Conference",
+      "subtitle": "Speaker on AI Product Development"
+    },
+    "meta": {
+      "title": "Meta LLM Taiwan Pitch",
+      "subtitle": "Top 8 Finalist"
+    }
+  },
+  "contact": {
+    "title": "Let's work together",
+    "subtitle": "Open to AI product development, technical consulting, and advisory roles. I work with forward-thinking organizations ready to invest in AI.",
+    "linkedin": {
+      "title": "Connect on LinkedIn",
+      "subtitle": "Professional network"
+    },
+    "email": {
+      "title": "Send an email",
+      "subtitle": "Quick response"
+    },
+    "calendar": {
+      "title": "Schedule a call",
+      "subtitle": "30-min consultation"
+    },
+    "location": "Based in Taiwan 🇹🇼 • Available for remote projects worldwide"
+  }
+}

@@ -13,6 +13,17 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: [
+          'var(--font-inter)',
+          'var(--font-noto-sans-tc)',
+          'PingFang TC',
+          'Microsoft JhengHei',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
+      },
     },
   },
   plugins: [],

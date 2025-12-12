@@ -17,7 +17,33 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), var(--font-noto-sans-tc), 'PingFang TC', 'Microsoft JhengHei', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+}
+
+/* Enhanced line-height for better Chinese readability */
+body:lang(zh),
+body:lang(zh-TW),
+body:lang(zh-CN) {
+  line-height: 1.8;
+}
+
+/* Optimize heading spacing for Chinese */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+body:lang(zh) h1,
+body:lang(zh-TW) h1,
+body:lang(zh-CN) h1,
+body:lang(zh) h2,
+body:lang(zh-TW) h2,
+body:lang(zh-CN) h2,
+body:lang(zh) h3,
+body:lang(zh-TW) h3,
+body:lang(zh-CN) h3 {
+  letter-spacing: 0.02em;
 }
 
 @layer utilities {

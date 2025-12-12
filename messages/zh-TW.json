@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "name": "蔡子揚",
+    "about": "關於我",
+    "trackRecord": "實績紀錄",
+    "services": "服務項目",
+    "projects": "專案作品",
+    "contact": "聯絡我",
+    "home": "首頁",
+    "blog": "部落格"
+  },
+  "hero": {
+    "badge": "AI 產品顧問",
+    "headline": "打造具有商業影響力的 AI 產品",
+    "subtitle": "我協助組織建立和擴展 AI 解決方案 — 從策略到部署",
+    "experience": "在教育科技、醫療保健和企業領域擁有 10 年以上經驗",
+    "ctaPrimary": "開始合作",
+    "ctaSecondary": "查看案例研究",
+    "photoPlaceholder": "替換成您的專業照片"
+  },
+  "about": {
+    "title": "關於我",
+    "intro": "👋 嗨！我是 Young，一位在台灣的 AI 產品顧問。",
+    "paragraph1": "過去 10 多年來,我專注於在教育科技和醫療保健領域建立 AI 產品 — 領導團隊,推出數百萬用戶依賴的功能,並用 AI 解決實際商業問題。",
+    "paragraph2": "我的旅程始於教育科技,在那裡我建立了 Vaitor、Jutor 和 Cutor 等產品,幫助學生更有效地學習。我領導工程團隊,將產品從原型擴展到生產,並學會了如何將 AI 能力轉化為實際的商業成果。",
+    "paragraph3": "現在,我協助組織進行 AI 轉型 — 從策略到部署。我與真正想要建立能產生可衡量影響的 AI 產品的公司合作,而不僅僅是嘗試最新的熱門技術。",
+    "paragraph4": "當我不在開發產品時,你會發現我在 Medium 上撰寫關於 AI 產品開發的文章、在科技會議上演講,或指導下一代技術領導者。",
+    "careerHighlights": "職涯亮點",
+    "viewLinkedIn": "在 LinkedIn 查看完整經歷",
+    "milestones": {
+      "current": {
+        "period": "2024-至今",
+        "title": "首席 AI 長 @ 均一教育平台",
+        "highlight1": "Meta LLM 台灣競賽前八強",
+        "highlight2": "建立 Vaitor、Jutor、Cutor AI 產品"
+      },
+      "deputy": {
+        "period": "2022-2024",
+        "title": "副執行長 → 產品長 @ 均一教育平台",
+        "highlight1": "將用戶從 20 萬增長至 30 萬以上",
+        "highlight2": "領導 20 人以上跨職能團隊"
+      },
+      "lead": {
+        "period": "2016-2022",
+        "title": "產品與資料負責人",
+        "highlight1": "透過統一資料平台節省 120 萬美元",
+        "highlight2": "培養 10 位以上領導者從 IC 到管理階層"
+      }
+    }
+  },
+  "trackRecord": {
+    "title": "實績紀錄",
+    "metrics": {
+      "savings": {
+        "metric": "節省 120 萬美元",
+        "description": "為大型教育科技平台建立資料儀表板,取代昂貴的外部分析工具。透過將 5 個不同系統整合為一個統一解決方案,降低營運成本。"
+      },
+      "growth": {
+        "metric": "用戶增長 50%",
+        "description": "領導 AI 產品計畫,在 12 個月內將月活躍用戶從 20 萬增長至 30 萬以上。透過個人化學習功能和改進的推薦演算法實現。"
+      },
+      "retention": {
+        "metric": "流失率 <5%",
+        "description": "在將工程組織從 8 人擴展到 25 人以上的過程中,維持極低的團隊流失率。建立當責文化,指導 10 位以上技術領導者晉升至資深職位。"
+      }
+    }
+  },
+  "services": {
+    "title": "我的服務",
+    "product": {
+      "title": "AI 產品開發",
+      "description": "端到端的 AI 驅動產品開發。從初始概念和架構到部署和擴展。專精於教育科技、醫療保健和企業解決方案。",
+      "note": "產品:Vaitor、Jutor、Cutor"
+    },
+    "strategy": {
+      "title": "AI 策略與領導",
+      "description": "為組織提供策略性 AI 轉型。我協助團隊識別機會、建立路線圖,並執行具有可衡量商業影響的計畫。專注於實務實施而非理論框架。",
+      "note": "培訓和指導 10 位以上技術領導者"
+    },
+    "consulting": {
+      "title": "技術諮詢",
+      "description": "採用現代基礎設施的全端開發。Next.js、FastAPI、AWS/GCP 和 AI 整合。我建立可從原型擴展到生產的系統。",
+      "note": "AWS 解決方案架構師認證"
+    }
+  },
+  "projects": {
+    "title": "精選專案",
+    "vaitor": {
+      "title": "Vaitor",
+      "subtitle": "AI 驅動學習平台",
+      "description": "領導開發適應性學習系統,為 30 萬以上學生提供個人化內容。使用 NLP 和推薦演算法建立智慧輔導功能,將學習成效提升 40%。",
+      "impact1": "30 萬以上活躍用戶",
+      "impact2": "學習成效提升 40%",
+      "impact3": "將團隊從 3 人擴展至 15 位工程師"
+    },
+    "healthcare": {
+      "title": "醫療保健分析儀表板",
+      "subtitle": "資料基礎設施與分析",
+      "description": "以統一分析平台取代 5 個昂貴的外部工具,每年節省 120 萬美元。建立即時儀表板以支援臨床決策和營運洞察。",
+      "impact1": "每年節省 120 萬美元",
+      "impact2": "整合 5 個系統",
+      "impact3": "即時臨床洞察"
+    },
+    "jutor": {
+      "title": "Jutor & Cutor",
+      "subtitle": "AI 輔導工具組",
+      "description": "開發 AI 驅動的輔導工具,提供個人化回饋和適應性練習。實作機器學習模型以進行自動內容生成和學生表現預測。",
+      "impact1": "服務 15 萬以上學生",
+      "impact2": "85% 學生滿意度",
+      "impact3": "人工評分減少 60%"
+    },
+    "impactLabel": "影響",
+    "techStackLabel": "技術堆疊",
+    "caseStudyLabel": "案例研究",
+    "projectScreenshot": "專案截圖"
+  },
+  "insights": {
+    "title": "最新見解",
+    "viewAll": "在 Medium 查看全部",
+    "article1": {
+      "title": "建立可擴展的 AI 產品",
+      "excerpt": "從將 AI 產品從原型擴展到擁有 30 萬以上用戶的生產環境中學到的經驗。",
+      "date": "2024 年 12 月",
+      "readTime": "5 分鐘閱讀"
+    },
+    "article2": {
+      "title": "外部分析工具的隱藏成本",
+      "excerpt": "我們如何透過建立客製化分析儀表板而非使用 SaaS 解決方案來節省 120 萬美元。",
+      "date": "2024 年 11 月",
+      "readTime": "7 分鐘閱讀"
+    },
+    "article3": {
+      "title": "在 AI 時代領導工程團隊",
+      "excerpt": "在擴展過程中指導技術領導者並維持低團隊流失率的策略。",
+      "date": "2024 年 10 月",
+      "readTime": "6 分鐘閱讀"
+    },
+    "readMore": "閱讀更多"
+  },
+  "testimonials": {
+    "title": "客戶評價",
+    "testimonial1": {
+      "quote": "Young 在 AI 產品開發方面的專業知識改變了我們的教育科技平台。他的策略方法幫助我們在一年內從 20 萬用戶擴展到 30 萬用戶。",
+      "author": "Sarah Chen",
+      "role": "產品副總裁,教育科技公司",
+      "company": "領先教育科技平台"
+    },
+    "testimonial2": {
+      "quote": "Young 建立的分析儀表板每年為我們節省 120 萬美元。他理解商業需求並將其轉化為技術解決方案的能力非常出色。",
+      "author": "David Park",
+      "role": "技術長",
+      "company": "醫療保健分析公司"
+    },
+    "testimonial3": {
+      "quote": "與 Young 合作改變了遊戲規則。他不僅在技術執行方面表現出色,還指導我們的團隊,幫助我們建立更強大的工程實踐。",
+      "author": "Lisa Wang",
+      "role": "工程經理",
+      "company": "AI 新創公司"
+    }
+  },
+  "speaking": {
+    "title": "演講與獎項",
+    "mediatek": {
+      "title": "聯發科 AI 會議",
+      "subtitle": "AI 產品開發演講者"
+    },
+    "meta": {
+      "title": "Meta LLM 台灣競賽",
+      "subtitle": "前八強"
+    }
+  },
+  "contact": {
+    "title": "開始合作",
+    "subtitle": "提供 AI 產品開發、技術諮詢和顧問服務。我與願意投資 AI 的前瞻性組織合作。",
+    "linkedin": {
+      "title": "在 LinkedIn 聯繫",
+      "subtitle": "專業網絡"
+    },
+    "email": {
+      "title": "發送電子郵件",
+      "subtitle": "快速回應"
+    },
+    "calendar": {
+      "title": "預約通話",
+      "subtitle": "30 分鐘諮詢"
+    },
+    "location": "位於台灣 🇹🇼 • 接受全球遠端專案"
+  }
+}

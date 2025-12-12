@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function Navigation() {
   const pathname = usePathname();
+  const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations('nav');
   const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,15 +29,22 @@ export default function Navigation() {
     document.documentElement.classList.toggle("dark");
   };
 
+  const switchLocale = (newLocale: string) => {
+    // Get current path without locale prefix
+    const pathWithoutLocale = pathname.replace(/^\/(en|zh-TW)/, '') || '/';
+    // Navigate to same path with new locale
+    router.push(`/${newLocale}${pathWithoutLocale}`);
+  };
+
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
-    { href: "/about", label: "About" },
+    { href: `/${locale}`, label: t('home') },
+    { href: `/${locale}/projects`, label: t('projects') },
+    { href: `/${locale}/blog`, label: t('blog') },
+    { href: `/${locale}/about`, label: t('about') },
   ];
 
   // Hide navigation on homepage (it has its own custom nav)
-  if (pathname === "/") {
+  if (pathname === `/${locale}` || pathname === '/') {
     return null;
   }
 
@@ -41,7 +52,7 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
+          <Link href={`/${locale}`} className="text-2xl font-bold">
             Young
           </Link>
 
@@ -58,6 +69,32 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
+            {/* Language Switcher */}
+            <div className="flex items-center gap-2 border-l border-gray-300 dark:border-gray-600 pl-4">
+              <button
+                onClick={() => switchLocale('en')}
+                className={`px-2 py-1 rounded transition-colors ${
+                  locale === 'en'
+                    ? 'text-purple-600 font-semibold'
+                    : 'text-gray-600 hover:text-purple-600'
+                }`}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+              <span className="text-gray-400">|</span>
+              <button
+                onClick={() => switchLocale('zh-TW')}
+                className={`px-2 py-1 rounded transition-colors ${
+                  locale === 'zh-TW'
+                    ? 'text-purple-600 font-semibold'
+                    : 'text-gray-600 hover:text-purple-600'
+                }`}
+                aria-label="切換到繁體中文"
+              >
+                繁中
+              </button>
+            </div>
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -69,6 +106,30 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
+            {/* Language Switcher Mobile */}
+            <div className="flex items-center gap-1 text-sm">
+              <button
+                onClick={() => switchLocale('en')}
+                className={`px-2 py-1 rounded transition-colors ${
+                  locale === 'en'
+                    ? 'text-purple-600 font-semibold'
+                    : 'text-gray-600'
+                }`}
+              >
+                EN
+              </button>
+              <span className="text-gray-400">|</span>
+              <button
+                onClick={() => switchLocale('zh-TW')}
+                className={`px-2 py-1 rounded transition-colors ${
+                  locale === 'zh-TW'
+                    ? 'text-purple-600 font-semibold'
+                    : 'text-gray-600'
+                }`}
+              >
+                繁中
+              </button>
+            </div>
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
