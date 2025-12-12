@@ -1,0 +1,179 @@
+---
+title: "Building Modern Web Apps with Next.js 15"
+date: "2025-12-10"
+description: "Exploring the new features and improvements in Next.js 15 and how they enhance the development experience"
+author: "Young"
+tags: ["nextjs", "react", "web-development"]
+---
+
+# Building Modern Web Apps with Next.js 15
+
+Next.js 15 brings significant improvements to the React framework, making it easier than ever to build high-performance web applications.
+
+## Key Features
+
+### 1. App Router Stability
+
+The App Router, introduced in Next.js 13, is now stable and production-ready in version 15. It provides:
+
+- **Server Components by default**: Improved performance and smaller bundle sizes
+- **Streaming**: Progressive rendering for better user experience
+- **Layouts**: Shared UI across routes with nested layouts
+
+### 2. React 19 Support
+
+Next.js 15 fully supports React 19, which includes:
+
+```typescript
+// Server Actions
+async function handleSubmit(formData: FormData) {
+  'use server';
+
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+  };
+
+  // Process the data
+  await saveToDatabase(data);
+}
+```
+
+### 3. Improved Performance
+
+Performance improvements include:
+
+- **Faster builds**: Optimized build process
+- **Better caching**: Smarter cache invalidation
+- **Smaller bundles**: Tree-shaking improvements
+
+## Building This Site
+
+This personal website is built with Next.js 15 and demonstrates several key features:
+
+### Project Structure
+
+```
+app/
+├── layout.tsx          # Root layout
+├── page.tsx            # Home page
+├── projects/           # Projects portfolio
+├── blog/               # Blog with MDX
+│   ├── page.tsx       # Blog listing
+│   └── [slug]/        # Dynamic blog posts
+└── api/
+    └── chat/          # AI chat endpoint
+```
+
+### AI Integration
+
+One of the standout features is the AI chat assistant powered by Claude:
+
+```typescript
+// Simplified API route
+export async function POST(request: NextRequest) {
+  const { messages } = await request.json();
+
+  const response = await anthropic.messages.create({
+    model: "claude-sonnet-4-20250514",
+    system: systemPrompt,
+    messages: messages,
+  });
+
+  return NextResponse.json({ message: response.content });
+}
+```
+
+### MDX for Content
+
+Blog posts are written in MDX, combining Markdown with React components:
+
+```mdx
+---
+title: "My Post"
+date: "2025-12-10"
+---
+
+# Regular Markdown
+
+<CustomComponent />
+```
+
+## Best Practices
+
+### 1. Server vs Client Components
+
+Use Server Components by default:
+
+```typescript
+// This is a Server Component (default)
+export default async function Page() {
+  const data = await fetchData();
+  return <div>{data}</div>;
+}
+```
+
+Only use Client Components when needed:
+
+```typescript
+'use client';
+
+// Client Component for interactivity
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
+```
+
+### 2. Loading States
+
+Use built-in loading states:
+
+```typescript
+// app/blog/loading.tsx
+export default function Loading() {
+  return <div>Loading blog posts...</div>;
+}
+```
+
+### 3. Error Handling
+
+Implement error boundaries:
+
+```typescript
+// app/blog/error.tsx
+'use client';
+
+export default function Error({ error, reset }: {
+  error: Error;
+  reset: () => void;
+}) {
+  return (
+    <div>
+      <h2>Something went wrong!</h2>
+      <button onClick={reset}>Try again</button>
+    </div>
+  );
+}
+```
+
+## Deployment
+
+Deploying to Vercel is straightforward:
+
+1. Push to GitHub
+2. Import in Vercel
+3. Configure environment variables
+4. Deploy!
+
+The built-in optimizations ensure excellent performance scores.
+
+## Conclusion
+
+Next.js 15 provides a robust foundation for modern web applications. Combined with React 19, TypeScript, and Tailwind CSS, it's possible to build fast, scalable, and maintainable applications.
+
+The addition of AI capabilities through APIs like Claude makes it easy to add intelligent features to your applications.
+
+---
+
+*Want to see this in action? Check out the source code or chat with my AI assistant!*
