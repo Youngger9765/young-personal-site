@@ -32,6 +32,11 @@ export default function Navigation() {
     { href: "/about", label: "About" },
   ];
 
+  // Hide navigation on homepage (it has its own custom nav)
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-4">

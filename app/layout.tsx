@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-TW">
+    <html lang="zh-TW" className="scroll-smooth">
       <body className="antialiased">
         <Navigation />
         <main className="min-h-screen">
