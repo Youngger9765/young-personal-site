@@ -69,18 +69,18 @@
     "title": "What I do",
     "product": {
       "title": "AI Product Development",
-      "description": "End-to-end development of AI-powered products. From initial concept and architecture to deployment and scaling. Specialized in EdTech, healthcare, and enterprise solutions.",
-      "note": "Products: Vaitor, Jutor, Cutor"
+      "description": "Want to build an AI product but don't know where to start? I help you ship a working MVP in 3-6 weeks, plus teach your team how to maintain and scale it. Not just delivery—I transfer the knowledge.",
+      "note": "$800/hour or Starting at $20,000 • Typical MVP: 3-6 weeks"
     },
     "strategy": {
-      "title": "AI Strategy & Leadership",
-      "description": "Strategic AI transformation for organizations. I help teams identify opportunities, build roadmaps, and execute with measurable business impact. Focus on practical implementation over theoretical frameworks.",
-      "note": "10+ technical leaders trained and mentored"
+      "title": "AI Strategy Consulting",
+      "description": "Organizations wanting to adopt AI but unclear on the approach. I provide AI feasibility assessment, technical architecture design, and 6-12 month implementation roadmap. Methodology proven in education with 300K+ students.",
+      "note": "Starting at $20,000 • 4-6 week engagement"
     },
     "consulting": {
-      "title": "Technical Consulting",
-      "description": "Full-stack development with modern infrastructure. Next.js, FastAPI, AWS/GCP, and AI integration. I build systems that scale from prototype to production.",
-      "note": "AWS Solutions Architect Certified"
+      "title": "AI Adoption & Training",
+      "description": "Purchased AI tools but your team isn't using them? I design customized training programs, lead tool implementation, and ensure your organization actually adopts AI. Focused on EdTech, healthcare, and non-profits.",
+      "note": "From $3,000 per session • Half-day workshops (3-4 hours)"
     }
   },
   "projects": {
