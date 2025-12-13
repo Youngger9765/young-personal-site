@@ -241,13 +241,13 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-8 mb-8">
                 {[
                   {
-                    period: t('about.milestones.current.period'),
-                    title: t('about.milestones.current.title'),
+                    period: t('about.milestones.lead.period'),
+                    title: t('about.milestones.lead.title'),
                     highlights: [
-                      t('about.milestones.current.highlight1'),
-                      t('about.milestones.current.highlight2')
+                      t('about.milestones.lead.highlight1'),
+                      t('about.milestones.lead.highlight2')
                     ],
-                    gradient: 'from-purple-500 to-purple-600'
+                    gradient: 'from-indigo-500 to-indigo-600'
                   },
                   {
                     period: t('about.milestones.deputy.period'),
@@ -259,13 +259,13 @@ export default function Home() {
                     gradient: 'from-blue-500 to-blue-600'
                   },
                   {
-                    period: t('about.milestones.lead.period'),
-                    title: t('about.milestones.lead.title'),
+                    period: t('about.milestones.current.period'),
+                    title: t('about.milestones.current.title'),
                     highlights: [
-                      t('about.milestones.lead.highlight1'),
-                      t('about.milestones.lead.highlight2')
+                      t('about.milestones.current.highlight1'),
+                      t('about.milestones.current.highlight2')
                     ],
-                    gradient: 'from-indigo-500 to-indigo-600'
+                    gradient: 'from-purple-500 to-purple-600'
                   }
                 ].map((milestone, index) => (
                   <motion.div
@@ -284,7 +284,7 @@ export default function Home() {
                       </div>
 
                       {/* Title */}
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 leading-snug min-h-[3.5rem] group-hover:text-purple-600 transition-colors">
+                      <h4 className="text-lg font-bold text-gray-900 mb-4 leading-snug min-h-[3.5rem] group-hover:text-purple-600 transition-colors whitespace-pre-line">
                         {milestone.title}
                       </h4>
 
