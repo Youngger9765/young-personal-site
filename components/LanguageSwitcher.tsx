@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
     <div className="relative inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1">
       {/* Sliding background indicator */}
       <div
-        className={`absolute top-1 bottom-1 w-[calc(50%-0.25rem)] bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transition-all duration-300 ease-in-out ${
+        className={`absolute top-1 bottom-1 w-[calc(50%-0.25rem)] bg-gradient-to-r from-slate-blue to-coral-orange rounded-full transition-all duration-300 ease-in-out ${
           locale === 'en' ? 'left-1' : 'left-[calc(50%+0.125rem)]'
         }`}
         aria-hidden="true"
