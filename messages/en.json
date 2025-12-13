@@ -113,7 +113,7 @@
     "jutor": {
       "title": "Jutor & Cutor",
       "subtitle": "AI Tutoring Suite",
-      "description": "Developed AI-powered tutoring tools that provided personalized feedback and adaptive practice. Implemented ML models for automated content generation and student performance prediction.",
+      "description": "Jutor: AI-powered English learning platform for listening, speaking, reading, and writing (Jutor.ai). Cutor: Chinese writing/essay correction AI assistant. Both tools provide personalized feedback and adaptive practice.",
       "impact1": "150K+ students served",
       "impact2": "85% student satisfaction",
       "impact3": "60% reduction in manual grading"

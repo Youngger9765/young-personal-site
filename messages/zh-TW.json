@@ -113,7 +113,7 @@
     "jutor": {
       "title": "Jutor & Cutor",
       "subtitle": "AI 輔導工具組",
-      "description": "開發 AI 驅動的輔導工具,提供個人化回饋和適應性練習。實作機器學習模型以進行自動內容生成和學生表現預測。",
+      "description": "Jutor：英文聽說讀寫 AI 輔助平台 (Jutor.ai)。Cutor：中文作文批改 AI 助手。兩項工具皆提供個人化回饋和適應性練習。",
       "impact1": "服務 15 萬以上學生",
       "impact2": "85% 學生滿意度",
       "impact3": "人工評分減少 60%"
