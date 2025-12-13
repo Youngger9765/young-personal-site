@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode, FaChartLine, FaUsers, FaDollarSign, FaMicrophone, FaTrophy } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Navigation from '@/components/Navigation';
 
 export default function Home() {
   const t = useTranslations();
@@ -15,41 +15,7 @@ export default function Home() {
       <div className="fixed inset-0 z-0 bg-white" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <a href="#hero" className="text-2xl font-bold text-gray-900 hover:text-purple-600 transition-colors">
-              {t('nav.name')}
-            </a>
-            <div className="hidden md:flex items-center gap-6 text-base">
-              <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.about')}</a>
-              <a href="#track-record" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.trackRecord')}</a>
-              <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.services')}</a>
-              <a href="#projects" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.projects')}</a>
-              <div className="border-l border-gray-300 pl-4">
-                <LanguageSwitcher />
-              </div>
-              <a
-                href="https://calendly.com/app/scheduling/meeting_types/user/me"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-medium"
-              >
-                {t('nav.contact')}
-              </a>
-            </div>
-            {/* Mobile navigation */}
-            <div className="md:hidden flex items-center gap-3">
-              <LanguageSwitcher />
-              <button className="text-gray-600 hover:text-gray-900">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       <div className="relative z-10">
         {/* Hero Section - Minimalist Redesign */}
@@ -251,8 +217,15 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* LinkedIn Link */}
-              <div className="text-center">
+              {/* Links */}
+              <div className="text-center flex justify-center gap-8">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition-colors group"
+                >
+                  {t('about.page.readFullStory')}
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </Link>
                 <a
                   href="https://www.linkedin.com/in/tzu-yang-tsai/"
                   target="_blank"

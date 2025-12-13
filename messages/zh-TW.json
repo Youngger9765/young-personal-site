@@ -35,6 +35,22 @@
     "paragraph4": "當我不在開發產品時,你會發現我在 Medium 上撰寫關於 AI 產品開發的文章、在科技會議上演講,或指導下一代技術領導者。",
     "careerHighlights": "職涯亮點",
     "viewLinkedIn": "在 LinkedIn 查看完整經歷",
+    "page": {
+      "title": "關於我",
+      "subtitle": "我能讓你的 AI 想法變成產品，一週上線。位於台灣。",
+      "readFullStory": "閱讀完整故事",
+      "beliefs": "我相信",
+      "believeIntro": "我相信：",
+      "belief1": "AI 應該讓學習更公平、更容易取得",
+      "belief2": "產品要解決真實問題，而非追逐熱潮",
+      "belief3": "快速迭代勝過完美規劃",
+      "workingStyle": "工作方式",
+      "style1": "第一週：交付可用原型",
+      "style2": "用數據驗證假設，而非意見",
+      "style3": "教會團隊自給自足，而非依賴顧問",
+      "cta": "開始合作",
+      "ctaSubtitle": "提供 AI 產品開發、諮詢和顧問服務"
+    },
     "milestones": {
       "current": {
         "period": "2024-至今",

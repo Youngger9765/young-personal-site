@@ -35,6 +35,22 @@
     "paragraph4": "When I'm not building products, you'll find me writing on Medium about AI product development, speaking at tech conferences, or mentoring the next generation of technical leaders.",
     "careerHighlights": "Career Highlights",
     "viewLinkedIn": "View full experience on LinkedIn",
+    "page": {
+      "title": "About Me",
+      "subtitle": "I turn AI ideas into products in one week. Based in Taiwan.",
+      "readFullStory": "Read full story",
+      "beliefs": "What I Believe",
+      "believeIntro": "I believe:",
+      "belief1": "AI should make learning more accessible and equitable for everyone",
+      "belief2": "Products should solve real problems, not chase hype",
+      "belief3": "Fast iteration beats perfect planning every time",
+      "workingStyle": "How I Work",
+      "style1": "Week 1: Ship a working prototype",
+      "style2": "Use data to validate assumptions, not opinions",
+      "style3": "Teach teams to be self-sufficient, not dependent on consultants",
+      "cta": "Let's Work Together",
+      "ctaSubtitle": "Open to AI product development, consulting, and advisory roles"
+    },
     "milestones": {
       "current": {
         "period": "2024-Present",
