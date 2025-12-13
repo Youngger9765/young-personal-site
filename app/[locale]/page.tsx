@@ -90,11 +90,7 @@ export default function Home() {
               </motion.div>
 
               <motion.h1
-                className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-purple-700 to-blue-700 bg-clip-text text-transparent leading-[1.2] tracking-tight"
-                style={{
-                  letterSpacing: '0.02em',
-                  wordSpacing: '0.1em'
-                }}
+                className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-700 to-blue-700 bg-clip-text text-transparent leading-[1.1] tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -103,20 +99,57 @@ export default function Home() {
               </motion.h1>
 
               <motion.p
-                className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
+                className="text-2xl md:text-3xl text-gray-600 mb-8 font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                {t('hero.subtitle')}
-                <span className="block mt-2 text-purple-600 font-semibold">{t('hero.experience')}</span>
+                {t('hero.subheadline')}
               </motion.p>
+
+              {/* Timeline */}
+              <motion.div
+                className="flex flex-wrap gap-6 mb-8 text-gray-700"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.55 }}
+              >
+                <div className="text-base md:text-lg">
+                  {t('hero.timeline.day1')}
+                </div>
+                <div className="text-gray-400">→</div>
+                <div className="text-base md:text-lg">
+                  {t('hero.timeline.week1')}
+                </div>
+                <div className="text-gray-400">→</div>
+                <div className="text-base md:text-lg">
+                  {t('hero.timeline.month1')}
+                </div>
+              </motion.div>
+
+              {/* Achievement Badges */}
+              <motion.div
+                className="flex flex-wrap gap-3 mb-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <span className="px-4 py-2 bg-purple-50 border border-purple-200 text-purple-700 rounded-full text-sm font-semibold">
+                  {t('hero.achievements.meta')}
+                </span>
+                <span className="px-4 py-2 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-sm font-semibold">
+                  {t('hero.achievements.users')}
+                </span>
+                <span className="px-4 py-2 bg-green-50 border border-green-200 text-green-700 rounded-full text-sm font-semibold">
+                  {t('hero.achievements.saved')}
+                </span>
+              </motion.div>
 
               <motion.div
                 className="flex flex-wrap gap-4 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.65 }}
               >
                 <a
                   href="#contact"
