@@ -35,6 +35,36 @@ export default function ProjectsGalleryPage() {
       subtitle: t('jutor.subtitle'),
       description: t('jutor.description'),
     },
+    {
+      slug: 'learning-recommendation',
+      title: t('learningRecommendation.title'),
+      subtitle: t('learningRecommendation.subtitle'),
+      description: t('learningRecommendation.description'),
+    },
+    {
+      slug: 'assessment-platform',
+      title: t('assessmentPlatform.title'),
+      subtitle: t('assessmentPlatform.subtitle'),
+      description: t('assessmentPlatform.description'),
+    },
+    {
+      slug: 'content-management',
+      title: t('contentManagement.title'),
+      subtitle: t('contentManagement.subtitle'),
+      description: t('contentManagement.description'),
+    },
+    {
+      slug: 'edtech-analytics',
+      title: t('dataAnalytics.title'),
+      subtitle: t('dataAnalytics.subtitle'),
+      description: t('dataAnalytics.description'),
+    },
+    {
+      slug: 'teacher-tools',
+      title: t('teacherTools.title'),
+      subtitle: t('teacherTools.subtitle'),
+      description: t('teacherTools.description'),
+    },
   ];
 
   return (

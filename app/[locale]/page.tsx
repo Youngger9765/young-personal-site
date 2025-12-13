@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
 
 export default function Home() {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <div className="min-h-screen bg-white text-gray-900 overflow-hidden">
@@ -148,7 +150,7 @@ export default function Home() {
         {/* Services Section */}
         <section id="services" className="border-t border-gray-200">
           <div className="max-w-6xl mx-auto px-6 py-24">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16 text-center">
               {t('services.title')}
             </h2>
             <div className="space-y-12">
@@ -219,114 +221,154 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Projects Section - Horizontal Carousel */}
         <section id="projects" className="border-t border-gray-200">
-          <div className="max-w-6xl mx-auto px-6 py-24">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16">
-              {t('projects.title')}
-            </h2>
-            <div className="space-y-16">
-              {[
-                {
-                  title: t('projects.vaitor.title'),
-                  subtitle: t('projects.vaitor.subtitle'),
-                  description: t('projects.vaitor.description'),
-                  impact: [
-                    t('projects.vaitor.impact1'),
-                    t('projects.vaitor.impact2'),
-                    t('projects.vaitor.impact3')
-                  ],
-                  tech: ["Python", "FastAPI", "React", "PostgreSQL", "AWS"],
-                },
-                {
-                  title: t('projects.healthcare.title'),
-                  subtitle: t('projects.healthcare.subtitle'),
-                  description: t('projects.healthcare.description'),
-                  impact: [
-                    t('projects.healthcare.impact1'),
-                    t('projects.healthcare.impact2'),
-                    t('projects.healthcare.impact3')
-                  ],
-                  tech: ["Next.js", "Python", "BigQuery", "GCP", "Looker"],
-                },
-                {
-                  title: t('projects.jutor.title'),
-                  subtitle: t('projects.jutor.subtitle'),
-                  description: t('projects.jutor.description'),
-                  impact: [
-                    t('projects.jutor.impact1'),
-                    t('projects.jutor.impact2'),
-                    t('projects.jutor.impact3')
-                  ],
-                  tech: ["Python", "TensorFlow", "React", "PostgreSQL", "Docker"],
-                },
-              ].map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 hover:border-slate-blue transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                    {/* Project Image Placeholder */}
-                    <div className="relative h-64 bg-gradient-to-br from-warm-cream to-blue-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <div className="text-center">
-                        <svg className="w-16 h-16 text-slate-blue mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <p className="text-slate-blue text-sm font-medium">{t('projects.projectScreenshot')}</p>
-                      </div>
-                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-                        {t('projects.caseStudyLabel')}
-                      </div>
-                    </div>
+          <div className="max-w-7xl mx-auto py-24">
+            <div className="px-6">
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16 text-center">
+                {t('projects.title')}
+              </h2>
+            </div>
 
-                    <div className="p-8">
-                      <div className="mb-6">
-                        <h3 className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-slate-blue text-sm font-medium">
-                          {project.subtitle}
-                        </p>
-                      </div>
-                      <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                        {project.description}
-                      </p>
-                    <div className="mb-6">
-                      <h4 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-4">
-                        {t('projects.impactLabel')}
-                      </h4>
-                      <ul className="space-y-2">
-                        {project.impact.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-gray-600">
-                            <span className="text-slate-blue mt-1">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-4">
-                        {t('projects.techStackLabel')}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 bg-gray-100 border border-gray-200 rounded-full text-sm text-gray-700"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            {/* Horizontal Scrolling Container */}
+            <div className="relative">
+              {/* Left Fade Indicator */}
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+
+              {/* Right Fade Indicator */}
+              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+              {/* Scrollable Container */}
+              <div
+                className="overflow-x-auto scrollbar-hide md:px-12"
+                style={{
+                  scrollSnapType: 'x mandatory',
+                  scrollPaddingLeft: '0px',
+                  scrollPaddingRight: '0px',
+                }}
+              >
+                <div className="flex gap-6 pb-4 pl-6 pr-6 md:pl-0 md:pr-0">
+                  {[
+                    {
+                      slug: 'vaitor',
+                      title: t('projects.vaitor.title'),
+                      subtitle: t('projects.vaitor.subtitle'),
+                      description: t('projects.vaitor.description'),
+                    },
+                    {
+                      slug: 'healthcare-dashboard',
+                      title: t('projects.healthcare.title'),
+                      subtitle: t('projects.healthcare.subtitle'),
+                      description: t('projects.healthcare.description'),
+                    },
+                    {
+                      slug: 'jutor-cutor',
+                      title: t('projects.jutor.title'),
+                      subtitle: t('projects.jutor.subtitle'),
+                      description: t('projects.jutor.description'),
+                    },
+                    {
+                      slug: 'learning-recommendation',
+                      title: t('projects.learningRecommendation.title'),
+                      subtitle: t('projects.learningRecommendation.subtitle'),
+                      description: t('projects.learningRecommendation.description'),
+                    },
+                    {
+                      slug: 'assessment-platform',
+                      title: t('projects.assessmentPlatform.title'),
+                      subtitle: t('projects.assessmentPlatform.subtitle'),
+                      description: t('projects.assessmentPlatform.description'),
+                    },
+                    {
+                      slug: 'content-management',
+                      title: t('projects.contentManagement.title'),
+                      subtitle: t('projects.contentManagement.subtitle'),
+                      description: t('projects.contentManagement.description'),
+                    },
+                    {
+                      slug: 'edtech-analytics',
+                      title: t('projects.dataAnalytics.title'),
+                      subtitle: t('projects.dataAnalytics.subtitle'),
+                      description: t('projects.dataAnalytics.description'),
+                    },
+                    {
+                      slug: 'teacher-tools',
+                      title: t('projects.teacherTools.title'),
+                      subtitle: t('projects.teacherTools.subtitle'),
+                      description: t('projects.teacherTools.description'),
+                    },
+                  ].map((project, index) => (
+                    <motion.div
+                      key={project.slug}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex-shrink-0 w-[85vw] md:w-[400px]"
+                      style={{ scrollSnapAlign: 'start' }}
+                    >
+                      <Link href={`/${locale}/projects/${project.slug}`}>
+                        <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
+                          {/* Project Thumbnail */}
+                          <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <svg
+                                className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={1.5}
+                                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                />
+                              </svg>
+                            </div>
+
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-slate-blue/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                              <div className="text-center px-6">
+                                <div className="text-white text-lg font-semibold mb-2">
+                                  {t('projects.gallery.viewDetails')}
+                                </div>
+                                <div className="text-white/80 text-sm">
+                                  →
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Project Info */}
+                          <div className="p-6">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-sm text-slate-blue font-medium mb-3">
+                              {project.subtitle}
+                            </p>
+                            <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                              {project.description}
+                            </p>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* View All Projects Link */}
+            <div className="px-6 mt-8 text-center">
+              <Link
+                href={`/${locale}/projects`}
+                className="inline-flex items-center gap-2 text-slate-blue hover:text-gray-900 transition-colors font-semibold group"
+              >
+                <span>{t('projects.gallery.viewDetails')}</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
             </div>
           </div>
         </section>

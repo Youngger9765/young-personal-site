@@ -184,52 +184,83 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Values & Beliefs */}
+        {/* Values & Beliefs + Working Style */}
         <section className="border-t border-gray-200">
           <div className="max-w-4xl mx-auto px-6 py-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
-              {t('about.page.beliefs')}
-            </h2>
-            <div className="space-y-6 text-lg text-gray-700">
-              <ul className="space-y-4 ml-6">
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-blue mt-1">•</span>
-                  <span>{t('about.page.belief1')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-blue mt-1">•</span>
-                  <span>{t('about.page.belief2')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-blue mt-1">•</span>
-                  <span>{t('about.page.belief3')}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              {/* Beliefs Column */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12 tracking-tight">
+                  {t('about.page.beliefs')}
+                </h2>
+                <div className="space-y-5">
+                  {[
+                    { text: t('about.page.belief1') },
+                    { text: t('about.page.belief2') },
+                    { text: t('about.page.belief3') }
+                  ].map((belief, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                      className="group relative"
+                    >
+                      {/* Enhanced left accent border with shadow */}
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-blue via-slate-blue to-slate-blue/50 rounded-full shadow-[2px_0_8px_rgba(71,85,105,0.15)] transition-all duration-300 group-hover:w-1.5 group-hover:shadow-[3px_0_12px_rgba(71,85,105,0.25)]" />
 
-        {/* Working Style */}
-        <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
-              {t('about.page.workingStyle')}
-            </h2>
-            <div className="space-y-6 text-lg text-gray-700">
-              <ul className="space-y-4 ml-6">
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-blue mt-1">•</span>
-                  <span>{t('about.page.style1')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-blue mt-1">•</span>
-                  <span>{t('about.page.style2')}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-blue mt-1">•</span>
-                  <span>{t('about.page.style3')}</span>
-                </li>
-              </ul>
+                      {/* Premium content card with refined depth */}
+                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-warm-cream/10 to-warm-cream/20 rounded-r-2xl border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-slate-blue/30 hover:bg-gradient-to-br hover:from-white hover:via-warm-cream/15 hover:to-warm-cream/25">
+                        {/* Subtle top-left decorative element */}
+                        <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-slate-blue/5 to-transparent rounded-br-3xl pointer-events-none" />
+
+                        {/* Text content with enhanced typography */}
+                        <p className="relative text-gray-800 leading-[1.7] text-[16.5px] font-medium tracking-wide">
+                          {belief.text}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Working Style Column */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12 tracking-tight">
+                  {t('about.page.workingStyle')}
+                </h2>
+                <div className="space-y-5">
+                  {[
+                    { text: t('about.page.style1') },
+                    { text: t('about.page.style2') },
+                    { text: t('about.page.style3') }
+                  ].map((style, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                      className="group relative"
+                    >
+                      {/* Enhanced left accent border with shadow */}
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-blue via-slate-blue to-slate-blue/50 rounded-full shadow-[2px_0_8px_rgba(71,85,105,0.15)] transition-all duration-300 group-hover:w-1.5 group-hover:shadow-[3px_0_12px_rgba(71,85,105,0.25)]" />
+
+                      {/* Premium content card with refined depth */}
+                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-warm-cream/10 to-warm-cream/20 rounded-r-2xl border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-slate-blue/30 hover:bg-gradient-to-br hover:from-white hover:via-warm-cream/15 hover:to-warm-cream/25">
+                        {/* Subtle top-left decorative element */}
+                        <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-slate-blue/5 to-transparent rounded-br-3xl pointer-events-none" />
+
+                        {/* Text content with enhanced typography */}
+                        <p className="relative text-gray-800 leading-[1.7] text-[16.5px] font-medium tracking-wide">
+                          {style.text}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

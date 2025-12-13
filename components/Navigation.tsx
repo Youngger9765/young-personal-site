@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
@@ -27,18 +28,38 @@ export default function Navigation() {
     return `/${locale}#${section}`;
   };
 
+  // Check if a nav link is active
+  const isActive = (path: string) => {
+    // Exact match for homepage (don't highlight on sub-pages)
+    if (path === `/${locale}`) {
+      return pathname === `/${locale}` || pathname === '/' || pathname === `/${locale}/`;
+    }
+    // For other pages, check exact match or if it's a sub-page
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a href={`/${locale}`} className="text-2xl font-bold text-gray-900 hover:text-slate-blue transition-colors">
-            {t('name')}
+          <a href={`/${locale}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Image
+              src="/images/logo.png"
+              alt="Young Tsai Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+            <span className="text-2xl font-bold text-gray-900">
+              Young Tsai
+            </span>
           </a>
           <div className="hidden md:flex items-center gap-6 text-base">
-            <a href={`/${locale}`} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('home')}</a>
-            <a href={getNavHref('services')} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('services')}</a>
-            <a href={getNavHref('projects')} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('projects')}</a>
-            <a href={`/${locale}/about`} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('about')}</a>
+            <a href={`/${locale}`} className={`${isActive(`/${locale}`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('home')}</a>
+            <a href={`/${locale}/about`} className={`${isActive(`/${locale}/about`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('about')}</a>
+            <a href={getNavHref('projects')} className={`${isActive(`/${locale}/projects`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('projects')}</a>
+            <a href={`/${locale}/speaking`} className={`${isActive(`/${locale}/speaking`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('speaking')}</a>
+            <a href={`/${locale}/blog`} className={`${isActive(`/${locale}/blog`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('blog')}</a>
             <div className="border-l border-gray-300 pl-4">
               <LanguageSwitcher />
             </div>
@@ -72,30 +93,37 @@ export default function Navigation() {
               <a
                 href={`/${locale}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className={`px-4 py-2 ${isActive(`/${locale}`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
               >
                 {t('home')}
               </a>
               <a
-                href={getNavHref('services')}
+                href={`/${locale}/about`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className={`px-4 py-2 ${isActive(`/${locale}/about`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
               >
-                {t('services')}
+                {t('about')}
               </a>
               <a
                 href={getNavHref('projects')}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className={`px-4 py-2 ${isActive(`/${locale}/projects`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
               >
                 {t('projects')}
               </a>
               <a
-                href={`/${locale}/about`}
+                href={`/${locale}/speaking`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className={`px-4 py-2 ${isActive(`/${locale}/speaking`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
               >
-                {t('about')}
+                {t('speaking')}
+              </a>
+              <a
+                href={`/${locale}/blog`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`px-4 py-2 ${isActive(`/${locale}/blog`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
+              >
+                {t('blog')}
               </a>
               <a
                 href="https://calendly.com/young-tsai/ai"

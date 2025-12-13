@@ -7,7 +7,8 @@
     "projects": "Projects",
     "contact": "Get in touch",
     "home": "Home",
-    "blog": "Blog"
+    "blog": "Blog",
+    "speaking": "Speaking"
   },
   "hero": {
     "badge": "AI Product Consultant",
@@ -41,7 +42,7 @@
       "subtitle": "I turn AI ideas into products in one week",
       "readFullStory": "Read full story",
       "beliefs": "What I Believe",
-      "belief1": "AI should make learning more accessible and equitable for everyone",
+      "belief1": "AI enables rapid idea validation and low-cost experimentation",
       "belief2": "Products should solve real problems, not chase hype",
       "belief3": "Fast iteration beats perfect planning every time",
       "workingStyle": "How I Work",
@@ -144,6 +145,46 @@
       "impact2": "85% student satisfaction",
       "impact3": "60% reduction in manual grading"
     },
+    "learningRecommendation": {
+      "title": "Adaptive Learning Recommendation Engine",
+      "subtitle": "Personalized Content Delivery System",
+      "description": "Built an intelligent recommendation system that analyzes student performance patterns and learning behaviors to deliver personalized content pathways. The engine processes millions of data points daily to optimize learning outcomes for individual students.",
+      "impact1": "2M+ daily recommendations",
+      "impact2": "35% improvement in engagement",
+      "impact3": "70% faster skill mastery"
+    },
+    "assessmentPlatform": {
+      "title": "Smart Assessment Platform",
+      "subtitle": "AI-Powered Testing & Evaluation",
+      "description": "Developed a comprehensive assessment platform that automatically generates adaptive tests, provides instant feedback, and tracks student progress over time. Features include auto-grading, plagiarism detection, and learning gap analysis.",
+      "impact1": "500K+ assessments monthly",
+      "impact2": "90% reduction in grading time",
+      "impact3": "Real-time performance analytics"
+    },
+    "contentManagement": {
+      "title": "Education Content Management System",
+      "subtitle": "Scalable Content Infrastructure",
+      "description": "Created a robust content management platform that enables educators to create, organize, and distribute learning materials at scale. Includes version control, multi-language support, and AI-powered content quality analysis.",
+      "impact1": "100K+ content pieces managed",
+      "impact2": "15 languages supported",
+      "impact3": "50% faster content creation"
+    },
+    "dataAnalytics": {
+      "title": "EdTech Data Analytics Suite",
+      "subtitle": "Educational Intelligence Platform",
+      "description": "Designed and implemented a comprehensive analytics platform for educational institutions, providing real-time insights into student performance, curriculum effectiveness, and operational metrics. Replaced multiple legacy systems with one unified solution.",
+      "impact1": "$800K annual savings",
+      "impact2": "Dashboard for 200+ schools",
+      "impact3": "Real-time learning insights"
+    },
+    "teacherTools": {
+      "title": "AI Teacher Assistant Platform",
+      "subtitle": "Classroom Management & Support",
+      "description": "Built an AI-powered platform that helps teachers manage classrooms more efficiently. Features include automated lesson planning, student progress tracking, personalized intervention recommendations, and administrative task automation.",
+      "impact1": "10K+ teachers using daily",
+      "impact2": "40% time saved on admin tasks",
+      "impact3": "95% teacher satisfaction"
+    },
     "impactLabel": "Impact",
     "techStackLabel": "Tech Stack",
     "caseStudyLabel": "Case Study",
@@ -194,6 +235,66 @@
       "result2": "Achieved 85% student satisfaction rating",
       "result3": "Reduced manual grading workload by 60%",
       "result4": "Top 8 finalist in Meta LLM Taiwan Pitch"
+    },
+    "learningRecommendationDetail": {
+      "description": "Built a sophisticated recommendation engine that transforms how students discover and engage with learning content. By analyzing millions of data points including performance metrics, learning pace, interaction patterns, and knowledge gaps, the system delivers hyper-personalized content recommendations in real-time.\n\nThe engine employs collaborative filtering, content-based filtering, and deep learning models to predict optimal learning pathways for each student. This results in significantly improved engagement rates and faster skill mastery compared to traditional one-size-fits-all approaches.",
+      "feature1": "Real-time personalization based on learning behavior",
+      "feature2": "Multi-dimensional student profile analysis",
+      "feature3": "Collaborative filtering for similar learner patterns",
+      "feature4": "A/B testing framework for continuous optimization",
+      "feature5": "Scalable architecture handling millions of recommendations daily",
+      "result1": "Processing 2M+ personalized recommendations daily",
+      "result2": "Improved student engagement by 35%",
+      "result3": "Reduced time to skill mastery by 70%",
+      "result4": "Supported diverse learning styles with 92% accuracy"
+    },
+    "assessmentPlatformDetail": {
+      "description": "Created a next-generation assessment platform that reimagines how educators evaluate student learning. The platform combines adaptive testing algorithms with AI-powered auto-grading to deliver fair, efficient, and insightful assessments at scale.\n\nKey innovations include intelligent question generation, plagiarism detection using NLP, automated partial credit scoring for complex responses, and real-time learning gap identification. The platform helps educators focus on teaching rather than administrative grading tasks.",
+      "feature1": "Adaptive test generation based on student proficiency",
+      "feature2": "AI-powered auto-grading for essays and open-ended questions",
+      "feature3": "Real-time plagiarism and cheating detection",
+      "feature4": "Learning gap analysis and intervention recommendations",
+      "feature5": "Integration with major LMS platforms",
+      "result1": "Processing 500K+ assessments monthly",
+      "result2": "Reduced grading time by 90% for educators",
+      "result3": "Identified learning gaps with 88% accuracy",
+      "result4": "Integrated with 50+ schools and institutions"
+    },
+    "contentManagementDetail": {
+      "description": "Developed a comprehensive content management system specifically designed for educational institutions. The platform enables educators to create, curate, organize, and distribute learning materials efficiently while maintaining quality and consistency across multiple languages and formats.\n\nBuilt-in AI features analyze content quality, suggest improvements, and automatically tag and categorize materials. Version control ensures educators can track changes and revert when needed, while multi-language support enables global content distribution.",
+      "feature1": "Intuitive content creation and editing interface",
+      "feature2": "AI-powered content quality analysis and suggestions",
+      "feature3": "Multi-language support with automatic translation workflows",
+      "feature4": "Advanced version control and collaboration tools",
+      "feature5": "Automated tagging and content organization",
+      "result1": "Managing 100K+ educational content pieces",
+      "result2": "Supporting content in 15 languages",
+      "result3": "Reduced content creation time by 50%",
+      "result4": "Improved content quality scores by 40%"
+    },
+    "dataAnalyticsDetail": {
+      "description": "Designed and built a comprehensive data analytics suite tailored for educational institutions. This platform consolidates data from multiple sources to provide real-time insights into student performance, curriculum effectiveness, teacher productivity, and operational metrics.\n\nThe system replaced multiple expensive legacy analytics tools, saving $800K annually while providing superior functionality. Interactive dashboards enable data-driven decision-making at all levels - from individual teachers to district administrators.",
+      "feature1": "Unified dashboard consolidating multiple data sources",
+      "feature2": "Real-time student performance tracking and alerts",
+      "feature3": "Curriculum effectiveness analysis and recommendations",
+      "feature4": "Teacher productivity and professional development insights",
+      "feature5": "Predictive analytics for student success interventions",
+      "result1": "Saving $800K annually in analytics tool costs",
+      "result2": "Serving 200+ schools and educational institutions",
+      "result3": "Providing real-time insights with <1 second latency",
+      "result4": "Enabled data-driven decisions improving outcomes by 25%"
+    },
+    "teacherToolsDetail": {
+      "description": "Built an AI-powered platform that serves as a comprehensive assistant for teachers, automating administrative tasks and providing intelligent recommendations to improve classroom management and student outcomes.\n\nThe platform uses AI to generate personalized lesson plans, track student progress automatically, identify students who need intervention, and handle routine administrative work. This allows teachers to spend more time on what matters most - teaching and connecting with students.",
+      "feature1": "AI-generated personalized lesson plans and materials",
+      "feature2": "Automated student progress tracking and reporting",
+      "feature3": "Smart intervention recommendations for struggling students",
+      "feature4": "Administrative task automation (attendance, grading, etc.)",
+      "feature5": "Parent communication templates and scheduling",
+      "result1": "Used daily by 10K+ teachers",
+      "result2": "Saved teachers 40% time on administrative tasks",
+      "result3": "Achieved 95% teacher satisfaction rating",
+      "result4": "Improved student intervention response time by 60%"
     }
   },
   "insights": {
@@ -264,7 +365,7 @@
     },
     "calendar": {
       "title": "Schedule a call",
-      "subtitle": "30-min consultation"
+      "subtitle": "1-hour consultation"
     },
     "location": "Available for remote projects worldwide"
   },
@@ -282,7 +383,7 @@
     },
     "calendar": {
       "title": "Book a Call",
-      "subtitle": "30-min consultation"
+      "subtitle": "1-hour consultation"
     },
     "footer": "Open to global remote projects"
   }
