@@ -49,7 +49,7 @@ export default async function LocaleLayout({
           <main className="min-h-screen">
             {children}
           </main>
-          <AIChatWidget />
+          {/* <AIChatWidget /> */}
         </NextIntlClientProvider>
       </body>
     </html>
