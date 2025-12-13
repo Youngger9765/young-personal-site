@@ -123,72 +123,19 @@
     "title": "Selected Projects",
     "vaitor": {
       "title": "Vaitor",
-      "subtitle": "AI-Powered Learning Platform",
-      "description": "Led development of an adaptive learning system that personalized content for 300K+ students. Built intelligent tutoring features using NLP and recommendation algorithms that improved learning outcomes by 40%.",
-      "impact1": "300K+ active users",
-      "impact2": "40% improvement in learning outcomes",
-      "impact3": "Scaled team from 3 to 15 engineers"
-    },
-    "healthcare": {
-      "title": "Healthcare Analytics Dashboard",
-      "subtitle": "Data Infrastructure & Analytics",
-      "description": "Replaced 5 expensive external tools with a unified analytics platform, saving $1.2M annually. Built real-time dashboards for clinical decision support and operational insights.",
-      "impact1": "$1.2M annual savings",
-      "impact2": "5 systems consolidated",
-      "impact3": "Real-time clinical insights"
+      "subtitle": "AI Video Tutor",
+      "description": "AI-powered video tutoring system that analyzes educational videos and provides interactive learning experiences. Built with Next.js, Claude AI, and video processing technology, enabling students to interact with video content in real-time."
     },
     "jutor": {
-      "title": "Jutor & Cutor",
-      "subtitle": "AI Tutoring Suite",
-      "description": "Jutor: AI-powered English learning platform for listening, speaking, reading, and writing (Jutor.ai). Cutor: Chinese writing/essay correction AI assistant. Both tools provide personalized feedback and adaptive practice.",
-      "impact1": "150K+ students served",
-      "impact2": "85% student satisfaction",
-      "impact3": "60% reduction in manual grading"
+      "title": "Jutor",
+      "subtitle": "AI English Tutor",
+      "description": "AI English tutoring platform providing personalized learning and instant feedback for listening, speaking, reading, and writing. Meta LLM Taiwan Pitch Top 8 finalist, built with FastAPI, OpenAI, and speech recognition technology."
     },
-    "learningRecommendation": {
-      "title": "Adaptive Learning Recommendation Engine",
-      "subtitle": "Personalized Content Delivery System",
-      "description": "Built an intelligent recommendation system that analyzes student performance patterns and learning behaviors to deliver personalized content pathways. The engine processes millions of data points daily to optimize learning outcomes for individual students.",
-      "impact1": "2M+ daily recommendations",
-      "impact2": "35% improvement in engagement",
-      "impact3": "70% faster skill mastery"
+    "cutor": {
+      "title": "Cutor",
+      "subtitle": "AI Writing Assistant",
+      "description": "AI-powered Chinese writing assistant that helps users optimize writing content, style, and essay corrections. Built with Claude AI, GPT-4, and Next.js, providing real-time writing suggestions and corrections."
     },
-    "assessmentPlatform": {
-      "title": "Smart Assessment Platform",
-      "subtitle": "AI-Powered Testing & Evaluation",
-      "description": "Developed a comprehensive assessment platform that automatically generates adaptive tests, provides instant feedback, and tracks student progress over time. Features include auto-grading, plagiarism detection, and learning gap analysis.",
-      "impact1": "500K+ assessments monthly",
-      "impact2": "90% reduction in grading time",
-      "impact3": "Real-time performance analytics"
-    },
-    "contentManagement": {
-      "title": "Education Content Management System",
-      "subtitle": "Scalable Content Infrastructure",
-      "description": "Created a robust content management platform that enables educators to create, organize, and distribute learning materials at scale. Includes version control, multi-language support, and AI-powered content quality analysis.",
-      "impact1": "100K+ content pieces managed",
-      "impact2": "15 languages supported",
-      "impact3": "50% faster content creation"
-    },
-    "dataAnalytics": {
-      "title": "EdTech Data Analytics Suite",
-      "subtitle": "Educational Intelligence Platform",
-      "description": "Designed and implemented a comprehensive analytics platform for educational institutions, providing real-time insights into student performance, curriculum effectiveness, and operational metrics. Replaced multiple legacy systems with one unified solution.",
-      "impact1": "$800K annual savings",
-      "impact2": "Dashboard for 200+ schools",
-      "impact3": "Real-time learning insights"
-    },
-    "teacherTools": {
-      "title": "AI Teacher Assistant Platform",
-      "subtitle": "Classroom Management & Support",
-      "description": "Built an AI-powered platform that helps teachers manage classrooms more efficiently. Features include automated lesson planning, student progress tracking, personalized intervention recommendations, and administrative task automation.",
-      "impact1": "10K+ teachers using daily",
-      "impact2": "40% time saved on admin tasks",
-      "impact3": "95% teacher satisfaction"
-    },
-    "impactLabel": "Impact",
-    "techStackLabel": "Tech Stack",
-    "caseStudyLabel": "Case Study",
-    "projectScreenshot": "Project Screenshot",
     "gallery": {
       "title": "Portfolio",
       "subtitle": "Selected projects showcasing AI product development, data infrastructure, and EdTech innovation",
@@ -212,18 +159,6 @@
       "result3": "Successfully scaled engineering team from 3 to 15 members",
       "result4": "Maintained <5% team turnover while scaling organization"
     },
-    "healthcareDetail": {
-      "description": "Built a comprehensive analytics platform that replaced 5 disparate external tools, saving $1.2M annually. This unified solution provides real-time insights for clinical decision support and operational intelligence.\n\nThe platform consolidates data from multiple sources into a single, coherent dashboard. Healthcare professionals can access real-time patient data, track clinical outcomes, and make data-driven decisions that improve patient care while reducing operational costs.",
-      "feature1": "Unified dashboard consolidating 5 separate analytics systems",
-      "feature2": "Real-time clinical decision support tools",
-      "feature3": "Automated operational insights and reporting",
-      "feature4": "HIPAA-compliant data infrastructure",
-      "feature5": "Custom visualization for healthcare metrics",
-      "result1": "Saved $1.2M annually by eliminating external tool dependencies",
-      "result2": "Reduced data query time from hours to seconds",
-      "result3": "Consolidated 5 systems into one unified platform",
-      "result4": "Improved clinical decision-making with real-time insights"
-    },
     "jutorDetail": {
       "description": "Developed a comprehensive AI tutoring suite consisting of Jutor (English learning) and Cutor (Chinese writing). These platforms leverage advanced AI to provide personalized feedback, adaptive practice, and intelligent assessment for language learners.\n\nJutor focuses on all four language skills - listening, speaking, reading, and writing - with real-time pronunciation analysis and grammar correction. Cutor specializes in Chinese essay writing and correction, helping students improve their composition skills through AI-powered feedback.",
       "feature1": "Multi-skill English learning (listening, speaking, reading, writing)",
@@ -236,65 +171,17 @@
       "result3": "Reduced manual grading workload by 60%",
       "result4": "Top 8 finalist in Meta LLM Taiwan Pitch"
     },
-    "learningRecommendationDetail": {
-      "description": "Built a sophisticated recommendation engine that transforms how students discover and engage with learning content. By analyzing millions of data points including performance metrics, learning pace, interaction patterns, and knowledge gaps, the system delivers hyper-personalized content recommendations in real-time.\n\nThe engine employs collaborative filtering, content-based filtering, and deep learning models to predict optimal learning pathways for each student. This results in significantly improved engagement rates and faster skill mastery compared to traditional one-size-fits-all approaches.",
-      "feature1": "Real-time personalization based on learning behavior",
-      "feature2": "Multi-dimensional student profile analysis",
-      "feature3": "Collaborative filtering for similar learner patterns",
-      "feature4": "A/B testing framework for continuous optimization",
-      "feature5": "Scalable architecture handling millions of recommendations daily",
-      "result1": "Processing 2M+ personalized recommendations daily",
-      "result2": "Improved student engagement by 35%",
-      "result3": "Reduced time to skill mastery by 70%",
-      "result4": "Supported diverse learning styles with 92% accuracy"
-    },
-    "assessmentPlatformDetail": {
-      "description": "Created a next-generation assessment platform that reimagines how educators evaluate student learning. The platform combines adaptive testing algorithms with AI-powered auto-grading to deliver fair, efficient, and insightful assessments at scale.\n\nKey innovations include intelligent question generation, plagiarism detection using NLP, automated partial credit scoring for complex responses, and real-time learning gap identification. The platform helps educators focus on teaching rather than administrative grading tasks.",
-      "feature1": "Adaptive test generation based on student proficiency",
-      "feature2": "AI-powered auto-grading for essays and open-ended questions",
-      "feature3": "Real-time plagiarism and cheating detection",
-      "feature4": "Learning gap analysis and intervention recommendations",
-      "feature5": "Integration with major LMS platforms",
-      "result1": "Processing 500K+ assessments monthly",
-      "result2": "Reduced grading time by 90% for educators",
-      "result3": "Identified learning gaps with 88% accuracy",
-      "result4": "Integrated with 50+ schools and institutions"
-    },
-    "contentManagementDetail": {
-      "description": "Developed a comprehensive content management system specifically designed for educational institutions. The platform enables educators to create, curate, organize, and distribute learning materials efficiently while maintaining quality and consistency across multiple languages and formats.\n\nBuilt-in AI features analyze content quality, suggest improvements, and automatically tag and categorize materials. Version control ensures educators can track changes and revert when needed, while multi-language support enables global content distribution.",
-      "feature1": "Intuitive content creation and editing interface",
-      "feature2": "AI-powered content quality analysis and suggestions",
-      "feature3": "Multi-language support with automatic translation workflows",
-      "feature4": "Advanced version control and collaboration tools",
-      "feature5": "Automated tagging and content organization",
-      "result1": "Managing 100K+ educational content pieces",
-      "result2": "Supporting content in 15 languages",
-      "result3": "Reduced content creation time by 50%",
-      "result4": "Improved content quality scores by 40%"
-    },
-    "dataAnalyticsDetail": {
-      "description": "Designed and built a comprehensive data analytics suite tailored for educational institutions. This platform consolidates data from multiple sources to provide real-time insights into student performance, curriculum effectiveness, teacher productivity, and operational metrics.\n\nThe system replaced multiple expensive legacy analytics tools, saving $800K annually while providing superior functionality. Interactive dashboards enable data-driven decision-making at all levels - from individual teachers to district administrators.",
-      "feature1": "Unified dashboard consolidating multiple data sources",
-      "feature2": "Real-time student performance tracking and alerts",
-      "feature3": "Curriculum effectiveness analysis and recommendations",
-      "feature4": "Teacher productivity and professional development insights",
-      "feature5": "Predictive analytics for student success interventions",
-      "result1": "Saving $800K annually in analytics tool costs",
-      "result2": "Serving 200+ schools and educational institutions",
-      "result3": "Providing real-time insights with <1 second latency",
-      "result4": "Enabled data-driven decisions improving outcomes by 25%"
-    },
-    "teacherToolsDetail": {
-      "description": "Built an AI-powered platform that serves as a comprehensive assistant for teachers, automating administrative tasks and providing intelligent recommendations to improve classroom management and student outcomes.\n\nThe platform uses AI to generate personalized lesson plans, track student progress automatically, identify students who need intervention, and handle routine administrative work. This allows teachers to spend more time on what matters most - teaching and connecting with students.",
-      "feature1": "AI-generated personalized lesson plans and materials",
-      "feature2": "Automated student progress tracking and reporting",
-      "feature3": "Smart intervention recommendations for struggling students",
-      "feature4": "Administrative task automation (attendance, grading, etc.)",
-      "feature5": "Parent communication templates and scheduling",
-      "result1": "Used daily by 10K+ teachers",
-      "result2": "Saved teachers 40% time on administrative tasks",
-      "result3": "Achieved 95% teacher satisfaction rating",
-      "result4": "Improved student intervention response time by 60%"
+    "cutorDetail": {
+      "description": "Cutor is an AI-powered writing assistant designed specifically for Chinese writing. Using advanced AI technology including Claude AI and GPT-4, it helps users optimize content, improve writing style, and provides essay correction services with instant, personalized feedback.\n\nWhether it's student essays, business copy, or creative writing, Cutor provides accurate grammar corrections, style suggestions, and content optimization to help users improve their Chinese writing skills.",
+      "feature1": "Real-time grammar and punctuation checking",
+      "feature2": "Writing style optimization suggestions",
+      "feature3": "Essay structure analysis and improvements",
+      "feature4": "Personalized writing feedback",
+      "feature5": "Support for multiple writing genres (academic, business, creative)",
+      "result1": "AI writing assistant product in development",
+      "result2": "Built with Claude AI and GPT-4 technology",
+      "result3": "Supports various Chinese writing scenarios",
+      "result4": "Provides instant writing suggestions and corrections"
     }
   },
   "insights": {

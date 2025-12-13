@@ -256,46 +256,16 @@ export default function Home() {
                       description: t('projects.vaitor.description'),
                     },
                     {
-                      slug: 'healthcare-dashboard',
-                      title: t('projects.healthcare.title'),
-                      subtitle: t('projects.healthcare.subtitle'),
-                      description: t('projects.healthcare.description'),
-                    },
-                    {
-                      slug: 'jutor-cutor',
+                      slug: 'jutor',
                       title: t('projects.jutor.title'),
                       subtitle: t('projects.jutor.subtitle'),
                       description: t('projects.jutor.description'),
                     },
                     {
-                      slug: 'learning-recommendation',
-                      title: t('projects.learningRecommendation.title'),
-                      subtitle: t('projects.learningRecommendation.subtitle'),
-                      description: t('projects.learningRecommendation.description'),
-                    },
-                    {
-                      slug: 'assessment-platform',
-                      title: t('projects.assessmentPlatform.title'),
-                      subtitle: t('projects.assessmentPlatform.subtitle'),
-                      description: t('projects.assessmentPlatform.description'),
-                    },
-                    {
-                      slug: 'content-management',
-                      title: t('projects.contentManagement.title'),
-                      subtitle: t('projects.contentManagement.subtitle'),
-                      description: t('projects.contentManagement.description'),
-                    },
-                    {
-                      slug: 'edtech-analytics',
-                      title: t('projects.dataAnalytics.title'),
-                      subtitle: t('projects.dataAnalytics.subtitle'),
-                      description: t('projects.dataAnalytics.description'),
-                    },
-                    {
-                      slug: 'teacher-tools',
-                      title: t('projects.teacherTools.title'),
-                      subtitle: t('projects.teacherTools.subtitle'),
-                      description: t('projects.teacherTools.description'),
+                      slug: 'cutor',
+                      title: t('projects.cutor.title'),
+                      subtitle: t('projects.cutor.subtitle'),
+                      description: t('projects.cutor.description'),
                     },
                   ].map((project, index) => (
                     <motion.div

@@ -20,6 +20,7 @@
 
 ### Key Achievements
 - 🏆 **Meta LLM Taiwan Pitch - Top 8 Finalist** (2024)
+- 🎯 **"Hour of AI" Initiative** - Led development of AI education program targeting 250,000 participants, aiming for global top 5, supported by Microsoft, Meta, and TSMC (2024)
 - 🎤 **Speaker at MediaTek AI Conference**
 - 💰 **Saved $1.2M** with data dashboard implementation
 - 📈 **Increased active users by 50%** through product optimization
@@ -129,6 +130,15 @@
   - 支援 14 種語言
   - AI 驅動的學習內容
   - 互動式練習題
+- **重大成就**:
+  - 🎯 **"1小時玩AI"計畫** - 均一教育平台推出的 AI 教育計畫
+  - 📰 **新聞報導**: https://udn.com/news/story/6885/9161998
+  - 🎯 **目標**: 25萬參與者，力拼全球前5
+  - 🤝 **企業支持**: 微軟、Meta、台積電等企業相挺
+  - 📚 **教學模組**:
+    - "我的半導體冒險"
+    - "資料世界：認識 AI"
+  - 💡 **核心理念**: "Hour of AI 的核心不是技術本身，而是提供一個框架讓所有人都能參與"
 - **專屬 Agent**: ai-square-manager
 
 ### 6. Medical Decision Platform

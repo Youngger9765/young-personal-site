@@ -16,13 +16,8 @@ interface ProjectDetailProps {
 
 const projectSlugs = [
   'vaitor',
-  'healthcare-dashboard',
-  'jutor-cutor',
-  'learning-recommendation',
-  'assessment-platform',
-  'content-management',
-  'edtech-analytics',
-  'teacher-tools'
+  'jutor',
+  'cutor'
 ];
 
 export default function ProjectDetailPage({ params }: ProjectDetailProps) {
@@ -51,25 +46,15 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
   // Map slugs to translation keys
   const slugToKey: Record<string, string> = {
     'vaitor': 'vaitor',
-    'healthcare-dashboard': 'healthcare',
-    'jutor-cutor': 'jutor',
-    'learning-recommendation': 'learningRecommendation',
-    'assessment-platform': 'assessmentPlatform',
-    'content-management': 'contentManagement',
-    'edtech-analytics': 'dataAnalytics',
-    'teacher-tools': 'teacherTools'
+    'jutor': 'jutor',
+    'cutor': 'cutor'
   };
 
   const projectKey = slugToKey[slug];
   const detailKey = `${projectKey}Detail` as
     'vaitorDetail' |
     'jutorDetail' |
-    'healthcareDetail' |
-    'learningRecommendationDetail' |
-    'assessmentPlatformDetail' |
-    'contentManagementDetail' |
-    'dataAnalyticsDetail' |
-    'teacherToolsDetail';
+    'cutorDetail';
 
   const project = {
     title: t(`${projectKey}.title`),
@@ -282,14 +267,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
 function getTechStack(slug: string): string[] {
   const techStacks: Record<string, string[]> = {
-    'vaitor': ["Python", "FastAPI", "React", "PostgreSQL", "AWS", "NLP", "Recommendation Algorithms"],
-    'jutor-cutor': ["Python", "TensorFlow", "React", "PostgreSQL", "Docker", "Speech Recognition", "OpenAI"],
-    'healthcare-dashboard': ["Next.js", "Python", "BigQuery", "GCP", "Looker", "Data Pipeline", "Real-time Analytics"],
-    'learning-recommendation': ["Python", "TensorFlow", "Redis", "PostgreSQL", "Apache Kafka", "Collaborative Filtering", "Deep Learning"],
-    'assessment-platform': ["Next.js", "Python", "PostgreSQL", "OpenAI", "NLP", "Plagiarism Detection", "LMS Integration"],
-    'content-management': ["React", "Node.js", "MongoDB", "AWS S3", "Elasticsearch", "i18n", "Version Control"],
-    'edtech-analytics': ["Python", "Apache Airflow", "BigQuery", "Tableau", "PostgreSQL", "Real-time Processing", "Predictive Analytics"],
-    'teacher-tools': ["Next.js", "Python", "OpenAI GPT-4", "PostgreSQL", "Redis", "Natural Language Generation", "Task Automation"],
+    'vaitor': ["Next.js", "Claude AI", "Video Processing", "React", "TypeScript"],
+    'jutor': ["Python", "FastAPI", "OpenAI", "Speech Recognition", "PostgreSQL"],
+    'cutor': ["Next.js", "Claude AI", "GPT-4", "React", "TypeScript"],
   };
 
   return techStacks[slug] || [];

@@ -24,46 +24,16 @@ export default function ProjectsGalleryPage() {
       description: t('vaitor.description'),
     },
     {
-      slug: 'healthcare-dashboard',
-      title: t('healthcare.title'),
-      subtitle: t('healthcare.subtitle'),
-      description: t('healthcare.description'),
-    },
-    {
-      slug: 'jutor-cutor',
+      slug: 'jutor',
       title: t('jutor.title'),
       subtitle: t('jutor.subtitle'),
       description: t('jutor.description'),
     },
     {
-      slug: 'learning-recommendation',
-      title: t('learningRecommendation.title'),
-      subtitle: t('learningRecommendation.subtitle'),
-      description: t('learningRecommendation.description'),
-    },
-    {
-      slug: 'assessment-platform',
-      title: t('assessmentPlatform.title'),
-      subtitle: t('assessmentPlatform.subtitle'),
-      description: t('assessmentPlatform.description'),
-    },
-    {
-      slug: 'content-management',
-      title: t('contentManagement.title'),
-      subtitle: t('contentManagement.subtitle'),
-      description: t('contentManagement.description'),
-    },
-    {
-      slug: 'edtech-analytics',
-      title: t('dataAnalytics.title'),
-      subtitle: t('dataAnalytics.subtitle'),
-      description: t('dataAnalytics.description'),
-    },
-    {
-      slug: 'teacher-tools',
-      title: t('teacherTools.title'),
-      subtitle: t('teacherTools.subtitle'),
-      description: t('teacherTools.description'),
+      slug: 'cutor',
+      title: t('cutor.title'),
+      subtitle: t('cutor.subtitle'),
+      description: t('cutor.description'),
     },
   ];
 
