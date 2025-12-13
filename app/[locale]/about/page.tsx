@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
 import { FaLinkedin } from 'react-icons/fa';
+import ContactCTA from '@/components/ContactCTA';
 
 export default function AboutPage() {
   const t = useTranslations();
@@ -159,42 +160,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="border-t border-gray-200 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6 py-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">
-                {t('about.page.cta')}
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                {t('about.page.ctaSubtitle')}
-              </p>
-              <div className="flex justify-center gap-4">
-                <a
-                  href="https://www.linkedin.com/in/tzu-yang-tsai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all shadow-md hover:shadow-lg font-semibold"
-                >
-                  <FaLinkedin className="w-5 h-5" />
-                  {t('about.viewLinkedIn')}
-                </a>
-                <a
-                  href="https://calendly.com/app/scheduling/meeting_types/user/me"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 transition-colors font-semibold"
-                >
-                  {t('nav.contact')}
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <ContactCTA />
       </div>
     </div>
   );

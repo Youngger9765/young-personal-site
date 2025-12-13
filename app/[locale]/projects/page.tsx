@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ContactCTA from '@/components/ContactCTA';
 
 interface Project {
   id: string;
@@ -224,6 +225,9 @@ export default function ProjectsPage() {
           </button>
         </div>
       </div>
+
+      {/* Contact CTA */}
+      <ContactCTA />
     </div>
   );
 }

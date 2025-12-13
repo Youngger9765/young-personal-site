@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode, FaChartLine,
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
+import ContactCTA from '@/components/ContactCTA';
 
 export default function Home() {
   const t = useTranslations();
@@ -624,65 +625,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="border-t border-gray-200 bg-gradient-to-br from-purple-50 to-blue-50">
-          <div className="max-w-6xl mx-auto px-6 py-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                {t('contact.title')}
-              </h2>
-              <p className="text-xl text-gray-700 mb-12 leading-relaxed">
-                {t('contact.subtitle')}
-              </p>
-
-              {/* Contact Options */}
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                <a
-                  href="https://www.linkedin.com/in/tzu-yang-tsai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 transition-all shadow-sm hover:shadow-md group"
-                >
-                  <FaLinkedin className="w-8 h-8 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-semibold text-gray-900 mb-2">{t('contact.linkedin.title')}</p>
-                  <p className="text-sm text-gray-600">{t('contact.linkedin.subtitle')}</p>
-                </a>
-
-                <a
-                  href="mailto:young.tsai.9765@gmail.com?subject=Website%20Contact%20-%20AI%20Product%20Consulting"
-                  className="p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 transition-all shadow-sm hover:shadow-md group"
-                >
-                  <svg className="w-8 h-8 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <p className="font-semibold text-gray-900 mb-2">{t('contact.email.title')}</p>
-                  <p className="text-sm text-gray-600">{t('contact.email.subtitle')}</p>
-                </a>
-
-                <a
-                  href="https://calendly.com/young-tsai/ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-6 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all shadow-md hover:shadow-lg group"
-                >
-                  <svg className="w-8 h-8 mx-auto mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="font-semibold mb-2">{t('contact.calendar.title')}</p>
-                  <p className="text-sm text-purple-100">{t('contact.calendar.subtitle')}</p>
-                </a>
-              </div>
-
-              <p className="text-gray-600">
-                {t('contact.location')}
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <ContactCTA />
       </div>
     </div>
   );

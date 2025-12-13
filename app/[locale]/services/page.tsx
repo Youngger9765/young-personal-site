@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FaCompass, FaTools, FaMicrophone, FaHandshake, FaArrowRight } from "react-icons/fa";
+import ContactCTA from '@/components/ContactCTA';
 
 interface Service {
   id: string;
@@ -332,6 +333,9 @@ export default function ServicesPage() {
           </button>
         </div>
       </div>
+
+      {/* Contact CTA */}
+      <ContactCTA />
     </div>
   );
 }
