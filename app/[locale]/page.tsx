@@ -68,7 +68,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-6 mb-12">
                 <a
-                  href="https://calendly.com/app/scheduling/meeting_types/user/me"
+                  href="https://calendly.com/young-tsai/ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
@@ -664,7 +664,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://calendly.com/your-link"
+                  href="https://calendly.com/young-tsai/ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-6 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all shadow-md hover:shadow-lg group"
