@@ -72,7 +72,7 @@ export default function Home() {
                   href="https://calendly.com/young-tsai/ai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 bg-copper-blush text-white rounded-lg hover:bg-[#A66B5B] transition-colors font-semibold"
+                  className="px-8 py-4 bg-copper-blush text-white rounded-lg hover:bg-[#D89490] transition-colors font-semibold"
                 >
                   {t('hero.ctaPrimary')}
                 </a>
@@ -222,7 +222,7 @@ export default function Home() {
               <div className="text-center flex justify-center gap-8">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 text-copper-blush hover:text-[#A66B5B] font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-copper-blush hover:text-[#D89490] font-medium transition-colors group"
                 >
                   {t('about.page.readFullStory')}
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -231,7 +231,7 @@ export default function Home() {
                   href="https://www.linkedin.com/in/tzu-yang-tsai/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-copper-blush hover:text-[#A66B5B] font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-copper-blush hover:text-[#D89490] font-medium transition-colors group"
                 >
                   {t('about.viewLinkedIn')}
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -490,7 +490,7 @@ export default function Home() {
                 href="https://medium.com/young-tsai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-copper-blush hover:text-[#A66B5B] font-medium flex items-center gap-2 group"
+                className="text-copper-blush hover:text-[#D89490] font-medium flex items-center gap-2 group"
               >
                 {t('insights.viewAll')}
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
