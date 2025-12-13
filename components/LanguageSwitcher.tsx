@@ -16,27 +16,39 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="relative inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1">
+      {/* Sliding background indicator */}
+      <div
+        className={`absolute top-1 bottom-1 w-[calc(50%-0.25rem)] bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transition-all duration-300 ease-in-out ${
+          locale === 'en' ? 'left-1' : 'left-[calc(50%+0.125rem)]'
+        }`}
+        aria-hidden="true"
+      />
+
+      {/* EN Button */}
       <button
         onClick={() => switchLocale('en')}
-        className={`px-2 py-1 rounded text-sm transition-colors ${
+        className={`relative z-10 px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
           locale === 'en'
-            ? 'text-purple-600 font-semibold'
-            : 'text-gray-600 hover:text-purple-600'
+            ? 'text-white'
+            : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
         }`}
         aria-label="Switch to English"
+        aria-pressed={locale === 'en'}
       >
         EN
       </button>
-      <span className="text-gray-400">|</span>
+
+      {/* 繁中 Button */}
       <button
         onClick={() => switchLocale('zh-TW')}
-        className={`px-2 py-1 rounded text-sm transition-colors ${
+        className={`relative z-10 px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
           locale === 'zh-TW'
-            ? 'text-purple-600 font-semibold'
-            : 'text-gray-600 hover:text-purple-600'
+            ? 'text-white'
+            : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
         }`}
         aria-label="切換到繁體中文"
+        aria-pressed={locale === 'zh-TW'}
       >
         繁中
       </button>

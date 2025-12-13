@@ -29,6 +29,7 @@
   "about": {
     "title": "About",
     "intro": "👋 Hey! I'm Young, an AI product consultant based in Taiwan",
+    "brandStatement": "I transform scattered conversations, fragmented knowledge, and fleeting inspiration into stable, repeatable, and evolvable systems",
     "paragraph1": "I spent the last 10+ years building products in EdTech, e-commerce, and NPO sectors. Recently, I've been transferring this expertise to healthcare with great success—leading teams, shipping features that hundreds of thousands of users rely on, and solving real business problems with AI",
     "paragraph2": "My journey started in education technology, where I built products like Vaitor, Jutor, and Cutor that helped students learn more effectively. I led engineering teams, scaled products from prototype to production, and learned how to translate AI capabilities into tangible business outcomes",
     "paragraph3": "Now I help organizations navigate AI transformation—from strategy to deployment. I work with companies that are serious about building AI products that drive measurable impact, not just experimenting with the latest hype",
@@ -90,19 +91,30 @@
   },
   "services": {
     "title": "What I do",
+    "labels": {
+      "pain": "Your challenge",
+      "solution": "How we fix it",
+      "value": "What you get"
+    },
     "product": {
       "title": "AI Product Development",
-      "description": "Want to build an AI product but don't know where to start? I help you ship a working MVP in 3-6 weeks, plus teach your team how to maintain and scale it. Not just delivery—I transfer the knowledge.",
+      "pain": "Building an English learning platform is time-consuming and expensive. Outsourcing requires extensive communication, detailed specs for pricing, and long waits—1 month at best, a quarter at worst",
+      "solution": "Direct on-site collaboration, proposal review on day 1, interactive prototype delivered in week 1",
+      "value": "Typically live with users within a month, saving time and communication costs",
       "note": "$1,500-3,000/hour or Starting at $50,000 • Typical MVP: 3-6 weeks"
     },
     "strategy": {
       "title": "AI Strategy Consulting",
-      "description": "Organizations wanting to adopt AI but unclear on the approach. I provide AI feasibility assessment, technical architecture design, and 6-12 month implementation roadmap. Methodology proven in education with 300K+ students.",
+      "pain": "Knowledge exists only in individual minds",
+      "solution": "Knowledge structuring system",
+      "value": "Teams can co-learn and inherit knowledge",
       "note": "Starting at $20,000 • 4-6 week engagement"
     },
     "consulting": {
       "title": "AI Adoption & Training",
-      "description": "Purchased AI tools but your team isn't using them? I design customized training programs, lead tool implementation, and ensure your organization actually adopts AI. Focused on EdTech, healthcare, and non-profits.",
+      "pain": "Too many tools creates chaos",
+      "solution": "Phased Shu-Ha-Ri approach",
+      "value": "Reduce switching and learning costs",
       "note": "$5,000-8,000 per half-day • $8,000-15,000 per full-day workshop"
     }
   },
