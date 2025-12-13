@@ -17,7 +17,7 @@ export default function ContactCTA() {
   };
 
   return (
-    <section className="border-t border-gray-200 bg-gradient-to-br from-foggy-lilac to-blue-50">
+    <section className="border-t border-gray-200 bg-gradient-to-br from-warm-cream to-blue-50">
       <div className="max-w-6xl mx-auto px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ export default function ContactCTA() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cosmic-indigo to-gray-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
             {t('headline')}
           </h2>
           <p className="text-xl text-gray-700 mb-12 leading-relaxed">
@@ -39,16 +39,16 @@ export default function ContactCTA() {
               href="https://www.linkedin.com/in/tzu-yang-tsai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 bg-white rounded-xl border border-gray-200 hover:border-cosmic-indigo transition-all shadow-sm hover:shadow-md group"
+              className="p-6 bg-white rounded-xl border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md group"
             >
-              <FaLinkedin className="w-8 h-8 text-cosmic-indigo mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <FaLinkedin className="w-8 h-8 text-slate-blue mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <p className="font-semibold text-gray-900 mb-2">{t('linkedin.title')}</p>
               <p className="text-sm text-gray-600">{t('linkedin.subtitle')}</p>
             </a>
 
             {/* Email */}
-            <div className="p-6 bg-white rounded-xl border border-gray-200 hover:border-cosmic-indigo transition-all shadow-sm hover:shadow-md">
-              <FaEnvelope className="w-8 h-8 text-cosmic-indigo mx-auto mb-4" />
+            <div className="p-6 bg-white rounded-xl border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md">
+              <FaEnvelope className="w-8 h-8 text-slate-blue mx-auto mb-4" />
               <p className="font-semibold text-gray-900 mb-2">{t('email.title')}</p>
               <p className="text-sm text-gray-600 mb-3">{t('email.subtitle')}</p>
               <div className="flex items-center justify-center gap-2 mt-4">
@@ -57,13 +57,13 @@ export default function ContactCTA() {
                 </code>
                 <button
                   onClick={handleCopyEmail}
-                  className="p-1.5 hover:bg-foggy-lilac rounded transition-colors"
+                  className="p-1.5 hover:bg-warm-cream rounded transition-colors"
                   title={copied ? '已複製！' : '複製'}
                 >
                   {copied ? (
                     <FaCheck className="w-4 h-4 text-green-600" />
                   ) : (
-                    <FaCopy className="w-4 h-4 text-cosmic-indigo" />
+                    <FaCopy className="w-4 h-4 text-slate-blue" />
                   )}
                 </button>
               </div>
@@ -74,7 +74,7 @@ export default function ContactCTA() {
               href="https://calendly.com/young-tsai/ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 bg-copper-blush text-white rounded-xl hover:bg-[#D89490] transition-all shadow-md hover:shadow-lg group"
+              className="p-6 bg-coral-orange text-white rounded-xl hover:bg-[#FF7043] transition-all shadow-md hover:shadow-lg group"
             >
               <FaCalendarAlt className="w-8 h-8 mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <p className="font-semibold mb-2">{t('calendar.title')}</p>

@@ -26,15 +26,15 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a href={`/${locale}`} className="text-2xl font-bold text-gray-900 hover:text-cosmic-indigo transition-colors">
+          <a href={`/${locale}`} className="text-2xl font-bold text-gray-900 hover:text-slate-blue transition-colors">
             {t('name')}
           </a>
           <div className="hidden md:flex items-center gap-6 text-base">
-            <a href={`/${locale}`} className="text-gray-700 hover:text-cosmic-indigo transition-colors font-semibold">{t('home')}</a>
-            <a href={`/${locale}/about`} className="text-gray-700 hover:text-cosmic-indigo transition-colors font-semibold">{t('about')}</a>
-            <a href={getNavHref('track-record')} className="text-gray-700 hover:text-cosmic-indigo transition-colors font-semibold">{t('trackRecord')}</a>
-            <a href={getNavHref('services')} className="text-gray-700 hover:text-cosmic-indigo transition-colors font-semibold">{t('services')}</a>
-            <a href={getNavHref('projects')} className="text-gray-700 hover:text-cosmic-indigo transition-colors font-semibold">{t('projects')}</a>
+            <a href={`/${locale}`} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('home')}</a>
+            <a href={`/${locale}/about`} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('about')}</a>
+            <a href={getNavHref('track-record')} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('trackRecord')}</a>
+            <a href={getNavHref('services')} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('services')}</a>
+            <a href={getNavHref('projects')} className="text-gray-700 hover:text-slate-blue transition-colors font-semibold">{t('projects')}</a>
             <div className="border-l border-gray-300 pl-4">
               <LanguageSwitcher />
             </div>
@@ -42,7 +42,7 @@ export default function Navigation() {
               href="https://calendly.com/app/scheduling/meeting_types/user/me"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-copper-blush text-white rounded-lg hover:bg-[#D89490] transition-all font-medium"
+              className="px-4 py-2 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-medium"
             >
               {t('contact')}
             </a>
@@ -68,35 +68,35 @@ export default function Navigation() {
               <a
                 href={`/${locale}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-cosmic-indigo hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
               >
                 {t('home')}
               </a>
               <a
                 href={`/${locale}/about`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-cosmic-indigo hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
               >
                 {t('about')}
               </a>
               <a
                 href={getNavHref('track-record')}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-cosmic-indigo hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
               >
                 {t('trackRecord')}
               </a>
               <a
                 href={getNavHref('services')}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-cosmic-indigo hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
               >
                 {t('services')}
               </a>
               <a
                 href={getNavHref('projects')}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 hover:text-cosmic-indigo hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+                className="px-4 py-2 text-gray-700 hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold"
               >
                 {t('projects')}
               </a>
@@ -104,7 +104,7 @@ export default function Navigation() {
                 href="https://calendly.com/app/scheduling/meeting_types/user/me"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-copper-blush text-white rounded-lg hover:bg-[#A66B5B] transition-all font-medium text-center mt-2"
+                className="px-4 py-2 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-medium text-center mt-2"
               >
                 {t('contact')}
               </a>

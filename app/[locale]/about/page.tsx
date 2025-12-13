@@ -42,8 +42,8 @@ export default function AboutPage() {
               <p className="text-2xl text-gray-900">{t('about.intro')}</p>
 
               {/* Brand Statement Highlight */}
-              <div className="my-12 p-8 rounded-2xl bg-gradient-to-br from-foggy-lilac to-white border-l-4 border-cosmic-indigo">
-                <p className="text-xl font-semibold text-cosmic-indigo leading-relaxed">
+              <div className="my-12 p-8 rounded-2xl bg-gradient-to-br from-warm-cream to-white border-l-4 border-slate-blue">
+                <p className="text-xl font-semibold text-slate-blue leading-relaxed">
                   {t('about.brandStatement')}
                 </p>
               </div>
@@ -95,9 +95,9 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.15 }}
-                  className="border-l-4 border-cosmic-indigo pl-8 py-2"
+                  className="border-l-4 border-slate-blue pl-8 py-2"
                 >
-                  <div className="text-sm font-bold text-cosmic-indigo mb-2">
+                  <div className="text-sm font-bold text-slate-blue mb-2">
                     {milestone.period}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 whitespace-pre-line">
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   <ul className="space-y-2">
                     {milestone.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start gap-3 text-gray-600">
-                        <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-cosmic-indigo mt-2.5" />
+                        <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-slate-blue mt-2.5" />
                         <span className="leading-relaxed">{highlight}</span>
                       </li>
                     ))}
@@ -126,15 +126,15 @@ export default function AboutPage() {
             <div className="space-y-6 text-lg text-gray-700">
               <ul className="space-y-4 ml-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-cosmic-indigo mt-1">•</span>
+                  <span className="text-slate-blue mt-1">•</span>
                   <span>{t('about.page.belief1')}</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-cosmic-indigo mt-1">•</span>
+                  <span className="text-slate-blue mt-1">•</span>
                   <span>{t('about.page.belief2')}</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-cosmic-indigo mt-1">•</span>
+                  <span className="text-slate-blue mt-1">•</span>
                   <span>{t('about.page.belief3')}</span>
                 </li>
               </ul>
@@ -151,15 +151,15 @@ export default function AboutPage() {
             <div className="space-y-6 text-lg text-gray-700">
               <ul className="space-y-4 ml-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-cosmic-indigo mt-1">•</span>
+                  <span className="text-slate-blue mt-1">•</span>
                   <span>{t('about.page.style1')}</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-cosmic-indigo mt-1">•</span>
+                  <span className="text-slate-blue mt-1">•</span>
                   <span>{t('about.page.style2')}</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-cosmic-indigo mt-1">•</span>
+                  <span className="text-slate-blue mt-1">•</span>
                   <span>{t('about.page.style3')}</span>
                 </li>
               </ul>

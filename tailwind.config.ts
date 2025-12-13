@@ -12,10 +12,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Brand Colors
-        'cosmic-indigo': '#3C3E6E',
-        'foggy-lilac': '#F5F3F7',
-        'copper-blush': '#E8A5A0',
+        // Brand Colors - 2025 Warm Professional
+        'slate-blue': '#334155',
+        'warm-cream': '#FAF8F5',
+        'coral-orange': '#FF8A65',
       },
       fontFamily: {
         sans: [
