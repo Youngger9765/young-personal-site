@@ -29,7 +29,12 @@ export default function Home() {
               <div className="border-l border-gray-300 pl-4">
                 <LanguageSwitcher />
               </div>
-              <a href="#contact" className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-medium">
+              <a
+                href="https://calendly.com/app/scheduling/meeting_types/user/me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-medium"
+              >
                 {t('nav.contact')}
               </a>
             </div>
@@ -97,7 +102,9 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-6 mb-12">
                 <a
-                  href="#contact"
+                  href="https://calendly.com/app/scheduling/meeting_types/user/me"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
                 >
                   {t('hero.ctaPrimary')}
