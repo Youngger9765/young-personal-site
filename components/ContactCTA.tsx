@@ -2,10 +2,19 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
-import { FaLinkedin, FaEnvelope, FaCalendarAlt } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaCalendarAlt, FaCopy, FaCheck } from 'react-icons/fa';
+import { useState } from 'react';
 
 export default function ContactCTA() {
   const t = useTranslations('contactCTA');
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    const email = t('email.address');
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section className="border-t border-gray-200 bg-gradient-to-br from-purple-50 to-blue-50">
@@ -38,14 +47,27 @@ export default function ContactCTA() {
             </a>
 
             {/* Email */}
-            <a
-              href="mailto:young@example.com"
-              className="p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 transition-all shadow-sm hover:shadow-md group"
-            >
-              <FaEnvelope className="w-8 h-8 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <div className="p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 transition-all shadow-sm hover:shadow-md">
+              <FaEnvelope className="w-8 h-8 text-purple-600 mx-auto mb-4" />
               <p className="font-semibold text-gray-900 mb-2">{t('email.title')}</p>
-              <p className="text-sm text-gray-600">{t('email.subtitle')}</p>
-            </a>
+              <p className="text-sm text-gray-600 mb-3">{t('email.subtitle')}</p>
+              <div className="flex items-center justify-center gap-2 mt-4">
+                <code className="text-sm text-gray-700 bg-gray-50 px-3 py-1.5 rounded border border-gray-200">
+                  {t('email.address')}
+                </code>
+                <button
+                  onClick={handleCopyEmail}
+                  className="p-1.5 hover:bg-purple-50 rounded transition-colors"
+                  title={copied ? '已複製！' : '複製'}
+                >
+                  {copied ? (
+                    <FaCheck className="w-4 h-4 text-green-600" />
+                  ) : (
+                    <FaCopy className="w-4 h-4 text-purple-600" />
+                  )}
+                </button>
+              </div>
+            </div>
 
             {/* Calendar - Primary CTA */}
             <a

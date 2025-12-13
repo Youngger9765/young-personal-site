@@ -218,7 +218,8 @@
     },
     "email": {
       "title": "Send Email",
-      "subtitle": "Quick response"
+      "subtitle": "Quick response",
+      "address": "young.tsai.9765@gmail.com"
     },
     "calendar": {
       "title": "Book a Call",

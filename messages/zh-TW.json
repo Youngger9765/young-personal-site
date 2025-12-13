@@ -218,7 +218,8 @@
     },
     "email": {
       "title": "發送郵件",
-      "subtitle": "快速回應"
+      "subtitle": "快速回應",
+      "address": "young.tsai.9765@gmail.com"
     },
     "calendar": {
       "title": "預約通話",
