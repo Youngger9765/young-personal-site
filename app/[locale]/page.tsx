@@ -11,12 +11,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 overflow-hidden">
-      {/* Gradient Background */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50" />
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
-      </div>
+      {/* Simple Background */}
+      <div className="fixed inset-0 z-0 bg-white" />
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -51,29 +47,26 @@ export default function Home() {
       </nav>
 
       <div className="relative z-10">
-        {/* Hero Section */}
-        <section id="hero" className="max-w-6xl mx-auto px-6 pt-32 pb-24 min-h-screen flex items-center">
+        {/* Hero Section - Minimalist Redesign */}
+        <section id="hero" className="max-w-5xl mx-auto px-6 pt-40 pb-32 min-h-screen flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="flex flex-col md:flex-row items-center gap-16 w-full"
           >
-            {/* Photo */}
+            {/* Photo - Simplified */}
             <motion.div
               className="flex-shrink-0"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-purple-200 to-blue-200 border-4 border-white shadow-2xl flex items-center justify-center overflow-hidden group">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-100 border-4 border-white shadow-lg flex items-center justify-center overflow-hidden group">
                 <div className="text-7xl md:text-8xl">👤</div>
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <p className="text-white text-sm px-4 text-center font-medium">{t('hero.photoPlaceholder')}</p>
                 </div>
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-600 rounded-full blur-2xl opacity-30 animate-pulse" />
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-blue-600 rounded-full blur-2xl opacity-30 animate-pulse delay-75" />
               </div>
             </motion.div>
 
@@ -84,13 +77,13 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-lg font-semibold mb-6">
+                <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-8">
                   {t('hero.badge')}
                 </div>
               </motion.div>
 
               <motion.h1
-                className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-700 to-blue-700 bg-clip-text text-transparent leading-[1.1] tracking-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 leading-tight tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -98,83 +91,32 @@ export default function Home() {
                 {t('hero.headline')}
               </motion.h1>
 
-              <motion.p
-                className="text-2xl md:text-3xl text-gray-600 mb-8 font-medium whitespace-pre-line"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
+              <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed whitespace-pre-line">
                 {t('hero.subheadline')}
-              </motion.p>
+              </p>
 
-              {/* Timeline */}
-              <motion.div
-                className="flex flex-wrap gap-6 mb-8 text-gray-700"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.55 }}
-              >
-                <div className="text-base md:text-lg">
-                  {t('hero.timeline.day1')}
-                </div>
-                <div className="text-gray-400">→</div>
-                <div className="text-base md:text-lg">
-                  {t('hero.timeline.week1')}
-                </div>
-                <div className="text-gray-400">→</div>
-                <div className="text-base md:text-lg">
-                  {t('hero.timeline.month1')}
-                </div>
-              </motion.div>
-
-              {/* Achievement Badges */}
-              <motion.div
-                className="flex flex-wrap gap-3 mb-10"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <span className="px-4 py-2 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-sm font-semibold">
-                  {t('hero.achievements.users')}
-                </span>
-                <span className="px-4 py-2 bg-green-50 border border-green-200 text-green-700 rounded-full text-sm font-semibold">
-                  {t('hero.achievements.saved')}
-                </span>
-              </motion.div>
-
-              <motion.div
-                className="flex flex-wrap gap-4 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.65 }}
-              >
+              <div className="flex flex-wrap gap-6 mb-12">
                 <a
                   href="#contact"
-                  className="group px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl"
+                  className="px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
                 >
                   {t('hero.ctaPrimary')}
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
                 <a
                   href="#projects"
-                  className="px-8 py-4 bg-white border-2 border-gray-300 rounded-lg hover:border-purple-600 hover:bg-purple-50 transition-all font-semibold"
+                  className="px-8 py-4 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 transition-colors font-semibold"
                 >
                   {t('hero.ctaSecondary')}
                 </a>
-              </motion.div>
+              </div>
 
               {/* Social Links */}
-              <motion.div
-                className="flex gap-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-              >
+              <div className="flex gap-4">
                 <a
                   href="https://www.linkedin.com/in/tzu-yang-tsai/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all"
+                  className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:bg-gray-200 transition-colors"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin className="w-5 h-5" />
@@ -183,7 +125,7 @@ export default function Home() {
                   href="https://github.com/Youngger9765"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all"
+                  className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:bg-gray-200 transition-colors"
                   aria-label="GitHub"
                 >
                   <FaGithub className="w-5 h-5" />
@@ -192,12 +134,12 @@ export default function Home() {
                   href="https://medium.com/young-tsai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all"
+                  className="p-3 bg-gray-100 rounded-lg text-gray-600 hover:bg-gray-200 transition-colors"
                   aria-label="Medium"
                 >
                   <FaMedium className="w-5 h-5" />
                 </a>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </section>
