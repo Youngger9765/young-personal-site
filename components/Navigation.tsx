@@ -30,6 +30,7 @@ export default function Navigation() {
             {t('name')}
           </a>
           <div className="hidden md:flex items-center gap-6 text-base">
+            <a href={`/${locale}`} className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('home')}</a>
             <a href={`/${locale}/about`} className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('about')}</a>
             <a href={getNavHref('track-record')} className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('trackRecord')}</a>
             <a href={getNavHref('services')} className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('services')}</a>
@@ -64,6 +65,13 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden pt-4 pb-2 border-t border-gray-200 mt-4">
             <div className="flex flex-col gap-2">
+              <a
+                href={`/${locale}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-lg transition-colors font-semibold"
+              >
+                {t('home')}
+              </a>
               <a
                 href={`/${locale}/about`}
                 onClick={() => setIsMobileMenuOpen(false)}
