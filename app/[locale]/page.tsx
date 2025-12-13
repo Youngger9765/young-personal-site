@@ -84,7 +84,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-6">
+                <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-lg font-semibold mb-6">
                   {t('hero.badge')}
                 </div>
               </motion.div>
