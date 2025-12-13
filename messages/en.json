@@ -37,7 +37,7 @@
     "viewLinkedIn": "View full experience on LinkedIn",
     "page": {
       "title": "About Me",
-      "subtitle": "I turn AI ideas into products in one week. Based in Taiwan",
+      "subtitle": "I turn AI ideas into products in one week",
       "readFullStory": "Read full story",
       "beliefs": "What I Believe",
       "belief1": "AI should make learning more accessible and equitable for everyone",
@@ -207,7 +207,7 @@
       "title": "Schedule a call",
       "subtitle": "30-min consultation"
     },
-    "location": "Based in Taiwan 🇹🇼 • Available for remote projects worldwide"
+    "location": "Available for remote projects worldwide"
   },
   "contactCTA": {
     "headline": "Let's Work Together",
@@ -224,6 +224,6 @@
       "title": "Book a Call",
       "subtitle": "30-min consultation"
     },
-    "footer": "Based in Taiwan 🇹🇼 • Open to global remote projects"
+    "footer": "Open to global remote projects"
   }
 }

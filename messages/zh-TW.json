@@ -37,7 +37,7 @@
     "viewLinkedIn": "在 LinkedIn 查看完整經歷",
     "page": {
       "title": "關於我",
-      "subtitle": "我能讓你的 AI 想法變成產品，一週上線。位於台灣",
+      "subtitle": "我能讓你的 AI 想法變成產品，一週上線",
       "readFullStory": "閱讀完整故事",
       "beliefs": "我相信",
       "belief1": "AI 應該讓學習更公平、更容易取得",
@@ -207,7 +207,7 @@
       "title": "預約通話",
       "subtitle": "30 分鐘諮詢"
     },
-    "location": "位於台灣 🇹🇼 • 接受全球遠端專案"
+    "location": "接受全球遠端專案"
   },
   "contactCTA": {
     "headline": "開始合作",
@@ -224,6 +224,6 @@
       "title": "預約通話",
       "subtitle": "30 分鐘諮詢"
     },
-    "footer": "位於台灣 🇹🇼 • 接受全球遠端專案"
+    "footer": "接受全球遠端專案"
   }
 }
