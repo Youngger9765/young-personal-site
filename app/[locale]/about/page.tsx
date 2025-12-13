@@ -49,18 +49,18 @@ export default function AboutPage() {
         {/* Career Highlights - Timeline */}
         <section className="border-t border-gray-200">
           <div className="max-w-4xl mx-auto px-6 py-24">
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-16">
               {t('about.careerHighlights')}
             </h2>
 
             <div className="space-y-12">
               {[
                 {
-                  period: t('about.milestones.lead.period'),
-                  title: t('about.milestones.lead.title'),
+                  period: t('about.milestones.current.period'),
+                  title: t('about.milestones.current.title'),
                   highlights: [
-                    t('about.milestones.lead.highlight1'),
-                    t('about.milestones.lead.highlight2')
+                    t('about.milestones.current.highlight1'),
+                    t('about.milestones.current.highlight2')
                   ],
                 },
                 {
@@ -72,11 +72,11 @@ export default function AboutPage() {
                   ],
                 },
                 {
-                  period: t('about.milestones.current.period'),
-                  title: t('about.milestones.current.title'),
+                  period: t('about.milestones.lead.period'),
+                  title: t('about.milestones.lead.title'),
                   highlights: [
-                    t('about.milestones.current.highlight1'),
-                    t('about.milestones.current.highlight2')
+                    t('about.milestones.lead.highlight1'),
+                    t('about.milestones.lead.highlight2')
                   ],
                 }
               ].map((milestone, index) => (
@@ -111,11 +111,10 @@ export default function AboutPage() {
         {/* Values & Beliefs */}
         <section className="border-t border-gray-200">
           <div className="max-w-4xl mx-auto px-6 py-24">
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
               {t('about.page.beliefs')}
             </h2>
             <div className="space-y-6 text-lg text-gray-700">
-              <p className="text-2xl text-gray-900 font-medium">{t('about.page.believeIntro')}</p>
               <ul className="space-y-4 ml-6">
                 <li className="flex items-start gap-3">
                   <span className="text-purple-600 mt-1">•</span>
@@ -137,7 +136,7 @@ export default function AboutPage() {
         {/* Working Style */}
         <section className="border-t border-gray-200">
           <div className="max-w-4xl mx-auto px-6 py-24">
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
               {t('about.page.workingStyle')}
             </h2>
             <div className="space-y-6 text-lg text-gray-700">
