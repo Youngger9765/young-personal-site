@@ -22,14 +22,14 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <a href="#hero" className="text-lg font-semibold text-gray-900 hover:text-purple-600 transition-colors">
+            <a href="#hero" className="text-2xl font-bold text-gray-900 hover:text-purple-600 transition-colors">
               {t('nav.name')}
             </a>
-            <div className="hidden md:flex items-center gap-6 text-sm">
-              <a href="#about" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">{t('nav.about')}</a>
-              <a href="#track-record" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">{t('nav.trackRecord')}</a>
-              <a href="#services" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">{t('nav.services')}</a>
-              <a href="#projects" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">{t('nav.projects')}</a>
+            <div className="hidden md:flex items-center gap-6 text-base">
+              <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.about')}</a>
+              <a href="#track-record" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.trackRecord')}</a>
+              <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.services')}</a>
+              <a href="#projects" className="text-gray-700 hover:text-purple-600 transition-colors font-semibold">{t('nav.projects')}</a>
               <div className="border-l border-gray-300 pl-4">
                 <LanguageSwitcher />
               </div>
