@@ -136,6 +136,14 @@
       "subtitle": "AI Writing Assistant",
       "description": "AI-powered Chinese writing assistant that helps users optimize writing content, style, and essay corrections. Built with Claude AI, GPT-4, and Next.js, providing real-time writing suggestions and corrections."
     },
+    "aiSquare": {
+      "title": "AI Square",
+      "subtitle": "AI Education Platform - Hour of AI",
+      "description": "Junyi Academy's AI education initiative targeting 250,000 participants, aiming for global top 5. Supported by Microsoft, Meta, and TSMC, featuring 'My Semiconductor Adventure' and 'Data World: Understanding AI' modules.",
+      "impact1": "Targeting 250,000 participants, aiming for global top 5 in AI education",
+      "impact2": "Backed by leading companies: Microsoft, Meta, and TSMC",
+      "impact3": "Taiwan's pioneering large-scale AI education initiative, joining Code.org's Hour of AI global movement"
+    },
     "gallery": {
       "title": "Portfolio",
       "subtitle": "Selected projects showcasing AI product development, data infrastructure, and EdTech innovation",
@@ -147,6 +155,8 @@
       "githubLink": "View on GitHub",
       "briefDescription": "A one-line project overview"
     },
+    "projectScreenshot": "Project Screenshot",
+    "techStackLabel": "Tech Stack",
     "vaitorDetail": {
       "description": "Vaitor is an adaptive learning platform that revolutionized personalized education for 300,000+ students. By combining natural language processing with intelligent recommendation algorithms, we created a system that understands each student's learning patterns and adapts content in real-time.\n\nThe platform analyzes student interactions, performance data, and learning behavior to deliver personalized content paths. Our AI tutoring features provide instant feedback, identify knowledge gaps, and suggest targeted interventions that improved learning outcomes by 40%.",
       "feature1": "Adaptive learning paths based on individual student performance",
@@ -182,6 +192,18 @@
       "result2": "Built with Claude AI and GPT-4 technology",
       "result3": "Supports various Chinese writing scenarios",
       "result4": "Provides instant writing suggestions and corrections"
+    },
+    "aiSquareDetail": {
+      "description": "AI Square is Junyi Academy's 'Hour of AI' initiative, inspired by Code.org's global movement that has reached tens of millions of students across 180+ countries through Hour of Code. With Code.org launching Hour of AI in 2025 to focus on AI literacy education, Taiwan joins this global wave through AI Square, positioning itself as a leader in AI education across Asia.\n\nThis innovative program is backed by Microsoft, Meta, and TSMC, featuring two learning modules—'My Semiconductor Adventure' and 'Data World: Understanding AI'—that guide students to understand AI through 'asking, using, managing, and creating.' The core philosophy aligns with the global Hour of AI movement: 'Hour of AI is not about the technology itself, but providing a framework for everyone to participate.' The platform supports 14 languages and aims to engage 250,000 participants, targeting a spot in the global top 5 for AI education participation.",
+      "feature1": "Multilingual platform supporting 14 languages",
+      "feature2": "'My Semiconductor Adventure' interactive learning module",
+      "feature3": "'Data World: Understanding AI' curriculum design",
+      "feature4": "AI-driven learning content with real-time feedback",
+      "feature5": "Cross-sector collaboration between government, business, and education",
+      "result1": "Target 250,000 participants, aiming for global top 5",
+      "result2": "Supported by Microsoft, Meta, and TSMC",
+      "result3": "Taiwan's pioneering large-scale AI education initiative",
+      "result4": "Featured in major news outlets including United Daily News"
     }
   },
   "insights": {

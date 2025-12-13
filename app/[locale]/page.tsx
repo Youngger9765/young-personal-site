@@ -250,6 +250,12 @@ export default function Home() {
                 <div className="flex gap-6 pb-4 pl-6 pr-6 md:pl-0 md:pr-0">
                   {[
                     {
+                      slug: 'ai-square',
+                      title: t('projects.aiSquare.title'),
+                      subtitle: t('projects.aiSquare.subtitle'),
+                      description: t('projects.aiSquare.description'),
+                    },
+                    {
                       slug: 'vaitor',
                       title: t('projects.vaitor.title'),
                       subtitle: t('projects.vaitor.subtitle'),

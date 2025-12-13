@@ -18,6 +18,12 @@ export default function ProjectsGalleryPage() {
 
   const projects: ProjectCardData[] = [
     {
+      slug: 'ai-square',
+      title: t('aiSquare.title'),
+      subtitle: t('aiSquare.subtitle'),
+      description: t('aiSquare.description'),
+    },
+    {
       slug: 'vaitor',
       title: t('vaitor.title'),
       subtitle: t('vaitor.subtitle'),
