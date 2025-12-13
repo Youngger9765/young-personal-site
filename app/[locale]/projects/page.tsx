@@ -1,233 +1,124 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
-import ContactCTA from '@/components/ContactCTA';
+import Navigation from '@/components/Navigation';
 
-interface Project {
-  id: string;
+interface ProjectCardData {
+  slug: string;
   title: string;
+  subtitle: string;
   description: string;
-  tech: string[];
-  link?: string;
-  github?: string;
-  status: 'completed' | 'in-progress' | 'planning';
-  category: 'ai-product' | 'active' | 'past';
-  highlight?: string;
 }
 
-// AI Products (自主產品)
-const aiProducts: Project[] = [
-  {
-    id: 'vaitor',
-    title: 'Vaitor - AI Video Tutor',
-    description: 'AI-powered video tutoring system that analyzes educational videos and provides interactive learning experiences',
-    tech: ['Next.js', 'Claude AI', 'Video Processing', 'TypeScript'],
-    status: 'in-progress',
-    category: 'ai-product',
-  },
-  {
-    id: 'jutor',
-    title: 'Jutor - AI English Tutor',
-    description: 'Personalized AI English tutor with real-time feedback and pronunciation analysis',
-    tech: ['FastAPI', 'OpenAI', 'Speech Recognition', 'Python'],
-    status: 'in-progress',
-    category: 'ai-product',
-    highlight: 'Meta LLM Taiwan Pitch Top 8',
-  },
-  {
-    id: 'cutor',
-    title: 'Cutor - AI Writing Assistant',
-    description: 'AI-powered writing assistant that helps users optimize content and writing style',
-    tech: ['Claude AI', 'GPT-4', 'Next.js', 'TypeScript'],
-    status: 'in-progress',
-    category: 'ai-product',
-  },
-];
+export default function ProjectsGalleryPage() {
+  const t = useTranslations('projects');
+  const locale = useLocale();
 
-// Active Client Projects
-const activeProjects: Project[] = [
-  {
-    id: 'language-learning',
-    title: 'Language Learning Platform',
-    description: 'AI-powered language learning platform with assignment grading, pronunciation analysis, and progress tracking',
-    tech: ['FastAPI', 'PostgreSQL', 'Redis', 'Claude AI', 'Python'],
-    status: 'in-progress',
-    category: 'active',
-  },
-  {
-    id: 'consultation-platform',
-    title: 'Professional Consultation Platform',
-    description: 'RESTful API backend for professional consultation mobile app with authentication and data management',
-    tech: ['FastAPI', 'PostgreSQL', 'Python'],
-    status: 'in-progress',
-    category: 'active',
-  },
-  {
-    id: 'card-consultation',
-    title: 'Card Consultation Platform',
-    description: 'Online consultation platform with CRM and booking system',
-    tech: ['Vue.js', 'FastAPI', 'Python'],
-    status: 'in-progress',
-    category: 'active',
-  },
-  {
-    id: 'healthcare-platform',
-    title: 'Healthcare Platform - AWS Migration POC',
-    description: 'AWS cloud infrastructure migration and optimization proof-of-concept for healthcare client',
-    tech: ['AWS', 'Cloud Architecture', 'DevOps'],
-    status: 'in-progress',
-    category: 'active',
-  },
-  {
-    id: 'ai-square',
-    title: 'AI Square - AI Learning Platform',
-    description: 'Multi-language AI learning platform supporting 14 languages with interactive exercises',
-    tech: ['Next.js 15', 'React 19', 'Vertex AI', 'i18n'],
-    github: 'https://github.com/junyiacademy/ai-square',
-    status: 'in-progress',
-    category: 'active',
-  },
-  {
-    id: 'medical-decision-platform',
-    title: 'Medical Decision Platform',
-    description: 'AI-assisted shared decision-making platform for medical procedures with patient education tools',
-    tech: ['FastAPI', 'React', 'Claude AI', 'Medical AI'],
-    status: 'in-progress',
-    category: 'active',
-  },
-];
+  const projects: ProjectCardData[] = [
+    {
+      slug: 'vaitor',
+      title: t('vaitor.title'),
+      subtitle: t('vaitor.subtitle'),
+      description: t('vaitor.description'),
+    },
+    {
+      slug: 'healthcare-dashboard',
+      title: t('healthcare.title'),
+      subtitle: t('healthcare.subtitle'),
+      description: t('healthcare.description'),
+    },
+    {
+      slug: 'jutor-cutor',
+      title: t('jutor.title'),
+      subtitle: t('jutor.subtitle'),
+      description: t('jutor.description'),
+    },
+  ];
 
-const statusColors = {
-  completed: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-  'in-progress': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-  planning: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-};
-
-const statusLabels = {
-  completed: 'Completed',
-  'in-progress': 'In Progress',
-  planning: 'Planning',
-};
-
-function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-2xl font-bold">{project.title}</h3>
-        <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}>
-          {statusLabels[project.status]}
-        </span>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Navigation />
 
-      {project.highlight && (
-        <div className="mb-3 inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs font-medium">
-          🏆 {project.highlight}
-        </div>
-      )}
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
+            {t('gallery.title')}
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {t('gallery.subtitle')}
+          </p>
+        </motion.div>
+      </section>
 
-      <p className="text-gray-600 dark:text-gray-400 mb-4">
-        {project.description}
-      </p>
+      {/* Projects Grid */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.slug}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Link href={`/${locale}/projects/${project.slug}`}>
+                <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
+                  {/* Project Thumbnail */}
+                  <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg
+                        className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
 
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.tech.map((tech) => (
-          <span
-            key={tech}
-            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-slate-blue/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="text-center px-6">
+                        <div className="text-white text-lg font-semibold mb-2">
+                          {t('gallery.viewDetails')}
+                        </div>
+                        <div className="text-white/80 text-sm">
+                          →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-      <div className="flex gap-4">
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            Live Demo →
-          </a>
-        )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            GitHub →
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
-
-export default function ProjectsPage() {
-  return (
-    <div className="max-w-6xl mx-auto px-4 py-20">
-      <h1 className="text-5xl font-bold mb-6 text-center">Projects</h1>
-      <p className="text-xl text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-        From AI products to client projects — building solutions across education, healthcare, and enterprise
-      </p>
-
-      {/* AI Products Section */}
-      <section className="mb-20">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600"></div>
-          <h2 className="text-3xl font-bold">AI Products</h2>
-          <div className="text-sm text-gray-500">(Self-developed)</div>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {aiProducts.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+                  {/* Project Info */}
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-slate-blue font-medium mb-3">
+                      {project.subtitle}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </section>
-
-      {/* Active Projects Section */}
-      <section className="mb-20">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="h-1 w-12 bg-gradient-to-r from-green-600 to-blue-600"></div>
-          <h2 className="text-3xl font-bold">Active Client Projects</h2>
-          <div className="text-sm text-gray-500">(6 ongoing)</div>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {activeProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <div className="text-center mt-20 p-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl">
-        <h2 className="text-3xl font-bold mb-4">Have an Interesting Project?</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          I&apos;m open to AI product development, EdTech consulting, and technical leadership opportunities
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link
-            href="https://www.linkedin.com/in/tzu-yang-tsai/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            💼 Book Consultation
-          </Link>
-          <button
-            className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-            onClick={() => alert('Make a Wish feature coming soon! For now, please reach out via LinkedIn.')}
-          >
-            ✨ Make a Wish
-          </button>
-        </div>
-      </div>
-
-      {/* Contact CTA */}
-      <ContactCTA />
     </div>
   );
 }

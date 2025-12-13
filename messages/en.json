@@ -12,7 +12,7 @@
   "hero": {
     "badge": "AI Product Consultant",
     "headline": "Stop Planning AI\nStart Building!",
-    "subheadline": "Hey! I'm Young\nI turn your ideas into products in one week",
+    "subheadline": "Hey! I'm Young  Engineering background, 10 years product experience\nI turn your ideas into products, in one week",
     "timeline": {
       "day1": "Day 1: See Results",
       "week1": "Week 1: Go Live",
@@ -105,16 +105,16 @@
     },
     "strategy": {
       "title": "AI Strategy Consulting",
-      "pain": "Knowledge exists only in individual minds",
-      "solution": "Knowledge structuring system",
-      "value": "Teams can co-learn and inherit knowledge",
+      "pain": "Organization uses multiple expensive analytics tools, data scattered everywhere, hard to get unified insights for decision-making",
+      "solution": "Design unified data architecture, integrate existing systems, build one-stop analytics platform",
+      "value": "Eliminate at least 3 enterprise software subscriptions, centralized data management, real-time insights for decisions",
       "note": "Starting at $20,000 • 4-6 week engagement"
     },
     "consulting": {
       "title": "AI Adoption & Training",
-      "pain": "Too many tools creates chaos",
-      "solution": "Phased Shu-Ha-Ri approach",
-      "value": "Reduce switching and learning costs",
+      "pain": "Need to adopt new tools, upskill talent, and transform management thinking to leverage AI automation, but don't know where to start",
+      "solution": "From basics to advanced applications, phased implementation that lets teams gradually adapt and internalize",
+      "value": "Teams actually use AI tools effectively, reducing learning curve and adoption resistance",
       "note": "$5,000-8,000 per half-day • $8,000-15,000 per full-day workshop"
     }
   },
@@ -147,7 +147,54 @@
     "impactLabel": "Impact",
     "techStackLabel": "Tech Stack",
     "caseStudyLabel": "Case Study",
-    "projectScreenshot": "Project Screenshot"
+    "projectScreenshot": "Project Screenshot",
+    "gallery": {
+      "title": "Portfolio",
+      "subtitle": "Selected projects showcasing AI product development, data infrastructure, and EdTech innovation",
+      "viewDetails": "View Details",
+      "backToProjects": "Back to Projects",
+      "keyFeatures": "Key Features",
+      "results": "Impact & Results",
+      "demoLink": "View Demo",
+      "githubLink": "View on GitHub",
+      "briefDescription": "A one-line project overview"
+    },
+    "vaitorDetail": {
+      "description": "Vaitor is an adaptive learning platform that revolutionized personalized education for 300,000+ students. By combining natural language processing with intelligent recommendation algorithms, we created a system that understands each student's learning patterns and adapts content in real-time.\n\nThe platform analyzes student interactions, performance data, and learning behavior to deliver personalized content paths. Our AI tutoring features provide instant feedback, identify knowledge gaps, and suggest targeted interventions that improved learning outcomes by 40%.",
+      "feature1": "Adaptive learning paths based on individual student performance",
+      "feature2": "Real-time NLP-powered feedback and assessment",
+      "feature3": "Intelligent content recommendation engine",
+      "feature4": "Comprehensive analytics dashboard for educators",
+      "feature5": "Scalable infrastructure supporting 300K+ concurrent users",
+      "result1": "Grew active user base from 200K to 300K+ within 12 months",
+      "result2": "Achieved 40% improvement in learning outcomes through personalized content",
+      "result3": "Successfully scaled engineering team from 3 to 15 members",
+      "result4": "Maintained <5% team turnover while scaling organization"
+    },
+    "healthcareDetail": {
+      "description": "Built a comprehensive analytics platform that replaced 5 disparate external tools, saving $1.2M annually. This unified solution provides real-time insights for clinical decision support and operational intelligence.\n\nThe platform consolidates data from multiple sources into a single, coherent dashboard. Healthcare professionals can access real-time patient data, track clinical outcomes, and make data-driven decisions that improve patient care while reducing operational costs.",
+      "feature1": "Unified dashboard consolidating 5 separate analytics systems",
+      "feature2": "Real-time clinical decision support tools",
+      "feature3": "Automated operational insights and reporting",
+      "feature4": "HIPAA-compliant data infrastructure",
+      "feature5": "Custom visualization for healthcare metrics",
+      "result1": "Saved $1.2M annually by eliminating external tool dependencies",
+      "result2": "Reduced data query time from hours to seconds",
+      "result3": "Consolidated 5 systems into one unified platform",
+      "result4": "Improved clinical decision-making with real-time insights"
+    },
+    "jutorDetail": {
+      "description": "Developed a comprehensive AI tutoring suite consisting of Jutor (English learning) and Cutor (Chinese writing). These platforms leverage advanced AI to provide personalized feedback, adaptive practice, and intelligent assessment for language learners.\n\nJutor focuses on all four language skills - listening, speaking, reading, and writing - with real-time pronunciation analysis and grammar correction. Cutor specializes in Chinese essay writing and correction, helping students improve their composition skills through AI-powered feedback.",
+      "feature1": "Multi-skill English learning (listening, speaking, reading, writing)",
+      "feature2": "Real-time pronunciation analysis and correction",
+      "feature3": "AI-powered essay grading and feedback",
+      "feature4": "Adaptive difficulty based on student performance",
+      "feature5": "Comprehensive progress tracking and analytics",
+      "result1": "Served 150,000+ students across Taiwan",
+      "result2": "Achieved 85% student satisfaction rating",
+      "result3": "Reduced manual grading workload by 60%",
+      "result4": "Top 8 finalist in Meta LLM Taiwan Pitch"
+    }
   },
   "insights": {
     "title": "Latest insights",

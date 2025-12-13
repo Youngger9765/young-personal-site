@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode, FaChartLine, FaUsers, FaDollarSign, FaMicrophone, FaTrophy } from "react-icons/fa";
+import Image from "next/image";
+import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
@@ -34,11 +34,15 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-100 border-4 border-white shadow-lg flex items-center justify-center overflow-hidden group">
-                <div className="text-7xl md:text-8xl">👤</div>
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <p className="text-white text-sm px-4 text-center font-medium">{t('hero.photoPlaceholder')}</p>
-                </div>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-warm-cream to-slate-blue/10 border-4 border-white shadow-2xl overflow-hidden group">
+                <Image
+                  src="/images/young.jpg"
+                  alt="Young Tsai - AI Product Consultant"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </motion.div>
 
@@ -138,151 +142,6 @@ export default function Home() {
                 <p className="text-gray-600 text-base">{t('about.paragraph4')}</p>
               </div>
             </motion.div>
-
-            {/* Career Highlights */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="max-w-5xl mx-auto mt-16 pt-16 border-t border-gray-200"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16 text-center">
-                {t('about.careerHighlights')}
-              </h3>
-
-              {/* Centered Card Layout */}
-              <div className="grid md:grid-cols-3 gap-8 mb-8">
-                {[
-                  {
-                    period: t('about.milestones.lead.period'),
-                    title: t('about.milestones.lead.title'),
-                    highlights: [
-                      t('about.milestones.lead.highlight1'),
-                      t('about.milestones.lead.highlight2')
-                    ],
-                    gradient: 'from-indigo-500 to-indigo-600'
-                  },
-                  {
-                    period: t('about.milestones.deputy.period'),
-                    title: t('about.milestones.deputy.title'),
-                    highlights: [
-                      t('about.milestones.deputy.highlight1'),
-                      t('about.milestones.deputy.highlight2')
-                    ],
-                    gradient: 'from-blue-500 to-blue-600'
-                  },
-                  {
-                    period: t('about.milestones.current.period'),
-                    title: t('about.milestones.current.title'),
-                    highlights: [
-                      t('about.milestones.current.highlight1'),
-                      t('about.milestones.current.highlight2')
-                    ],
-                    gradient: 'from-purple-500 to-purple-600'
-                  }
-                ].map((milestone, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
-                    className="group relative"
-                  >
-                    {/* Card */}
-                    <div className="h-full p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-slate-blue transition-all shadow-md hover:shadow-xl">
-                      {/* Period Badge */}
-                      <div className={`inline-block px-4 py-1.5 rounded-full bg-gradient-to-r ${milestone.gradient} text-white text-sm font-bold mb-4 shadow-sm`}>
-                        {milestone.period}
-                      </div>
-
-                      {/* Title */}
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 leading-snug min-h-[3.5rem] group-hover:text-slate-blue transition-colors whitespace-pre-line">
-                        {milestone.title}
-                      </h4>
-
-                      {/* Highlights */}
-                      <ul className="space-y-3">
-                        {milestone.highlights.map((highlight, i) => (
-                          <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
-                            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-slate-blue mt-2" />
-                            <span className="leading-relaxed">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* Decorative gradient on hover */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-warm-cream to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="text-center flex justify-center">
-                <a
-                  href="https://www.linkedin.com/in/tzu-yang-tsai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-coral-orange hover:text-[#FF7043] font-medium transition-colors group"
-                >
-                  {t('about.viewLinkedIn')}
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Impact Section */}
-        <section id="track-record" className="border-t border-gray-200">
-          <div className="max-w-6xl mx-auto px-6 py-24">
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16"
-            >
-              {t('trackRecord.title')}
-            </motion.h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: FaDollarSign,
-                  metric: t('trackRecord.metrics.savings.metric'),
-                  description: t('trackRecord.metrics.savings.description'),
-                },
-                {
-                  icon: FaChartLine,
-                  metric: t('trackRecord.metrics.growth.metric'),
-                  description: t('trackRecord.metrics.growth.description'),
-                },
-                {
-                  icon: FaUsers,
-                  metric: t('trackRecord.metrics.retention.metric'),
-                  description: t('trackRecord.metrics.retention.description'),
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
-                >
-                  <div className="mb-6">
-                    <item.icon className="w-12 h-12 text-slate-blue group-hover:scale-110 transition-transform" />
-                  </div>
-                  <div className="text-4xl font-bold bg-gradient-to-r from-slate-blue to-blue-500 bg-clip-text text-transparent mb-4">
-                    {item.metric}
-                  </div>
-                  <p className="text-gray-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -327,7 +186,7 @@ export default function Home() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="p-8 rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md">
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 hover:border-slate-blue transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
                     <div className="flex items-center gap-4 mb-6">
                       <service.icon className="w-10 h-10 text-slate-blue group-hover:scale-110 transition-transform" />
                       <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-slate-blue transition-colors">
@@ -410,7 +269,7 @@ export default function Home() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md overflow-hidden">
+                  <div className="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 hover:border-slate-blue transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
                     {/* Project Image Placeholder */}
                     <div className="relative h-64 bg-gradient-to-br from-warm-cream to-blue-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                       <div className="text-center">
@@ -472,76 +331,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Blog/Insights Section */}
-        <section className="border-t border-gray-200">
-          <div className="max-w-6xl mx-auto px-6 py-24">
-            <div className="flex justify-between items-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
-                {t('insights.title')}
-              </h2>
-              <Link
-                href="https://medium.com/young-tsai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral-orange hover:text-[#FF7043] font-medium flex items-center gap-2 group"
-              >
-                {t('insights.viewAll')}
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: t('insights.article1.title'),
-                  excerpt: t('insights.article1.excerpt'),
-                  date: t('insights.article1.date'),
-                  readTime: t('insights.article1.readTime'),
-                },
-                {
-                  title: t('insights.article2.title'),
-                  excerpt: t('insights.article2.excerpt'),
-                  date: t('insights.article2.date'),
-                  readTime: t('insights.article2.readTime'),
-                },
-                {
-                  title: t('insights.article3.title'),
-                  excerpt: t('insights.article3.excerpt'),
-                  date: t('insights.article3.date'),
-                  readTime: t('insights.article3.readTime'),
-                },
-              ].map((article, index) => (
-                <motion.a
-                  key={index}
-                  href="https://medium.com/young-tsai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group p-6 rounded-xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
-                >
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                    <span>{article.date}</span>
-                    <span>•</span>
-                    <span>{article.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-slate-blue transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {article.excerpt}
-                  </p>
-                  <div className="flex items-center gap-2 text-coral-orange font-medium group-hover:gap-3 transition-all">
-                    {t('insights.readMore')}
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Testimonials - Temporarily Hidden */}
         {/*
         <section className="border-t border-gray-200 bg-gray-50">
@@ -597,42 +386,6 @@ export default function Home() {
           </div>
         </section>
         */}
-
-        {/* Speaking & Recognition */}
-        <section className="border-t border-gray-200">
-          <div className="max-w-6xl mx-auto px-6 py-24">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16">
-              {t('speaking.title')}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  icon: FaMicrophone,
-                  title: t('speaking.mediatek.title'),
-                  subtitle: t('speaking.mediatek.subtitle')
-                },
-                {
-                  icon: FaTrophy,
-                  title: t('speaking.meta.title'),
-                  subtitle: t('speaking.meta.subtitle')
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group p-6 rounded-xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
-                >
-                  <item.icon className="w-8 h-8 text-slate-blue mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-medium text-gray-900 mb-1">{item.title}</p>
-                  <p className="text-gray-600 text-sm">{item.subtitle}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <ContactCTA />
