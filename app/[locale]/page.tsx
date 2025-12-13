@@ -231,12 +231,14 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto mt-12 pt-12 border-t border-gray-200"
+              className="max-w-5xl mx-auto mt-16 pt-16 border-t border-gray-200"
             >
-              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-8 text-center">
+              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-12 text-center">
                 {t('about.careerHighlights')}
               </h3>
-              <div className="space-y-8">
+
+              {/* Centered Card Layout */}
+              <div className="grid md:grid-cols-3 gap-8 mb-8">
                 {[
                   {
                     period: t('about.milestones.current.period'),
@@ -244,7 +246,8 @@ export default function Home() {
                     highlights: [
                       t('about.milestones.current.highlight1'),
                       t('about.milestones.current.highlight2')
-                    ]
+                    ],
+                    gradient: 'from-purple-500 to-purple-600'
                   },
                   {
                     period: t('about.milestones.deputy.period'),
@@ -252,7 +255,8 @@ export default function Home() {
                     highlights: [
                       t('about.milestones.deputy.highlight1'),
                       t('about.milestones.deputy.highlight2')
-                    ]
+                    ],
+                    gradient: 'from-blue-500 to-blue-600'
                   },
                   {
                     period: t('about.milestones.lead.period'),
@@ -260,32 +264,49 @@ export default function Home() {
                     highlights: [
                       t('about.milestones.lead.highlight1'),
                       t('about.milestones.lead.highlight2')
-                    ]
+                    ],
+                    gradient: 'from-indigo-500 to-indigo-600'
                   }
                 ].map((milestone, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="relative pl-6 border-l-2 border-purple-200"
+                    transition={{ delay: index * 0.15 }}
+                    className="group relative"
                   >
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-600" />
-                    <div className="text-sm text-gray-500 mb-1">{milestone.period}</div>
-                    <div className="text-lg font-semibold text-gray-900 mb-2">{milestone.title}</div>
-                    <ul className="space-y-1">
-                      {milestone.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-gray-600">
-                          <span className="text-purple-600 mt-1">•</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Card */}
+                    <div className="h-full p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-purple-300 transition-all shadow-md hover:shadow-xl">
+                      {/* Period Badge */}
+                      <div className={`inline-block px-4 py-1.5 rounded-full bg-gradient-to-r ${milestone.gradient} text-white text-sm font-bold mb-4 shadow-sm`}>
+                        {milestone.period}
+                      </div>
+
+                      {/* Title */}
+                      <h4 className="text-lg font-bold text-gray-900 mb-4 leading-snug min-h-[3.5rem] group-hover:text-purple-600 transition-colors">
+                        {milestone.title}
+                      </h4>
+
+                      {/* Highlights */}
+                      <ul className="space-y-3">
+                        {milestone.highlights.map((highlight, i) => (
+                          <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
+                            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-purple-500 mt-2" />
+                            <span className="leading-relaxed">{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Decorative gradient on hover */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                    </div>
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-8 text-center">
+
+              {/* LinkedIn Link */}
+              <div className="text-center">
                 <a
                   href="https://www.linkedin.com/in/tzu-yang-tsai/"
                   target="_blank"
