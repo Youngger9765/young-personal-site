@@ -219,14 +219,7 @@ export default function Home() {
               </div>
 
               {/* Links */}
-              <div className="text-center flex justify-center gap-8">
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-coral-orange hover:text-[#FF7043] font-medium transition-colors group"
-                >
-                  {t('about.page.readFullStory')}
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </Link>
+              <div className="text-center flex justify-center">
                 <a
                   href="https://www.linkedin.com/in/tzu-yang-tsai/"
                   target="_blank"
