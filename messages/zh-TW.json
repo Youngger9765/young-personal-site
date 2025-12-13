@@ -10,16 +10,15 @@
     "blog": "部落格"
   },
   "hero": {
-    "badge": "首席 AI 長 • Meta LLM 台灣前八強",
-    "headline": "省下 120 萬美元。影響 30 萬用戶。7 天完成。零簡報。",
-    "subheadline": "做能用的 AI 產品",
+    "badge": "AI 產品顧問",
+    "headline": "別再規劃 AI 了，開始做",
+    "subheadline": "嗨，我是 Young。我讓 AI 產品在一週內上線",
     "timeline": {
       "day1": "1 天：看到成果",
       "week1": "1 週：上線",
       "month1": "1 月：營收"
     },
     "achievements": {
-      "meta": "Meta LLM 前 8",
       "users": "30 萬用戶",
       "saved": "省 $1.2M"
     },
