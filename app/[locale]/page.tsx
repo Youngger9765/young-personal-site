@@ -281,7 +281,7 @@ export default function Home() {
                   <div className="mb-6">
                     <item.icon className="w-12 h-12 text-slate-blue group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-4xl font-bold bg-gradient-to-r from-slate-blue to-coral-orange bg-clip-text text-transparent mb-4">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-slate-blue to-blue-500 bg-clip-text text-transparent mb-4">
                     {item.metric}
                   </div>
                   <p className="text-gray-600 leading-relaxed">
