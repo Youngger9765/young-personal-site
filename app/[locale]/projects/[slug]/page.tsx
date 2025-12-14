@@ -171,7 +171,17 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {slug === 'ai-square' ? (
+          {slug === 'duotopia' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/duotopia-banner.jpg"
+                alt="Duotopia - AI English Learning Platform"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'ai-square' ? (
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/hourofai.jpeg"
@@ -186,6 +196,16 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               <Image
                 src="/images/vibe-coding.jpg"
                 alt="Vaitor - AI Video Tutor"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'jutor' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/jutor-logo.png"
+                alt="Jutor - AI English Learning Platform"
                 fill
                 className="object-cover"
                 priority
