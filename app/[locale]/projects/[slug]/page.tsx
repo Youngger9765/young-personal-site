@@ -74,7 +74,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       result: t(`${projectKey}.result`),
       timeline: t(`${projectKey}.timeline`),
     },
-    quotes: (t.raw(`${projectKey}.quotes`) as Array<{ source: string; quote: string; link?: string }> | undefined) ?? [],
     features: [
       t(`${detailKey}.feature1`),
       t(`${detailKey}.feature2`),
@@ -759,39 +758,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
             </div>
           )}
 
-          {/* Quotes */}
-          {project.quotes.length > 0 && (
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {locale === 'zh-TW' ? '客戶 / 媒體引用' : 'Client / Media Quotes'}
-              </h3>
-              <div className="space-y-4">
-                {project.quotes.map((q, idx) => (
-                  <div
-                    key={`${q.source}-${idx}`}
-                    className="p-6 rounded-2xl bg-gradient-to-r from-white to-warm-cream/40 border border-gray-200 shadow-sm"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
-                        {q.source}
-                      </div>
-                      {q.link && (
-                        <a
-                          href={q.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-slate-blue hover:underline"
-                        >
-                          {locale === 'zh-TW' ? '查看來源' : 'View source'}
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-gray-800 leading-relaxed text-base">“{q.quote}”</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </motion.div>
       </section>
 

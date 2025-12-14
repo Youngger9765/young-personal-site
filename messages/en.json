@@ -185,7 +185,7 @@
       "description": "AI-powered video tutoring system that analyzes educational videos and provides interactive learning experiences. Built with Next.js, Claude AI, and video processing technology, enabling students to interact with video content in real-time.",
       "problem": "Students watched videos passively and struggled to retain key concepts.",
       "solution": "Layered AI Q&A and summaries on top of course videos so students can ask, review, and practice instantly.",
-      "result": "Improved comprehension by 40% and increased active users from 200K to 300K+.",
+      "result": "Improved comprehension and engagement, validated with pilot cohorts.",
       "timeline": "Prototype in 2 weeks, live to 50K users in 6 weeks.",
       "quotes": [
         {
@@ -303,10 +303,10 @@
       "feature3": "Intelligent content recommendation engine",
       "feature4": "Comprehensive analytics dashboard for educators",
       "feature5": "Scalable infrastructure supporting 300K+ concurrent users",
-      "result1": "Grew active user base from 200K to 300K+ within 12 months",
-      "result2": "Achieved 40% improvement in learning outcomes through personalized content",
-      "result3": "Successfully scaled engineering team from 3 to 15 members",
-      "result4": "Maintained <5% team turnover while scaling organization"
+      "result1": "Improved comprehension and engagement through personalized content",
+      "result2": "Demonstrated measurable learning uplift in pilot cohorts",
+      "result3": "Scaled engineering team and platform reliability to support growth",
+      "result4": "Established dashboards for educators to act on insights"
     },
     "jutorDetail": {
       "description": "Developed a comprehensive AI tutoring suite consisting of Jutor (English learning) and Cutor (Chinese writing). These platforms leverage advanced AI to provide personalized feedback, adaptive practice, and intelligent assessment for language learners.\n\nJutor focuses on all four language skills - listening, speaking, reading, and writing - with real-time pronunciation analysis and grammar correction. Cutor specializes in Chinese essay writing and correction, helping students improve their composition skills through AI-powered feedback.",
