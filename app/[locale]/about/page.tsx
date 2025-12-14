@@ -40,11 +40,6 @@ export default function AboutPage() {
     t('about.skills.edtech'),
   ];
 
-  const education = [
-    t('about.education.nctu'),
-    t('about.education.ncku'),
-  ];
-
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Simple Background */}
@@ -280,29 +275,6 @@ export default function AboutPage() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Education */}
-        <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-10">
-              {t('about.education.title')}
-            </h2>
-            <div className="space-y-4">
-              {education.map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="p-4 rounded-xl bg-gradient-to-r from-warm-cream/40 to-white border border-gray-200 text-gray-800 font-semibold"
-                >
-                  {item}
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
