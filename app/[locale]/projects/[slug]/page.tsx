@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navigation from '@/components/Navigation';
+import QuickConsultForm from '@/components/QuickConsultForm';
 
 interface ProjectDetailProps {
   params: Promise<{
@@ -255,6 +256,11 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
             </div>
           ))}
         </motion.div>
+      </section>
+
+      {/* Quick Consult Form */}
+      <section className="max-w-4xl mx-auto px-6 pb-16">
+        <QuickConsultForm />
       </section>
 
       {/* Project Description */}

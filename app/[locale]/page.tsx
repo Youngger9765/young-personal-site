@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
+import QuickConsultForm from '@/components/QuickConsultForm';
 
 export default function Home() {
   const t = useTranslations();
@@ -222,6 +223,13 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Quick Consult Form */}
+        <section className="border-t border-gray-200">
+          <div className="max-w-6xl mx-auto px-6 py-20">
+            <QuickConsultForm />
           </div>
         </section>
 
