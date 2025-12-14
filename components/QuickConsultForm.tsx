@@ -8,7 +8,7 @@ interface QuickConsultFormProps {
 }
 
 export default function QuickConsultForm({ className }: QuickConsultFormProps) {
-  const t = useTranslations('quickForm');
+  const t = useTranslations('projects');
   const [goal, setGoal] = useState('');
   const [timeline, setTimeline] = useState('');
   const [budget, setBudget] = useState('');
@@ -18,13 +18,13 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const note = [
-      `${t('labels.goal')}: ${goal || t('placeholders.na')}`,
-      `${t('labels.timeline')}: ${timeline || t('placeholders.na')}`,
-      `${t('labels.budget')}: ${budget || t('placeholders.na')}`,
+      `${t('quickForm.labels.goal')}: ${goal || t('quickForm.placeholders.na')}`,
+      `${t('quickForm.labels.timeline')}: ${timeline || t('quickForm.placeholders.na')}`,
+      `${t('quickForm.labels.budget')}: ${budget || t('quickForm.placeholders.na')}`,
     ].join('\n');
 
     const params = new URLSearchParams();
-    params.set('name', goal ? `Goal: ${goal}` : t('placeholders.na'));
+    params.set('name', goal ? `Goal: ${goal}` : t('quickForm.placeholders.na'));
     if (email) {
       params.set('email', email);
     }
@@ -42,25 +42,25 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
 
   return (
     <div className={`p-6 rounded-2xl bg-gradient-to-br from-warm-cream/60 via-white to-blue-50 border border-gray-200 shadow-sm ${className || ''}`}>
-      <div className="mb-4">
-        <h3 className="text-xl font-bold text-gray-900">{t('title')}</h3>
-        <p className="text-sm text-gray-600">{t('subtitle')}</p>
+          <div className="mb-4">
+        <h3 className="text-xl font-bold text-gray-900">{t('quickForm.title')}</h3>
+        <p className="text-sm text-gray-600">{t('quickForm.subtitle')}</p>
       </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
         {copied && (
           <div className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-            {t('copied')}
+            {t('quickForm.copied')}
           </div>
         )}
         <div>
           <label className="block text-sm font-semibold text-gray-800 mb-1">
-            {t('labels.goal')}
+            {t('quickForm.labels.goal')}
           </label>
           <textarea
             className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue resize-none"
             rows={3}
-            placeholder={t('placeholders.goal')}
+            placeholder={t('quickForm.placeholders.goal')}
             value={goal}
             onChange={(e) => setGoal(e.target.value)}
           />
@@ -68,12 +68,12 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
 
         <div>
           <label className="block text-sm font-semibold text-gray-800 mb-1">
-            {t('labels.email')}
+            {t('quickForm.labels.email')}
           </label>
           <input
             type="email"
             className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
-            placeholder={t('placeholders.email')}
+            placeholder={t('quickForm.placeholders.email')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -82,36 +82,36 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
         <div className="grid md:grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-semibold text-gray-800 mb-1">
-              {t('labels.timeline')}
+              {t('quickForm.labels.timeline')}
             </label>
             <select
               className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
               value={timeline}
               onChange={(e) => setTimeline(e.target.value)}
             >
-              <option value="">{t('placeholders.timeline')}</option>
-              <option value={t('options.timeline.week')}>{t('options.timeline.week')}</option>
-              <option value={t('options.timeline.month')}>{t('options.timeline.month')}</option>
-              <option value={t('options.timeline.quarter')}>{t('options.timeline.quarter')}</option>
-              <option value={t('options.timeline.asap')}>{t('options.timeline.asap')}</option>
-              <option value={t('options.timeline.tbd')}>{t('options.timeline.tbd')}</option>
+              <option value="">{t('quickForm.placeholders.timeline')}</option>
+              <option value={t('quickForm.options.timeline.week')}>{t('quickForm.options.timeline.week')}</option>
+              <option value={t('quickForm.options.timeline.month')}>{t('quickForm.options.timeline.month')}</option>
+              <option value={t('quickForm.options.timeline.quarter')}>{t('quickForm.options.timeline.quarter')}</option>
+              <option value={t('quickForm.options.timeline.asap')}>{t('quickForm.options.timeline.asap')}</option>
+              <option value={t('quickForm.options.timeline.tbd')}>{t('quickForm.options.timeline.tbd')}</option>
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-semibold text-gray-800 mb-1">
-              {t('labels.budget')}
+              {t('quickForm.labels.budget')}
             </label>
             <select
               className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
             >
-              <option value="">{t('placeholders.budget')}</option>
-              <option value={t('options.budget.low')}>{t('options.budget.low')}</option>
-              <option value={t('options.budget.mid')}>{t('options.budget.mid')}</option>
-              <option value={t('options.budget.high')}>{t('options.budget.high')}</option>
-              <option value={t('options.budget.tbd')}>{t('options.budget.tbd')}</option>
+              <option value="">{t('quickForm.placeholders.budget')}</option>
+              <option value={t('quickForm.options.budget.low')}>{t('quickForm.options.budget.low')}</option>
+              <option value={t('quickForm.options.budget.mid')}>{t('quickForm.options.budget.mid')}</option>
+              <option value={t('quickForm.options.budget.high')}>{t('quickForm.options.budget.high')}</option>
+              <option value={t('quickForm.options.budget.tbd')}>{t('quickForm.options.budget.tbd')}</option>
             </select>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
           type="submit"
           className="w-full md:w-auto px-6 py-3 bg-slate-blue text-white rounded-lg font-semibold hover:bg-gray-900 transition-colors"
         >
-          {t('cta')}
+          {t('quickForm.cta')}
         </button>
       </form>
     </div>
