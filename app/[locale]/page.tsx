@@ -153,67 +153,71 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16 text-center">
               {t('services.title')}
             </h2>
-            <div className="space-y-12">
+            <div className="grid lg:grid-cols-3 gap-8">
               {[
                 {
                   icon: FaRocket,
-                  title: t('services.product.title'),
-                  pain: t('services.product.pain'),
-                  solution: t('services.product.solution'),
-                  value: t('services.product.value'),
-                  note: t('services.product.note'),
+                  title: locale === 'zh-TW' ? '1 週原型 Sprint' : '1-week Prototype Sprint',
+                  deliverables: locale === 'zh-TW'
+                    ? ['互動原型（前後端+AI API）', '用戶腳本與 Demo', '技術文件與下一步計畫']
+                    : ['Interactive prototype (frontend + AI API)', 'User script & demo', 'Tech notes and next steps'],
+                  timeline: locale === 'zh-TW' ? '7 天' : '7 days',
+                  price: locale === 'zh-TW' ? '$15,000 起' : 'From $15,000',
                 },
                 {
                   icon: FaBrain,
-                  title: t('services.strategy.title'),
-                  pain: t('services.strategy.pain'),
-                  solution: t('services.strategy.solution'),
-                  value: t('services.strategy.value'),
-                  note: t('services.strategy.note'),
+                  title: locale === 'zh-TW' ? '4 週 MVP' : '4-week MVP',
+                  deliverables: locale === 'zh-TW'
+                    ? ['可上線 MVP（含部署）', '資料與事件追蹤', '運營手冊與交接']
+                    : ['Launch-ready MVP (with deployment)', 'Data/events tracking', 'Runbook & handoff'],
+                  timeline: locale === 'zh-TW' ? '4 週' : '4 weeks',
+                  price: locale === 'zh-TW' ? '$50,000 起' : 'From $50,000',
                 },
                 {
                   icon: FaCode,
-                  title: t('services.consulting.title'),
-                  pain: t('services.consulting.pain'),
-                  solution: t('services.consulting.solution'),
-                  value: t('services.consulting.value'),
-                  note: t('services.consulting.note'),
+                  title: locale === 'zh-TW' ? 'AI 策略 / 培訓' : 'AI Strategy / Training',
+                  deliverables: locale === 'zh-TW'
+                    ? ['AI 機會盤點與路線圖', '技術選型與成本估算', '實作工作坊（半天/一天）']
+                    : ['AI opportunities & roadmap', 'Tech stack + cost plan', 'Hands-on workshop (half/full day)'],
+                  timeline: locale === 'zh-TW' ? '2-4 週' : '2-4 weeks',
+                  price: locale === 'zh-TW' ? '$8,000 起' : 'From $8,000',
                 },
               ].map((service, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  key={service.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group"
+                  className="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 hover:border-slate-blue transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 flex flex-col"
                 >
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 hover:border-slate-blue transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-                    <div className="flex items-center gap-4 mb-6">
-                      <service.icon className="w-10 h-10 text-slate-blue group-hover:scale-110 transition-transform" />
-                      <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-slate-blue transition-colors">
-                        {service.title}
-                      </h3>
+                  <div className="flex items-center gap-4 mb-6">
+                    <service.icon className="w-10 h-10 text-slate-blue" />
+                    <h3 className="text-2xl font-semibold text-gray-900">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <ul className="space-y-2 mb-6 text-gray-700 leading-relaxed">
+                    {service.deliverables.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <span className="text-coral-orange mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto pt-4 border-t border-gray-200 text-sm text-gray-700 flex items-center justify-between">
+                    <div>
+                      <div className="font-semibold text-slate-blue">{service.timeline}</div>
+                      <div className="text-gray-600">{service.price}</div>
                     </div>
-
-                    <div className="space-y-4 mb-6">
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-28 text-base font-bold text-gray-900 mt-1">{t('services.labels.pain')}</div>
-                        <p className="flex-1 text-gray-700 leading-relaxed">{service.pain}</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-28 text-base font-bold text-slate-blue mt-1">{t('services.labels.solution')}</div>
-                        <p className="flex-1 text-gray-900 font-medium leading-relaxed">{service.solution}</p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-28 text-base font-bold text-coral-orange mt-1">{t('services.labels.value')}</div>
-                        <p className="flex-1 text-gray-700 leading-relaxed">{service.value}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-sm text-gray-500 border-t border-warm-cream pt-4">
-                      {service.note}
-                    </p>
+                    <a
+                      href="https://calendly.com/young-tsai/ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 transition-colors font-semibold text-sm"
+                    >
+                      {t('projects.consultCta')}
+                    </a>
                   </div>
                 </motion.div>
               ))}
@@ -254,24 +258,48 @@ export default function Home() {
                       title: t('projects.aiSquare.title'),
                       subtitle: t('projects.aiSquare.subtitle'),
                       description: t('projects.aiSquare.description'),
+                      summary: {
+                        problem: t('projects.aiSquare.problem'),
+                        solution: t('projects.aiSquare.solution'),
+                        result: t('projects.aiSquare.result'),
+                        timeline: t('projects.aiSquare.timeline'),
+                      },
                     },
                     {
                       slug: 'vaitor',
                       title: t('projects.vaitor.title'),
                       subtitle: t('projects.vaitor.subtitle'),
                       description: t('projects.vaitor.description'),
+                      summary: {
+                        problem: t('projects.vaitor.problem'),
+                        solution: t('projects.vaitor.solution'),
+                        result: t('projects.vaitor.result'),
+                        timeline: t('projects.vaitor.timeline'),
+                      },
                     },
                     {
                       slug: 'jutor',
                       title: t('projects.jutor.title'),
                       subtitle: t('projects.jutor.subtitle'),
                       description: t('projects.jutor.description'),
+                      summary: {
+                        problem: t('projects.jutor.problem'),
+                        solution: t('projects.jutor.solution'),
+                        result: t('projects.jutor.result'),
+                        timeline: t('projects.jutor.timeline'),
+                      },
                     },
                     {
                       slug: 'cutor',
                       title: t('projects.cutor.title'),
                       subtitle: t('projects.cutor.subtitle'),
                       description: t('projects.cutor.description'),
+                      summary: {
+                        problem: t('projects.cutor.problem'),
+                        solution: t('projects.cutor.solution'),
+                        result: t('projects.cutor.result'),
+                        timeline: t('projects.cutor.timeline'),
+                      },
                     },
                   ].map((project, index) => (
                     <motion.div
@@ -322,16 +350,42 @@ export default function Home() {
                               {project.title}
                             </h3>
                             <p className="text-sm text-slate-blue font-medium mb-3">
-                              {project.subtitle}
-                            </p>
-                            <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                              {project.description}
-                            </p>
+                          {project.subtitle}
+                        </p>
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                          {project.description}
+                        </p>
+                        <div className="space-y-2 text-sm text-gray-700 mb-4">
+                          <div className="flex gap-2">
+                            <span className="font-semibold text-gray-900">{t('projects.summary.problem')}:</span>
+                            <span className="line-clamp-1">{project.summary.problem}</span>
+                          </div>
+                          <div className="flex gap-2">
+                            <span className="font-semibold text-gray-900">{t('projects.summary.solution')}:</span>
+                            <span className="line-clamp-1">{project.summary.solution}</span>
+                          </div>
+                          <div className="flex gap-2">
+                            <span className="font-semibold text-gray-900">{t('projects.summary.result')}:</span>
+                            <span className="line-clamp-1">{project.summary.result}</span>
+                          </div>
+                          <div className="flex gap-2">
+                            <span className="font-semibold text-gray-900">{t('projects.summary.timeline')}:</span>
+                            <span className="line-clamp-1">{project.summary.timeline}</span>
                           </div>
                         </div>
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <a
+                          href="https://calendly.com/young-tsai/ai"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-slate-blue font-semibold text-sm hover:underline"
+                        >
+                          {t('projects.consultCta')}
+                        </a>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
                 </div>
               </div>
             </div>

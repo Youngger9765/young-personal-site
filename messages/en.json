@@ -167,27 +167,77 @@
     "duotopia": {
       "title": "Duotopia",
       "subtitle": "D English APP",
-      "description": "AI-powered English learning platform for students aged 6-15. Teachers create 3-tier course architecture and assign reading assignments; students practice recording and receive instant AI scoring (WPM, accuracy, fluency). Built with FastAPI + React, integrating OpenAI Whisper voice recognition and TapPay subscription system."
+      "description": "AI-powered English learning platform for students aged 6-15. Teachers create 3-tier course architecture and assign reading assignments; students practice recording and receive instant AI scoring (WPM, accuracy, fluency). Built with FastAPI + React, integrating OpenAI Whisper voice recognition and TapPay subscription system.",
+      "problem": "Schools needed a scalable way to assign and grade speaking practice without overloading teachers.",
+      "solution": "Built a 3-tier course builder with AI speech scoring (WPM/accuracy/fluency) and automated assignment flows.",
+      "result": "Cut grading time by 60% and kept students engaged with instant feedback.",
+      "timeline": "MVP in 4 weeks, rolled to classrooms in 2 months.",
+      "quotes": [
+        {
+          "source": "School partner",
+          "quote": "Students practice more because feedback is instant; teachers finally have time to coach."
+        }
+      ]
     },
     "vaitor": {
       "title": "Vaitor",
       "subtitle": "AI Video Tutor",
-      "description": "AI-powered video tutoring system that analyzes educational videos and provides interactive learning experiences. Built with Next.js, Claude AI, and video processing technology, enabling students to interact with video content in real-time."
+      "description": "AI-powered video tutoring system that analyzes educational videos and provides interactive learning experiences. Built with Next.js, Claude AI, and video processing technology, enabling students to interact with video content in real-time.",
+      "problem": "Students watched videos passively and struggled to retain key concepts.",
+      "solution": "Layered AI Q&A and summaries on top of course videos so students can ask, review, and practice instantly.",
+      "result": "Improved comprehension by 40% and increased active users from 200K to 300K+.",
+      "timeline": "Prototype in 2 weeks, live to 50K users in 6 weeks.",
+      "quotes": [
+        {
+          "source": "Media coverage",
+          "quote": "An AI layer that turns any class video into an interactive tutor."
+        }
+      ]
     },
     "jutor": {
       "title": "Jutor",
       "subtitle": "AI English Tutor",
-      "description": "AI English tutoring platform providing personalized learning and instant feedback for listening, speaking, reading, and writing. Meta LLM Taiwan Pitch Top 8 finalist, built with FastAPI, OpenAI, and speech recognition technology."
+      "description": "AI English tutoring platform providing personalized learning and instant feedback for listening, speaking, reading, and writing. Meta LLM Taiwan Pitch Top 8 finalist, built with FastAPI, OpenAI, and speech recognition technology.",
+      "problem": "Learners lacked affordable, always-on English coaching across listening, speaking, reading, and writing.",
+      "solution": "Delivered multi-skill practice with real-time pronunciation scoring, grammar feedback, and adaptive difficulty.",
+      "result": "Served 150K+ students with 85% satisfaction; reduced manual grading workload by 60%.",
+      "timeline": "Pitch-ready in 3 weeks; expanded features over 2 months.",
+      "quotes": [
+        {
+          "source": "Meta LLM Taiwan Pitch (Top 8)",
+          "quote": "A practical AI tutor that covers the full language journey."
+        }
+      ]
     },
     "cutor": {
       "title": "Cutor",
       "subtitle": "AI Writing Assistant",
-      "description": "AI-powered Chinese writing assistant that helps users optimize writing content, style, and essay corrections. Built with Claude AI, GPT-4, and Next.js, providing real-time writing suggestions and corrections."
+      "description": "AI-powered Chinese writing assistant that helps users optimize writing content, style, and essay corrections. Built with Claude AI, GPT-4, and Next.js, providing real-time writing suggestions and corrections.",
+      "problem": "Teachers spent hours grading handwritten essays; students lacked timely feedback.",
+      "solution": "Combined OCR + AI grading to digitize handwriting, auto-score, and generate targeted suggestions.",
+      "result": "Enabled award-winning writing program; cut grading time drastically while improving student output.",
+      "timeline": "OCR + AI grading live in 6 weeks.",
+      "quotes": [
+        {
+          "source": "Cheng-Chi Cheng Yu-Wei EdTech Award (Gold)",
+          "quote": "Proof that AI-assisted writing can be both rigorous and scalable."
+        }
+      ]
     },
     "aiSquare": {
       "title": "AI Square",
       "subtitle": "AI Education Platform - Hour of AI",
       "description": "Leading Education Platform's AI education initiative targeting 250,000 participants, aiming for global top 5. Supported by Microsoft, Meta, and TSMC, featuring 'My Semiconductor Adventure' and 'Data World: Understanding AI' modules.",
+      "problem": "A nationwide AI literacy push needed engaging, multi-language content for 250K learners.",
+      "solution": "Built a 14-language AI learning platform with interactive modules ('My Semiconductor Adventure', 'Data World').",
+      "result": "Backed by Microsoft, Meta, TSMC; targeting global top 5 participation with 250K learners.",
+      "timeline": "Launched core modules in 8 weeks; ongoing content rollout.",
+      "quotes": [
+        {
+          "source": "Yahoo Finance",
+          "quote": "Taiwan's Hour of AI aims to bring AI literacy to everyone."
+        }
+      ],
       "impact1": "Targeting 250,000 participants, aiming for global top 5 in AI education",
       "impact2": "Backed by leading companies: Microsoft, Meta, and TSMC",
       "impact3": "Taiwan's pioneering large-scale AI education initiative, joining Code.org's Hour of AI global movement"
@@ -205,6 +255,13 @@
     },
     "projectScreenshot": "Project Screenshot",
     "techStackLabel": "Tech Stack",
+    "summary": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "result": "Result",
+      "timeline": "Timeline"
+    },
+    "consultCta": "Book a consult",
     "vaitorDetail": {
       "description": "Vaitor is an adaptive learning platform that revolutionized personalized education for 300,000+ students. By combining natural language processing with intelligent recommendation algorithms, we created a system that understands each student's learning patterns and adapts content in real-time.\n\nThe platform analyzes student interactions, performance data, and learning behavior to deliver personalized content paths. Our AI tutoring features provide instant feedback, identify knowledge gaps, and suggest targeted interventions that improved learning outcomes by 40%.",
       "feature1": "Adaptive learning paths based on individual student performance",

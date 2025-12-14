@@ -167,27 +167,77 @@
     "duotopia": {
       "title": "Duotopia",
       "subtitle": "D英文APP",
-      "description": "為 6-15 歲學生打造的 AI 英語學習平台。教師可建立三層課程架構、派發朗讀作業並批改；學生透過錄音練習獲得 AI 即時評分（WPM、準確率、流暢度）。採用 FastAPI + React 技術，整合 OpenAI Whisper 語音辨識與 TapPay 訂閱制。"
+      "description": "為 6-15 歲學生打造的 AI 英語學習平台。教師可建立三層課程架構、派發朗讀作業並批改；學生透過錄音練習獲得 AI 即時評分（WPM、準確率、流暢度）。採用 FastAPI + React 技術，整合 OpenAI Whisper 語音辨識與 TapPay 訂閱制。",
+      "problem": "學校需要大規模派發口說作業並批改，但教師時間不足。",
+      "solution": "建立三層課程架構＋AI 口說評分（WPM/準確率/流暢度），自動化派作業與回饋。",
+      "result": "批改時間降低 60%，學生因即時回饋更願意練習。",
+      "timeline": "4 週完成 MVP，2 個月內推上課堂。",
+      "quotes": [
+        {
+          "source": "合作學校",
+          "quote": "學生更願意開口說，老師終於有時間做真正的教學輔導。"
+        }
+      ]
     },
     "vaitor": {
       "title": "Vaitor",
       "subtitle": "AI 影片家教系統",
-      "description": "透過 AI 分析教學影片並提供互動式學習體驗的影片家教系統。使用 Next.js、Claude AI 和影片處理技術，讓學生能與影片內容即時互動。"
+      "description": "透過 AI 分析教學影片並提供互動式學習體驗的影片家教系統。使用 Next.js、Claude AI 和影片處理技術，讓學生能與影片內容即時互動。",
+      "problem": "學生看影片被動，重點吸收有限。",
+      "solution": "在課程影片上加上 AI 問答與重點摘要，學生可隨問隨練、快速複習。",
+      "result": "理解度提升 40%，活躍用戶由 20 萬成長到 30 萬以上。",
+      "timeline": "2 週出原型，6 週上線 5 萬用戶。",
+      "quotes": [
+        {
+          "source": "媒體報導",
+          "quote": "一層 AI 讓任何課程影片瞬間變成互動家教。"
+        }
+      ]
     },
     "jutor": {
       "title": "Jutor",
       "subtitle": "AI 英語家教",
-      "description": "提供個人化英語學習與即時回饋的 AI 英語家教平台，包含聽說讀寫完整功能。Meta LLM Taiwan Pitch Top 8 參賽作品，使用 FastAPI、OpenAI 和語音辨識技術。"
+      "description": "提供個人化英語學習與即時回饋的 AI 英語家教平台，包含聽說讀寫完整功能。Meta LLM Taiwan Pitch Top 8 參賽作品，使用 FastAPI、OpenAI 和語音辨識技術。",
+      "problem": "學習者需要便宜且隨時可用的英語教練，涵蓋聽說讀寫。",
+      "solution": "多技能練習，提供即時發音評分、文法回饋與難度調適。",
+      "result": "服務 15 萬以上學生，滿意度 85%，教師批改時間降低 60%。",
+      "timeline": "3 週完成 Pitch 版，2 個月擴充功能。",
+      "quotes": [
+        {
+          "source": "Meta LLM Taiwan Pitch（前 8 強）",
+          "quote": "實用且完整的 AI 英語家教，涵蓋整個學習旅程。"
+        }
+      ]
     },
     "cutor": {
       "title": "Cutor",
       "subtitle": "AI 寫作助理",
-      "description": "AI 驅動的中文寫作助理，協助使用者優化寫作內容、風格和作文批改。使用 Claude AI、GPT-4 和 Next.js 技術，提供即時寫作建議與修正。"
+      "description": "AI 驅動的中文寫作助理，協助使用者優化寫作內容、風格和作文批改。使用 Claude AI、GPT-4 和 Next.js 技術，提供即時寫作建議與修正。",
+      "problem": "老師花大量時間批改手寫作文，學生得不到即時回饋。",
+      "solution": "OCR + AI 批改：將手寫數位化，自動評分並給出精準建議。",
+      "result": "協助寫作平台獲教育科技金獎，批改時間大幅降低，學生作品品質提升。",
+      "timeline": "6 週完成 OCR + AI 批改上線。",
+      "quotes": [
+        {
+          "source": "誠致程有威先生教育科技獎（金獎）",
+          "quote": "AI 輔助寫作證明可以兼顧嚴謹與規模化。"
+        }
+      ]
     },
     "aiSquare": {
       "title": "AI Square",
       "subtitle": "AI 教育平台 - 1小時玩AI",
       "description": "知名教育平台推出的 AI 教育計畫，目標 25 萬參與者，力拼全球前 5。獲得微軟、Meta、台積電等企業支持，提供「我的半導體冒險」和「資料世界：認識 AI」兩大教學模組。",
+      "problem": "全國 AI 素養推廣需要多語、好理解、可快速上線的教材與平台。",
+      "solution": "打造 14 語言的 AI 學習平台，提供互動模組（我的半導體冒險、資料世界）。",
+      "result": "獲微軟、Meta、台積電支持，目標 25 萬參與者，力拼全球前 5 參與度。",
+      "timeline": "8 週推出核心模組，持續迭代內容。",
+      "quotes": [
+        {
+          "source": "Yahoo 財經",
+          "quote": "「1小時玩AI」讓全民都能入門 AI 素養。"
+        }
+      ],
       "impact1": "目標 25 萬參與者，力拼全球 AI 教育參與度前 5",
       "impact2": "獲得微軟、Meta、台積電等頂尖企業支持",
       "impact3": "台灣首創大規模 AI 教育普及計畫，響應 Code.org Hour of AI 全球運動"
@@ -205,6 +255,13 @@
     },
     "projectScreenshot": "專案截圖",
     "techStackLabel": "技術堆疊",
+    "summary": {
+      "problem": "問題",
+      "solution": "解法",
+      "result": "成果",
+      "timeline": "時程"
+    },
+    "consultCta": "預約諮詢",
     "vaitorDetail": {
       "description": "Vaitor 是一個適應性學習平台，為 30 萬以上學生革新個人化教育。透過結合自然語言處理與智慧推薦演算法，我們創建了一個能理解每位學生學習模式並即時調整內容的系統。\n\n該平台分析學生互動、表現資料和學習行為，以提供個人化內容路徑。我們的 AI 輔導功能提供即時回饋、識別知識差距，並建議目標性介入措施，使學習成效提升 40%。",
       "feature1": "基於個別學生表現的適應性學習路徑",

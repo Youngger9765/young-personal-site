@@ -44,6 +44,7 @@
   - 一句話介紹：10+ years building data products and AI solutions
   - 亮點：Meta LLM Top 8 Finalist
   - CTA：[View AI Products] [Chat with AI] [Read Blog]
+  - 新增：單一句價值主張 + 兩個 CTA（預約諮詢 / 查看案例）
 
 ### 1.3 關於我頁面
 - [ ] 更新 `app/about/page.tsx`
@@ -72,6 +73,7 @@
     - Im-Here - EC 平台
     - SolveIssues - 政治議題平台
     - Chillchill - 農民民宿合作平台
+  - 新增：案例格式化（問題/解法/成果/時程/客戶語錄）+ 客戶/媒體引用 + 收單表單（首頁/專案頁）
 
 ### 1.5 部落格文章（至少 2 篇）
 - [ ] 建立 `content/blog/meta-llm-taiwan-pitch.mdx`
@@ -206,6 +208,7 @@
 4. 更新關於我頁面（完整經歷）
 5. 加入技能視覺化元件
 6. 撰寫 1-2 篇部落格文章
+7. 服務產品化：列出 2-3 套方案（交付物/時程/起價）並更新首頁服務區塊
 
 ### 💡 P2（下週完成）
 7. 動畫效果實作

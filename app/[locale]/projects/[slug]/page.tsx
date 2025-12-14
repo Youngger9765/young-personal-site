@@ -67,6 +67,13 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
     title: t(`${projectKey}.title`),
     subtitle: t(`${projectKey}.subtitle`),
     description: t(`${detailKey}.description`),
+    summary: {
+      problem: t(`${projectKey}.problem`),
+      solution: t(`${projectKey}.solution`),
+      result: t(`${projectKey}.result`),
+      timeline: t(`${projectKey}.timeline`),
+    },
+    quotes: (t.raw(`${projectKey}.quotes`) as Array<{ source: string; quote: string; link?: string }> | undefined) ?? [],
     features: [
       t(`${detailKey}.feature1`),
       t(`${detailKey}.feature2`),
@@ -225,6 +232,28 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               </div>
             </div>
           )}
+        </motion.div>
+      </section>
+
+      {/* Summary */}
+      <section className="max-w-4xl mx-auto px-6 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="grid md:grid-cols-2 gap-4 rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-warm-cream/30 p-6"
+        >
+          {([
+            { label: t('summary.problem'), value: project.summary.problem },
+            { label: t('summary.solution'), value: project.summary.solution },
+            { label: t('summary.result'), value: project.summary.result },
+            { label: t('summary.timeline'), value: project.summary.timeline },
+          ] as const).map((item) => (
+            <div key={item.label} className="space-y-1">
+              <div className="text-sm font-semibold text-slate-blue uppercase tracking-wide">{item.label}</div>
+              <p className="text-gray-800 leading-relaxed text-sm md:text-base">{item.value}</p>
+            </div>
+          ))}
         </motion.div>
       </section>
 
@@ -723,6 +752,40 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               </div>
             </div>
           )}
+
+          {/* Quotes */}
+          {project.quotes.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {locale === 'zh-TW' ? '客戶 / 媒體引用' : 'Client / Media Quotes'}
+              </h3>
+              <div className="space-y-4">
+                {project.quotes.map((q, idx) => (
+                  <div
+                    key={`${q.source}-${idx}`}
+                    className="p-6 rounded-2xl bg-gradient-to-r from-white to-warm-cream/40 border border-gray-200 shadow-sm"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                        {q.source}
+                      </div>
+                      {q.link && (
+                        <a
+                          href={q.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-slate-blue hover:underline"
+                        >
+                          {locale === 'zh-TW' ? '查看來源' : 'View source'}
+                        </a>
+                      )}
+                    </div>
+                    <p className="text-gray-800 leading-relaxed text-base">“{q.quote}”</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </motion.div>
       </section>
 
@@ -732,7 +795,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center p-8 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border border-gray-200"
+          className="text-center p-8 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border border-gray-200 flex flex-col md:flex-row items-center justify-center gap-4"
         >
           <Link
             href={`/${locale}/projects`}
@@ -741,6 +804,14 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
             {t('gallery.backToProjects')}
           </Link>
+          <a
+            href="https://calendly.com/young-tsai/ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 transition-colors font-semibold"
+          >
+            {t('consultCta')}
+          </a>
         </motion.div>
       </section>
     </div>
