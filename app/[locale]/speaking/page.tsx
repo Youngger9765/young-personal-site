@@ -1,91 +1,118 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from "next/link";
 import Navigation from '@/components/Navigation';
-import { FaMicrophone, FaTrophy } from "react-icons/fa";
 
-export default function SpeakingPage() {
-  const t = useTranslations();
+interface SpeakingCardData {
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
 
-  const speakingItems = [
+export default function SpeakingGalleryPage() {
+  const t = useTranslations('speaking');
+  const locale = useLocale();
+
+  const speakingEvents: SpeakingCardData[] = [
     {
-      icon: FaMicrophone,
-      title: t('speaking.mediatek.title'),
-      subtitle: t('speaking.mediatek.subtitle')
+      slug: 'mediatek-ai-day-2024',
+      title: t('mediatekAiDay.title'),
+      subtitle: t('mediatekAiDay.subtitle'),
+      description: t('mediatekAiDay.description'),
     },
     {
-      icon: FaTrophy,
-      title: t('speaking.meta.title'),
-      subtitle: t('speaking.meta.subtitle')
+      slug: 'meta-llm-taiwan-pitch',
+      title: t('metaLlmPitch.title'),
+      subtitle: t('metaLlmPitch.subtitle'),
+      description: t('metaLlmPitch.description'),
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-24">
-        {/* Hero Section */}
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
+          transition={{ duration: 0.6 }}
+          className="text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
-            {t('speaking.title')}
+            {t('gallery.title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Conference talks, industry events, and recognition for contributions to AI and education technology
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {t('gallery.subtitle')}
           </p>
         </motion.div>
+      </section>
 
-        {/* Speaking Items Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {speakingItems.map((item, index) => (
+      {/* Speaking Events Grid */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {speakingEvents.map((event, index) => (
             <motion.div
-              key={index}
+              key={event.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="group p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 hover:border-slate-blue transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <item.icon className="w-12 h-12 text-slate-blue mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-lg">
-                {item.subtitle}
-              </p>
+              <Link href={`/${locale}/speaking/${event.slug}`}>
+                <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
+                  {/* Event Thumbnail */}
+                  <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg
+                        className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                        />
+                      </svg>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-slate-blue/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="text-center px-6">
+                        <div className="text-white text-lg font-semibold mb-2">
+                          {t('gallery.viewDetails')}
+                        </div>
+                        <div className="text-white/80 text-sm">
+                          →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Event Info */}
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-slate-blue font-medium mb-3">
+                      {event.subtitle}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
-
-        {/* Future Speaking Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="bg-gradient-to-br from-warm-cream to-gray-50 rounded-2xl p-12 text-center border-2 border-gray-200"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Interested in having me speak at your event?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            I speak on topics including AI product development, engineering leadership, and building scalable EdTech platforms.
-          </p>
-          <a
-            href="https://calendly.com/young-tsai/ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-colors font-semibold shadow-lg hover:shadow-xl"
-          >
-            Schedule a Call
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-        </motion.div>
-      </div>
+      </section>
     </div>
   );
 }

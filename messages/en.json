@@ -259,6 +259,46 @@
     "meta": {
       "title": "Meta LLM Taiwan Pitch",
       "subtitle": "Top 8 Finalist"
+    },
+    "gallery": {
+      "title": "Speaking & Recognition",
+      "subtitle": "Conference talks, industry events, and recognition for contributions to AI and education technology",
+      "viewDetails": "View Details",
+      "backToSpeaking": "Back to Speaking",
+      "keyHighlights": "Key Highlights",
+      "watchVideo": "Watch Video",
+      "viewEvent": "View Event",
+      "eventPlaceholder": "Event Image"
+    },
+    "mediatekAiDay": {
+      "title": "2024 MediaTek Foundation AI DAY - Generative AI Teaching Workshop",
+      "subtitle": "AI Teaching Applications Speaker",
+      "description": "MediaTek Foundation's AI teaching innovation event, sharing practical experiences on applying generative AI technology in educational settings"
+    },
+    "mediatekAiDayDetail": {
+      "organization": "MediaTek Foundation",
+      "role": "Instructor",
+      "date": "2024",
+      "description": "Invited as an instructor at MediaTek Foundation's '2024 Teaching Innovation AI DAY' to share practical experiences of applying generative AI in educational settings. This event focused on integrating AI technology into teaching workflows to improve teaching efficiency and learning outcomes.\n\nThrough real-world case studies, demonstrated how to use AI tools to assist teachers in lesson planning, designing personalized learning content, and guiding students to effectively use AI to enhance learning. Also explored ethical issues and implementation challenges of AI in education, providing practical operation guidelines for participating teachers.",
+      "highlight1": "Shared practical use cases of generative AI in teaching",
+      "highlight2": "Explored implementation experiences of AI-assisted personalized learning",
+      "highlight3": "Provided practical guidelines for teachers using AI tools",
+      "highlight4": "Discussed ethics and challenges of AI applications in education"
+    },
+    "metaLlmPitch": {
+      "title": "Meta LLM Taiwan Pitch Top 8 Finalist",
+      "subtitle": "Large Language Model Application Competition",
+      "description": "Meta's LLM application competition Taiwan region, reached top 8 with Jutor AI English tutoring platform"
+    },
+    "metaLlmPitchDetail": {
+      "organization": "Meta",
+      "role": "Participant / Product Lead",
+      "date": "2024",
+      "description": "Participated in Meta LLM Taiwan Pitch competition with Jutor AI English tutoring platform and successfully reached the top 8. Jutor is an intelligent English learning platform built using large language model technology, providing personalized learning experiences across all four skills: listening, speaking, reading, and writing.\n\nThe platform integrates AI technologies such as speech recognition and natural language processing to provide real-time feedback and personalized recommendations for learners. Through an intelligent dialogue system, students can practice situational English conversations and receive targeted pronunciation and grammar corrections, significantly improving learning efficiency.",
+      "highlight1": "Meta LLM Taiwan Pitch Top 8 Finalist",
+      "highlight2": "Built intelligent English learning platform using large language models",
+      "highlight3": "Integrated speech recognition and natural language processing",
+      "highlight4": "Provided personalized listening, speaking, reading, and writing experiences"
     }
   },
   "contact": {

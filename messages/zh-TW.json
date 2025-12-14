@@ -259,6 +259,46 @@
     "meta": {
       "title": "Meta LLM 台灣競賽",
       "subtitle": "前八強"
+    },
+    "gallery": {
+      "title": "演講與獎項",
+      "subtitle": "技術演講、產業活動與 AI 教育科技貢獻獲獎紀錄",
+      "viewDetails": "查看詳情",
+      "backToSpeaking": "返回演講列表",
+      "keyHighlights": "重點亮點",
+      "watchVideo": "觀看影片",
+      "viewEvent": "查看活動",
+      "eventPlaceholder": "活動圖片"
+    },
+    "mediatekAiDay": {
+      "title": "2024 聯發科技教學創新 AI DAY - 生成式 AI 教學實戰分享會",
+      "subtitle": "AI 教學應用演講",
+      "description": "聯發科基金會舉辦的 AI 教學創新活動，分享如何將生成式 AI 技術應用於教學現場的實戰經驗"
+    },
+    "mediatekAiDayDetail": {
+      "organization": "聯發科基金會",
+      "role": "講師",
+      "date": "2024",
+      "description": "受邀於聯發科基金會「2024 教學創新 AI DAY」擔任講師，分享生成式 AI 在教育現場的實戰應用經驗。此次活動聚焦於如何將 AI 技術融入教學流程，提升教學效率與學習成效。\n\n透過實際案例分享，展示如何運用 AI 工具協助教師備課、設計個人化學習內容，以及如何引導學生善用 AI 提升學習效果。同時也探討 AI 在教育領域的倫理議題與實施挑戰，為與會教師提供實務操作的參考指南。",
+      "highlight1": "分享生成式 AI 在教學現場的實際應用案例",
+      "highlight2": "探討 AI 輔助個人化學習的實作經驗",
+      "highlight3": "提供教師使用 AI 工具的實務指南",
+      "highlight4": "討論 AI 教育應用的倫理與挑戰"
+    },
+    "metaLlmPitch": {
+      "title": "Meta LLM 台灣競賽前八強",
+      "subtitle": "大型語言模型應用競賽",
+      "description": "Meta 舉辦的 LLM 應用競賽台灣賽區，以 Jutor AI 英語家教平台入圍前八強"
+    },
+    "metaLlmPitchDetail": {
+      "organization": "Meta",
+      "role": "參賽者 / 產品負責人",
+      "date": "2024",
+      "description": "以 Jutor AI 英語家教平台參加 Meta LLM Taiwan Pitch 競賽，成功進入前八強。Jutor 是一個運用大型語言模型技術打造的智能英語學習平台，提供聽說讀寫四大技能的個人化學習體驗。\n\n平台結合語音辨識、自然語言處理等 AI 技術，為學習者提供即時回饋與個人化建議。透過智能對話系統，學生可以進行情境式英語會話練習，並獲得針對性的發音與文法修正，大幅提升學習效率。",
+      "highlight1": "Meta LLM Taiwan Pitch 前八強",
+      "highlight2": "運用大型語言模型打造智能英語學習平台",
+      "highlight3": "整合語音辨識與自然語言處理技術",
+      "highlight4": "提供個人化的聽說讀寫學習體驗"
     }
   },
   "contact": {
