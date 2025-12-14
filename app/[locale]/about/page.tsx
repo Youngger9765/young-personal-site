@@ -48,9 +48,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <p>{t('about.paragraph1')}</p>
-              <p>{t('about.paragraph2')}</p>
-              <p>{t('about.paragraph3')}</p>
+              <p className="text-center">{t('about.paragraph1')}</p>
+              <p className="text-center">{t('about.paragraph2')}</p>
+              <p className="text-center">{t('about.paragraph3')}</p>
             </motion.div>
           </div>
         </section>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                         <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-slate-blue/5 to-transparent rounded-br-3xl pointer-events-none" />
 
                         {/* Text content with enhanced typography */}
-                        <p className="relative text-gray-800 leading-[1.7] text-[16.5px] font-medium tracking-wide">
+                        <p className="relative text-gray-800 leading-[1.7] text-[16.5px] font-medium tracking-wide text-center">
                           {belief.text}
                         </p>
                       </div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                         <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-slate-blue/5 to-transparent rounded-br-3xl pointer-events-none" />
 
                         {/* Text content with enhanced typography */}
-                        <p className="relative text-gray-800 leading-[1.7] text-[16.5px] font-medium tracking-wide">
+                        <p className="relative text-gray-800 leading-[1.7] text-[16.5px] font-medium tracking-wide text-center">
                           {style.text}
                         </p>
                       </div>

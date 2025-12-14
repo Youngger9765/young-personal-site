@@ -131,6 +131,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               </a>
             </div>
           )}
+          {slug === 'duotopia' && (
+            <div className="flex gap-4 mb-8">
+              <a
+                href="https://duotopia.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-semibold shadow-md hover:shadow-lg"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                {locale === 'zh-TW' ? '查看作品' : 'Visit Project'}
+              </a>
+            </div>
+          )}
           {slug === 'jutor' && (
             <div className="flex gap-4 mb-8">
               <a
@@ -161,6 +176,16 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               <Image
                 src="/images/hourofai.jpeg"
                 alt="AI Square - Hour of AI Program"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'vaitor' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/vibe-coding.jpg"
+                alt="Vaitor - AI Video Tutor"
                 fill
                 className="object-cover"
                 priority
