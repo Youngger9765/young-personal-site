@@ -266,41 +266,78 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 {locale === 'zh-TW' ? '媒體報導' : 'Media Coverage'}
               </h3>
-              <a
-                href="https://udn.com/news/story/6885/9161998"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
-                        {locale === 'zh-TW' ? '聯合報' : 'United Daily News'}
-                      </span>
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                      {locale === 'zh-TW' ? '均一教育平台推『1小時玩AI』 企業相挺助學生入門' : "Junyi Academy Launches 'Hour of AI' - Corporate Support Helps Students Get Started"}
-                    </h4>
-                    <p className="text-gray-600 text-sm mb-3">
-                      {locale === 'zh-TW'
-                        ? '均一教育平台推出 AI 教育計畫，目標 25 萬參與者，獲微軟、Meta、台積電等企業支持...'
-                        : 'Junyi Academy launches AI education initiative targeting 250,000 participants, supported by Microsoft, Meta, TSMC...'}
-                    </p>
-                    <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
-                      <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
-                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <div className="space-y-4">
+                <a
+                  href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%81%A3hour-ai%E5%95%9F%E5%8B%95-%E5%9D%87-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%94%9C%E6%89%8B%E6%8E%A8%E5%8B%95%E5%85%A8%E6%B0%91ai%E6%95%99%E8%82%B2-101702045.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? 'Yahoo 財經' : 'Yahoo Finance'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? '台灣Hour of AI啟動！均一、台積電攜手推動全民AI教育' : "Taiwan's Hour of AI Launches! Junyi Academy and TSMC Join Forces for AI Education"}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '均一教育平台與台積電等企業攜手推動「1小時玩AI」計畫，讓全民都能參與 AI 教育...'
+                          : "Junyi Academy partners with TSMC to promote 'Hour of AI' initiative, making AI education accessible to everyone..."}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+                <a
+                  href="https://udn.com/news/story/6885/9161998"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? '聯合報' : 'United Daily News'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? '均一教育平台推『1小時玩AI』 企業相挺助學生入門' : "Junyi Academy Launches 'Hour of AI' - Corporate Support Helps Students Get Started"}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '均一教育平台推出 AI 教育計畫，目標 25 萬參與者，獲微軟、Meta、台積電等企業支持...'
+                          : 'Junyi Academy launches AI education initiative targeting 250,000 participants, supported by Microsoft, Meta, TSMC...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           )}
         </motion.div>
