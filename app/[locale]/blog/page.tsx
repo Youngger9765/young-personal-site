@@ -86,7 +86,7 @@ export default function BlogPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-center"
+          className="text-center space-y-4"
         >
           <a
             href="https://medium.com/young-tsai"
@@ -97,6 +97,17 @@ export default function BlogPage() {
             {t('insights.viewAll')}
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
+          <div>
+            <a
+              href="https://calendly.com/young-tsai/ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-slate-blue font-semibold hover:underline"
+            >
+              {t('projects.consultCta')}
+              <span>→</span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </div>

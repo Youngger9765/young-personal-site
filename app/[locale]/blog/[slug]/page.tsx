@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import "highlight.js/styles/github-dark.css";
+import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getBlogPost(slug);
+  const t = await getTranslations();
 
   if (!post) {
     notFound();
@@ -87,6 +89,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         >
           ← Back to Blog
         </Link>
+        <a
+          href="https://calendly.com/young-tsai/ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-blue-600 hover:underline"
+        >
+          {t('projects.consultCta')}
+          <span>→</span>
+        </a>
       </footer>
     </article>
   );
