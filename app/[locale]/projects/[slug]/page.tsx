@@ -471,6 +471,124 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               </div>
             </div>
           )}
+
+          {/* Vaitor Media Coverage */}
+          {slug === 'vaitor' && (
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {locale === 'zh-TW' ? '媒體報導' : 'Media Coverage'}
+              </h3>
+              <div className="space-y-4">
+                <a
+                  href="https://www.facebook.com/JunyiAcademy/posts/-ai-狐狸貓默默出現啦以平台上原有的課程影片-配合-ai-驅動的新功能-ai-狐狸貓-將逐漸進駐影片下方自動把影片轉化為文本打造師生各自專屬的功能讓自學力-x/852188293619317/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? '均一平台教育基金會' : 'Junyi Academy Foundation'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? 'AI 狐狸貓功能發表' : 'AI Fox Cat Feature Launch'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '以平台上原有的課程影片，配合 AI 驅動的新功能「AI 狐狸貓」，將逐漸進駐影片下方，自動把影片轉化為文本，打造師生各自專屬的功能...'
+                          : 'Using existing course videos on the platform, combined with the AI-powered new feature "AI Fox Cat", which will gradually appear below videos, automatically converting videos into text...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://sunnyteaching680228.blogspot.com/2024/04/ai.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? 'Sunny Teaching' : 'Sunny Teaching'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? 'AI 教學應用分享' : 'AI Teaching Application Sharing'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '教學現場如何運用 AI 影片家教系統提升學習成效，實際應用案例與心得分享...'
+                          : 'How to use AI video tutoring system in the classroom to enhance learning outcomes, practical application cases and experience sharing...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.thsh.tp.edu.tw/uploads/1725321120011KwiQmzMv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? '教育部推薦' : 'Ministry of Education Recommended'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? '教育部推薦 AI 教學工具' : 'Ministry of Education Recommended AI Teaching Tool'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '獲教育部推薦之 AI 輔助教學工具，協助教師提升教學品質與學生學習成效...'
+                          : 'Recommended by the Ministry of Education as an AI-assisted teaching tool to help teachers improve teaching quality and student learning outcomes...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '查看文件' : 'View Document'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          )}
         </motion.div>
       </section>
 
