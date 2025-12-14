@@ -407,10 +407,10 @@ export default function Home() {
                           <Link href={`/${locale}/projects/${slug}`}>
                             <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
                               {/* Project Thumbnail */}
-                              <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
+                              <div className="relative h-44 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
                                 <div className="absolute inset-0 flex items-center justify-center">
                                   <svg
-                                    className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
+                                    className="w-16 h-16 text-slate-blue/30"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -423,59 +423,43 @@ export default function Home() {
                                     />
                                   </svg>
                                 </div>
-
-                                {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-slate-blue/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                  <div className="text-center px-6">
-                                    <div className="text-white text-lg font-semibold mb-2">
-                                      {t('projects.gallery.viewDetails')}
-                                    </div>
-                                    <div className="text-white/80 text-sm">
-                                      →
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
 
                               {/* Project Info */}
-                              <div className="p-6">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                                  {project.title}
-                                </h3>
-                                <p className="text-sm text-slate-blue font-medium mb-3">
-                                  {project.subtitle}
-                                </p>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                              <div className="p-5 space-y-3">
+                                <div>
+                                  <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-slate-blue transition-colors">
+                                    {project.title}
+                                  </h3>
+                                  <p className="text-sm text-slate-blue font-medium">
+                                    {project.subtitle}
+                                  </p>
+                                </div>
+                                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
                                   {project.description}
                                 </p>
-                                <div className="space-y-2 text-sm text-gray-700 mb-4">
+                                <div className="space-y-1 text-sm text-gray-700">
                                   <div className="flex items-start gap-2">
                                     <span className="font-semibold text-gray-900">{t('projects.summary.problem')}:</span>
                                     <span className="line-clamp-1">{project.summary.problem}</span>
                                   </div>
                                   <div className="flex items-start gap-2">
-                                    <span className="font-semibold text-gray-900">{t('projects.summary.result')}:</span>
-                                    <span className="line-clamp-1">{project.summary.result}</span>
-                                  </div>
-                                  <div className="flex items-center gap-2 text-xs">
-                                    <span className="px-3 py-1 rounded-full bg-warm-cream text-gray-800 font-semibold">
-                                      {t('projects.summary.timeline')}: {project.summary.timeline}
-                                    </span>
+                                    <span className="font-semibold text-gray-900">{t('projects.summary.solution')}:</span>
+                                    <span className="line-clamp-1">{project.summary.solution}</span>
                                   </div>
                                 </div>
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center justify-between pt-2">
+                                  <span className="text-xs px-3 py-1 rounded-full bg-warm-cream text-gray-800 font-semibold">
+                                    {t('projects.summary.timeline')}: {project.summary.timeline}
+                                  </span>
                                   <a
                                     href="https://calendly.com/young-tsai/ai"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-4 py-2 bg-slate-blue text-white rounded-lg text-sm font-semibold hover:bg-gray-900 transition-colors"
+                                    className="inline-flex items-center gap-2 px-3 py-2 bg-slate-blue text-white rounded-lg text-sm font-semibold hover:bg-gray-900 transition-colors"
                                   >
                                     {t('projects.consultCta')}
-                                    <span>→</span>
                                   </a>
-                                  <span className="text-xs text-gray-500">
-                                    {t('projects.summary.solution')}: {project.summary.solution}
-                                  </span>
                                 </div>
                               </div>
                             </div>
