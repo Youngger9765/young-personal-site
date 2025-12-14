@@ -125,6 +125,62 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* Quick Packages Strip */}
+        <section className="border-t border-gray-200 bg-gradient-to-r from-white via-warm-cream/40 to-blue-50">
+          <div className="max-w-6xl mx-auto px-6 py-12">
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                {
+                  icon: FaRocket,
+                  title: locale === 'zh-TW' ? '1 週原型 Sprint' : '1-week Prototype Sprint',
+                  timeline: locale === 'zh-TW' ? '7 天內交付' : 'Delivery in 7 days',
+                  price: locale === 'zh-TW' ? '$15,000 起' : 'From $15,000',
+                  note: locale === 'zh-TW' ? '互動原型 + Demo' : 'Interactive prototype + demo',
+                },
+                {
+                  icon: FaBrain,
+                  title: locale === 'zh-TW' ? '4 週 MVP' : '4-week MVP',
+                  timeline: locale === 'zh-TW' ? '4 週上線' : 'Live in 4 weeks',
+                  price: locale === 'zh-TW' ? '$50,000 起' : 'From $50,000',
+                  note: locale === 'zh-TW' ? '部署 + 追蹤 + 交接' : 'Deployed, tracked, handed off',
+                },
+                {
+                  icon: FaCode,
+                  title: locale === 'zh-TW' ? 'AI 策略 / 培訓' : 'AI Strategy / Training',
+                  timeline: locale === 'zh-TW' ? '2-4 週顧問' : '2-4 weeks advisory',
+                  price: locale === 'zh-TW' ? '$8,000 起' : 'From $8,000',
+                  note: locale === 'zh-TW' ? '路線圖 + 選型 + 工作坊' : 'Roadmap, stack, workshop',
+                },
+              ].map((pkg, index) => (
+                <motion.div
+                  key={pkg.title}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="p-5 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all flex items-center gap-4"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-warm-cream flex items-center justify-center text-slate-blue">
+                    <pkg.icon className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-lg font-semibold text-gray-900 truncate">{pkg.title}</div>
+                    <div className="text-sm text-gray-700">{pkg.timeline}</div>
+                    <div className="text-sm text-slate-blue font-semibold">{pkg.price}</div>
+                    <div className="text-xs text-gray-600">{pkg.note}</div>
+                  </div>
+                  <a
+                    href="#services"
+                    className="text-sm font-semibold text-slate-blue hover:underline whitespace-nowrap"
+                  >
+                    {locale === 'zh-TW' ? '查看方案' : 'See plans'}
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* About Section */}
         <section id="about" className="border-t border-gray-200">
           <div className="max-w-6xl mx-auto px-6 py-24">
