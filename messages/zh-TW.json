@@ -286,16 +286,16 @@
       "highlight4": "討論 AI 教育應用的倫理與挑戰"
     },
     "metaLlmPitch": {
-      "title": "Meta LLM 台灣競賽前八強",
-      "subtitle": "大型語言模型應用競賽",
-      "description": "Meta 舉辦的 LLM 應用競賽台灣賽區，以 Jutor AI 英語家教平台入圍前八強"
+      "title": "Meta LLM 台灣黑客松前八強",
+      "subtitle": "大型語言模型應用黑客松",
+      "description": "Meta 舉辦的 LLM 應用黑客松台灣賽區，以 Jutor AI 英語家教平台入圍前八強"
     },
     "metaLlmPitchDetail": {
       "organization": "Meta",
       "role": "參賽者 / 產品負責人",
       "date": "2024",
-      "description": "以 Jutor AI 英語家教平台參加 Meta LLM Taiwan Pitch 競賽，成功進入前八強。Jutor 是一個運用大型語言模型技術打造的智能英語學習平台，提供聽說讀寫四大技能的個人化學習體驗。\n\n平台結合語音辨識、自然語言處理等 AI 技術，為學習者提供即時回饋與個人化建議。透過智能對話系統，學生可以進行情境式英語會話練習，並獲得針對性的發音與文法修正，大幅提升學習效率。",
-      "highlight1": "Meta LLM Taiwan Pitch 前八強",
+      "description": "以 Jutor AI 英語家教平台參加 Meta LLM Taiwan Pitch 黑客松，成功進入前八強。Jutor 是一個運用大型語言模型技術打造的智能英語學習平台，提供聽說讀寫四大技能的個人化學習體驗。\n\n平台結合語音辨識、自然語言處理等 AI 技術，為學習者提供即時回饋與個人化建議。透過智能對話系統，學生可以進行情境式英語會話練習，並獲得針對性的發音與文法修正，大幅提升學習效率。",
+      "highlight1": "Meta LLM Taiwan Pitch 黑客松前八強",
       "highlight2": "運用大型語言模型打造智能英語學習平台",
       "highlight3": "整合語音辨識與自然語言處理技術",
       "highlight4": "提供個人化的聽說讀寫學習體驗"

@@ -4,6 +4,7 @@ import * as React from 'react';
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navigation from '@/components/Navigation';
 
@@ -155,7 +156,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
         </motion.div>
       </section>
 
-      {/* Video Embed or Placeholder */}
+      {/* Video/Image Embed or Placeholder */}
       <section className="max-w-5xl mx-auto px-6 pb-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -173,6 +174,16 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0"
+              />
+            </div>
+          ) : slug === 'meta-llm-taiwan-pitch' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/meta-jutor.jpg"
+                alt="Meta LLM Taiwan Pitch Hackathon - Jutor AI"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
           ) : (
