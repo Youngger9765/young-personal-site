@@ -424,42 +424,45 @@ export default function Home() {
                               {project.title}
                             </h3>
                             <p className="text-sm text-slate-blue font-medium mb-3">
-                          {project.subtitle}
-                        </p>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
-                          {project.description}
-                        </p>
-                        <div className="space-y-2 text-sm text-gray-700 mb-4">
-                          <div className="flex gap-2">
-                            <span className="font-semibold text-gray-900">{t('projects.summary.problem')}:</span>
-                            <span className="line-clamp-1">{project.summary.problem}</span>
-                          </div>
-                          <div className="flex gap-2">
-                            <span className="font-semibold text-gray-900">{t('projects.summary.solution')}:</span>
-                            <span className="line-clamp-1">{project.summary.solution}</span>
-                          </div>
-                          <div className="flex gap-2">
-                            <span className="font-semibold text-gray-900">{t('projects.summary.result')}:</span>
-                            <span className="line-clamp-1">{project.summary.result}</span>
-                          </div>
-                          <div className="flex gap-2">
-                            <span className="font-semibold text-gray-900">{t('projects.summary.timeline')}:</span>
-                            <span className="line-clamp-1">{project.summary.timeline}</span>
-                          </div>
-                        </div>
-                        <a
-                          href="https://calendly.com/young-tsai/ai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-slate-blue font-semibold text-sm hover:underline"
-                        >
-                          {t('projects.consultCta')}
-                        </a>
+                      {project.subtitle}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="space-y-2 text-sm text-gray-700 mb-4">
+                      <div className="flex items-start gap-2">
+                        <span className="font-semibold text-gray-900">{t('projects.summary.problem')}:</span>
+                        <span className="line-clamp-1">{project.summary.problem}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="font-semibold text-gray-900">{t('projects.summary.result')}:</span>
+                        <span className="line-clamp-1">{project.summary.result}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="px-3 py-1 rounded-full bg-warm-cream text-gray-800 font-semibold">
+                          {t('projects.summary.timeline')}: {project.summary.timeline}
+                        </span>
                       </div>
                     </div>
-                  </Link>
-                </motion.div>
-              ))}
+                    <div className="flex items-center gap-3">
+                      <a
+                        href="https://calendly.com/young-tsai/ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-slate-blue text-white rounded-lg text-sm font-semibold hover:bg-gray-900 transition-colors"
+                      >
+                        {t('projects.consultCta')}
+                        <span>→</span>
+                      </a>
+                      <span className="text-xs text-gray-500">
+                        {t('projects.summary.solution')}: {project.summary.solution}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
                 </div>
               </div>
             </div>

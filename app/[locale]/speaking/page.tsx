@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from '@/components/Navigation';
 
 interface SpeakingCardData {
@@ -43,6 +44,13 @@ export default function SpeakingGalleryPage() {
     },
   ];
 
+  const eventImages: Record<string, string | null> = {
+    'userxper-ai-ux-2024': '/images/Uxer.png',
+    'teacher-ai-workshop': '/images/vibe-coding.jpg',
+    'mediatek-ai-day-2024': '/images/jutor-logo.png',
+    'meta-llm-taiwan-pitch': '/images/meta-jutor.jpg',
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -78,21 +86,32 @@ export default function SpeakingGalleryPage() {
                 <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
                   {/* Event Thumbnail */}
                   <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg
-                        className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                        />
-                      </svg>
-                    </div>
+                    {eventImages[event.slug] ? (
+                      <Image
+                        src={eventImages[event.slug]!}
+                        alt={event.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        priority={index === 0}
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <svg
+                          className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                          />
+                        </svg>
+                      </div>
+                    )}
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-slate-blue/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

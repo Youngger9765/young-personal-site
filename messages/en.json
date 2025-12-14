@@ -268,7 +268,7 @@
       "labels": {
         "goal": "Goal / what to build",
         "email": "Email (optional, prefill Calendly)",
-        "timeline": "Timeline",
+        "timeline": "When you need results",
         "budget": "Budget range"
       },
       "options": {
@@ -289,7 +289,7 @@
       "placeholders": {
         "goal": "Example: AI tutor MVP, or automate grading for 50 classes",
         "email": "you@example.com",
-        "timeline": "Pick one",
+        "timeline": "Pick a timeframe (e.g., 1 week / 1 month)",
         "budget": "Pick one",
         "na": "Not provided"
       },

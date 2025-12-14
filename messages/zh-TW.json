@@ -268,7 +268,7 @@
       "labels": {
         "goal": "目標 / 想做什麼",
         "email": "Email（選填，預先帶入 Calendly）",
-        "timeline": "時程",
+        "timeline": "希望什麼時候看到成果",
         "budget": "預算區間"
       },
       "options": {
@@ -289,7 +289,7 @@
       "placeholders": {
         "goal": "例：AI 家教 MVP、或自動批改 50 個班級作業",
         "email": "you@example.com",
-        "timeline": "請選擇",
+        "timeline": "請填時間範圍（例：1 週 / 1 個月）",
         "budget": "請選擇",
         "na": "未填寫"
       },
