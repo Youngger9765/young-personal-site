@@ -169,12 +169,22 @@ export default function Home() {
                     <div className="text-sm text-slate-blue font-semibold">{pkg.price}</div>
                     <div className="text-xs text-gray-600">{pkg.note}</div>
                   </div>
-                  <a
-                    href="#services"
-                    className="text-sm font-semibold text-slate-blue hover:underline whitespace-nowrap"
-                  >
-                    {locale === 'zh-TW' ? '查看方案' : 'See plans'}
-                  </a>
+                  <div className="flex flex-col items-end gap-1 whitespace-nowrap">
+                    <a
+                      href="https://calendly.com/young-tsai/ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-coral-orange hover:underline"
+                    >
+                      {locale === 'zh-TW' ? '預約諮詢' : 'Book a consult'}
+                    </a>
+                    <a
+                      href="#services"
+                      className="text-xs font-semibold text-slate-blue hover:underline"
+                    >
+                      {locale === 'zh-TW' ? '查看方案' : 'See plans'}
+                    </a>
+                  </div>
                 </motion.div>
               ))}
             </div>
