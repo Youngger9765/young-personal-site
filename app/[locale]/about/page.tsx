@@ -8,6 +8,43 @@ import ContactCTA from '@/components/ContactCTA';
 export default function AboutPage() {
   const t = useTranslations();
 
+  const metrics = [
+    {
+      value: t('about.metrics.savings.value'),
+      label: t('about.metrics.savings.label'),
+      description: t('about.metrics.savings.description'),
+    },
+    {
+      value: t('about.metrics.growth.value'),
+      label: t('about.metrics.growth.label'),
+      description: t('about.metrics.growth.description'),
+    },
+    {
+      value: t('about.metrics.retention.value'),
+      label: t('about.metrics.retention.label'),
+      description: t('about.metrics.retention.description'),
+    },
+    {
+      value: t('about.metrics.leaders.value'),
+      label: t('about.metrics.leaders.label'),
+      description: t('about.metrics.leaders.description'),
+    },
+  ];
+
+  const skills = [
+    t('about.skills.ai'),
+    t('about.skills.dataProduct'),
+    t('about.skills.fullStack'),
+    t('about.skills.dataEngineering'),
+    t('about.skills.teamLeadership'),
+    t('about.skills.edtech'),
+  ];
+
+  const education = [
+    t('about.education.nctu'),
+    t('about.education.ncku'),
+  ];
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Simple Background */}
@@ -98,6 +135,16 @@ export default function AboutPage() {
                     icon: '💡',
                     color: 'from-slate-blue/90 to-slate-blue/70'
                   },
+                  {
+                    period: t('about.milestones.engineer.period'),
+                    title: t('about.milestones.engineer.title'),
+                    highlights: [
+                      t('about.milestones.engineer.highlight1'),
+                      t('about.milestones.engineer.highlight2')
+                    ],
+                    icon: '🛠️',
+                    color: 'from-gray-700 to-gray-500'
+                  },
                 ].map((milestone, index) => (
                   <motion.div
                     key={index}
@@ -181,6 +228,82 @@ export default function AboutPage() {
                 {t('about.viewLinkedIn')}
               </a>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Metrics & Skills */}
+        <section className="border-t border-gray-200">
+          <div className="max-w-5xl mx-auto px-6 py-24">
+            <div className="grid lg:grid-cols-3 gap-12">
+              {/* Impact Numbers */}
+              <div className="lg:col-span-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+                  {t('about.metrics.title')}
+                </h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {metrics.map((metric, index) => (
+                    <motion.div
+                      key={metric.label}
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.05 }}
+                      className="p-6 rounded-2xl bg-gradient-to-br from-white to-warm-cream/20 border border-gray-200 shadow-sm"
+                    >
+                      <div className="text-3xl font-extrabold text-slate-blue mb-2">
+                        {metric.value}
+                      </div>
+                      <div className="text-gray-900 font-semibold mb-2">{metric.label}</div>
+                      <p className="text-gray-600 text-sm leading-relaxed">{metric.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Skills */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+                  {t('about.skills.title')}
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  {skills.map((skill, index) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, y: 8 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.05 }}
+                      className="px-4 py-2 bg-white border-2 border-gray-200 rounded-full text-gray-800 font-medium hover:border-slate-blue transition-colors"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Education */}
+        <section className="border-t border-gray-200">
+          <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-10">
+              {t('about.education.title')}
+            </h2>
+            <div className="space-y-4">
+              {education.map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="p-4 rounded-xl bg-gradient-to-r from-warm-cream/40 to-white border border-gray-200 text-gray-800 font-semibold"
+                >
+                  {item}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 

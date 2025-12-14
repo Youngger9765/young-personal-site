@@ -70,7 +70,50 @@
         "title": "Product & Data Lead\nLeading Education Platform",
         "highlight1": "Saved $1.2M with unified data platform",
         "highlight2": "Trained 10+ leaders from IC to management"
+      },
+      "engineer": {
+        "period": "2014-2016",
+        "title": "Full-stack & Data Engineer\nEducation and Commerce Projects",
+        "highlight1": "Built data pipelines and web apps that informed product direction",
+        "highlight2": "Developed engineering craft that later scaled product organizations"
       }
+    },
+    "metrics": {
+      "title": "Impact in numbers",
+      "savings": {
+        "value": "$1.2M",
+        "label": "Cost savings",
+        "description": "Built unified data platform that replaced 5 analytics tools and reduced annual spend by $1.2M"
+      },
+      "growth": {
+        "value": "50%",
+        "label": "User growth",
+        "description": "Drove AI-led product initiatives that grew MAU from 200K to 300K+ in 12 months"
+      },
+      "retention": {
+        "value": "<5%",
+        "label": "Team turnover",
+        "description": "Scaled engineering and product teams while maintaining industry-low attrition"
+      },
+      "leaders": {
+        "value": "10+",
+        "label": "Leaders trained",
+        "description": "Coached ICs into senior and lead roles across engineering, data, and product"
+      }
+    },
+    "skills": {
+      "title": "Skills & focus",
+      "ai": "AI/ML & GenAI",
+      "dataProduct": "Data product leadership",
+      "fullStack": "Full-stack delivery",
+      "dataEngineering": "Data engineering & analytics",
+      "teamLeadership": "Team leadership & coaching",
+      "edtech": "EdTech domain expertise"
+    },
+    "education": {
+      "title": "Education",
+      "nctu": "National Chiao Tung University — Master's",
+      "ncku": "National Cheng Kung University — Bachelor's"
     }
   },
   "trackRecord": {
