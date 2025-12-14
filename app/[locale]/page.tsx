@@ -131,17 +131,17 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
+              className="max-w-3xl mx-auto text-left"
             >
               <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-12">
                 {t('about.title')}
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>{t('about.intro')}</p>
-                <p>{t('about.paragraph1')}</p>
-                <p>{t('about.paragraph2')}</p>
-                <p>{t('about.paragraph3')}</p>
-                <p className="text-gray-600 text-base">{t('about.paragraph4')}</p>
+                <p className="text-left">{t('about.intro')}</p>
+                <p className="text-left">{t('about.paragraph1')}</p>
+                <p className="text-left">{t('about.paragraph2')}</p>
+                <p className="text-left">{t('about.paragraph3')}</p>
+                <p className="text-left text-gray-600 text-base">{t('about.paragraph4')}</p>
               </div>
             </motion.div>
           </div>

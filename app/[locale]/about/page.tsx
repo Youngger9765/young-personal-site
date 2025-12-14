@@ -69,7 +69,7 @@ export default function AboutPage() {
 
         {/* Personal Story */}
         <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-24 text-center">
+          <div className="max-w-4xl mx-auto px-6 py-24 text-left">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -85,9 +85,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <p className="text-center">{t('about.paragraph1')}</p>
-              <p className="text-center">{t('about.paragraph2')}</p>
-              <p className="text-center">{t('about.paragraph3')}</p>
+              <p>{t('about.paragraph1')}</p>
+              <p>{t('about.paragraph2')}</p>
+              <p>{t('about.paragraph3')}</p>
             </motion.div>
           </div>
         </section>
@@ -309,7 +309,7 @@ export default function AboutPage() {
 
         {/* Values & Beliefs + Working Style */}
         <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-24 text-center">
+          <div className="max-w-4xl mx-auto px-6 py-24 text-left">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {/* Beliefs Column */}
               <div>
