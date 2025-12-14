@@ -145,7 +145,10 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                {t('gallery.viewEvent')}
+                {slug === 'meta-llm-taiwan-pitch'
+                  ? (locale === 'zh-TW' ? '查看作品' : 'Visit Project')
+                  : t('gallery.viewEvent')
+                }
               </a>
             )}
           </div>
@@ -350,7 +353,7 @@ function getYoutubeUrl(slug: string): string | null {
 function getEventUrl(slug: string): string | null {
   const urls: Record<string, string | null> = {
     'mediatek-ai-day-2024': 'https://www.mediatekfoundation.org/app-list/view/064B83Ceb9c0',
-    'meta-llm-taiwan-pitch': null,
+    'meta-llm-taiwan-pitch': 'https://www.jutor.ai/',
   };
   return urls[slug] || null;
 }
