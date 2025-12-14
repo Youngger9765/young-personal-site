@@ -15,7 +15,7 @@ export default function AboutPage() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="max-w-4xl mx-auto px-6 pt-32 pb-16">
+        <section className="max-w-4xl mx-auto px-6 pt-32 pb-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function AboutPage() {
 
         {/* Personal Story */}
         <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-24">
+          <div className="max-w-4xl mx-auto px-6 py-24 text-center">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
         {/* Career Highlights - Timeline */}
         <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-24">
+          <div className="max-w-4xl mx-auto px-6 py-24 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-16">
               {t('about.careerHighlights')}
             </h2>
@@ -186,7 +186,7 @@ export default function AboutPage() {
 
         {/* Values & Beliefs + Working Style */}
         <section className="border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 py-24">
+          <div className="max-w-4xl mx-auto px-6 py-24 text-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {/* Beliefs Column */}
               <div>
