@@ -4,6 +4,7 @@ import * as React from 'react';
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navigation from '@/components/Navigation';
 
@@ -15,6 +16,7 @@ interface ProjectDetailProps {
 }
 
 const projectSlugs = [
+  'duotopia',
   'ai-square',
   'vaitor',
   'jutor',
@@ -46,6 +48,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
   // Map slugs to translation keys
   const slugToKey: Record<string, string> = {
+    'duotopia': 'duotopia',
     'ai-square': 'aiSquare',
     'vaitor': 'vaitor',
     'jutor': 'jutor',
@@ -54,6 +57,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
   const projectKey = slugToKey[slug];
   const detailKey = `${projectKey}Detail` as
+    'duotopiaDetail' |
     'aiSquareDetail' |
     'vaitorDetail' |
     'jutorDetail' |
@@ -151,28 +155,41 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50"
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <svg
-                className="w-24 h-24 text-slate-blue/40 mx-auto mb-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <p className="text-slate-blue text-sm font-medium">
-                {t('projectScreenshot')}
-              </p>
+          {slug === 'ai-square' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/hourofai.jpeg"
+                alt="AI Square - Hour of AI Program"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-          </div>
+          ) : (
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <svg
+                    className="w-24 h-24 text-slate-blue/40 mx-auto mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <p className="text-slate-blue text-sm font-medium">
+                    {t('projectScreenshot')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </motion.div>
       </section>
 
@@ -615,6 +632,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
 function getTechStack(slug: string): string[] {
   const techStacks: Record<string, string[]> = {
+    'duotopia': ["Next.js", "React", "OpenAI Whisper", "Speech Recognition", "PostgreSQL", "Redis"],
     'ai-square': ["Next.js 15", "React 19", "Vertex AI", "i18n (14 languages)", "TypeScript"],
     'vaitor': ["Next.js", "Claude AI", "Video Processing", "React", "TypeScript"],
     'jutor': ["Python", "FastAPI", "OpenAI", "Speech Recognition", "PostgreSQL"],
