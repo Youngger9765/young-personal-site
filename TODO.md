@@ -45,6 +45,7 @@
   - 亮點：Meta LLM Top 8 Finalist
   - CTA：[View AI Products] [Chat with AI] [Read Blog]
   - 新增：單一句價值主張 + 兩個 CTA（預約諮詢 / 查看案例）
+  - Quick Packages：首屏下方重述 1 週原型 / 4 週 MVP / 策略培訓方案
 
 ### 1.3 關於我頁面
 - [ ] 更新 `app/about/page.tsx`
