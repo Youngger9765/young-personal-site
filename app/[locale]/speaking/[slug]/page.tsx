@@ -68,6 +68,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
     ],
     youtubeUrl: getYoutubeUrl(slug),
     eventUrl: getEventUrl(slug),
+    mediaLinks: getMediaLinks(slug, locale),
   };
 
   return (
@@ -250,6 +251,73 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
         </motion.div>
       </section>
 
+      {/* Media Coverage */}
+      {event.mediaLinks && (
+        <section className="max-w-4xl mx-auto px-6 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-8">
+              {locale === 'zh-TW' ? '媒體報導與相關連結' : 'Media Coverage & Related Links'}
+            </h2>
+            <div className="space-y-4">
+              {event.mediaLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <svg
+                      className="w-6 h-6 text-slate-blue flex-shrink-0 mt-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                      />
+                    </svg>
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <div className="text-sm text-slate-blue font-semibold mb-1">
+                            {link.source}
+                          </div>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                            {link.title}
+                          </h3>
+                        </div>
+                        <svg
+                          className="w-5 h-5 text-gray-400 group-hover:text-slate-blue transition-colors flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+      )}
+
       {/* Back to Gallery CTA */}
       <section className="max-w-4xl mx-auto px-6 pb-24">
         <motion.div
@@ -285,6 +353,43 @@ function getEventUrl(slug: string): string | null {
     'meta-llm-taiwan-pitch': null,
   };
   return urls[slug] || null;
+}
+
+function getMediaLinks(slug: string, locale: string): Array<{ title: string; url: string; source: string }> | null {
+  const linksZh: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
+    'mediatek-ai-day-2024': null,
+    'meta-llm-taiwan-pitch': [
+      {
+        title: '均一 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定',
+        url: 'https://www.facebook.com/JunyiAcademy/posts/972099254961553/',
+        source: '均一教育平台 Facebook'
+      },
+      {
+        title: 'Meta LLM應用於教育：均一AI英文學習工具',
+        url: 'https://flipedu.parenting.com.tw/article/009564',
+        source: '親子天下翻轉教育'
+      }
+    ]
+  };
+
+  const linksEn: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
+    'mediatek-ai-day-2024': null,
+    'meta-llm-taiwan-pitch': [
+      {
+        title: 'Jutor AI English Tutor Recognized at Meta Llama Hackathon Finals',
+        url: 'https://www.facebook.com/JunyiAcademy/posts/972099254961553/',
+        source: 'Junyi Academy Facebook'
+      },
+      {
+        title: 'Meta LLM Applied to Education: Junyi AI English Learning Tool',
+        url: 'https://flipedu.parenting.com.tw/article/009564',
+        source: 'FlipEdu by CommonWealth Parenting'
+      }
+    ]
+  };
+
+  const links = locale === 'zh-TW' ? linksZh : linksEn;
+  return links[slug] || null;
 }
 
 function getYoutubeEmbedUrl(youtubeUrl: string): string {
