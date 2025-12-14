@@ -16,6 +16,7 @@ interface SpeakingDetailProps {
 }
 
 const speakingSlugs = [
+  'userxper-ai-ux-2024',
   'teacher-ai-workshop',
   'mediatek-ai-day-2024',
   'meta-llm-taiwan-pitch'
@@ -46,6 +47,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
 
   // Map slugs to translation keys
   const slugToKey: Record<string, string> = {
+    'userxper-ai-ux-2024': 'userxperAiUx',
     'teacher-ai-workshop': 'teacherAiWorkshop',
     'mediatek-ai-day-2024': 'mediatekAiDay',
     'meta-llm-taiwan-pitch': 'metaLlmPitch'
@@ -53,6 +55,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
 
   const eventKey = slugToKey[slug];
   const detailKey = `${eventKey}Detail` as
+    'userxperAiUxDetail' |
     'teacherAiWorkshopDetail' |
     'mediatekAiDayDetail' |
     'metaLlmPitchDetail';
@@ -362,6 +365,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
 
 function getYoutubeUrl(slug: string): string | null {
   const urls: Record<string, string | null> = {
+    'userxper-ai-ux-2024': null,
     'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': 'https://www.youtube.com/watch?v=EBLfH5-VxwE',
     'meta-llm-taiwan-pitch': null,
@@ -371,6 +375,7 @@ function getYoutubeUrl(slug: string): string | null {
 
 function getEventUrl(slug: string): string | null {
   const urls: Record<string, string | null> = {
+    'userxper-ai-ux-2024': 'https://hackmd.io/@UserXper-Edu/HJsUDrSNyx/%2Fk9-nLI9LRbC0d_AeXH06EQ',
     'teacher-ai-workshop': 'https://flipedu.parenting.com.tw/article/009501',
     'mediatek-ai-day-2024': 'https://www.mediatekfoundation.org/app-list/view/064B83Ceb9c0',
     'meta-llm-taiwan-pitch': 'https://www.jutor.ai/',
@@ -380,6 +385,23 @@ function getEventUrl(slug: string): string | null {
 
 function getMediaLinks(slug: string, locale: string): Array<{ title: string; url: string; source: string }> | null {
   const linksZh: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
+    'userxper-ai-ux-2024': [
+      {
+        title: 'LLM AI 時代的團隊創新實驗 - 活動共筆',
+        url: 'https://hackmd.io/@UserXper-Edu/HJsUDrSNyx/%2Fk9-nLI9LRbC0d_AeXH06EQ',
+        source: 'HackMD 共筆'
+      },
+      {
+        title: '2024 AI/UX 實務研討精彩落幕',
+        url: 'https://www.threads.com/@userxper/post/DDjufxZydDF',
+        source: 'UserXper Threads'
+      },
+      {
+        title: '2024 AI/UX 實務研討 - 課程頁面',
+        url: 'https://edu.userxper.com/courses/2024-ai-ux',
+        source: '悠識學院'
+      }
+    ],
     'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [
@@ -397,6 +419,23 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
   };
 
   const linksEn: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
+    'userxper-ai-ux-2024': [
+      {
+        title: 'Team Innovation Experiments in the LLM AI Era - Event Notes',
+        url: 'https://hackmd.io/@UserXper-Edu/HJsUDrSNyx/%2Fk9-nLI9LRbC0d_AeXH06EQ',
+        source: 'HackMD Collaborative Notes'
+      },
+      {
+        title: '2024 AI/UX Workshop Successfully Concluded',
+        url: 'https://www.threads.com/@userxper/post/DDjufxZydDF',
+        source: 'UserXper Threads'
+      },
+      {
+        title: '2024 AI/UX Workshop - Course Page',
+        url: 'https://edu.userxper.com/courses/2024-ai-ux',
+        source: 'UserXper Academy'
+      }
+    ],
     'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [

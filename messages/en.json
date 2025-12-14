@@ -314,6 +314,21 @@
       "highlight2": "Built intelligent English learning platform using large language models",
       "highlight3": "Integrated speech recognition and natural language processing",
       "highlight4": "Provided personalized listening, speaking, reading, and writing experiences"
+    },
+    "userxperAiUx": {
+      "title": "Team Innovation Experiments in the LLM AI Era",
+      "subtitle": "2024 AI/UX Workshop",
+      "description": "Shared strategies for leading team innovation experiments with limited resources at UserXper's 2024 AI/UX Workshop, including digital-first approach, cross-functional collaboration, and empowering non-technical teams for successful AI transformation"
+    },
+    "userxperAiUxDetail": {
+      "organization": "UserXper Academy",
+      "role": "Speaker",
+      "date": "2024-12-14",
+      "description": "Invited as a speaker at UserXper Academy's '2024 AI/UX Workshop' to share insights on leading team innovation experiments in the LLM AI era. Facing societal expectations for the education industry, pressure from technological transformation trends, and team members' anxiety about AI, I proposed three key principles: digital-first approach, empowering non-technical teams, and gradual transformation.\n\nThrough practical case studies, including data engineers collaborating to develop the AI version of Star Adventure (completing a 6-month project in half a month), sales teams independently designing multi-agent systems using OpenAI Playground, product managers rapidly prototyping Jutor English tutor using no-code tools, and the Dream More program using AI to analyze teacher-student interactions, I demonstrated how to successfully drive organizational AI innovation experiments through cross-functional collaboration and tool empowerment despite limited resources.",
+      "highlight1": "Digital-first, cross-functional innovation: Data engineers and product managers collaborated on web products, completing a 6-month project in half a month",
+      "highlight2": "Empowering non-technical teams: Sales teams designed multi-agent systems using OpenAI Playground, product managers rapid prototyping with no-code tools",
+      "highlight3": "Gradual team transformation: Design team started with Canva, progressively adapting to AI tools to avoid anxiety from excessive change",
+      "highlight4": "Real-world case studies: Including Star Adventure AI version, Jutor English tutor, Dream More AI assistance, and more"
     }
   },
   "contact": {
