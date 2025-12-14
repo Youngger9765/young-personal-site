@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
-import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode, FaQuestionCircle, FaLightbulb, FaCheckCircle, FaClock } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Navigation from '@/components/Navigation';
@@ -13,6 +12,68 @@ import QuickConsultForm from '@/components/QuickConsultForm';
 export default function Home() {
   const t = useTranslations();
   const locale = useLocale();
+  const projects = [
+    {
+      slug: 'ai-square',
+      title: t('projects.aiSquare.title'),
+      subtitle: t('projects.aiSquare.subtitle'),
+      description: t('projects.aiSquare.description'),
+      summary: {
+        problem: t('projects.aiSquare.problem'),
+        solution: t('projects.aiSquare.solution'),
+        result: t('projects.aiSquare.result'),
+        timeline: t('projects.aiSquare.timeline'),
+      },
+    },
+    {
+      slug: 'vaitor',
+      title: t('projects.vaitor.title'),
+      subtitle: t('projects.vaitor.subtitle'),
+      description: t('projects.vaitor.description'),
+      summary: {
+        problem: t('projects.vaitor.problem'),
+        solution: t('projects.vaitor.solution'),
+        result: t('projects.vaitor.result'),
+        timeline: t('projects.vaitor.timeline'),
+      },
+    },
+    {
+      slug: 'jutor',
+      title: t('projects.jutor.title'),
+      subtitle: t('projects.jutor.subtitle'),
+      description: t('projects.jutor.description'),
+      summary: {
+        problem: t('projects.jutor.problem'),
+        solution: t('projects.jutor.solution'),
+        result: t('projects.jutor.result'),
+        timeline: t('projects.jutor.timeline'),
+      },
+    },
+    {
+      slug: 'cutor',
+      title: t('projects.cutor.title'),
+      subtitle: t('projects.cutor.subtitle'),
+      description: t('projects.cutor.description'),
+      summary: {
+        problem: t('projects.cutor.problem'),
+        solution: t('projects.cutor.solution'),
+        result: t('projects.cutor.result'),
+        timeline: t('projects.cutor.timeline'),
+      },
+    },
+    {
+      slug: 'duotopia',
+      title: t('projects.duotopia.title'),
+      subtitle: t('projects.duotopia.subtitle'),
+      description: t('projects.duotopia.description'),
+      summary: {
+        problem: t('projects.duotopia.problem'),
+        solution: t('projects.duotopia.solution'),
+        result: t('projects.duotopia.result'),
+        timeline: t('projects.duotopia.timeline'),
+      },
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white text-gray-900 overflow-hidden">
@@ -300,203 +361,84 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section - Horizontal Carousel */}
+        {/* Projects Section - Vertical List */}
         <section id="projects" className="border-t border-gray-200">
-          <div className="max-w-7xl mx-auto py-24">
-            <div className="px-6">
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-16 text-center">
-                {t('projects.title')}
-              </h2>
-            </div>
-
-            {/* Horizontal Scrolling Container */}
-            <div className="relative">
-              {/* Left Fade Indicator */}
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-
-              {/* Right Fade Indicator */}
-              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-              {/* Scrollable Container with controls */}
-              <div className="relative">
-                <div
-                  className="overflow-x-auto scrollbar-hide md:px-12"
-                  style={{
-                    scrollSnapType: 'x mandatory',
-                    scrollPaddingLeft: '0px',
-                    scrollPaddingRight: '0px',
-                  }}
-                  ref={projectsRef}
-                >
-                  <div className="flex gap-6 pb-4 pl-6 pr-6 md:pl-0 md:pr-0">
-                    {[
-                      'ai-square',
-                      'vaitor',
-                      'jutor',
-                      'cutor',
-                      'duotopia',
-                    ].map((slug, index) => {
-                      const map = {
-                        'ai-square': {
-                          title: t('projects.aiSquare.title'),
-                          subtitle: t('projects.aiSquare.subtitle'),
-                          description: t('projects.aiSquare.description'),
-                          summary: {
-                            problem: t('projects.aiSquare.problem'),
-                            solution: t('projects.aiSquare.solution'),
-                            result: t('projects.aiSquare.result'),
-                            timeline: t('projects.aiSquare.timeline'),
-                          },
-                        },
-                        'vaitor': {
-                          title: t('projects.vaitor.title'),
-                          subtitle: t('projects.vaitor.subtitle'),
-                          description: t('projects.vaitor.description'),
-                          summary: {
-                            problem: t('projects.vaitor.problem'),
-                            solution: t('projects.vaitor.solution'),
-                            result: t('projects.vaitor.result'),
-                            timeline: t('projects.vaitor.timeline'),
-                          },
-                        },
-                        'jutor': {
-                          title: t('projects.jutor.title'),
-                          subtitle: t('projects.jutor.subtitle'),
-                          description: t('projects.jutor.description'),
-                          summary: {
-                            problem: t('projects.jutor.problem'),
-                            solution: t('projects.jutor.solution'),
-                            result: t('projects.jutor.result'),
-                            timeline: t('projects.jutor.timeline'),
-                          },
-                        },
-                        'cutor': {
-                          title: t('projects.cutor.title'),
-                          subtitle: t('projects.cutor.subtitle'),
-                          description: t('projects.cutor.description'),
-                          summary: {
-                            problem: t('projects.cutor.problem'),
-                            solution: t('projects.cutor.solution'),
-                            result: t('projects.cutor.result'),
-                            timeline: t('projects.cutor.timeline'),
-                          },
-                        },
-                        'duotopia': {
-                          title: t('projects.duotopia.title'),
-                          subtitle: t('projects.duotopia.subtitle'),
-                          description: t('projects.duotopia.description'),
-                          summary: {
-                            problem: t('projects.duotopia.problem'),
-                            solution: t('projects.duotopia.solution'),
-                            result: t('projects.duotopia.result'),
-                            timeline: t('projects.duotopia.timeline'),
-                          },
-                        },
-                      } as const;
-                      const project = map[slug as keyof typeof map];
-                      return (
-                        <motion.div
-                          key={slug}
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true, margin: "-100px" }}
-                          transition={{ delay: index * 0.05 }}
-                          className="flex-shrink-0 w-[85vw] md:w-[400px]"
-                          style={{ scrollSnapAlign: 'start' }}
+          <div className="max-w-6xl mx-auto px-6 py-24 space-y-8">
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent text-center">
+              {t('projects.title')}
+            </h2>
+            <div className="space-y-6">
+              {projects.map((project) => (
+                <Link key={project.slug} href={`/${locale}/projects/${project.slug}`}>
+                  <div className="group rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="relative md:w-1/3 h-40 md:h-full bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 flex items-center justify-center">
+                        <svg
+                          className="w-16 h-16 text-slate-blue/30"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
-                          <Link href={`/${locale}/projects/${slug}`}>
-                            <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
-                              {/* Project Thumbnail */}
-                              <div className="relative h-44 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                  <svg
-                                    className="w-16 h-16 text-slate-blue/30"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={1.5}
-                                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                    />
-                                  </svg>
-                                </div>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </div>
+                      <div className="flex-1 p-5 space-y-3">
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-slate-blue transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-sm text-slate-blue font-medium">
+                            {project.subtitle}
+                          </p>
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {project.description}
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-2 text-sm text-gray-700">
+                          {[
+                            { icon: FaQuestionCircle, text: project.summary.problem, label: t('projects.summary.problem') },
+                            { icon: FaLightbulb, text: project.summary.solution, label: t('projects.summary.solution') },
+                            { icon: FaCheckCircle, text: project.summary.result, label: t('projects.summary.result') },
+                            { icon: FaClock, text: project.summary.timeline, label: t('projects.summary.timeline') },
+                          ].map((item) => (
+                            <div key={item.label} className="flex items-start gap-2">
+                              <div className="mt-0.5 text-slate-blue">
+                                <item.icon className="w-4 h-4" />
                               </div>
-
-                              {/* Project Info */}
-                              <div className="p-5 space-y-3">
-                                <div>
-                                  <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-slate-blue transition-colors">
-                                    {project.title}
-                                  </h3>
-                                  <p className="text-sm text-slate-blue font-medium">
-                                    {project.subtitle}
-                                  </p>
-                                </div>
-                                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
-                                  {project.description}
-                                </p>
-                                <div className="space-y-1 text-sm text-gray-700">
-                                  <div className="flex items-start gap-2">
-                                    <span className="font-semibold text-gray-900">{t('projects.summary.problem')}:</span>
-                                    <span className="line-clamp-1">{project.summary.problem}</span>
-                                  </div>
-                                  <div className="flex items-start gap-2">
-                                    <span className="font-semibold text-gray-900">{t('projects.summary.solution')}:</span>
-                                    <span className="line-clamp-1">{project.summary.solution}</span>
-                                  </div>
-                                </div>
-                                <div className="flex items-center justify-between pt-2">
-                                  <span className="text-xs px-3 py-1 rounded-full bg-warm-cream text-gray-800 font-semibold">
-                                    {t('projects.summary.timeline')}: {project.summary.timeline}
-                                  </span>
-                                  <a
-                                    href="https://calendly.com/young-tsai/ai"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-3 py-2 bg-slate-blue text-white rounded-lg text-sm font-semibold hover:bg-gray-900 transition-colors"
-                                  >
-                                    {t('projects.consultCta')}
-                                  </a>
-                                </div>
+                              <div className="flex-1">
+                                <span className="font-semibold text-gray-900 mr-1">{item.label}:</span>
+                                <span className="line-clamp-2">{item.text}</span>
                               </div>
                             </div>
-                          </Link>
-                        </motion.div>
-                      );
-                    })}
+                          ))}
+                        </div>
+                        <div className="pt-2">
+                          <a
+                            href="https://calendly.com/young-tsai/ai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-3 py-2 bg-slate-blue text-white rounded-lg text-sm font-semibold hover:bg-gray-900 transition-colors"
+                          >
+                            {t('projects.consultCta')}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                {/* Controls */}
-                <button
-                  type="button"
-                  onClick={() => projectsRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
-                  className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow hover:shadow-md items-center justify-center text-slate-blue"
-                  aria-label="Scroll left"
-                >
-                  <FaArrowLeft />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => projectsRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
-                  className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow hover:shadow-md items-center justify-center text-slate-blue"
-                  aria-label="Scroll right"
-                >
-                  <FaArrowRight />
-                </button>
-              </div>
+                </Link>
+              ))}
             </div>
-
-            {/* View All Projects Link */}
-            <div className="px-6 mt-8 text-center">
+            <div className="text-center pt-4">
               <Link
                 href={`/${locale}/projects`}
                 className="inline-flex items-center gap-2 text-slate-blue hover:text-gray-900 transition-colors font-semibold group"
               >
-                <span>{t('projects.gallery.viewDetails')}</span>
+                <span>{locale === 'zh-TW' ? '更多專案' : 'More projects'}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
