@@ -262,9 +262,9 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-8">
-              {locale === 'zh-TW' ? '媒體報導與相關連結' : 'Media Coverage & Related Links'}
-            </h2>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              {locale === 'zh-TW' ? '媒體報導' : 'Media Coverage'}
+            </h3>
             <div className="space-y-4">
               {event.mediaLinks.map((link, index) => (
                 <a
@@ -275,41 +275,34 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                   className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <svg
-                      className="w-6 h-6 text-slate-blue flex-shrink-0 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                      />
-                    </svg>
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-lg ${index === 1 ? 'bg-coral-orange' : 'bg-slate-blue'} flex items-center justify-center`}>
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
                     <div className="flex-1">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <div className="text-sm text-slate-blue font-semibold mb-1">
-                            {link.source}
-                          </div>
-                          <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                            {link.title}
-                          </h3>
-                        </div>
-                        <svg
-                          className="w-5 h-5 text-gray-400 group-hover:text-slate-blue transition-colors flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className={`px-3 py-1 ${index === 1 ? 'bg-coral-orange' : 'bg-slate-blue'} text-white text-xs font-semibold rounded-full`}>
+                          {link.source}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {link.title}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {index === 0
+                          ? (locale === 'zh-TW'
+                              ? '均一教育平台 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定...'
+                              : 'Jutor AI English Tutor recognized at Meta Llama Hackathon Finals...')
+                          : (locale === 'zh-TW'
+                              ? '親子天下報導均一如何運用 Meta LLM 技術打造 AI 英文學習工具...'
+                              : 'CommonWealth Parenting reports on how Junyi uses Meta LLM to build AI English learning tools...')
+                        }
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
                     </div>
