@@ -412,7 +412,13 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
         source: '悠識學院'
       }
     ],
-    'teacher-ai-workshop': null,
+    'teacher-ai-workshop': [
+      {
+        title: '教師增能研習：從一級 AI 見習生到二級 AI 魔法師',
+        url: 'https://flipedu.parenting.com.tw/article/009501',
+        source: '親子天下翻轉教育'
+      }
+    ],
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [
       {
@@ -446,7 +452,13 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
         source: 'UserXper Academy'
       }
     ],
-    'teacher-ai-workshop': null,
+    'teacher-ai-workshop': [
+      {
+        title: 'Teacher Development Workshop: From Level 1 AI Apprentice to Level 2 AI Wizard',
+        url: 'https://flipedu.parenting.com.tw/article/009501',
+        source: 'FlipEdu by CommonWealth Parenting'
+      }
+    ],
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [
       {

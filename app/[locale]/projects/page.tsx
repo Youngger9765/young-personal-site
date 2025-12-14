@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from '@/components/Navigation';
 
 interface ProjectCardData {
@@ -49,6 +50,15 @@ export default function ProjectsGalleryPage() {
     },
   ];
 
+  // Map project slugs to their banner images
+  const projectImages: Record<string, string | null> = {
+    'duotopia': '/images/duotopia-banner.jpg',
+    'ai-square': '/images/hourofai.jpeg',
+    'vaitor': '/images/vibe-coding.jpg',
+    'jutor': null, // Keep placeholder for jutor
+    'cutor': null, // Keep placeholder for cutor
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -84,21 +94,31 @@ export default function ProjectsGalleryPage() {
                 <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
                   {/* Project Thumbnail */}
                   <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg
-                        className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
+                    {projectImages[project.slug] ? (
+                      <Image
+                        src={projectImages[project.slug]!}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <svg
+                          className="w-20 h-20 text-slate-blue/30 group-hover:text-slate-blue/50 transition-colors"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </div>
+                    )}
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-slate-blue/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

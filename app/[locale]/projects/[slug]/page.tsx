@@ -201,16 +201,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                 priority
               />
             </div>
-          ) : slug === 'jutor' ? (
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/jutor-logo.png"
-                alt="Jutor - AI English Learning Platform"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
           ) : (
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50">
               <div className="absolute inset-0 flex items-center justify-center">
