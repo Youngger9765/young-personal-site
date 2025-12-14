@@ -127,6 +127,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               </a>
             </div>
           )}
+          {slug === 'jutor' && (
+            <div className="flex gap-4 mb-8">
+              <a
+                href="https://www.jutor.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-semibold shadow-md hover:shadow-lg"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                {locale === 'zh-TW' ? '查看作品' : 'Visit Project'}
+              </a>
+            </div>
+          )}
         </motion.div>
       </section>
 
@@ -327,6 +342,122 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                         {locale === 'zh-TW'
                           ? '均一教育平台推出 AI 教育計畫，目標 25 萬參與者，獲微軟、Meta、台積電等企業支持...'
                           : 'Junyi Academy launches AI education initiative targeting 250,000 participants, supported by Microsoft, Meta, TSMC...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          )}
+
+          {/* Media Coverage - Jutor only */}
+          {slug === 'jutor' && (
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {locale === 'zh-TW' ? '媒體報導' : 'Media Coverage'}
+              </h3>
+              <div className="space-y-4">
+                <a
+                  href="https://flipedu.parenting.com.tw/article/009564"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? '親子天下翻轉教育' : 'FlipEdu by CommonWealth Parenting'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? 'Meta LLM應用於教育：均一AI英文學習工具' : 'Meta LLM Applied to Education: Junyi AI English Learning Tool'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '親子天下報導均一如何運用 Meta LLM 技術打造 AI 英文學習工具...'
+                          : 'CommonWealth Parenting reports on how Junyi uses Meta LLM to build AI English learning tools...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://vocus.cc/article/66e78933fd89780001ae952f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? 'Vocus' : 'Vocus'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? 'Jutor AI 英語家教：結合 Meta Llama 的創新教育應用' : 'Jutor AI English Tutor: Innovative Educational Application with Meta Llama'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '深入探討 Jutor 如何利用 Meta Llama 模型打造個人化 AI 英語學習體驗...'
+                          : 'In-depth look at how Jutor leverages Meta Llama models to create personalized AI English learning experiences...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://vocus.cc/article/642b69e5fd897800012b6fce"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? 'Vocus' : 'Vocus'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? 'AI 賦能教育：Jutor 的誕生與發展' : 'AI-Powered Education: The Birth and Development of Jutor'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '從概念到實現，探索 Jutor AI 英語家教平台的發展歷程與技術創新...'
+                          : 'From concept to implementation, explore the development journey and technological innovation of Jutor AI English tutoring platform...'}
                       </p>
                       <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
