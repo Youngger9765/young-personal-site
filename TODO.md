@@ -38,15 +38,6 @@
 
 ## 📋 Phase 1: 內容更新（優先）
 
-### 1.1 個人資料整合
-- [ ] 更新 `knowledge/about-me.md`（AI 聊天知識庫）
-  - LinkedIn 完整資訊
-  - CAIO 職位 + Deputy CEO + CPO 經歷
-  - AI 產品（Vaitor, Jutor, Cutor）
-  - 教育背景（交大碩士、成大學士）
-  - 成就（Meta LLM Top 8, Speaker）
-  - 個人專案（JKSong, iMuzi, Hometaste 等）
-
 ### 1.2 首頁 Hero Section
 - [ ] 重寫 `app/page.tsx`
   - 職位：CAIO at Junyi Academy
@@ -96,7 +87,6 @@
 ## 🎨 Phase 2: 設計優化（學習 Mitchell Sparrow）
 
 ### 2.1 安裝依賴
-- [ ] 安裝 Framer Motion：`npm install framer-motion`
 - [ ] 考慮 Sanity CMS（選配）：`npm install @sanity/client`
 
 ### 2.2 動畫效果
@@ -209,28 +199,26 @@
 ## 📊 優先級排序
 
 ### 🔥 P0（立即完成）
-1. 更新 `knowledge/about-me.md`（AI 聊天知識庫）
-2. 重寫首頁 Hero Section
-3. 重構專案頁面（分類：AI Products / Active / Past）
-4. 測試 AI 聊天功能
+1. 重寫首頁 Hero Section
+2. 重構專案頁面（分類：AI Products / Active / Past）
+3. 測試 AI 聊天功能
 
 ### ⚡ P1（本週完成）
-5. 更新關於我頁面（完整經歷）
-6. 安裝 Framer Motion
-7. 加入技能視覺化元件
-8. 撰寫 1-2 篇部落格文章
+4. 更新關於我頁面（完整經歷）
+5. 加入技能視覺化元件
+6. 撰寫 1-2 篇部落格文章
 
 ### 💡 P2（下週完成）
-9. 動畫效果實作
-10. SEO 優化
-11. Contact Form
-12. 考慮單頁式改造
+7. 動畫效果實作
+8. SEO 優化
+9. Contact Form
+10. 考慮單頁式改造
 
 ### 🌟 P3（未來優化）
-13. Sanity CMS 整合
-14. Analytics
-15. 更多部落格文章
-16. 自訂網域
+11. Sanity CMS 整合
+12. Analytics
+13. 更多部落格文章
+14. 自訂網域
 
 ---
 
