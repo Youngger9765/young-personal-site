@@ -18,6 +18,12 @@ export default function SpeakingGalleryPage() {
 
   const speakingEvents: SpeakingCardData[] = [
     {
+      slug: 'teacher-ai-workshop',
+      title: t('teacherAiWorkshop.title'),
+      subtitle: t('teacherAiWorkshop.subtitle'),
+      description: t('teacherAiWorkshop.description'),
+    },
+    {
       slug: 'mediatek-ai-day-2024',
       title: t('mediatekAiDay.title'),
       subtitle: t('mediatekAiDay.subtitle'),

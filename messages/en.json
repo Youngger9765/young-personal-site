@@ -270,6 +270,21 @@
       "viewEvent": "View Event",
       "eventPlaceholder": "Event Image"
     },
+    "teacherAiWorkshop": {
+      "title": "Teacher Empowerment Workshop: From AI Apprentice to AI Wizard",
+      "subtitle": "AI Education Workshop - Ahead of Vibe Coding Trend",
+      "description": "AI empowerment workshop designed for teachers, promoting innovative concepts of AI-assisted teaching and coding before the 'Vibe Coding' concept was introduced"
+    },
+    "teacherAiWorkshopDetail": {
+      "organization": "Junyi Academy",
+      "role": "Workshop Instructor / Course Designer",
+      "date": "2024",
+      "description": "Designed and facilitated the 'From AI Apprentice to AI Wizard' teacher empowerment workshop, helping teachers master AI tools in educational settings. What's particularly noteworthy about this workshop is that we were already promoting similar concepts and practices before 'Vibe Coding' became widely known.\n\nThe workshop features a progressive learning design, starting from basic AI tool recognition (Apprentice stage) and gradually guiding teachers to advanced applications such as AI-assisted lesson planning, teaching material design, and personalized learning (Wizard stage). Through hands-on practice and case sharing, teachers can immediately apply what they've learned in their classrooms to improve teaching efficiency and learning outcomes.",
+      "highlight1": "Ahead of the Curve: Promoted AI-assisted coding education before Vibe Coding concept emerged",
+      "highlight2": "Systematic Training: Complete learning path from AI Apprentice to AI Wizard",
+      "highlight3": "Practice-Oriented: Provided immediately applicable AI teaching tools and methods",
+      "highlight4": "Teacher Empowerment: Cultivated teachers' ability to use AI to improve teaching efficiency"
+    },
     "mediatekAiDay": {
       "title": "2024 MediaTek Foundation AI DAY - Generative AI Teaching Workshop",
       "subtitle": "AI Teaching Applications Speaker",

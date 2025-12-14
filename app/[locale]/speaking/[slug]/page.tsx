@@ -16,6 +16,7 @@ interface SpeakingDetailProps {
 }
 
 const speakingSlugs = [
+  'teacher-ai-workshop',
   'mediatek-ai-day-2024',
   'meta-llm-taiwan-pitch'
 ];
@@ -45,12 +46,14 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
 
   // Map slugs to translation keys
   const slugToKey: Record<string, string> = {
+    'teacher-ai-workshop': 'teacherAiWorkshop',
     'mediatek-ai-day-2024': 'mediatekAiDay',
     'meta-llm-taiwan-pitch': 'metaLlmPitch'
   };
 
   const eventKey = slugToKey[slug];
   const detailKey = `${eventKey}Detail` as
+    'teacherAiWorkshopDetail' |
     'mediatekAiDayDetail' |
     'metaLlmPitchDetail';
 
@@ -348,6 +351,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
 
 function getYoutubeUrl(slug: string): string | null {
   const urls: Record<string, string | null> = {
+    'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': 'https://www.youtube.com/watch?v=EBLfH5-VxwE',
     'meta-llm-taiwan-pitch': null,
   };
@@ -356,6 +360,7 @@ function getYoutubeUrl(slug: string): string | null {
 
 function getEventUrl(slug: string): string | null {
   const urls: Record<string, string | null> = {
+    'teacher-ai-workshop': 'https://flipedu.parenting.com.tw/article/009501',
     'mediatek-ai-day-2024': 'https://www.mediatekfoundation.org/app-list/view/064B83Ceb9c0',
     'meta-llm-taiwan-pitch': 'https://www.jutor.ai/',
   };
@@ -364,6 +369,7 @@ function getEventUrl(slug: string): string | null {
 
 function getMediaLinks(slug: string, locale: string): Array<{ title: string; url: string; source: string }> | null {
   const linksZh: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
+    'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [
       {
@@ -380,6 +386,7 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
   };
 
   const linksEn: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
+    'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [
       {
