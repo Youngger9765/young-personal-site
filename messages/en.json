@@ -267,6 +267,7 @@
       "subtitle": "30 seconds to share what you need, then pick a slot",
       "labels": {
         "goal": "Goal / what to build",
+        "email": "Email (optional, prefill Calendly)",
         "timeline": "Timeline",
         "budget": "Budget range"
       },
@@ -287,11 +288,13 @@
       },
       "placeholders": {
         "goal": "Example: AI tutor MVP, or automate grading for 50 classes",
+        "email": "you@example.com",
         "timeline": "Pick one",
         "budget": "Pick one",
         "na": "Not provided"
       },
-      "cta": "Send & book on Calendly"
+      "cta": "Send & book on Calendly",
+      "copied": "Copied your answers. Paste into Calendly notes if needed."
     },
     "vaitorDetail": {
       "description": "Vaitor is an adaptive learning platform that revolutionized personalized education for 300,000+ students. By combining natural language processing with intelligent recommendation algorithms, we created a system that understands each student's learning patterns and adapts content in real-time.\n\nThe platform analyzes student interactions, performance data, and learning behavior to deliver personalized content paths. Our AI tutoring features provide instant feedback, identify knowledge gaps, and suggest targeted interventions that improved learning outcomes by 40%.",

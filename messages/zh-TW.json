@@ -267,6 +267,7 @@
       "subtitle": "30 秒留下重點，接著直接選時間",
       "labels": {
         "goal": "目標 / 想做什麼",
+        "email": "Email（選填，預先帶入 Calendly）",
         "timeline": "時程",
         "budget": "預算區間"
       },
@@ -287,11 +288,13 @@
       },
       "placeholders": {
         "goal": "例：AI 家教 MVP、或自動批改 50 個班級作業",
+        "email": "you@example.com",
         "timeline": "請選擇",
         "budget": "請選擇",
         "na": "未填寫"
       },
-      "cta": "送出並到 Calendly 預約"
+      "cta": "送出並到 Calendly 預約",
+      "copied": "已複製你的回答，如 Calendly 未預填，請貼到備註欄。"
     },
     "vaitorDetail": {
       "description": "Vaitor 是一個適應性學習平台，為 30 萬以上學生革新個人化教育。透過結合自然語言處理與智慧推薦演算法，我們創建了一個能理解每位學生學習模式並即時調整內容的系統。\n\n該平台分析學生互動、表現資料和學習行為，以提供個人化內容路徑。我們的 AI 輔導功能提供即時回饋、識別知識差距，並建議目標性介入措施，使學習成效提升 40%。",

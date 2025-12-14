@@ -12,6 +12,8 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
   const [goal, setGoal] = useState('');
   const [timeline, setTimeline] = useState('');
   const [budget, setBudget] = useState('');
+  const [email, setEmail] = useState('');
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +23,20 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
       `${t('labels.budget')}: ${budget || t('placeholders.na')}`,
     ].join('\n');
 
-    const url = `https://calendly.com/young-tsai/ai?text=${encodeURIComponent(note)}`;
+    const params = new URLSearchParams();
+    params.set('name', goal ? `Goal: ${goal}` : t('placeholders.na'));
+    if (email) {
+      params.set('email', email);
+    }
+    // Some Calendly setups accept a1 as the first custom question; use it to pass the note.
+    params.set('a1', note);
+
+    const url = `https://calendly.com/young-tsai/ai?${params.toString()}`;
+    // Copy to clipboard so user can paste into the notes field if prefill is ignored
+    if (navigator?.clipboard?.writeText) {
+      navigator.clipboard.writeText(note).then(() => setCopied(true)).catch(() => setCopied(false));
+      setTimeout(() => setCopied(false), 2000);
+    }
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -33,6 +48,11 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
       </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
+        {copied && (
+          <div className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
+            {t('copied')}
+          </div>
+        )}
         <div>
           <label className="block text-sm font-semibold text-gray-800 mb-1">
             {t('labels.goal')}
@@ -43,6 +63,19 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
             placeholder={t('placeholders.goal')}
             value={goal}
             onChange={(e) => setGoal(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-gray-800 mb-1">
+            {t('labels.email')}
+          </label>
+          <input
+            type="email"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
+            placeholder={t('placeholders.email')}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
