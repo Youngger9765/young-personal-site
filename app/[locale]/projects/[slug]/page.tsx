@@ -641,6 +641,88 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               </div>
             </div>
           )}
+
+          {/* Cutor Media Coverage */}
+          {slug === 'cutor' && (
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {locale === 'zh-TW' ? '媒體報導' : 'Media Coverage'}
+              </h3>
+              <div className="space-y-4">
+                <a
+                  href="https://flipedu.parenting.com.tw/article/010170"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? '親子天下翻轉教育' : 'FlipEdu by CommonWealth Parenting'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? '樂寫公益學習網獲「誠致程有威先生教育科技獎」金獎' : 'Happy Writing Charity Learning Network Wins Gold Award in Education Technology'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? '藉由平台內建 AI 功能，提供寫作靈感，學生可以輕鬆掌握文章架構，同時透過 AI 輔助批改，將圖片轉成文字，提供建議評語，可以大幅節省批閱負擔...'
+                          : 'With built-in AI features, the platform provides writing inspiration, helping students easily grasp essay structure, while AI-assisted grading converts images to text and provides suggestion comments, significantly reducing grading workload...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://flipedu.parenting.com.tw/teacher_resource/561"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                          {locale === 'zh-TW' ? '親子天下翻轉教育' : 'FlipEdu by CommonWealth Parenting'}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                        {locale === 'zh-TW' ? 'AI 寫作助理教學應用資源' : 'AI Writing Assistant Teaching Resources'}
+                      </h4>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {locale === 'zh-TW'
+                          ? 'AI 寫作助理在教學現場的實際應用方式、教學資源與使用指南，協助教師運用 AI 技術提升寫作教學品質...'
+                          : 'Practical application methods, teaching resources, and usage guides for AI writing assistants in the classroom, helping teachers use AI technology to improve writing instruction quality...'}
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                        <span>{locale === 'zh-TW' ? '查看資源' : 'View Resources'}</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          )}
         </motion.div>
       </section>
 

@@ -187,16 +187,16 @@
       "result4": "Top 8 finalist in Meta LLM Taiwan Pitch"
     },
     "cutorDetail": {
-      "description": "Cutor is an AI-powered writing assistant designed specifically for Chinese writing. Using advanced AI technology including Claude AI and GPT-4, it helps users optimize content, improve writing style, and provides essay correction services with instant, personalized feedback.\n\nWhether it's student essays, business copy, or creative writing, Cutor provides accurate grammar corrections, style suggestions, and content optimization to help users improve their Chinese writing skills.",
-      "feature1": "Real-time grammar and punctuation checking",
-      "feature2": "Writing style optimization suggestions",
-      "feature3": "Essay structure analysis and improvements",
-      "feature4": "Personalized writing feedback",
-      "feature5": "Support for multiple writing genres (academic, business, creative)",
-      "result1": "AI writing assistant product in development",
-      "result2": "Built with Claude AI and GPT-4 technology",
-      "result3": "Supports various Chinese writing scenarios",
-      "result4": "Provides instant writing suggestions and corrections"
+      "description": "Cutor is an AI-powered writing assistant designed specifically for Chinese writing, originally a manual grading platform. After integrating AI modules, it evolved into an automated grading, intelligent question generation, and writing inspiration system, dramatically improving teacher efficiency and student learning experience. Built with Claude AI and GPT-4, it provides instant, personalized writing feedback.\n\nThe standout feature is OCR (Optical Character Recognition) technology that enables teachers to quickly digitize handwritten essays for AI grading with precise suggestion comments. AI also helps students generate writing inspiration and easily grasp essay structure, from ideation to completion. This technology helped 'Happy Writing Charity Learning Network' win the Gold Award in the 'Cheng-Chi Cheng Yu-Wei Education Technology Award,' validating AI's practical value in education.",
+      "feature1": "OCR Image-to-Text: Automatically digitize handwritten essays for rapid AI grading workflow",
+      "feature2": "AI Smart Question Generation: Auto-generate writing prompts based on student level and learning objectives",
+      "feature3": "Writing Inspiration Generation: AI assists students in grasping essay structure and brainstorming content, lowering writing barriers",
+      "feature4": "Automated Grading & Comments: AI provides precise grammar corrections, style suggestions, and personalized feedback",
+      "feature5": "Multiple Genre Support: Comprehensive coverage of academic papers, business copy, and creative writing",
+      "result1": "Helped 'Happy Writing Charity Learning Network' win Gold Award in 'Cheng-Chi Cheng Yu-Wei Education Technology Award'",
+      "result2": "Successfully transformed from manual grading platform to AI automated grading system, dramatically reducing teacher workload",
+      "result3": "Enterprise-grade AI writing assistance powered by Claude AI and GPT-4 technology",
+      "result4": "OCR + AI grading integrated workflow: digitization and grading of handwritten essays in one seamless process"
     },
     "duotopiaDetail": {
       "description": "Duotopia is an AI-powered English learning platform for students aged 6-15, designed to solve critical pain points for English teachers: time-consuming course creation, inefficient assignment grading, and difficulty tracking student progress—while addressing students' lack of instant pronunciation feedback and unclear progress visibility.\n\nThe platform employs a 3-tier Content Management System (Program → Lesson → Content) enabling teachers to rapidly create reusable course materials with drag-and-drop reordering, Translation API, and TTS API assistance, dramatically reducing lesson preparation time. After students complete reading recordings, the system integrates Azure Speech API and OpenAI Whisper for real-time voice recognition, automatically scoring WPM (Words Per Minute), accuracy, fluency, and pronunciation while marking specific error locations.\n\nFor commercialization, TapPay payment integration supports teacher subscription plans (30-day trial + flexible 1-12 month top-ups), quota management (voice recording billed per second), and automated e-invoice generation. The assignment system features complete lifecycle management (assign → record → submit → AI/manual grading → return for revision), ensuring a fully traceable teaching loop.",
