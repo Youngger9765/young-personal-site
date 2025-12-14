@@ -13,7 +13,7 @@
   "hero": {
     "badge": "AI Product Consultant",
     "headline": "Stop Planning AI\nStart Building!",
-    "subheadline": "Hey! I'm Young  Engineering background, 10 years product experience\nI turn your ideas into products, in one week",
+    "subheadline": "Hey! I'm Young\n10 years building products with engineering precision\nFrom idea to launch in one week",
     "timeline": {
       "day1": "Day 1: See Results",
       "week1": "Week 1: Go Live",
@@ -55,19 +55,19 @@
     "milestones": {
       "current": {
         "period": "2024-Present",
-        "title": "Chief AI Officer\nJunyi Academy",
+        "title": "Chief AI Officer\nLeading Education Platform",
         "highlight1": "Meta LLM Taiwan Top 8 Finalist",
         "highlight2": "Built Vaitor, Jutor, Cutor AI products"
       },
       "deputy": {
         "period": "2022-2024",
-        "title": "Deputy CEO\nJunyi Academy",
+        "title": "Deputy CEO\nLeading Education Platform",
         "highlight1": "Grew users from 200K to 300K+",
         "highlight2": "Led 20+ person cross-functional team"
       },
       "lead": {
         "period": "2016-2022",
-        "title": "Product & Data Lead\nJunyi Academy",
+        "title": "Product & Data Lead\nLeading Education Platform",
         "highlight1": "Saved $1.2M with unified data platform",
         "highlight2": "Trained 10+ leaders from IC to management"
       }
@@ -144,7 +144,7 @@
     "aiSquare": {
       "title": "AI Square",
       "subtitle": "AI Education Platform - Hour of AI",
-      "description": "Junyi Academy's AI education initiative targeting 250,000 participants, aiming for global top 5. Supported by Microsoft, Meta, and TSMC, featuring 'My Semiconductor Adventure' and 'Data World: Understanding AI' modules.",
+      "description": "Leading Education Platform's AI education initiative targeting 250,000 participants, aiming for global top 5. Supported by Microsoft, Meta, and TSMC, featuring 'My Semiconductor Adventure' and 'Data World: Understanding AI' modules.",
       "impact1": "Targeting 250,000 participants, aiming for global top 5 in AI education",
       "impact2": "Backed by leading companies: Microsoft, Meta, and TSMC",
       "impact3": "Taiwan's pioneering large-scale AI education initiative, joining Code.org's Hour of AI global movement"
@@ -211,7 +211,7 @@
       "result4": "Solving Teacher Pain Points: 10-minute first assignment setup, AI auto-grading saves 60% time, quota system reduces operating costs"
     },
     "aiSquareDetail": {
-      "description": "AI Square is Junyi Academy's 'Hour of AI' initiative, inspired by Code.org's global movement that has reached tens of millions of students across 180+ countries through Hour of Code. With Code.org launching Hour of AI in 2025 to focus on AI literacy education, Taiwan joins this global wave through AI Square, positioning itself as a leader in AI education across Asia.\n\nThis innovative program is backed by Microsoft, Meta, and TSMC, featuring two learning modules—'My Semiconductor Adventure' and 'Data World: Understanding AI'—that guide students to understand AI through 'asking, using, managing, and creating.' The core philosophy aligns with the global Hour of AI movement: 'Hour of AI is not about the technology itself, but providing a framework for everyone to participate.' The platform supports 14 languages and aims to engage 250,000 participants, targeting a spot in the global top 5 for AI education participation.",
+      "description": "AI Square is Leading Education Platform's 'Hour of AI' initiative, inspired by Code.org's global movement that has reached tens of millions of students across 180+ countries through Hour of Code. With Code.org launching Hour of AI in 2025 to focus on AI literacy education, Taiwan joins this global wave through AI Square, positioning itself as a leader in AI education across Asia.\n\nThis innovative program is backed by Microsoft, Meta, and TSMC, featuring two learning modules—'My Semiconductor Adventure' and 'Data World: Understanding AI'—that guide students to understand AI through 'asking, using, managing, and creating.' The core philosophy aligns with the global Hour of AI movement: 'Hour of AI is not about the technology itself, but providing a framework for everyone to participate.' The platform supports 14 languages and aims to engage 250,000 participants, targeting a spot in the global top 5 for AI education participation.",
       "feature1": "Multilingual platform supporting 14 languages",
       "feature2": "'My Semiconductor Adventure' interactive learning module",
       "feature3": "'Data World: Understanding AI' curriculum design",
@@ -293,7 +293,7 @@
       "description": "AI empowerment workshop designed for teachers, promoting innovative concepts of AI-assisted teaching and coding before the 'Vibe Coding' concept was introduced"
     },
     "teacherAiWorkshopDetail": {
-      "organization": "Junyi Academy",
+      "organization": "Leading Education Platform",
       "role": "Workshop Instructor / Course Designer",
       "date": "2024",
       "description": "Designed and facilitated the 'From AI Apprentice to AI Wizard' teacher empowerment workshop, helping teachers master AI tools in educational settings. What's particularly noteworthy about this workshop is that we were already promoting similar concepts and practices before 'Vibe Coding' became widely known.\n\nThe workshop features a progressive learning design, starting from basic AI tool recognition (Apprentice stage) and gradually guiding teachers to advanced applications such as AI-assisted lesson planning, teaching material design, and personalized learning (Wizard stage). Through hands-on practice and case sharing, teachers can immediately apply what they've learned in their classrooms to improve teaching efficiency and learning outcomes.",

@@ -330,11 +330,11 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                       <p className="text-gray-600 text-sm mb-3">
                         {index === 0
                           ? (locale === 'zh-TW'
-                              ? '均一教育平台 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定...'
+                              ? '知名教育平台 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定...'
                               : 'Jutor AI English Tutor recognized at Meta Llama Hackathon Finals...')
                           : (locale === 'zh-TW'
-                              ? '親子天下報導均一如何運用 Meta LLM 技術打造 AI 英文學習工具...'
-                              : 'CommonWealth Parenting reports on how Junyi uses Meta LLM to build AI English learning tools...')
+                              ? '親子天下報導知名教育平台如何運用 Meta LLM 技術打造 AI 英文學習工具...'
+                              : 'CommonWealth Parenting reports on how a leading education platform uses Meta LLM to build AI English learning tools...')
                         }
                       </p>
                       <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
@@ -422,12 +422,12 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
     'mediatek-ai-day-2024': null,
     'meta-llm-taiwan-pitch': [
       {
-        title: '均一 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定',
+        title: '知名教育平台 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定',
         url: 'https://www.facebook.com/JunyiAcademy/posts/972099254961553/',
-        source: '均一教育平台 Facebook'
+        source: '知名教育平台 Facebook'
       },
       {
-        title: 'Meta LLM應用於教育：均一AI英文學習工具',
+        title: 'Meta LLM應用於教育：知名教育平台 AI英文學習工具',
         url: 'https://flipedu.parenting.com.tw/article/009564',
         source: '親子天下翻轉教育'
       }
@@ -464,10 +464,10 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
       {
         title: 'Jutor AI English Tutor Recognized at Meta Llama Hackathon Finals',
         url: 'https://www.facebook.com/JunyiAcademy/posts/972099254961553/',
-        source: 'Junyi Academy Facebook'
+        source: 'Leading Education Platform Facebook'
       },
       {
-        title: 'Meta LLM Applied to Education: Junyi AI English Learning Tool',
+        title: 'Meta LLM Applied to Education: Leading Education Platform AI English Learning Tool',
         url: 'https://flipedu.parenting.com.tw/article/009564',
         source: 'FlipEdu by CommonWealth Parenting'
       }

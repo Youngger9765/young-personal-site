@@ -353,12 +353,12 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                         </span>
                       </div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                        {locale === 'zh-TW' ? '台灣Hour of AI啟動！均一、台積電攜手推動全民AI教育' : "Taiwan's Hour of AI Launches! Junyi Academy and TSMC Join Forces for AI Education"}
+                        {locale === 'zh-TW' ? '台灣Hour of AI啟動！知名教育平台、台積電攜手推動全民AI教育' : "Taiwan's Hour of AI Launches! Leading Education Platform and TSMC Join Forces for AI Education"}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
                         {locale === 'zh-TW'
-                          ? '均一教育平台與台積電等企業攜手推動「1小時玩AI」計畫，讓全民都能參與 AI 教育...'
-                          : "Junyi Academy partners with TSMC to promote 'Hour of AI' initiative, making AI education accessible to everyone..."}
+                          ? '知名教育平台與台積電等企業攜手推動「1小時玩AI」計畫，讓全民都能參與 AI 教育...'
+                          : "Leading Education Platform partners with TSMC to promote 'Hour of AI' initiative, making AI education accessible to everyone..."}
                       </p>
                       <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
@@ -388,12 +388,12 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                         </span>
                       </div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                        {locale === 'zh-TW' ? '均一教育平台推『1小時玩AI』 企業相挺助學生入門' : "Junyi Academy Launches 'Hour of AI' - Corporate Support Helps Students Get Started"}
+                        {locale === 'zh-TW' ? '知名教育平台推『1小時玩AI』 企業相挺助學生入門' : "Leading Education Platform Launches 'Hour of AI' - Corporate Support Helps Students Get Started"}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
                         {locale === 'zh-TW'
-                          ? '均一教育平台推出 AI 教育計畫，目標 25 萬參與者，獲微軟、Meta、台積電等企業支持...'
-                          : 'Junyi Academy launches AI education initiative targeting 250,000 participants, supported by Microsoft, Meta, TSMC...'}
+                          ? '知名教育平台推出 AI 教育計畫，目標 25 萬參與者，獲微軟、Meta、台積電等企業支持...'
+                          : 'Leading Education Platform launches AI education initiative targeting 250,000 participants, supported by Microsoft, Meta, TSMC...'}
                       </p>
                       <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
@@ -434,12 +434,12 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                         </span>
                       </div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
-                        {locale === 'zh-TW' ? 'Meta LLM應用於教育：均一AI英文學習工具' : 'Meta LLM Applied to Education: Junyi AI English Learning Tool'}
+                        {locale === 'zh-TW' ? 'Meta LLM應用於教育：知名教育平台 AI英文學習工具' : 'Meta LLM Applied to Education: Leading Education Platform AI English Learning Tool'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
                         {locale === 'zh-TW'
-                          ? '親子天下報導均一如何運用 Meta LLM 技術打造 AI 英文學習工具...'
-                          : 'CommonWealth Parenting reports on how Junyi uses Meta LLM to build AI English learning tools...'}
+                          ? '親子天下報導知名教育平台如何運用 Meta LLM 技術打造 AI 英文學習工具...'
+                          : 'CommonWealth Parenting reports on how a leading education platform uses Meta LLM to build AI English learning tools...'}
                       </p>
                       <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
@@ -546,7 +546,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
-                          {locale === 'zh-TW' ? '均一平台教育基金會' : 'Junyi Academy Foundation'}
+                          {locale === 'zh-TW' ? '知名教育平台' : 'Leading Education Platform Foundation'}
                         </span>
                       </div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">

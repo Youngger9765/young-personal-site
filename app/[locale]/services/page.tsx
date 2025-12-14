@@ -33,7 +33,7 @@ const services: Service[] = [
     ],
     timeline: "4-6 週",
     pricing: "Starting at $20,000",
-    examples: ["均一 AI 轉型策略", "企業 AI PoC 規劃", "醫療 AI 可行性評估"]
+    examples: ["知名教育平台 AI 轉型策略", "企業 AI PoC 規劃", "醫療 AI 可行性評估"]
   },
   {
     id: "implementation",
@@ -67,7 +67,7 @@ const services: Service[] = [
     ],
     timeline: "半天 or 全天工作坊",
     pricing: "Half-day from $3,000",
-    examples: ["GAICONF: 均一如何教老師使用 AI", "台大創創: AI 商業模式解構", "MediaTek AI Conference"]
+    examples: ["GAICONF: 知名教育平台如何教老師使用 AI", "台大創創: AI 商業模式解構", "MediaTek AI Conference"]
   },
   {
     id: "advisory",
