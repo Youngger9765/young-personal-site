@@ -312,99 +312,130 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Services Section - Redesigned with Entry Point Focus */}
         <section id="services" className="border-t border-gray-200 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white">
           <div className="max-w-7xl mx-auto px-6 py-32">
+            {/* Header */}
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-purple-200 to-coral-orange bg-clip-text text-transparent mb-6">
                 {t('services.title')}
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                {locale === 'zh-TW' ? '靈活的合作方式，符合您的時程與預算' : 'Flexible engagement models to fit your timeline and budget'}
+                {t('services.subtitle')}
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-10">
+            {/* Entry Point - Featured Large Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-16 relative p-12 rounded-3xl bg-gradient-to-br from-orange-500 via-coral-orange to-orange-600 border-4 border-white/20 shadow-2xl"
+            >
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-8 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 text-base font-black rounded-full shadow-xl">
+                💡 {t('services.featured.recommended')}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-4xl md:text-5xl font-black text-white mb-4">
+                    {t('services.healthCheck.title')}
+                  </h3>
+                  <p className="text-xl text-white/90 mb-6 leading-relaxed">
+                    {t('services.healthCheck.tagline')}
+                  </p>
+                  <div className="text-6xl font-black text-white mb-4">
+                    {t('services.healthCheck.price')}
+                  </div>
+                  <p className="text-white/80 text-lg mb-8">
+                    {t('services.healthCheck.timeline')} • {t('services.healthCheck.ideal')}
+                  </p>
+
+                  <a
+                    href="https://calendly.com/young-tsai/ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-10 py-5 bg-white text-coral-orange rounded-xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  >
+                    {locale === 'zh-TW' ? '立即預約' : 'Book Now'}
+                  </a>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                  <h4 className="text-2xl font-bold text-white mb-6">{locale === 'zh-TW' ? '你會得到' : 'What You Get'}</h4>
+                  <ul className="space-y-4">
+                    {[0, 1, 2].map((i) => (
+                      <li key={i} className="flex gap-3 items-start text-white/90 text-lg">
+                        <span className="text-yellow-400 mt-1 text-2xl">✓</span>
+                        <span>{t(`services.healthCheck.deliverables.${i}`)}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-8 pt-8 border-t border-white/20">
+                    <p className="text-sm text-white/70 mb-2">{locale === 'zh-TW' ? '流程' : 'Process'}</p>
+                    <p className="text-white/90">{t('services.healthCheck.flow')}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Other Options */}
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-white mb-4">{locale === 'zh-TW' ? '其他方案' : 'Other Options'}</h3>
+              <p className="text-gray-300">{locale === 'zh-TW' ? '根據你的時程與預算選擇' : 'Choose based on your timeline and budget'}</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
               {[
                 {
-                  icon: FaRocket,
-                  title: locale === 'zh-TW' ? '1 週原型 Sprint' : '1-week Prototype Sprint',
-                  deliverables: locale === 'zh-TW'
-                    ? ['互動原型（前後端+AI API）', '用戶腳本與 Demo', '技術文件與下一步計畫']
-                    : ['Interactive prototype (frontend + AI API)', 'User script & demo', 'Tech notes and next steps'],
-                  timeline: locale === 'zh-TW' ? '7 天' : '7 days',
-                  price: locale === 'zh-TW' ? '$15,000 起' : 'From $15,000',
-                  gradient: 'from-orange-500 to-coral-orange',
-                },
-                {
-                  icon: FaBrain,
-                  title: locale === 'zh-TW' ? '4 週 MVP' : '4-week MVP',
-                  deliverables: locale === 'zh-TW'
-                    ? ['可上線 MVP（含部署）', '資料與事件追蹤', '運營手冊與交接']
-                    : ['Launch-ready MVP (with deployment)', 'Data/events tracking', 'Runbook & handoff'],
-                  timeline: locale === 'zh-TW' ? '4 週' : '4 weeks',
-                  price: locale === 'zh-TW' ? '$50,000 起' : 'From $50,000',
+                  key: 'fastPrototype',
                   gradient: 'from-purple-500 to-purple-700',
-                  featured: true,
+                  featured: false,
                 },
                 {
-                  icon: FaCode,
-                  title: locale === 'zh-TW' ? 'AI 策略 / 培訓' : 'AI Strategy / Training',
-                  deliverables: locale === 'zh-TW'
-                    ? ['AI 機會盤點與路線圖', '技術選型與成本估算', '實作工作坊（半天/一天）']
-                    : ['AI opportunities & roadmap', 'Tech stack + cost plan', 'Hands-on workshop (half/full day)'],
-                  timeline: locale === 'zh-TW' ? '2-4 週' : '2-4 weeks',
-                  price: locale === 'zh-TW' ? '$8,000 起' : 'From $8,000',
+                  key: 'mvp',
                   gradient: 'from-blue-500 to-cyan-500',
+                  featured: true,
                 },
               ].map((service, index) => (
                 <motion.div
-                  key={service.title}
+                  key={service.key}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 }}
+                  transition={{ delay: index * 0.1 }}
                   className={`relative p-10 rounded-3xl bg-gradient-to-br from-gray-800 to-gray-900 border-2 ${
-                    service.featured ? 'border-purple-500 ring-4 ring-purple-500/30 scale-105' : 'border-gray-700'
+                    service.featured ? 'border-blue-500 ring-4 ring-blue-500/20' : 'border-gray-700'
                   } hover:border-white/50 transition-all duration-500 shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 flex flex-col`}
                 >
                   {service.featured && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white text-sm font-black rounded-full shadow-2xl">
-                      ⭐ {locale === 'zh-TW' ? '最受歡迎' : 'Most Popular'}
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-black rounded-full shadow-lg">
+                      ⭐ {t('services.featured.badge')}
                     </div>
                   )}
 
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white mb-8 shadow-2xl`}>
-                    <service.icon className="w-10 h-10" />
+                  <h3 className="text-3xl font-black text-white mb-3">{t(`services.${service.key}.title`)}</h3>
+                  <p className="text-gray-300 text-lg mb-6 leading-relaxed">{t(`services.${service.key}.tagline`)}</p>
+
+                  <div className="mb-6">
+                    <div className={`text-5xl font-black bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-2`}>
+                      {t(`services.${service.key}.price`)}
+                    </div>
+                    <p className="text-gray-400 text-sm">{t(`services.${service.key}.timeline`)}</p>
                   </div>
 
-                  <h3 className="text-3xl font-black text-white mb-6">
-                    {service.title}
-                  </h3>
-
-                  <ul className="space-y-4 mb-10 text-gray-300 leading-relaxed flex-1">
-                    {service.deliverables.map((item) => (
-                      <li key={item} className="flex gap-3 items-start">
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {[0, 1, 2].map((i) => (
+                      <li key={i} className="flex gap-3 items-start text-gray-300">
                         <span className="text-coral-orange mt-1 text-xl">✓</span>
-                        <span className="text-lg">{item}</span>
+                        <span className="text-lg">{t(`services.${service.key}.deliverables.${i}`)}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="pt-6 border-t border-gray-700 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm text-gray-400 mb-1">{locale === 'zh-TW' ? '時程' : 'Timeline'}</div>
-                        <div className="font-bold text-white text-lg">{service.timeline}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm text-gray-400 mb-1">{locale === 'zh-TW' ? '投資' : 'Investment'}</div>
-                        <div className={`font-black text-2xl bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                          {service.price}
-                        </div>
-                      </div>
-                    </div>
-
+                    <p className="text-sm text-gray-400">{t(`services.${service.key}.ideal`)}</p>
                     <a
                       href="https://calendly.com/young-tsai/ai"
                       target="_blank"

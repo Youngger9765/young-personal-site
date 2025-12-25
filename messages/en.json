@@ -129,32 +129,76 @@
     }
   },
   "services": {
-    "title": "What I do",
-    "labels": {
-      "pain": "Your challenge",
-      "solution": "How we fix it",
-      "value": "What you get"
+    "title": "Service Packages",
+    "subtitle": "From idea to launch, choose your starting point",
+    "featured": {
+      "badge": "Most Popular",
+      "recommended": "Recommended Start"
     },
-    "product": {
-      "title": "AI Product Development",
-      "pain": "Building an English learning platform is time-consuming and expensive. Outsourcing requires extensive communication, detailed specs for pricing, and long waits—1 month at best, a quarter at worst",
-      "solution": "Direct on-site collaboration, proposal review on day 1, interactive prototype delivered in week 1",
-      "value": "Typically live with users within a month, saving time and communication costs",
-      "note": "$1,500-3,000/hour or Starting at $50,000 • Typical MVP: 3-6 weeks"
+    "healthCheck": {
+      "title": "AI Product Health Check",
+      "tagline": "I'll help you calculate feasibility & costs for your AI idea",
+      "price": "$999",
+      "timeline": "60 minutes",
+      "deliverables": [
+        "Technical feasibility assessment",
+        "Rough cost estimate (development + AI API fees)",
+        "Next-step recommendations (3-5 actionable items)"
+      ],
+      "flow": "Pay → Fill form (idea/target users/budget) → 60-min video call → Report delivered in 24h",
+      "ideal": "For: Founders/PMs with ideas but unsure how to start"
+    },
+    "fastPrototype": {
+      "title": "Fast Prototype Validation",
+      "tagline": "I'll turn your AI idea into a working demo in 7 days",
+      "price": "$9,800",
+      "timeline": "7 days",
+      "deliverables": [
+        "Working demo (frontend + AI API)",
+        "User testing script & demo flow",
+        "Technical docs & next-step dev plan"
+      ],
+      "flow": "50% deposit → Gather requirements (1 day) → Development (5 days) → Delivery + demo (1 day)",
+      "ideal": "For: Quick validation to get internal buy-in or investor interest"
+    },
+    "fullPrototype": {
+      "title": "1-Week Full Prototype",
+      "tagline": "Complete interactive prototype with full-stack + AI integration",
+      "price": "$15,000",
+      "timeline": "7 days",
+      "deliverables": [
+        "Interactive prototype (frontend + backend + AI API)",
+        "User script & demo",
+        "Technical documentation & roadmap"
+      ],
+      "flow": "Pay → Requirements confirmation → Development → Demo delivery",
+      "ideal": "For: High-quality prototype for client demos or user testing"
+    },
+    "mvp": {
+      "title": "4-Week MVP",
+      "tagline": "Launch-ready product, from development to deployment",
+      "price": "$50,000",
+      "timeline": "4 weeks",
+      "deliverables": [
+        "Launch-ready MVP (with deployment)",
+        "Data & event tracking setup",
+        "Operations manual & technical handoff"
+      ],
+      "flow": "50% deposit → Planning (1 week) → Development (2 weeks) → Testing & deployment (1 week)",
+      "ideal": "For: Validated ideas ready to launch and acquire users"
     },
     "strategy": {
       "title": "AI Strategy Consulting",
-      "pain": "Organization uses multiple expensive analytics tools, data scattered everywhere, hard to get unified insights for decision-making",
-      "solution": "Design unified data architecture, integrate existing systems, build one-stop analytics platform",
-      "value": "Eliminate at least 3 enterprise software subscriptions, centralized data management, real-time insights for decisions",
-      "note": "Starting at $20,000 • 4-6 week engagement"
-    },
-    "consulting": {
-      "title": "AI Adoption & Training",
-      "pain": "Need to adopt new tools, upskill talent, and transform management thinking to leverage AI automation, but don't know where to start",
-      "solution": "From basics to advanced applications, phased implementation that lets teams gradually adapt and internalize",
-      "value": "Teams actually use AI tools effectively, reducing learning curve and adoption resistance",
-      "note": "$5,000-8,000 per half-day • $8,000-15,000 per full-day workshop"
+      "tagline": "Find AI opportunities & choose the right tech path",
+      "price": "$8,000",
+      "timeline": "2-4 weeks",
+      "deliverables": [
+        "AI opportunity inventory & prioritization",
+        "Tech stack selection & cost planning",
+        "Hands-on workshop (half or full day)"
+      ],
+      "flow": "Pay → Current state interviews → Analysis report → Workshop",
+      "ideal": "For: Teams/organizations wanting AI adoption but unsure where to start"
     }
   },
   "projects": {
