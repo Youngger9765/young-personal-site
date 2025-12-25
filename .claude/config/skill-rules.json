@@ -1,0 +1,144 @@
+{
+  "skills": {
+    "deploy-check": {
+      "description": "Pre-deployment validation for Next.js site (TypeScript, build, i18n)",
+      "keywords": [
+        "deploy",
+        "部署",
+        "push",
+        "推送",
+        "publish",
+        "發布",
+        "上線",
+        "production",
+        "正式環境",
+        "vercel",
+        "build",
+        "構建",
+        "release",
+        "發版"
+      ],
+      "force_activation": true,
+      "priority": "critical",
+      "activation_message": "MANDATORY: Use deploy-check skill to validate TypeScript, build, and i18n before deployment."
+    },
+    "i18n-sync": {
+      "description": "Bilingual content synchronization (zh-TW ↔ en)",
+      "keywords": [
+        "translation",
+        "翻譯",
+        "雙語",
+        "bilingual",
+        "中英文",
+        "language",
+        "語言",
+        "i18n",
+        "locale",
+        "zh-TW",
+        "en",
+        "messages",
+        "訊息",
+        "content",
+        "內容"
+      ],
+      "force_activation": true,
+      "priority": "critical",
+      "activation_message": "MANDATORY: Use i18n-sync skill to ensure zh-TW and en translations are synchronized."
+    },
+    "content-update": {
+      "description": "Portfolio content updates (projects, speaking, about)",
+      "keywords": [
+        "project",
+        "專案",
+        "作品",
+        "portfolio",
+        "作品集",
+        "speaking",
+        "演講",
+        "分享",
+        "talk",
+        "event",
+        "活動",
+        "about",
+        "關於",
+        "個人簡介",
+        "bio",
+        "add",
+        "新增",
+        "update",
+        "更新",
+        "modify",
+        "修改",
+        "gallery",
+        "畫廊"
+      ],
+      "force_activation": false,
+      "priority": "high",
+      "activation_message": "RECOMMENDED: Use content-update skill to systematically update portfolio content across all pages."
+    },
+    "requirements-clarification": {
+      "description": "Force requirements clarification BEFORE implementation using CARIO framework (Universal - 95% reusable)",
+      "keywords": [
+        "需求",
+        "requirement",
+        "requirements",
+        "客戶要",
+        "案主說",
+        "新功能",
+        "用戶想要",
+        "clarify",
+        "clarification",
+        "不確定",
+        "spec",
+        "specification"
+      ],
+      "force_activation": true,
+      "priority": "critical",
+      "activation_message": "MANDATORY: Use requirements-clarification skill to validate requirements using CARIO framework BEFORE any implementation."
+    },
+    "debugging": {
+      "description": "Systematic debugging workflow (5-step checklist) (Universal - 85% reusable)",
+      "keywords": [
+        "bug",
+        "error",
+        "debug",
+        "不work",
+        "壞掉",
+        "修復",
+        "fix",
+        "broken",
+        "not working",
+        "issue",
+        "問題",
+        "crash",
+        "exception",
+        "failure",
+        "typescript error",
+        "編譯錯誤",
+        "build error",
+        "構建失敗"
+      ],
+      "force_activation": true,
+      "priority": "critical",
+      "activation_message": "MANDATORY: Use debugging skill to follow systematic 5-step debugging process."
+    }
+  },
+  "activation_strategy": {
+    "method": "keyword_matching",
+    "fallback": "manual",
+    "min_confidence": 0.7,
+    "max_skills_per_prompt": 3
+  },
+  "hook_config": {
+    "timeout_seconds": 5,
+    "verbose_mode": false,
+    "fail_silently": true
+  },
+  "project_context": {
+    "name": "young-personal-site",
+    "tech_stack": ["Next.js 15", "TypeScript", "Tailwind CSS", "next-intl"],
+    "deployment": "Vercel",
+    "languages": ["zh-TW", "en"],
+    "key_concerns": ["TypeScript compilation", "i18n consistency", "build success"]
+  }
+}

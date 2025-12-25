@@ -1,0 +1,65 @@
+{
+  "env": {},
+  "permissions": {
+    "allow": [],
+    "deny": []
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./.claude/hooks/skill-activation-hook.sh",
+            "timeout": 5,
+            "description": "Project: Auto-activate project-specific skills (deploy-check, i18n-sync, content-update)"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./.claude/hooks/session-start-hook.sh",
+            "description": "Display project context and available skills"
+          }
+        ]
+      }
+    ],
+    "BeforePush": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./.claude/hooks/pre-push-hook.sh",
+            "timeout": 10,
+            "description": "Recommend deploy-check skill before pushing"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✨ Session ended. Remember to test i18n in both languages!'"
+          }
+        ]
+      }
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "project": {
+    "name": "young-personal-site",
+    "type": "next.js",
+    "languages": ["zh-TW", "en"],
+    "deployment": "vercel"
+  }
+}
