@@ -82,7 +82,7 @@ export default function ProjectsGalleryPage() {
 
       {/* Projects Grid */}
       <section className="max-w-6xl mx-auto px-6 pb-24">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
             <motion.div
               key={project.slug}

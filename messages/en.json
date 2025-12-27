@@ -32,7 +32,7 @@
     "intro": "👋 Hey! I'm Young, an AI product consultant based in Taiwan",
     "brandStatement": "I transform scattered conversations, fragmented knowledge, and fleeting inspiration into stable, repeatable, and evolvable systems",
     "paragraph1": "I spent the last 10+ years building products in EdTech, e-commerce, and NPO sectors. Recently, I've been transferring this expertise to healthcare with great success—leading teams, shipping features that hundreds of thousands of users rely on, and solving real business problems with AI",
-    "paragraph2": "My journey started in education technology, where I built products like Vaitor, Jutor, and Cutor that helped students learn more effectively. I led engineering teams, scaled products from prototype to production, and learned how to translate AI capabilities into tangible business outcomes",
+    "paragraph2": "My journey started in education technology, where I built products like Video Chat Learning Module, English Skills AI Module, and Chinese Writing AI Module that helped students learn more effectively. I led engineering teams, scaled products from prototype to production, and learned how to translate AI capabilities into tangible business outcomes",
     "paragraph3": "Now I help organizations navigate AI transformation—from strategy to deployment. I work with companies that are serious about building AI products that drive measurable impact, not just experimenting with the latest hype",
     "paragraph4": "When I'm not building products, you'll find me writing on Medium about AI product development, speaking at tech conferences, or mentoring the next generation of technical leaders",
     "careerHighlights": "Career",
@@ -57,7 +57,7 @@
         "period": "2024-Present",
         "title": "Chief AI Officer\nLeading Education Platform",
         "highlight1": "Meta LLM Taiwan Top 8 Finalist",
-        "highlight2": "Built Vaitor, Jutor, Cutor AI products"
+        "highlight2": "Built Video Chat, English Skills, Chinese Writing AI modules"
       },
       "deputy": {
         "period": "2022-2024",
@@ -219,8 +219,8 @@
       ]
     },
     "vaitor": {
-      "title": "Vaitor",
-      "subtitle": "AI Video Tutor",
+      "title": "Video Chat Learning Module",
+      "subtitle": "AI Interactive Video Teaching System",
       "description": "AI-powered video tutoring system that analyzes educational videos and provides interactive learning experiences. Built with Next.js, Claude AI, and video processing technology, enabling students to interact with video content in real-time.",
       "problem": "Students watched videos passively and struggled to retain key concepts.",
       "solution": "Layered AI Q&A and summaries on top of course videos so students can ask, review, and practice instantly.",
@@ -234,8 +234,8 @@
       ]
     },
     "jutor": {
-      "title": "Jutor",
-      "subtitle": "AI English Tutor",
+      "title": "English Skills AI Module",
+      "subtitle": "AI Comprehensive English Learning System",
       "description": "AI English tutoring platform providing personalized learning and instant feedback for listening, speaking, reading, and writing. Meta LLM Taiwan Pitch Top 8 finalist, built with FastAPI, OpenAI, and speech recognition technology.",
       "problem": "Learners lacked affordable, always-on English coaching across listening, speaking, reading, and writing.",
       "solution": "Delivered multi-skill practice with real-time pronunciation scoring, grammar feedback, and adaptive difficulty.",
@@ -249,8 +249,8 @@
       ]
     },
     "cutor": {
-      "title": "Cutor",
-      "subtitle": "AI Writing Assistant",
+      "title": "Chinese Writing AI Module",
+      "subtitle": "AI Writing Feedback & Tutoring System",
       "description": "AI-powered Chinese writing assistant that helps users optimize writing content, style, and essay corrections. Built with Claude AI, GPT-4, and Next.js, providing real-time writing suggestions and corrections.",
       "problem": "Teachers spent hours grading handwritten essays; students lacked timely feedback.",
       "solution": "Combined OCR + AI grading to digitize handwriting, auto-score, and generate targeted suggestions.",
@@ -336,7 +336,7 @@
       "copied": "Copied your answers. Paste into Calendly notes if needed."
     },
     "vaitorDetail": {
-      "description": "Vaitor is an adaptive learning platform that revolutionized personalized education for 300,000+ students. By combining natural language processing with intelligent recommendation algorithms, we created a system that understands each student's learning patterns and adapts content in real-time.\n\nThe platform analyzes student interactions, performance data, and learning behavior to deliver personalized content paths. Our AI tutoring features provide instant feedback, identify knowledge gaps, and suggest targeted interventions that improved learning outcomes by 40%.",
+      "description": "The Video Chat Learning Module is an adaptive learning platform that revolutionized personalized education for 300,000+ students. By combining natural language processing with intelligent recommendation algorithms, we created a system that understands each student's learning patterns and adapts content in real-time.\n\nThe platform analyzes student interactions, performance data, and learning behavior to deliver personalized content paths. Our AI tutoring features provide instant feedback, identify knowledge gaps, and suggest targeted interventions that improved learning outcomes by 40%.",
       "feature1": "Adaptive learning paths based on individual student performance",
       "feature2": "Real-time NLP-powered feedback and assessment",
       "feature3": "Intelligent content recommendation engine",
@@ -348,7 +348,7 @@
       "result4": "Established dashboards for educators to act on insights"
     },
     "jutorDetail": {
-      "description": "Developed a comprehensive AI tutoring suite consisting of Jutor (English learning) and Cutor (Chinese writing). These platforms leverage advanced AI to provide personalized feedback, adaptive practice, and intelligent assessment for language learners.\n\nJutor focuses on all four language skills - listening, speaking, reading, and writing - with real-time pronunciation analysis and grammar correction. Cutor specializes in Chinese essay writing and correction, helping students improve their composition skills through AI-powered feedback.",
+      "description": "Developed a comprehensive AI language learning suite consisting of English Skills AI Module and Chinese Writing AI Module. These platforms leverage advanced AI to provide personalized feedback, adaptive practice, and intelligent assessment for language learners.\n\nThe English Skills AI Module focuses on all four language skills - listening, speaking, reading, and writing - with real-time pronunciation analysis and grammar correction. The Chinese Writing AI Module specializes in Chinese essay writing and correction, helping students improve their composition skills through AI-powered feedback.",
       "feature1": "Multi-skill English learning (listening, speaking, reading, writing)",
       "feature2": "Real-time pronunciation analysis and correction",
       "feature3": "AI-powered essay grading and feedback",
@@ -360,13 +360,13 @@
       "result4": "Top 8 finalist in Meta LLM Taiwan Pitch"
     },
     "cutorDetail": {
-      "description": "Cutor is an AI-powered writing assistant designed specifically for Chinese writing, originally a manual grading platform. After integrating AI modules, it evolved into an automated grading, intelligent question generation, and writing inspiration system, dramatically improving teacher efficiency and student learning experience. Built with Claude AI and GPT-4, it provides instant, personalized writing feedback.\n\nThe standout feature is OCR (Optical Character Recognition) technology that enables teachers to quickly digitize handwritten essays for AI grading with precise suggestion comments. AI also helps students generate writing inspiration and easily grasp essay structure, from ideation to completion. This technology helped 'Happy Writing Charity Learning Network' win the Gold Award in the 'Cheng-Chi Cheng Yu-Wei Education Technology Award,' validating AI's practical value in education.",
+      "description": "The Chinese Writing AI Module is an AI-powered writing assistant designed specifically for Chinese writing, originally a manual grading platform. After integrating AI modules, it evolved into an automated grading, intelligent question generation, and writing inspiration system, dramatically improving teacher efficiency and student learning experience. Built with Claude AI and GPT-4, it provides instant, personalized writing feedback.\n\nThe standout feature is OCR (Optical Character Recognition) technology that enables teachers to quickly digitize handwritten essays for AI grading with precise suggestion comments. AI also helps students generate writing inspiration and easily grasp essay structure, from ideation to completion. This technology helped a leading education nonprofit platform win the Gold Award in the 'Cheng-Chi Cheng Yu-Wei Education Technology Award,' validating AI's practical value in education.",
       "feature1": "OCR Image-to-Text: Automatically digitize handwritten essays for rapid AI grading workflow",
       "feature2": "AI Smart Question Generation: Auto-generate writing prompts based on student level and learning objectives",
       "feature3": "Writing Inspiration Generation: AI assists students in grasping essay structure and brainstorming content, lowering writing barriers",
       "feature4": "Automated Grading & Comments: AI provides precise grammar corrections, style suggestions, and personalized feedback",
       "feature5": "Multiple Genre Support: Comprehensive coverage of academic papers, business copy, and creative writing",
-      "result1": "Helped 'Happy Writing Charity Learning Network' win Gold Award in 'Cheng-Chi Cheng Yu-Wei Education Technology Award'",
+      "result1": "Helped leading education nonprofit platform win Gold Award in 'Cheng-Chi Cheng Yu-Wei Education Technology Award'",
       "result2": "Successfully transformed from manual grading platform to AI automated grading system, dramatically reducing teacher workload",
       "result3": "Enterprise-grade AI writing assistance powered by Claude AI and GPT-4 technology",
       "result4": "OCR + AI grading integrated workflow: digitization and grading of handwritten essays in one seamless process"
