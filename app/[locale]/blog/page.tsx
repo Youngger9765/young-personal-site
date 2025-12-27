@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { getTranslations } from 'next-intl/server';
 import Navigation from '@/components/Navigation';
 import { getBlogPosts } from '@/lib/blog';
@@ -37,19 +36,14 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
-        >
+        <div className="mb-20 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
             {t('insights.title')}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Thoughts on AI product development, engineering leadership, and building products that scale
           </p>
-        </motion.div>
+        </div>
 
         {/* Blog Posts from MDX */}
         {blogPosts.length > 0 && (
@@ -134,12 +128,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
         </div>
 
         {/* View All on Medium CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-center space-y-4"
-        >
+        <div className="text-center space-y-4">
           <a
             href="https://medium.com/young-tsai"
             target="_blank"
@@ -160,7 +149,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
               <span>→</span>
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
