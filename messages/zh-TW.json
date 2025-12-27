@@ -493,13 +493,13 @@
     "metaLlmPitch": {
       "title": "Meta LLM 台灣黑客松前八強",
       "subtitle": "大型語言模型應用黑客松",
-      "description": "Meta 舉辦的 LLM 應用黑客松台灣賽區，以 Jutor AI 英語家教平台入圍前八強"
+      "description": "Meta 舉辦的 LLM 應用黑客松台灣賽區，以英文聽說讀寫 AI 學習平台入圍前八強"
     },
     "metaLlmPitchDetail": {
       "organization": "Meta",
       "role": "參賽者 / 產品負責人",
       "date": "2024",
-      "description": "以 Jutor AI 英語家教平台參加 Meta LLM Taiwan Pitch 黑客松，成功進入前八強。Jutor 是一個運用大型語言模型技術打造的智能英語學習平台，提供聽說讀寫四大技能的個人化學習體驗。\n\n平台結合語音辨識、自然語言處理等 AI 技術，為學習者提供即時回饋與個人化建議。透過智能對話系統，學生可以進行情境式英語會話練習，並獲得針對性的發音與文法修正，大幅提升學習效率。",
+      "description": "以英文聽說讀寫 AI 學習平台參加 Meta LLM Taiwan Pitch 黑客松，成功進入前八強。這是一個運用大型語言模型技術打造的智能英語學習平台，提供聽說讀寫四大技能的個人化學習體驗。\n\n平台結合語音辨識、自然語言處理等 AI 技術，為學習者提供即時回饋與個人化建議。透過智能對話系統，學生可以進行情境式英語會話練習，並獲得針對性的發音與文法修正，大幅提升學習效率。",
       "highlight1": "Meta LLM Taiwan Pitch 黑客松前八強",
       "highlight2": "運用大型語言模型打造智能英語學習平台",
       "highlight3": "整合語音辨識與自然語言處理技術",
@@ -518,7 +518,7 @@
       "highlight1": "數位先行，跨職能合作推動創新：資料工程師與產品經理合作開發網頁產品，半個月完成原本需半年的專案",
       "highlight2": "賦能非技術團隊：銷售團隊自行使用 OpenAI Playground 設計多 Agent 系統，產品經理運用無代碼工具快速原型開發",
       "highlight3": "循序漸進實現團隊轉型：設計團隊從 Canva 起步，逐步適應 AI 工具，避免過度變革造成焦慮",
-      "highlight4": "實戰案例分享：包含星空探險隊 AI 版、Jutor 英文家教、Dream more 計畫 AI 輔助等多個成功案例"
+      "highlight4": "實戰案例分享：包含星空探險隊 AI 版、英文聽說讀寫模組、Dream more 計畫 AI 輔助等多個成功案例"
     }
   },
   "contact": {
