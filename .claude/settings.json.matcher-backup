@@ -49,7 +49,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '\u2728 Session ended. Remember to test i18n in both languages!'"
+            "command": "echo '✨ Session ended. Remember to test i18n in both languages!'"
           }
         ]
       }
@@ -59,10 +59,7 @@
   "project": {
     "name": "young-personal-site",
     "type": "next.js",
-    "languages": [
-      "zh-TW",
-      "en"
-    ],
+    "languages": ["zh-TW", "en"],
     "deployment": "vercel"
   }
 }

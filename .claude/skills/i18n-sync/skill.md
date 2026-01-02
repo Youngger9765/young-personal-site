@@ -1,647 +1,270 @@
+---
+name: i18n-sync
+description: |
+  Bilingual content synchronization validator for young-personal-site.
+  Ensures perfect zh-TW/en translation consistency.
+activation-keywords: [translation, 翻譯, bilingual, 雙語, language, 語言, i18n, zh-TW, en]
+priority: high
+allowed-tools: [Read, Bash, Grep]
+---
+
 # i18n-sync - Bilingual Content Synchronization
 
 ## Purpose
+Ensure perfect synchronization between Chinese (zh-TW) and English (en) translation files.
 
-Ensure **perfect synchronization** between Chinese (zh-TW) and English (en) translation files. This skill prevents missing translations, inconsistent keys, and structural mismatches.
-
----
-
-## When to Use
-
-**Auto-activates when prompt contains**:
-- Translation keywords: `translation`, `翻譯`, `bilingual`, `雙語`
-- Language keywords: `language`, `語言`, `i18n`, `locale`
-- Content keywords: `messages`, `訊息`, `content`, `內容`
-- Specific locales: `zh-TW`, `en`, `Chinese`, `English`, `中英文`
-
-**Manually invoke when**:
-- Adding new content (projects, speaking events, about page)
-- Updating existing content with new fields
-- Refactoring translation structure
-- Before committing content changes
-- After content updates to verify consistency
+**Prevents**: Missing translations, inconsistent keys, type mismatches
+**Ensures**: Structural consistency, complete translations, deployment safety
 
 ---
 
-## Workflow
+## Translation Files
+```
+messages/
+  ├── zh-TW.json  (Chinese Traditional)
+  └── en.json     (English)
+```
 
-### Step 1: Locate Translation Files
+---
 
+## Validation Workflow
+
+### 1. File Existence & JSON Validity
 ```bash
-# Find translation files
+# Check both files exist and are valid JSON
 ls -la messages/
-
-# Expected structure:
-# messages/
-#   ├── zh-TW.json  (Chinese Traditional)
-#   └── en.json     (English)
+python3 -m json.tool messages/zh-TW.json > /dev/null
+python3 -m json.tool messages/en.json > /dev/null
 ```
 
-**Validation**:
-- ✅ Both files exist
-- ✅ Both files are valid JSON
-- ⚠️ If either missing → Create it
-
----
-
-### Step 2: Load and Parse JSON
-
-```typescript
-// Pseudo-code for understanding
-const zhTW = JSON.parse(readFile('messages/zh-TW.json'))
-const en = JSON.parse(readFile('messages/en.json'))
-
-// Expected structure:
-{
-  "navigation": {
-    "home": "首頁", // or "Home" in en.json
-    "projects": "作品集",
-    "speaking": "演講分享",
-    "about": "關於我"
-  },
-  "projects": {
-    "duotopia": {
-      "title": "Duotopia 英語學習平台",
-      "description": "...",
-      "tags": ["AI", "教育"]
-    }
-  },
-  // ... more content
-}
-```
-
----
-
-### Step 3: Compare Key Structures
-
-**Check for missing keys**:
-
-```python
-# Pseudo-code for validation logic
-def compare_keys(zh_tw, en, path=""):
-    zh_keys = set(zh_tw.keys())
-    en_keys = set(en.keys())
-
-    # Find missing keys
-    missing_in_en = zh_keys - en_keys
-    missing_in_zh = en_keys - zh_keys
-
-    # Report issues
-    if missing_in_en:
-        print(f"⚠️ Missing in en.json at {path}: {missing_in_en}")
-
-    if missing_in_zh:
-        print(f"⚠️ Missing in zh-TW.json at {path}: {missing_in_zh}")
-
-    # Recursively check nested objects
-    for key in zh_keys & en_keys:
-        if isinstance(zh_tw[key], dict) and isinstance(en[key], dict):
-            compare_keys(zh_tw[key], en[key], f"{path}.{key}")
-```
-
-**Example output**:
-
-```
-Checking key consistency...
-
-✅ navigation.* - All keys match
-✅ projects.duotopia.* - All keys match
-⚠️ projects.mediatek - Missing in en.json: "media_coverage"
-⚠️ speaking.techconf - Missing in zh-TW.json: "slides_url"
-```
-
----
-
-### Step 4: Validate Value Types
-
-**Ensure matching value types**:
-
-```python
-def validate_value_types(zh_tw, en, path=""):
-    for key in zh_tw.keys():
-        if key not in en:
-            continue  # Already reported in Step 3
-
-        zh_type = type(zh_tw[key])
-        en_type = type(en[key])
-
-        if zh_type != en_type:
-            print(f"⚠️ Type mismatch at {path}.{key}")
-            print(f"   zh-TW: {zh_type.__name__}")
-            print(f"   en: {en_type.__name__}")
-
-        # Recursively validate nested objects
-        if isinstance(zh_tw[key], dict):
-            validate_value_types(zh_tw[key], en[key], f"{path}.{key}")
-```
-
-**Example output**:
-
-```
-Validating value types...
-
-✅ All types match correctly
-  - Strings match strings
-  - Arrays match arrays
-  - Objects match objects
-```
-
----
-
-### Step 5: Check for Empty/Missing Translations
-
-**Flag untranslated content**:
-
-```python
-def check_empty_values(data, locale, path=""):
-    for key, value in data.items():
-        current_path = f"{path}.{key}" if path else key
-
-        if isinstance(value, dict):
-            check_empty_values(value, locale, current_path)
-        elif isinstance(value, str) and not value.strip():
-            print(f"⚠️ Empty translation in {locale} at {current_path}")
-        elif isinstance(value, list) and len(value) == 0:
-            print(f"⚠️ Empty array in {locale} at {current_path}")
-```
-
-**Example output**:
-
-```
-Checking for empty values...
-
-⚠️ Empty translation in en at projects.newproject.description
-⚠️ Empty translation in zh-TW at speaking.futuretalk.summary
-```
-
----
-
-### Step 6: Generate Synchronization Report
-
-**Comprehensive validation report**:
-
-```markdown
-# i18n Synchronization Report
-
-## Summary
-- ✅ Structural consistency: PASS
-- ⚠️ Missing keys detected: 2 issues
-- ⚠️ Empty translations: 2 issues
-- ✅ Type consistency: PASS
-
-## Issues Found
-
-### Missing Keys
-
-1. **projects.mediatek.media_coverage**
-   - Present in: zh-TW.json
-   - Missing in: en.json
-   - Suggested fix: Add key to en.json with English translation
-
-2. **speaking.techconf.slides_url**
-   - Present in: en.json
-   - Missing in: zh-TW.json
-   - Suggested fix: Add key to zh-TW.json with Chinese translation
-
-### Empty Translations
-
-1. **projects.newproject.description**
-   - File: en.json
-   - Value: "" (empty string)
-   - Suggested fix: Add English description
-
-2. **speaking.futuretalk.summary**
-   - File: zh-TW.json
-   - Value: "" (empty string)
-   - Suggested fix: Add Chinese summary
-
-## Recommendations
-
-1. Fix missing keys before deployment
-2. Complete all empty translations
-3. Consider using translation-manager agent for bulk updates
-4. Run i18n-sync again after fixes
-
-## Next Steps
-
-Choose one:
-a) Fix issues manually
-b) Invoke translation-manager agent: Skill(skill="translation-manager")
-c) Proceed with deployment (not recommended with issues)
-```
-
----
-
-### Step 7: Auto-Fix (Optional)
-
-**If user requests auto-fix**:
-
+### 2. Key Structure Comparison
 ```yaml
-Auto-fix Process:
+Checks:
+  - All keys in zh-TW.json exist in en.json
+  - All keys in en.json exist in zh-TW.json
+  - Nested object keys match recursively
+
+Reports:
+  - Missing keys in either file
+  - Path to each missing key (e.g., "projects.mediatek.media_coverage")
+```
+
+### 3. Value Type Validation
+```yaml
+Checks:
+  - String in zh-TW → String in en
+  - Array in zh-TW → Array in en
+  - Object in zh-TW → Object in en
+
+Reports:
+  - Type mismatches (e.g., array vs. string)
+  - Path to each mismatch
+```
+
+### 4. Empty Translation Detection
+```yaml
+Checks:
+  - Empty strings ("")
+  - Empty arrays ([])
+  - Missing values
+
+Reports:
+  - Path to each empty translation
+  - Which file (zh-TW or en)
+```
+
+---
+
+## Validation Severity Levels
+
+### ❌ Critical (MUST Fix - Blocks Deployment)
+1. Missing translation files
+2. Invalid JSON syntax
+3. Missing top-level keys (navigation, projects, speaking, about)
+
+### ⚠️ Warning (SHOULD Fix - Safe but Incomplete)
+1. Missing nested keys
+2. Empty translations
+3. Type mismatches
+
+### ℹ️ Info (NICE to Have)
+1. Key order inconsistency
+2. Translation length ratio differences
+3. Unused keys
+
+---
+
+## Output Format
+
+### Success
+```
+✅ i18n Synchronization: PASS
+
+📊 Results:
+  ✅ Both files exist and valid
+  ✅ All keys synchronized (zh-TW ↔ en)
+  ✅ Type consistency verified
+  ✅ No empty translations
+
+🎉 Bilingual content perfectly synchronized!
+```
+
+### Warnings
+```
+⚠️ i18n Synchronization: WARNINGS
+
+📊 Results:
+  ✅ Files valid
+  ⚠️ 2 missing keys
+  ⚠️ 1 empty translation
+
+🔧 Issues:
+  1. projects.newproject.media_coverage - Missing in en.json
+  2. speaking.futuretalk.summary - Empty in zh-TW.json
+
+💡 Fix before deployment
+```
+
+### Failure
+```
+❌ i18n Synchronization: FAILED
+
+🚨 Critical Issues:
+  1. en.json - Invalid JSON syntax (line 45: Unexpected token })
+
+⛔ DEPLOYMENT BLOCKED
+```
+
+---
+
+## Auto-Fix (Optional)
+
+**User confirms auto-fix**:
+```yaml
+Process:
   1. Missing keys in en.json:
-     - Add key with placeholder: "[TRANSLATION NEEDED]"
+     - Add with placeholder: "[TRANSLATION NEEDED]"
      - Preserve structure from zh-TW.json
 
   2. Missing keys in zh-TW.json:
-     - Add key with placeholder: "[需要翻譯]"
+     - Add with placeholder: "[需要翻譯]"
      - Preserve structure from en.json
 
   3. Empty translations:
      - Keep empty (requires human input)
-     - Flag for attention
+     - Flag for manual completion
 
-  4. Save updated files:
+  4. Save:
      - Backup original files
-     - Write updated JSON with proper formatting
+     - Write formatted JSON
      - Preserve key order
-```
-
-**Example auto-fix**:
-
-Before (en.json):
-```json
-{
-  "projects": {
-    "duotopia": {
-      "title": "Duotopia English Learning Platform"
-    }
-  }
-}
-```
-
-After (en.json with auto-fix):
-```json
-{
-  "projects": {
-    "duotopia": {
-      "title": "Duotopia English Learning Platform",
-      "media_coverage": "[TRANSLATION NEEDED]"
-    }
-  }
-}
-```
-
----
-
-## Validation Rules
-
-### Critical (MUST Pass)
-
-1. **Both files exist** - Cannot deploy without both zh-TW.json and en.json
-2. **Valid JSON syntax** - Files must parse correctly
-3. **Matching top-level keys** - `navigation`, `projects`, `speaking`, `about` must exist in both
-
-### Warnings (SHOULD Fix)
-
-1. **Missing nested keys** - Warn but don't block deployment
-2. **Empty translations** - Flag for attention
-3. **Type mismatches** - Arrays vs. strings, objects vs. primitives
-
-### Informational (NICE to Have)
-
-1. **Key order consistency** - Same order in both files
-2. **Translation length ratios** - Chinese vs. English length comparisons
-3. **Unused keys** - Keys defined but never referenced in code
-
----
-
-## Integration with Other Skills
-
-### Paired with content-update
-
-When adding new content:
-```
-1. content-update adds new project/speaking/about entries
-   ↓
-2. i18n-sync validates both language files
-   ↓
-3. Report any missing translations
-   ↓
-4. User completes translations
-   ↓
-5. i18n-sync validates again → PASS
-```
-
-### Paired with deploy-check
-
-Before deployment:
-```
-1. deploy-check runs TypeScript check
-   ↓
-2. deploy-check invokes i18n-sync
-   ↓
-3. i18n-sync validates translation consistency
-   ↓
-4. If PASS → Safe to deploy
-   If FAIL → Fix issues first
 ```
 
 ---
 
 ## Common Scenarios
 
-### Scenario 1: Adding a New Project
-
-**User action**: Add new project to portfolio
-
-**i18n-sync workflow**:
+### New Project Added
 ```
-1. Detect new project key in zh-TW.json
-2. Check if corresponding key exists in en.json
-3. If missing → Warn: "Missing English translation for new project"
-4. Suggest: Add to en.json with translation
-5. Validate after user adds translation
+1. Detect new key in zh-TW.json
+2. Check if exists in en.json
+3. If missing → Warn: "Missing English translation"
+4. User adds translation
+5. Validate → PASS
 ```
 
-### Scenario 2: Updating Existing Content
-
-**User action**: Update project description
-
-**i18n-sync workflow**:
+### Content Update
 ```
-1. Detect change in zh-TW.json at projects.duotopia.description
-2. Check if en.json has same key
-3. If exists → Remind: "Remember to update English description too"
-4. If missing → Warn: "Missing English version"
-5. Validate consistency after update
+1. Detect change in zh-TW.json
+2. Remind: "Update English version too"
+3. Validate after both updated
+4. Report consistency
 ```
 
-### Scenario 3: Bulk Content Changes
-
-**User action**: Refactor translation structure
-
-**i18n-sync workflow**:
+### Bulk Refactor
 ```
-1. Full comparison of entire JSON structure
-2. Report all differences comprehensively
-3. Suggest using translation-manager agent for bulk fixes
-4. Validate after bulk update completes
+1. Full JSON structure comparison
+2. Report all differences
+3. Suggest auto-fix or manual updates
+4. Re-validate after fixes
 ```
 
 ---
 
-## Output Format
+## Integration
 
-### Success (All Checks Pass)
-
+**With content-update**:
 ```
-✅ i18n Synchronization: PASS
-
-📊 Validation Results:
-  ✅ Both translation files exist
-  ✅ Valid JSON syntax
-  ✅ All keys synchronized (zh-TW ↔ en)
-  ✅ No empty translations
-  ✅ Type consistency verified
-
-🎉 Your bilingual content is perfectly synchronized!
+content-update adds content → i18n-sync validates → Report issues → Fix → Re-validate
 ```
 
-### Warnings (Non-Critical Issues)
-
+**With deploy-check**:
 ```
-⚠️ i18n Synchronization: WARNINGS DETECTED
-
-📊 Validation Results:
-  ✅ Both translation files exist
-  ✅ Valid JSON syntax
-  ⚠️ 2 missing keys detected
-  ⚠️ 1 empty translation found
-  ✅ Type consistency verified
-
-🔧 Issues to fix:
-  1. projects.newproject.media_coverage - Missing in en.json
-  2. speaking.futuretalk.summary - Empty in zh-TW.json
-
-💡 Recommendation: Fix these issues before deployment
+deploy-check → TypeScript check → i18n-sync → If PASS → Deploy, If FAIL → Block
 ```
-
-### Failure (Critical Issues)
-
-```
-❌ i18n Synchronization: FAILED
-
-📊 Validation Results:
-  ❌ en.json has invalid JSON syntax
-  ✅ zh-TW.json is valid
-  ❌ Cannot compare keys due to syntax error
-
-🚨 Critical Issues:
-  1. en.json - Syntax error on line 45: Unexpected token }
-
-⛔ DEPLOYMENT BLOCKED: Fix critical issues first
-```
-
----
-
-## Testing the Skill
-
-### Test 1: Perfect Sync
-
-**Setup**:
-```json
-// messages/zh-TW.json
-{
-  "navigation": {
-    "home": "首頁"
-  }
-}
-
-// messages/en.json
-{
-  "navigation": {
-    "home": "Home"
-  }
-}
-```
-
-**Expected**: ✅ PASS - Perfect synchronization
-
----
-
-### Test 2: Missing Key
-
-**Setup**:
-```json
-// messages/zh-TW.json
-{
-  "navigation": {
-    "home": "首頁",
-    "projects": "作品集"
-  }
-}
-
-// messages/en.json
-{
-  "navigation": {
-    "home": "Home"
-  }
-}
-```
-
-**Expected**: ⚠️ WARNING - Missing "projects" key in en.json
-
----
-
-### Test 3: Type Mismatch
-
-**Setup**:
-```json
-// messages/zh-TW.json
-{
-  "projects": {
-    "tags": ["AI", "教育"]
-  }
-}
-
-// messages/en.json
-{
-  "projects": {
-    "tags": "AI, Education"
-  }
-}
-```
-
-**Expected**: ⚠️ WARNING - Type mismatch (array vs. string)
-
----
-
-## Best Practices
-
-1. **Run before every content change** - Validate before editing
-2. **Fix issues immediately** - Don't accumulate translation debt
-3. **Use consistent structure** - Mirror key hierarchy in both files
-4. **Keep keys in same order** - Easier to manually review
-5. **Add comments for context** - Help future translators (JSON5 if supported)
-6. **Version control translations** - Track changes over time
 
 ---
 
 ## Edge Cases
 
-### Case 1: Nested Object Depth Mismatch
-
+### Nested Object Depth Mismatch
 ```json
-// zh-TW.json
-{
-  "projects": {
-    "duotopia": {
-      "details": {
-        "version": "2.0"
-      }
-    }
-  }
-}
-
-// en.json
-{
-  "projects": {
-    "duotopia": {
-      "details": "Version 2.0"
-    }
-  }
-}
+// zh-TW: { "details": { "version": "2.0" } }
+// en: { "details": "Version 2.0" }
+→ Type mismatch: object vs. string
 ```
 
-**Detection**: Type mismatch - object vs. string
-**Solution**: Align structure depth in both files
-
----
-
-### Case 2: Array Length Differences
-
+### Array Length Differences
 ```json
-// zh-TW.json
-{
-  "projects": {
-    "tags": ["AI", "教育", "創新"]
-  }
-}
-
-// en.json
-{
-  "projects": {
-    "tags": ["AI", "Education"]
-  }
-}
+// zh-TW: ["AI", "教育", "創新"]
+// en: ["AI", "Education"]
+→ Warning: Array length mismatch (3 vs. 2)
 ```
 
-**Detection**: Array length mismatch (3 vs. 2)
-**Solution**: Ensure same number of tags, or document why different
-
----
-
-### Case 3: Special Characters Encoding
-
+### Special Character Encoding
 ```json
-// zh-TW.json
-{
-  "about": {
-    "bio": "AI 專家 • iOS 開發者"
-  }
-}
-
-// en.json
-{
-  "about": {
-    "bio": "AI Expert \u2022 iOS Developer"
-  }
-}
+// zh-TW: "AI 專家 • iOS 開發者"
+// en: "AI Expert \u2022 iOS Developer"
+→ Both valid (JSON handles encoding)
 ```
-
-**Detection**: Different encoding for bullet point (• vs. \u2022)
-**Solution**: Both valid - no action needed (JSON handles this)
 
 ---
 
 ## Troubleshooting
 
-### Issue: "JSON parse error"
+### JSON Parse Error
+```bash
+# Validate JSON syntax
+python3 -m json.tool messages/zh-TW.json
+# Fix syntax error on reported line
+```
 
-**Cause**: Invalid JSON syntax (missing comma, quote, etc.)
+### Too Many Missing Keys
+```
+1. Use auto-fix for placeholders
+2. Prioritize critical sections (navigation, projects)
+3. Schedule time to complete all translations
+```
 
-**Fix**:
-1. Use JSON validator: `python3 -m json.tool messages/zh-TW.json`
-2. Check syntax error line number
-3. Fix syntax issue
-4. Re-run i18n-sync
-
----
-
-### Issue: "Too many missing keys"
-
-**Cause**: Translation files severely out of sync
-
-**Fix**:
-1. Use auto-fix to add placeholder keys
-2. Prioritize critical translations (navigation, projects)
-3. Consider invoking translation-manager agent for bulk work
-4. Schedule time to complete all translations
-
----
-
-### Issue: "Cannot read translation files"
-
-**Cause**: Files don't exist or permission issues
-
-**Fix**:
-1. Check files exist: `ls -la messages/`
-2. Check permissions: `chmod 644 messages/*.json`
-3. Create missing files if needed
-4. Re-run i18n-sync
+### Cannot Read Files
+```bash
+# Check existence and permissions
+ls -la messages/
+chmod 644 messages/*.json
+```
 
 ---
 
-## Version History
+## Best Practices
 
-- **v1.0** (2025-12-25) - Initial implementation
-  - Basic key comparison
-  - Type validation
-  - Empty value detection
-  - Comprehensive reporting
+1. Run before every content change
+2. Fix issues immediately (avoid translation debt)
+3. Mirror key hierarchy in both files
+4. Keep same key order (easier review)
+5. Version control all changes
 
 ---
 
-**Last Updated**: 2025-12-25
+**Version**: v1.1 | **Updated**: 2025-12-31
 **Project**: young-personal-site
-**Integration**: deploy-check, content-update
+**Integration**: content-update, deploy-check

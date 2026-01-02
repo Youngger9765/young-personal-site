@@ -1,130 +1,58 @@
 ---
 name: content-update
 description: |
-  Streamlined content update workflow for young-personal-site bilingual content.
-  Auto-activates on "更新內容", "新增專案", "加作品", "修改文案", "翻譯" keywords.
-  Handles dual-language content (zh-TW/en) with consistency checks.
+  Streamlined bilingual content updates for young-personal-site.
+  Auto-activates on content modification keywords with dual-language consistency checks.
+activation-keywords: [更新內容, 新增專案, 加作品, 修改文案, 翻譯, update content, add project, speaking event]
+priority: high
 allowed-tools: [Read, Edit, Write, Bash, Grep, Glob]
 ---
 
 # Content Update Skill
 
 ## Purpose
-Simplify content updates for the personal website with automatic bilingual support.
+Ensure bilingual content consistency when updating website content.
 
-**Prevents**:
-- ❌ Missing translations (zh-TW or en)
-- ❌ Inconsistent content across languages
-- ❌ Broken image paths
-- ❌ Untested bilingual content
-
-**Ensures**:
-- ✅ Both zh-TW and en translations present
-- ✅ Translation keys match exactly
-- ✅ Images optimized and properly linked
-- ✅ Tested in both languages before deployment
+**Prevents**: Missing translations, broken images, inconsistent keys
+**Ensures**: Synchronized zh-TW/en content, optimized images, tested updates
 
 ---
 
-## Auto-Activation
+## Content Locations
 
-Triggers on:
-- ✅ "更新內容", "update content", "add content"
-- ✅ "新增專案", "加作品", "add project"
-- ✅ "演講活動", "speaking event", "add talk"
-- ✅ "修改文案", "翻譯", "translation"
-- ✅ "關於頁面", "about page", "服務內容"
-
----
-
-## Content Types & Locations
-
-### 1. Projects (`/projects`)
-**Translation files**:
-- `messages/zh-TW.json` → `projects.items[]`
-- `messages/en.json` → `projects.items[]`
-
-**Component**:
-- `app/[locale]/projects/page.tsx`
-
-**Images**:
-- `public/images/projects/`
-
-### 2. Speaking Events (`/speaking`)
-**Translation files**:
-- `messages/zh-TW.json` → `speaking.events[]`
-- `messages/en.json` → `speaking.events[]`
-
-**Components**:
-- `app/[locale]/speaking/page.tsx` (list)
-- `app/[locale]/speaking/[slug]/page.tsx` (detail)
-
-**Images**:
-- `public/images/speaking/`
-
-### 3. About Page (`/about`)
-**Translation files**:
-- `messages/zh-TW.json` → `about.*`
-- `messages/en.json` → `about.*`
-
-**Component**:
-- `app/[locale]/about/page.tsx`
-
-### 4. Services (`/services`)
-**Translation files**:
-- `messages/zh-TW.json` → `services.*`
-- `messages/en.json` → `services.*`
-
-**Component**:
-- `app/[locale]/services/page.tsx`
+| Type | Translation Path | Component | Images |
+|------|-----------------|-----------|--------|
+| Projects | `projects.items[]` | `app/[locale]/projects/page.tsx` | `public/images/projects/` |
+| Speaking | `speaking.events[]` | `app/[locale]/speaking/page.tsx` | `public/images/speaking/` |
+| About | `about.*` | `app/[locale]/about/page.tsx` | - |
+| Services | `services.*` | `app/[locale]/services/page.tsx` | - |
 
 ---
 
-## Workflow: Add New Project
+## Core Workflow
 
-### Step 1: Gather Information
+### 1. Add New Project
 
-**Required info**:
-```markdown
-Project Checklist:
-- [ ] Project name (zh-TW)
-- [ ] Project name (en)
-- [ ] Description (zh-TW)
-- [ ] Description (en)
-- [ ] Category/tags
-- [ ] Banner image (path or URL)
-- [ ] Project URL (if applicable)
-- [ ] Date/year
+```yaml
+Steps:
+  1. Gather info: name, description, category, image, year (both languages)
+  2. Update messages/zh-TW.json → projects.items[]
+  3. Update messages/en.json → projects.items[]
+  4. Add image to public/images/projects/ (< 500KB, optimized)
+  5. Verify: keys match, paths identical
+  6. Test: npm run dev → check both /zh-TW/projects and /en/projects
+  7. Commit: "feat: add [project name]"
 ```
 
 **Example**:
-```
-User: "新增 Duotopia 專案"
-
-Agent asks:
-1. 中文描述？
-2. English description?
-3. 專案分類？
-4. 圖片路徑？
-```
-
-### Step 2: Update Translation Files
-
-**Read current content**:
-```bash
-Read messages/zh-TW.json
-Read messages/en.json
-```
-
-**Add to zh-TW.json**:
 ```json
+// messages/zh-TW.json
 {
   "projects": {
     "items": [
-      // ... existing projects
       {
         "title": "Duotopia 多鄰國風格學習平台",
-        "description": "仿照 Duolingo 的遊戲化學習平台，支援多語言學習路徑",
+        "description": "仿照 Duolingo 的遊戲化學習平台",
         "category": "教育科技",
         "image": "/images/projects/duotopia-banner.jpg",
         "year": "2024"
@@ -132,17 +60,14 @@ Read messages/en.json
     ]
   }
 }
-```
 
-**Add to en.json**:
-```json
+// messages/en.json (mirror structure)
 {
   "projects": {
     "items": [
-      // ... existing projects
       {
         "title": "Duotopia - Gamified Learning Platform",
-        "description": "A Duolingo-inspired gamified learning platform with multi-language learning paths",
+        "description": "A Duolingo-inspired gamified learning platform",
         "category": "EdTech",
         "image": "/images/projects/duotopia-banner.jpg",
         "year": "2024"
@@ -152,264 +77,33 @@ Read messages/en.json
 }
 ```
 
-### Step 3: Handle Images
+### 2. Add Speaking Event
 
-**If image needs to be added**:
-```markdown
-Image Checklist:
-- [ ] File name descriptive (e.g., duotopia-banner.jpg)
-- [ ] Optimized size (< 500KB recommended)
-- [ ] Placed in correct directory (public/images/projects/)
-- [ ] Path matches translation files
-
-Optimization tips:
-- Use JPEG for photos (80-85% quality)
-- Use PNG for logos/graphics with transparency
-- Consider WebP for better compression
-- Resize to max 1920px width
+```yaml
+Steps:
+  1. Gather: name, date, location, description, type, image (both languages)
+  2. Update speaking.events[] in both translation files
+  3. Add slug to app/[locale]/speaking/[slug]/page.tsx validSlugs array
+  4. Add image to public/images/speaking/
+  5. Test: list page + detail page (both languages)
+  6. Commit: "feat: add [event name] speaking event"
 ```
 
-**Prompt user if needed**:
-```
-Image needed for this project. Please provide:
-1. Image file path, OR
-2. Let me know to use placeholder
+### 3. Update About/Services Content
 
-For best results:
-- Optimize to < 500KB
-- 16:9 or 4:3 aspect ratio
-- Min 800px width
-```
-
-### Step 4: Verify Translation Consistency
-
-**Validation**:
-```bash
-# Check both files have same structure
-grep -A 10 "Duotopia" messages/zh-TW.json
-grep -A 10 "Duotopia" messages/en.json
-
-# Verify image paths match
-grep "duotopia-banner" messages/*.json
-```
-
-**Consistency checklist**:
-- [ ] Same number of fields in both languages
-- [ ] Image paths identical
-- [ ] Keys match exactly
-- [ ] No missing translations
-
-### Step 5: Test Bilingual Display
-
-**Test locally**:
-```bash
-# Start dev server
-npm run dev
-
-# Test both languages:
-# 1. Visit http://localhost:3000/zh-TW/projects
-# 2. Visit http://localhost:3000/en/projects
-# 3. Check new project appears
-# 4. Verify image loads
-# 5. Test language switcher
-```
-
-**Manual test checklist**:
-- [ ] Project visible on zh-TW version
-- [ ] Project visible on en version
-- [ ] Image loads correctly
-- [ ] Text displays properly (no overflow)
-- [ ] Responsive on mobile
-- [ ] Language switcher works
-
-### Step 6: Commit and Deploy
-
-```bash
-# Build check
-npm run build
-
-# If successful, commit
-git add messages/zh-TW.json messages/en.json public/images/
-git commit -m "feat: add Duotopia project with bilingual content"
-
-# Push (auto-deploys)
-git push
+```yaml
+Steps:
+  1. Identify section: about.hero, about.intro, services.consulting, etc.
+  2. Update both zh-TW.json and en.json
+  3. Test: /zh-TW/about and /en/about
+  4. Commit: "docs: update [section] content"
 ```
 
 ---
 
-## Workflow: Add Speaking Event
+## Translation Guidelines
 
-### Step 1: Gather Event Information
-
-```markdown
-Event Checklist:
-- [ ] Event name (zh-TW & en)
-- [ ] Date
-- [ ] Location
-- [ ] Description (zh-TW & en)
-- [ ] Event type (conference/workshop/podcast/etc.)
-- [ ] Audience size (if applicable)
-- [ ] Event image
-- [ ] Media coverage links (if any)
-- [ ] Slide deck link (if any)
-- [ ] Video link (if any)
-```
-
-### Step 2: Update Translation Files
-
-**zh-TW.json**:
-```json
-{
-  "speaking": {
-    "events": [
-      {
-        "slug": "mediatek-ai-education-2024",
-        "title": "AI 賦能教育：從理論到實踐",
-        "date": "2024-11-15",
-        "location": "聯發科技總部",
-        "type": "企業內訓",
-        "description": "分享 AI 在教育領域的應用案例與實踐經驗",
-        "image": "/images/speaking/mediatek-2024.jpg",
-        "attendees": "80+",
-        "media": [
-          {
-            "title": "活動報導",
-            "url": "https://..."
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-**en.json**:
-```json
-{
-  "speaking": {
-    "events": [
-      {
-        "slug": "mediatek-ai-education-2024",
-        "title": "AI-Powered Education: From Theory to Practice",
-        "date": "2024-11-15",
-        "location": "MediaTek Headquarters",
-        "type": "Corporate Training",
-        "description": "Sharing AI education case studies and practical experiences",
-        "image": "/images/speaking/mediatek-2024.jpg",
-        "attendees": "80+",
-        "media": [
-          {
-            "title": "Event Coverage",
-            "url": "https://..."
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-### Step 3: Update Valid Slugs (if detail page needed)
-
-**Edit** `app/[locale]/speaking/[slug]/page.tsx`:
-```tsx
-// Add new slug to valid slugs array
-const validSlugs = [
-  // ... existing slugs
-  'mediatek-ai-education-2024',
-];
-```
-
-### Step 4: Test and Deploy
-
-```bash
-# Test speaking list page
-npm run dev
-# → Visit /zh-TW/speaking and /en/speaking
-
-# Test detail page (if added)
-# → Visit /zh-TW/speaking/mediatek-ai-education-2024
-
-# Commit
-git add messages/ app/
-git commit -m "feat: add MediaTek AI education speaking event"
-git push
-```
-
----
-
-## Workflow: Update About/Services Content
-
-### Step 1: Identify Content to Update
-
-**About page sections**:
-- `about.hero` (Hero section)
-- `about.intro` (Introduction)
-- `about.background` (Background)
-- `about.expertise` (Expertise areas)
-- `about.values` (Core values)
-
-**Services page sections**:
-- `services.hero`
-- `services.consulting`
-- `services.training`
-- `services.development`
-
-### Step 2: Update Both Language Files
-
-**Example: Update about intro**:
-
-**zh-TW.json**:
-```json
-{
-  "about": {
-    "intro": "全新的自我介紹文字..."
-  }
-}
-```
-
-**en.json**:
-```json
-{
-  "about": {
-    "intro": "Updated introduction text..."
-  }
-}
-```
-
-### Step 3: Test and Deploy
-
-```bash
-npm run dev
-# Test /zh-TW/about and /en/about
-
-git add messages/
-git commit -m "docs: update about page introduction"
-git push
-```
-
----
-
-## Translation Best Practices
-
-### 1. Consistency in Tone
-
-**zh-TW**: 專業但親和
-```
-✅ "協助企業導入 AI 教育解決方案"
-❌ "幫公司弄 AI 教學的東西"
-```
-
-**en**: Professional and clear
-```
-✅ "Help enterprises adopt AI-powered education solutions"
-❌ "Help companies with AI teaching stuff"
-```
-
-### 2. Terminology Consistency
-
-**Maintain glossary**:
+### Terminology Consistency
 ```
 教育科技 = EdTech
 企業內訓 = Corporate Training
@@ -418,241 +112,115 @@ git push
 顧問服務 = Consulting Services
 ```
 
-### 3. Length Balance
+### Tone Standards
+- **zh-TW**: 專業但親和 (Professional yet approachable)
+- **en**: Professional and clear
 
-**Try to keep similar length**:
-```
-zh-TW: "AI 賦能教育的創新實踐" (11 chars)
-en:    "Innovative AI-Powered Education" (31 chars)
-```
-
-**Why**: Prevents layout breaking in UI
-
-### 4. Context Preservation
-
-**Include context in descriptions**:
-```json
-// Good
-{
-  "title": "Duotopia 多鄰國風格學習平台",
-  "description": "仿照 Duolingo 的遊戲化學習平台，支援多語言學習路徑，包含積分系統、連勝記錄等功能"
-}
-
-// Bad (too vague)
-{
-  "title": "Duotopia",
-  "description": "學習平台"
-}
+### Image Optimization
+```yaml
+Requirements:
+  - File size: < 500KB
+  - Format: JPEG (photos, 80-85% quality), PNG (logos/graphics)
+  - Dimensions: Max 1920px width, min 800px width
+  - Naming: Descriptive (duotopia-banner.jpg, not IMG_1234.jpg)
+  - Aspect ratio: 16:9 or 4:3
 ```
 
 ---
 
-## Common Content Update Scenarios
+## Validation Checklist
 
-### Scenario 1: Quick Text Fix
-
-**User**: "修改關於頁面的自我介紹，改成 XXX"
-
-**Workflow**:
-1. Read both translation files
-2. Update zh-TW intro
-3. Ask user for English version OR translate
-4. Update en intro
-5. Test both languages
-6. Commit: "docs: update about page intro"
-
-### Scenario 2: Add Multiple Projects
-
-**User**: "新增 3 個專案：A, B, C"
-
-**Workflow**:
-1. Gather info for all 3 projects (batch)
-2. Update zh-TW.json (add all 3)
-3. Update en.json (add all 3)
-4. Add images (if needed)
-5. Test all projects display
-6. Commit: "feat: add projects A, B, and C"
-
-### Scenario 3: Image Optimization
-
-**User**: "專案圖片太大，幫我優化"
-
-**Workflow**:
-1. Identify large images (> 500KB)
-2. Suggest optimization:
-   ```bash
-   # Using ImageOptim, TinyPNG, or similar
-   # Target: 80-85% JPEG quality, < 500KB
-   ```
-3. Update image files
-4. Verify paths still correct
-5. Commit: "perf: optimize project images"
-
----
-
-## Translation Checklist Template
-
-**Copy this for every content update**:
-
+**Before committing**:
 ```markdown
-## Content Update Checklist
-
-### Content Gathering
-- [ ] zh-TW content ready
-- [ ] en content ready
-- [ ] Images identified/optimized
-- [ ] Links verified (if any)
-
-### File Updates
-- [ ] messages/zh-TW.json updated
-- [ ] messages/en.json updated
-- [ ] Images added to public/images/
-- [ ] Component updated (if needed)
-
-### Validation
-- [ ] Translation keys match
+Content:
+- [ ] zh-TW translation complete
+- [ ] en translation complete
+- [ ] Keys match exactly in both files
 - [ ] Image paths identical
-- [ ] No missing fields
-- [ ] Terminology consistent
 
-### Testing
+Images:
+- [ ] Optimized (< 500KB)
+- [ ] Correct directory (public/images/[type]/)
+- [ ] Paths match translation files
+
+Testing:
+- [ ] npm run dev successful
 - [ ] zh-TW page displays correctly
 - [ ] en page displays correctly
-- [ ] Images load
 - [ ] Language switcher works
+- [ ] Images load properly
 - [ ] Mobile responsive
-- [ ] npm run build succeeds
+- [ ] npm run build passes
 
-### Deployment
-- [ ] Commit with clear message
-- [ ] Push to main
-- [ ] Verify Vercel deployment
+Deployment:
+- [ ] Clear commit message
+- [ ] Push to main (auto-deploys to Vercel)
 ```
 
 ---
 
-## Anti-Patterns to Avoid
+## Common Scenarios
+
+### Quick Text Fix
+```
+User: "修改關於頁面的自我介紹"
+→ Read both translation files
+→ Update zh-TW intro
+→ Update en intro (ask user or translate)
+→ Test both languages
+→ Commit: "docs: update about page intro"
+```
+
+### Bulk Project Addition
+```
+User: "新增 3 個專案：A, B, C"
+→ Gather info for all 3 (batch)
+→ Update zh-TW.json (add all 3)
+→ Update en.json (add all 3)
+→ Add images
+→ Test all projects
+→ Commit: "feat: add projects A, B, and C"
+```
+
+### Image Optimization
+```
+User: "專案圖片太大"
+→ Identify large images (> 500KB)
+→ Optimize (80-85% JPEG quality)
+→ Verify paths unchanged
+→ Commit: "perf: optimize project images"
+```
+
+---
+
+## Anti-Patterns
 
 ### ❌ Updating Only One Language
-
 ```json
-// Bad: Only zh-TW updated
-// messages/zh-TW.json
-{
-  "projects": {
-    "items": [
-      { "title": "New Project", ... }
-    ]
-  }
-}
-
-// messages/en.json (MISSING new project!)
-{
-  "projects": {
-    "items": []
-  }
-}
+// zh-TW.json has new project, en.json missing → English version breaks
 ```
-
-**Result**: English version shows missing content!
 
 ### ❌ Mismatched Image Paths
-
 ```json
-// Bad: Different paths
-// zh-TW.json
-{ "image": "/images/project-banner.jpg" }
-
-// en.json
-{ "image": "/images/projects/banner.jpg" }
+// zh-TW: "/images/project-banner.jpg"
+// en: "/images/projects/banner.jpg" → Image missing in one language
 ```
-
-**Result**: Image missing in one language!
 
 ### ❌ Inconsistent Keys
-
 ```json
-// Bad: Different structures
-// zh-TW.json
-{
-  "projects": {
-    "list": [...]
-  }
-}
-
-// en.json
-{
-  "projects": {
-    "items": [...]
-  }
-}
-```
-
-**Result**: Translation system breaks!
-
----
-
-## Quick Reference: Common Updates
-
-### Add Project
-```
-1. Read messages/zh-TW.json, messages/en.json
-2. Add to projects.items[] in both files
-3. Add image to public/images/projects/
-4. Test both languages
-5. Commit: "feat: add [project name]"
-```
-
-### Add Speaking Event
-```
-1. Read translation files
-2. Add to speaking.events[] in both files
-3. Update valid slugs if needed
-4. Add image to public/images/speaking/
-5. Test both languages + detail page
-6. Commit: "feat: add [event name] speaking event"
-```
-
-### Update About Content
-```
-1. Read messages files
-2. Update about.* in both zh-TW and en
-3. Test /about in both languages
-4. Commit: "docs: update about page [section]"
-```
-
-### Fix Translation
-```
-1. Identify incorrect translation
-2. Update in appropriate messages file
-3. Test affected pages
-4. Commit: "fix: correct [section] translation"
+// zh-TW: projects.list[]
+// en: projects.items[] → Translation system breaks
 ```
 
 ---
 
-## Success Metrics
+## Integration
 
-### Before This Skill
-- ⏱️ Content updates: Manual, error-prone
-- 🌍 Bilingual sync: Often broken
-- 🖼️ Images: Inconsistent paths
-
-### After This Skill
-- ✅ Content updates: Streamlined, systematic
-- 🌍 Bilingual sync: Always consistent
-- 🖼️ Images: Properly linked and optimized
-
----
-
-## Related Skills
-
+- **i18n-sync**: Validates translation consistency after updates
 - **design-improvement**: Content + design updates together
 - **deploy-check**: Pre-deployment content verification
 
 ---
 
-**Skill Version**: v1.0
-**Last Updated**: 2025-12-25
+**Version**: v1.1 | **Updated**: 2025-12-31
 **Project**: young-personal-site
-**Philosophy**: "Content is king, but consistency is queen" 👑
