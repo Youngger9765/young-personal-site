@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navigation from '@/components/Navigation';
 import AIChatWidget from '@/components/AIChatWidget';
-import { Inter, Noto_Sans_TC } from 'next/font/google';
+import { Inter, Noto_Sans_TC, Merriweather } from 'next/font/google';
 import '../globals.css';
 
 const inter = Inter({
@@ -18,6 +18,13 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-sans-tc',
+});
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
+  variable: '--font-merriweather',
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -43,7 +50,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
-      <body className={`${inter.variable} ${notoSansTC.variable} antialiased`}>
+      <body className={`${inter.variable} ${notoSansTC.variable} ${merriweather.variable} font-body antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <main className="min-h-screen">
