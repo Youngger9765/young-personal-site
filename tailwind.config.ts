@@ -14,8 +14,28 @@ const config: Config = {
         foreground: "var(--foreground)",
         // Brand Colors - 2025 Warm Professional
         'slate-blue': '#334155',
-        'warm-cream': '#FAF8F5',
         'coral-orange': '#FF8A65',
+        // Rich Earth Tones - Brutalist Luxury
+        'deep-brown': '#2C1810',
+        'forest-green': '#1A3A2E',
+        'warm-cream': '#F5F1E8',
+        'amber-gold': '#D4A574',
+        'bronze': '#8B6F47',
+        'warm-orange': '#E87B35',
+        'charcoal': '#3A3A3A',
+        'stone-gray': '#6B6B6B',
+        'light-stone': '#D4CFCF',
+      },
+      spacing: {
+        '18': '4.5rem',   // 72px
+        '22': '5.5rem',   // 88px
+        '26': '6.5rem',   // 104px
+        '30': '7.5rem',   // 120px
+        '34': '8.5rem',   // 136px
+        '38': '9.5rem',   // 152px
+        '42': '10.5rem',  // 168px
+        '46': '11.5rem',  // 184px
+        '50': '12.5rem',  // 200px
       },
       fontFamily: {
         sans: [
@@ -27,6 +47,14 @@ const config: Config = {
           '-apple-system',
           'sans-serif',
         ],
+        'display': ['Inter', 'system-ui', 'sans-serif'],
+        'body': ['Merriweather', 'Georgia', 'serif'],
+        'ui': ['Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        'brutal': '8px 8px 0px rgba(44, 24, 16, 0.15)',
+        'brutal-lg': '12px 12px 0px rgba(44, 24, 16, 0.15)',
+        'brutal-amber': '8px 8px 0px rgba(212, 165, 116, 0.3)',
       },
       typography: {
         DEFAULT: {
