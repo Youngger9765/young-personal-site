@@ -472,14 +472,15 @@ export default function Home() {
 
             <div className="space-y-8">
               {projects.map((project, index) => (
-                <Link key={project.slug} href={`/${locale}/projects/${project.slug}`}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="group relative rounded-3xl bg-white border-2 border-gray-200 hover:border-purple-500 transition-all duration-500 shadow-xl hover:shadow-2xl overflow-hidden"
-                  >
+                <motion.div
+                  key={project.slug}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => window.location.href = `/${locale}/projects/${project.slug}`}
+                  className="group relative rounded-3xl bg-white border-2 border-gray-200 hover:border-purple-500 transition-all duration-500 shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer"
+                >
                     {/* Hover Gradient Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-coral-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -551,7 +552,9 @@ export default function Home() {
                             href="https://calendly.com/young-tsai/ai"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                            }}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300"
                           >
                             {t('projects.consultCta')}
@@ -563,8 +566,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
-                </Link>
+                </motion.div>
               ))}
             </div>
 
