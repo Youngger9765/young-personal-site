@@ -51,6 +51,10 @@ const config: Config = {
         'body': ['Merriweather', 'Georgia', 'serif'],
         'ui': ['Inter', 'system-ui', 'sans-serif'],
       },
+      borderWidth: {
+        '3': '3px',
+        '5': '5px',
+      },
       boxShadow: {
         'brutal': '8px 8px 0px rgba(44, 24, 16, 0.15)',
         'brutal-lg': '12px 12px 0px rgba(44, 24, 16, 0.15)',

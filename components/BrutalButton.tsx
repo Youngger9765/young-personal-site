@@ -20,7 +20,7 @@ export default function BrutalButton({
   external = false,
   className = '',
 }: BrutalButtonProps) {
-  const baseStyles = 'font-ui font-bold transition-all duration-200 border-[3px] inline-block';
+  const baseStyles = 'font-ui font-bold transition-all duration-200 border-3 inline-block';
 
   const variantStyles = {
     primary: 'bg-amber-gold text-deep-brown border-deep-brown hover:bg-bronze shadow-brutal hover:shadow-brutal-lg hover:translate-x-1 hover:translate-y-1',
