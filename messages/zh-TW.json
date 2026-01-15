@@ -243,7 +243,7 @@
       "requirement5": "請事先準備想實作的題目，並思考是否適合用網頁服務處理"
     },
     "strategyConsulting": {
-      "title": "AI Strategy Consulting",
+      "title": "AI 策略顧問",
       "tagline": "從迷霧到清晰的 AI 轉型路線圖",
       "description": "AI 轉型戰略規劃、技術可行性評估、實施路線圖設計。不只告訴你該做什麼，更告訴你為什麼這樣做、如何做、以及如何衡量成功。",
       "suitableFor": "想導入 AI 但不知從何開始的組織、需要驗證 AI 想法的團隊、準備進行 AI 轉型的企業",
@@ -252,13 +252,13 @@
       "deliverable3": "分階段實施計畫（Quick Wins → 短期目標 → 長期願景）",
       "deliverable4": "ROI 預測與 KPI 設計",
       "timeline": "4-6 週",
-      "pricing": "Starting at $20,000",
+      "pricing": "起價 $20,000 美元",
       "example1": "知名教育平台 AI 轉型策略",
       "example2": "企業 AI PoC 規劃",
       "example3": "醫療 AI 可行性評估"
     },
     "implementation": {
-      "title": "AI Implementation & Development",
+      "title": "AI 開發與實作",
       "tagline": "7 天從概念到可用 MVP",
       "description": "AI MVP 快速開發、系統整合、技術指導。運用 Vibe Coding 方法論，快速驗證想法，降低風險，縮短上市時間。",
       "suitableFor": "需要快速驗證 AI 想法的團隊、已有明確需求的專案、需要技術救援的開發團隊",
@@ -267,13 +267,13 @@
       "deliverable3": "雲端部署方案（Cloud Run / Supabase / GCP）",
       "deliverable4": "成本優化建議與監控設定",
       "timeline": "彈性（時薪制或專案制）",
-      "pricing": "$800/hour or project-based",
-      "example1": "Jutor - AI English Tutor (Meta LLM Top 8)",
+      "pricing": "$800 美元/小時 或專案制",
+      "example1": "Jutor - AI 英語家教（Meta LLM 前八強）",
       "example2": "AI Square 多語言學習平台",
-      "example3": "Medical Decision Platform 醫療決策平台"
+      "example3": "醫療決策平台"
     },
     "speakingWorkshop": {
-      "title": "Speaking & Workshops",
+      "title": "演講與工作坊",
       "tagline": "讓團隊真正「會用」AI",
       "description": "企業內訓、產業研討會、教師培訓。不只講理論，更帶實作；不只教工具，更教思維。",
       "suitableFor": "想提升團隊 AI 素養的組織、需要教師 AI 培訓的學校、舉辦產業研討會的單位",
@@ -281,14 +281,14 @@
       "deliverable2": "實作工作坊（帶學員動手做）",
       "deliverable3": "課後資源包（簡報、範例、工具清單）",
       "deliverable4": "後續諮詢支援（Email / Slack）",
-      "timeline": "半天 or 全天工作坊",
-      "pricing": "Half-day from $3,000",
-      "example1": "GAICONF: 知名教育平台如何教老師使用 AI",
-      "example2": "台大創創: AI 商業模式解構",
-      "example3": "MediaTek AI Conference"
+      "timeline": "半天或全天工作坊",
+      "pricing": "半天起價 $3,000 美元",
+      "example1": "GAICONF：知名教育平台如何教老師使用 AI",
+      "example2": "台大創創：AI 商業模式解構",
+      "example3": "聯發科 AI 大會"
     },
     "advisory": {
-      "title": "Advisory & Retainer",
+      "title": "顧問與長期合作",
       "tagline": "長期夥伴，持續賦能",
       "description": "月度技術顧問、戰略諮詢、決策支援。像有個 CAIO 在你的團隊，但不用付全職薪水。",
       "suitableFor": "需要持續 AI 指導的組織、正在進行長期專案的團隊、需要戰略夥伴的新創公司",
@@ -297,9 +297,9 @@
       "deliverable3": "戰略審查會議（每月一次）",
       "deliverable4": "技術決策支援（架構審查、技術選型、成本優化）",
       "timeline": "月度訂閱制",
-      "pricing": "$5,000/month (retainer)",
-      "example1": "EdTech Startup 長期技術顧問",
-      "example2": "Healthcare AI 專案陪跑",
+      "pricing": "$5,000 美元/月（長期合作）",
+      "example1": "教育科技新創長期技術顧問",
+      "example2": "醫療 AI 專案陪跑",
       "example3": "企業 AI 轉型教練"
     },
     "healthCheck": {
