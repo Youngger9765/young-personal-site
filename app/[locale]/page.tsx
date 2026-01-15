@@ -8,6 +8,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
 import QuickConsultForm from '@/components/QuickConsultForm';
+import BrutalButton from '@/components/BrutalButton';
 
 export default function Home() {
   const t = useTranslations();
@@ -76,97 +77,79 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 overflow-hidden">
-      {/* Simple Background */}
-      <div className="fixed inset-0 z-0 bg-white" />
+    <div className="min-h-screen bg-warm-cream text-charcoal overflow-hidden">
+      {/* Background with geometric shapes */}
+      <div className="fixed inset-0 z-0 bg-warm-cream">
+        {/* Geometric decorations - Brutalist style */}
+        <div className="absolute top-20 right-10 w-64 h-64 border-4 border-deep-brown opacity-20" />
+        <div className="absolute bottom-40 left-20 w-96 h-96 border-8 border-forest-green opacity-10" />
+        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-amber-gold opacity-20" />
+      </div>
 
       {/* Navigation */}
       <Navigation />
 
       <div className="relative z-10">
-        {/* Hero Section - Modern & Bold */}
-        <section id="hero" className="max-w-7xl mx-auto px-6 pt-32 pb-24 min-h-screen flex items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col md:flex-row items-center gap-20 w-full"
-          >
-            {/* Photo - Modern Design */}
-            <motion.div
-              className="flex-shrink-0"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="relative">
-                {/* Decorative Background */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-coral-orange/20 via-purple-500/20 to-slate-blue/20 rounded-full blur-2xl"></div>
-
-                {/* Photo Container */}
-                <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white group">
-                  <Image
-                    src="/images/young.jpg"
-                    alt="Young Tsai - AI Product Consultant"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-blue/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+        {/* Hero Section - Brutalist + Luxury */}
+        <section id="hero" className="max-w-7xl mx-auto px-6 pt-42 pb-30 min-h-screen flex items-center">
+          <div className="flex flex-col md:flex-row items-center gap-20 w-full">
+            {/* Photo - Brutalist style with thick border */}
+            <div className="flex-shrink-0">
+              <div className="relative w-80 h-80 md:w-96 md:h-96 border-8 border-deep-brown overflow-hidden">
+                <Image
+                  src="/images/young.jpg"
+                  alt="Young Tsai - AI Product Consultant"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
-            </motion.div>
+            </div>
 
             {/* Hero Content */}
             <div className="flex-1 max-w-2xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <div className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-coral-orange/10 to-purple-500/10 border border-coral-orange/30 text-slate-blue rounded-full text-base md:text-lg font-bold mb-10 shadow-sm">
-                  <span className="w-2 h-2 bg-coral-orange rounded-full mr-2 animate-pulse"></span>
-                  {t('hero.badge')}
-                </div>
-              </motion.div>
+              {/* Badge */}
+              <div className="inline-flex items-center px-6 py-3 bg-amber-gold border-3 border-deep-brown text-deep-brown text-base md:text-lg font-bold mb-10">
+                <span className="w-3 h-3 bg-warm-orange mr-3"></span>
+                {t('hero.badge')}
+              </div>
 
-              <motion.h1
-                className="text-5xl md:text-6xl lg:text-7xl font-black mb-10 bg-gradient-to-r from-gray-900 via-slate-blue to-gray-700 bg-clip-text text-transparent leading-tight tracking-tight whitespace-pre-line"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
+              {/* Headline */}
+              <h1 className="font-display font-black text-6xl md:text-7xl lg:text-8xl text-deep-brown mb-10 leading-none whitespace-pre-line">
                 {t('hero.headline')}
-              </motion.h1>
+              </h1>
 
-              <p className="text-xl md:text-2xl text-gray-700 mb-14 leading-relaxed whitespace-pre-line font-medium">
+              {/* Subheadline */}
+              <p className="font-body text-xl md:text-2xl text-charcoal mb-14 leading-relaxed whitespace-pre-line">
                 {t('hero.subheadline')}
               </p>
 
+              {/* CTAs */}
               <div className="flex flex-wrap gap-6 mb-14">
-                <a
+                <BrutalButton
                   href="https://calendly.com/young-tsai/ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-10 py-5 bg-gradient-to-r from-coral-orange to-orange-500 text-white rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-lg shadow-lg"
+                  variant="primary"
+                  size="lg"
+                  external
                 >
                   {t('hero.ctaPrimary')}
-                </a>
-                <a
+                </BrutalButton>
+                <BrutalButton
                   href="#projects"
-                  className="px-10 py-5 bg-white border-2 border-gray-900 rounded-xl hover:bg-gray-900 hover:text-white transition-all duration-300 font-bold text-lg shadow-lg"
+                  variant="secondary"
+                  size="lg"
                 >
                   {t('hero.ctaSecondary')}
-                </a>
+                </BrutalButton>
               </div>
 
-              {/* Social Links */}
+              {/* Social Links - Brutal style */}
               <div className="flex gap-5">
                 <a
                   href="https://www.linkedin.com/in/tzu-yang-tsai/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl text-gray-700 hover:bg-gradient-to-br hover:from-coral-orange hover:to-orange-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:scale-110"
+                  className="p-4 border-3 border-deep-brown bg-warm-cream hover:bg-deep-brown hover:text-warm-cream transition-colors duration-200"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin className="w-6 h-6" />
@@ -175,7 +158,7 @@ export default function Home() {
                   href="https://github.com/Youngger9765"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl text-gray-700 hover:bg-gradient-to-br hover:from-coral-orange hover:to-orange-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:scale-110"
+                  className="p-4 border-3 border-deep-brown bg-warm-cream hover:bg-deep-brown hover:text-warm-cream transition-colors duration-200"
                   aria-label="GitHub"
                 >
                   <FaGithub className="w-6 h-6" />
@@ -184,14 +167,14 @@ export default function Home() {
                   href="https://medium.com/young-tsai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl text-gray-700 hover:bg-gradient-to-br hover:from-coral-orange hover:to-orange-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:scale-110"
+                  className="p-4 border-3 border-deep-brown bg-warm-cream hover:bg-deep-brown hover:text-warm-cream transition-colors duration-200"
                   aria-label="Medium"
                 >
                   <FaMedium className="w-6 h-6" />
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Quick Packages Strip */}
