@@ -52,6 +52,22 @@
       "cta": "Let's Work Together",
       "ctaSubtitle": "Open to AI product development, consulting, and advisory roles"
     },
+    "journey": {
+      "title": "My Journey"
+    },
+    "beliefs": {
+      "title": "What I Believe",
+      "aiDriven": {
+        "title": "AI-Driven Rapid Realization"
+      },
+      "solveReal": {
+        "title": "Solve Real Problems"
+      },
+      "fastIteration": {
+        "title": "Fast Iteration Over Perfect Planning"
+      }
+    },
+    "cta": "Let's Work Together",
     "milestones": {
       "current": {
         "period": "2024-Present",

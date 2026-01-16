@@ -20,6 +20,7 @@ export default function Home() {
       title: t('projects.aiSquare.title'),
       subtitle: t('projects.aiSquare.subtitle'),
       description: t('projects.aiSquare.description'),
+      techStack: ['React', 'Monorepo', 'CI/CD', 'TypeScript'],
       summary: {
         problem: t('projects.aiSquare.problem'),
         solution: t('projects.aiSquare.solution'),
@@ -32,6 +33,7 @@ export default function Home() {
       title: t('projects.vaitor.title'),
       subtitle: t('projects.vaitor.subtitle'),
       description: t('projects.vaitor.description'),
+      techStack: ['Vue.js', 'TypeScript', 'Google Cloud', 'Firebase'],
       summary: {
         problem: t('projects.vaitor.problem'),
         solution: t('projects.vaitor.solution'),
@@ -44,6 +46,7 @@ export default function Home() {
       title: t('projects.jutor.title'),
       subtitle: t('projects.jutor.subtitle'),
       description: t('projects.jutor.description'),
+      techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
       summary: {
         problem: t('projects.jutor.problem'),
         solution: t('projects.jutor.solution'),
@@ -56,6 +59,7 @@ export default function Home() {
       title: t('projects.cutor.title'),
       subtitle: t('projects.cutor.subtitle'),
       description: t('projects.cutor.description'),
+      techStack: ['Python', 'FastAPI', 'OpenAI', 'PostgreSQL'],
       summary: {
         problem: t('projects.cutor.problem'),
         solution: t('projects.cutor.solution'),
@@ -68,6 +72,7 @@ export default function Home() {
       title: t('projects.duotopia.title'),
       subtitle: t('projects.duotopia.subtitle'),
       description: t('projects.duotopia.description'),
+      techStack: ['Next.js', 'React', 'Firebase', 'Tailwind CSS'],
       summary: {
         problem: t('projects.duotopia.problem'),
         solution: t('projects.duotopia.solution'),
@@ -271,28 +276,104 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="border-t border-gray-200 bg-white">
-          <div className="max-w-5xl mx-auto px-6 py-32">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-left"
-            >
-              <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-slate-blue via-purple-600 to-gray-900 bg-clip-text text-transparent mb-12 text-center">
-                {t('about.title')}
-              </h2>
-              <div className="space-y-8 text-xl text-gray-800 leading-relaxed">
-                <p className="text-left first-letter:text-6xl first-letter:font-black first-letter:text-purple-600 first-letter:mr-2 first-letter:float-left">
+        {/* About Section - Dark Brutalist Luxury */}
+        <section id="about" className="bg-deep-brown text-warm-cream py-30 md:py-42 border-t-5 border-amber-gold">
+          <div className="container mx-auto px-6 max-w-7xl">
+            {/* Section Title */}
+            <h2 className="font-display font-black text-6xl md:text-7xl text-amber-gold mb-16 md:mb-22">
+              {t('about.title')}
+            </h2>
+
+            {/* Two-column Grid */}
+            <div className="md:grid md:grid-cols-2 gap-16 md:gap-22">
+              {/* Left Column: Personal Story */}
+              <div>
+                <h3 className="font-display font-bold text-3xl md:text-4xl text-warm-cream mb-8">
+                  {t('about.journey.title')}
+                </h3>
+                <p className="font-body text-lg md:text-xl text-warm-cream leading-relaxed mb-6">
                   {t('about.intro')}
                 </p>
-                <p className="text-left pl-4 border-l-4 border-coral-orange">{t('about.paragraph1')}</p>
-                <p className="text-left">{t('about.paragraph2')}</p>
-                <p className="text-left pl-4 border-l-4 border-purple-500">{t('about.paragraph3')}</p>
-                <p className="text-left text-gray-600 text-lg italic bg-gray-50 p-6 rounded-2xl">{t('about.paragraph4')}</p>
+                <p className="font-body text-lg md:text-xl text-warm-cream leading-relaxed mb-6">
+                  {t('about.paragraph1')}
+                </p>
+                <p className="font-body text-lg md:text-xl text-warm-cream leading-relaxed mb-6">
+                  {t('about.paragraph2')}
+                </p>
+
+                {/* Pull Quote */}
+                <div className="border-l-5 border-amber-gold pl-8 my-12">
+                  <p className="font-body text-2xl md:text-3xl text-amber-gold italic leading-relaxed">
+                    {t('about.brandStatement')}
+                  </p>
+                </div>
               </div>
-            </motion.div>
+
+              {/* Right Column: Values/Beliefs */}
+              <div>
+                <h3 className="font-display font-bold text-3xl md:text-4xl text-warm-cream mb-8">
+                  {t('about.page.beliefs')}
+                </h3>
+
+                {/* Value Items */}
+                <div className="mb-8">
+                  <div className="w-12 h-12 border-3 border-amber-gold bg-transparent flex items-center justify-center text-amber-gold font-display font-black text-xl mb-4">
+                    1
+                  </div>
+                  <h4 className="font-display font-bold text-xl md:text-2xl text-warm-cream mb-3">
+                    {t('about.beliefs.aiDriven.title')}
+                  </h4>
+                  <p className="font-body text-base md:text-lg text-warm-cream/95 leading-relaxed">
+                    {t('about.page.belief1')}
+                  </p>
+                </div>
+
+                <div className="mb-8">
+                  <div className="w-12 h-12 border-3 border-amber-gold bg-transparent flex items-center justify-center text-amber-gold font-display font-black text-xl mb-4">
+                    2
+                  </div>
+                  <h4 className="font-display font-bold text-xl md:text-2xl text-warm-cream mb-3">
+                    {t('about.beliefs.solveReal.title')}
+                  </h4>
+                  <p className="font-body text-base md:text-lg text-warm-cream/95 leading-relaxed">
+                    {t('about.page.belief2')}
+                  </p>
+                </div>
+
+                <div className="mb-8">
+                  <div className="w-12 h-12 border-3 border-amber-gold bg-transparent flex items-center justify-center text-amber-gold font-display font-black text-xl mb-4">
+                    3
+                  </div>
+                  <h4 className="font-display font-bold text-xl md:text-2xl text-warm-cream mb-3">
+                    {t('about.beliefs.fastIteration.title')}
+                  </h4>
+                  <p className="font-body text-base md:text-lg text-warm-cream/95 leading-relaxed">
+                    {t('about.page.belief3')}
+                  </p>
+                </div>
+
+                {/* Additional Info */}
+                <div className="mt-12 pt-8 border-t-3 border-amber-gold/30">
+                  <p className="font-body text-base md:text-lg text-warm-cream/80 leading-relaxed">
+                    {t('about.paragraph3')}
+                  </p>
+                  <p className="font-body text-base md:text-lg text-warm-cream/80 leading-relaxed mt-6">
+                    {t('about.paragraph4')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA at Bottom */}
+            <div className="flex justify-center mt-16">
+              <BrutalButton
+                href={`/${locale}/contact`}
+                variant="primary"
+                size="lg"
+              >
+                {t('about.cta')} →
+              </BrutalButton>
+            </div>
           </div>
         </section>
 
@@ -470,126 +551,92 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section - Modern Cards */}
-        <section id="projects" className="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-slate-50">
-          <div className="max-w-7xl mx-auto px-6 py-32">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-slate-blue via-purple-600 to-gray-900 bg-clip-text text-transparent mb-4">
-                {t('projects.title')}
-              </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                {locale === 'zh-TW' ? '從概念到上線，打造真正有價值的 AI 產品' : 'From concept to launch, building AI products that matter'}
-              </p>
-            </div>
+        {/* Projects Section - Brutalist Asymmetric Zigzag */}
+        <section id="projects" className="bg-warm-cream py-30 md:py-42">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Section Title */}
+            <h2 className="font-display font-black text-6xl md:text-7xl text-deep-brown mb-22">
+              {locale === 'zh-TW' ? '精選專案' : 'Featured Projects'}
+            </h2>
 
-            <div className="space-y-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => window.location.href = `/${locale}/projects/${project.slug}`}
-                  className="group relative rounded-3xl bg-white border-2 border-gray-200 hover:border-purple-500 transition-all duration-500 shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer"
-                >
-                    {/* Hover Gradient Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-coral-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Projects - Asymmetric Zigzag Layout */}
+            <div className="space-y-16 md:space-y-22">
+              {projects.map((project, index) => {
+                const isOdd = index % 2 === 0;
+                const projectIcons = ['🚀', '🎯', '💡', '🔧', '✨'];
 
-                    <div className="relative flex flex-col md:flex-row">
-                      {/* Project Visual */}
-                      <div className="relative md:w-2/5 h-64 md:h-auto bg-gradient-to-br from-purple-100 via-warm-cream to-orange-50 flex items-center justify-center overflow-hidden">
-                        {/* Decorative Elements */}
-                        <div className="absolute inset-0">
-                          <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-                          <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-coral-orange/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-                        </div>
+                return (
+                  <div key={project.slug}>
+                    {/* Project Card with Asymmetric Layout */}
+                    <div className="grid md:grid-cols-5 gap-6">
+                      <div className={isOdd ? 'md:col-span-3' : 'md:col-span-3 md:col-start-3'}>
+                        <BrutalCard className="bg-white">
+                          {/* Icon Placeholder */}
+                          <div className="w-20 h-20 md:w-24 md:h-24 border-3 border-deep-brown bg-amber-gold flex items-center justify-center text-4xl md:text-5xl mb-6" aria-hidden="true">
+                            {projectIcons[index % projectIcons.length]}
+                          </div>
 
-                        {/* Icon */}
-                        <div className="relative z-10 w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-coral-orange flex items-center justify-center text-white shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                          <svg
-                            className="w-12 h-12"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-
-                      {/* Project Content */}
-                      <div className="flex-1 p-8 md:p-10">
-                        <div className="mb-6">
-                          <h3 className="text-3xl font-black text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                          {/* Title */}
+                          <h3 className="font-display font-black text-4xl md:text-5xl text-deep-brown mb-4">
                             {project.title}
                           </h3>
-                          <p className="text-lg text-purple-600 font-bold">
-                            {project.subtitle}
+
+                          {/* Subtitle */}
+                          {project.subtitle && (
+                            <p className="font-body text-xl text-stone-gray italic mb-6">
+                              {project.subtitle}
+                            </p>
+                          )}
+
+                          {/* Description */}
+                          <p className="font-body text-lg text-charcoal leading-relaxed mb-8">
+                            {project.description}
                           </p>
-                        </div>
 
-                        <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                          {project.description}
-                        </p>
-
-                        {/* Key Metrics Grid */}
-                        <div className="grid sm:grid-cols-2 gap-5 mb-8">
-                          {[
-                            { icon: FaQuestionCircle, text: project.summary.problem, label: t('projects.summary.problem'), color: 'text-red-500' },
-                            { icon: FaLightbulb, text: project.summary.solution, label: t('projects.summary.solution'), color: 'text-yellow-500' },
-                            { icon: FaCheckCircle, text: project.summary.result, label: t('projects.summary.result'), color: 'text-green-500' },
-                            { icon: FaClock, text: project.summary.timeline, label: t('projects.summary.timeline'), color: 'text-blue-500' },
-                          ].map((item) => (
-                            <div key={item.label} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 group-hover:bg-white transition-colors duration-300">
-                              <div className={`mt-1 ${item.color}`}>
-                                <item.icon className="w-5 h-5" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="font-bold text-gray-900 text-sm mb-1">{item.label}</div>
-                                <div className="text-gray-700 text-sm leading-snug">{item.text}</div>
-                              </div>
+                          {/* Tech Tags */}
+                          {project.techStack && project.techStack.length > 0 && (
+                            <div className="flex flex-wrap gap-3 mb-8">
+                              {project.techStack.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="px-4 py-2 border-3 border-deep-brown bg-warm-cream text-deep-brown font-ui font-medium text-sm"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
                             </div>
-                          ))}
-                        </div>
+                          )}
 
-                        {/* CTA */}
-                        <div className="flex flex-wrap items-center gap-4">
-                          <a
-                            href="https://calendly.com/young-tsai/ai"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                            }}
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                          {/* CTA Button */}
+                          <BrutalButton
+                            href={`/${locale}/projects/${project.slug}`}
+                            variant="secondary"
+                            size="md"
                           >
-                            {t('projects.consultCta')}
-                            <span className="group-hover:translate-x-1 transition-transform">→</span>
-                          </a>
-                          <span className="text-gray-500 text-sm font-medium">
-                            {locale === 'zh-TW' ? '點擊查看完整案例' : 'Click for full case study'}
-                          </span>
-                        </div>
+                            {locale === 'zh-TW' ? '查看專案' : 'View Project'}
+                          </BrutalButton>
+                        </BrutalCard>
                       </div>
                     </div>
-                </motion.div>
-              ))}
+
+                    {/* Divider between projects (except after last) */}
+                    {index < projects.length - 1 && (
+                      <div className="border-t-5 border-bronze my-16 md:my-22 w-3/4 mx-auto" />
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
-            <div className="text-center pt-12">
-              <Link
+            {/* View All Projects Button */}
+            <div className="flex justify-center mt-16">
+              <BrutalButton
                 href={`/${locale}/projects`}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-gray-900 text-white rounded-xl hover:bg-purple-600 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 group"
+                variant="primary"
+                size="lg"
               >
-                <span>{locale === 'zh-TW' ? '查看所有專案' : 'View all projects'}</span>
-                <span className="group-hover:translate-x-2 transition-transform">→</span>
-              </Link>
+                {locale === 'zh-TW' ? '查看所有專案 →' : 'View All Projects →'}
+              </BrutalButton>
             </div>
           </div>
         </section>

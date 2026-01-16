@@ -1,10 +1,9 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from 'next-intl';
-import Image from 'next/image';
-import LanguageSwitcher from './LanguageSwitcher';
+import Link from 'next/link';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -13,20 +12,14 @@ export default function Navigation() {
   const t = useTranslations('nav');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isHomepage = pathname === `/${locale}` || pathname === '/';
-
-  // Navigation items with hash links for homepage, regular links for other pages
-  const getNavHref = (section: string) => {
-    // Projects section always links to the projects page
-    if (section === 'projects') {
-      return `/${locale}/projects`;
-    }
-
-    if (isHomepage) {
-      return `#${section}`;
-    }
-    return `/${locale}#${section}`;
-  };
+  // Navigation links configuration
+  const links = [
+    { href: `/${locale}`, label: t('home') },
+    { href: `/${locale}/about`, label: t('about') },
+    { href: `/${locale}/projects`, label: t('projects') },
+    { href: `/${locale}/services`, label: t('services') },
+    { href: `/${locale}/speaking`, label: t('speaking') },
+  ];
 
   // Check if a nav link is active
   const isActive = (path: string) => {
@@ -38,105 +31,120 @@ export default function Navigation() {
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
+  // Language switcher logic
+  const switchLocale = (newLocale: string) => {
+    const pathWithoutLocale = pathname.replace(/^\/(en|zh-TW)/, '') || '/';
+    router.push(`/${newLocale}${pathWithoutLocale}`);
+  };
+
+  // Focus trap for mobile menu accessibility
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Focus first link when menu opens
+      const firstLink = document.querySelector('[data-mobile-menu] a');
+      if (firstLink) (firstLink as HTMLElement).focus();
+
+      // Handle Escape key to close menu
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setIsMobileMenuOpen(false);
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [isMobileMenuOpen]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <a href={`/${locale}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Image
-              src="/images/logo.png"
-              alt="Young Tsai Logo"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-            <span className="text-2xl font-bold text-gray-900">
-              Young Tsai
-            </span>
-          </a>
-          <div className="hidden md:flex items-center gap-6 text-base">
-            <a href={`/${locale}`} className={`${isActive(`/${locale}`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('home')}</a>
-            <a href={`/${locale}/about`} className={`${isActive(`/${locale}/about`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('about')}</a>
-            <a href={getNavHref('projects')} className={`${isActive(`/${locale}/projects`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('projects')}</a>
-            <a href={`/${locale}/speaking`} className={`${isActive(`/${locale}/speaking`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('speaking')}</a>
-            <a href={`/${locale}/blog`} className={`${isActive(`/${locale}/blog`) ? 'text-slate-blue' : 'text-gray-700'} hover:text-slate-blue transition-colors font-semibold`}>{t('blog')}</a>
-            <div className="border-l border-gray-300 pl-4">
-              <LanguageSwitcher />
-            </div>
-            <a
-              href="https://calendly.com/young-tsai/ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-medium"
+    <nav className="sticky top-0 z-50 bg-warm-cream border-b-3 border-deep-brown shadow-brutal h-20 md:h-24">
+      <div className="container mx-auto px-6 h-full flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href={`/${locale}`}
+          className="font-display font-black text-2xl md:text-3xl text-deep-brown hover:text-amber-gold transition-colors duration-200"
+        >
+          Young
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex md:items-center md:gap-8">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`font-ui font-bold text-base pb-1 transition-colors duration-200 ${
+                isActive(link.href)
+                  ? 'text-amber-gold border-b-3 border-amber-gold'
+                  : 'text-deep-brown hover:text-amber-gold'
+              }`}
             >
-              {t('contact')}
-            </a>
-          </div>
-          {/* Mobile navigation */}
-          <div className="md:hidden flex items-center gap-3">
-            <LanguageSwitcher />
+              {link.label}
+            </Link>
+          ))}
+
+          {/* Language Switcher */}
+          <button
+            onClick={() => switchLocale(locale === 'zh-TW' ? 'en' : 'zh-TW')}
+            className="w-10 h-10 md:w-12 md:h-12 border-3 border-deep-brown bg-transparent hover:bg-deep-brown text-deep-brown hover:text-warm-cream font-ui font-bold text-sm transition-all duration-200 flex items-center justify-center"
+            aria-label={locale === 'zh-TW' ? 'Switch to English' : '切換到繁體中文'}
+          >
+            {locale === 'zh-TW' ? 'EN' : '中'}
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden w-10 h-10 border-3 border-deep-brown bg-transparent hover:bg-deep-brown hover:text-warm-cream text-deep-brown transition-colors duration-200 flex items-center justify-center text-xl font-bold"
+          aria-label="Toggle mobile menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-40 bg-warm-cream border-b-5 border-deep-brown pt-24 px-6"
+          onClick={(e) => {
+            // Close menu if clicking on backdrop (not on links)
+            if (e.target === e.currentTarget) {
+              setIsMobileMenuOpen(false);
+            }
+          }}
+        >
+          <div className="flex flex-col gap-6" data-mobile-menu>
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`font-display font-black text-3xl transition-colors duration-200 ${
+                  isActive(link.href)
+                    ? 'text-amber-gold'
+                    : 'text-deep-brown hover:text-amber-gold'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* Language Switcher (Mobile) */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-600 hover:text-gray-900"
+              onClick={() => {
+                switchLocale(locale === 'zh-TW' ? 'en' : 'zh-TW');
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-10 h-10 md:w-12 md:h-12 border-3 border-deep-brown bg-transparent hover:bg-deep-brown text-deep-brown hover:text-warm-cream font-ui font-bold text-sm transition-all duration-200 flex items-center justify-center"
+              aria-label={locale === 'zh-TW' ? 'Switch to English' : '切換到繁體中文'}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {locale === 'zh-TW' ? 'EN' : '中'}
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-2 border-t border-gray-200 mt-4">
-            <div className="flex flex-col gap-2">
-              <a
-                href={`/${locale}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-2 ${isActive(`/${locale}`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
-              >
-                {t('home')}
-              </a>
-              <a
-                href={`/${locale}/about`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-2 ${isActive(`/${locale}/about`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
-              >
-                {t('about')}
-              </a>
-              <a
-                href={getNavHref('projects')}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-2 ${isActive(`/${locale}/projects`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
-              >
-                {t('projects')}
-              </a>
-              <a
-                href={`/${locale}/speaking`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-2 ${isActive(`/${locale}/speaking`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
-              >
-                {t('speaking')}
-              </a>
-              <a
-                href={`/${locale}/blog`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-2 ${isActive(`/${locale}/blog`) ? 'text-slate-blue bg-gray-50' : 'text-gray-700'} hover:text-slate-blue hover:bg-gray-50 rounded-lg transition-colors font-semibold`}
-              >
-                {t('blog')}
-              </a>
-              <a
-                href="https://calendly.com/young-tsai/ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-medium text-center mt-2"
-              >
-                {t('contact')}
-              </a>
-            </div>
-          </div>
-        )}
-      </div>
+      )}
     </nav>
   );
 }

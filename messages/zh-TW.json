@@ -52,6 +52,22 @@
       "cta": "開始合作",
       "ctaSubtitle": "提供 AI 產品開發、諮詢和顧問服務"
     },
+    "journey": {
+      "title": "我的旅程"
+    },
+    "beliefs": {
+      "title": "我的信念",
+      "aiDriven": {
+        "title": "AI 驅動的快速實現"
+      },
+      "solveReal": {
+        "title": "解決真實問題"
+      },
+      "fastIteration": {
+        "title": "快速迭代優於完美規劃"
+      }
+    },
+    "cta": "開始合作",
     "milestones": {
       "current": {
         "period": "2024-至今",

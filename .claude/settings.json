@@ -30,19 +30,6 @@
         ]
       }
     ],
-    "BeforePush": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ./.claude/hooks/pre-push-hook.sh",
-            "timeout": 10,
-            "description": "Recommend deploy-check skill before pushing"
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "matcher": "*",
