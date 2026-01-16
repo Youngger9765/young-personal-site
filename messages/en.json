@@ -722,21 +722,9 @@
     "location": "Available for remote projects worldwide"
   },
   "contactCTA": {
-    "headline": "Let's Work Together",
-    "subtitle": "Open to AI product development, consulting, and advisory roles. I work with forward-thinking organizations ready to invest in AI.",
-    "linkedin": {
-      "title": "Connect on LinkedIn",
-      "subtitle": "Professional network"
-    },
-    "email": {
-      "title": "Send Email",
-      "subtitle": "Quick response",
-      "address": "young.tsai.9765@gmail.com"
-    },
-    "calendar": {
-      "title": "Book a Call",
-      "subtitle": "1-hour consultation"
-    },
-    "footer": "Open to global remote projects"
+    "heading": "Ready to Build Something Great?",
+    "subheading": "Let's discuss your project and create something amazing together.",
+    "button": "Schedule a Consultation",
+    "responseTime": "Usually respond within 24 hours"
   }
 }

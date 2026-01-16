@@ -722,21 +722,9 @@
     "location": "接受全球遠端專案"
   },
   "contactCTA": {
-    "headline": "開始合作",
-    "subtitle": "提供 AI 產品開發、技術諮詢和顧問服務。我與願意投資 AI 的前瞻性組織合作。",
-    "linkedin": {
-      "title": "LinkedIn 聯繫",
-      "subtitle": "專業網絡"
-    },
-    "email": {
-      "title": "發送郵件",
-      "subtitle": "快速回應",
-      "address": "young.tsai.9765@gmail.com"
-    },
-    "calendar": {
-      "title": "預約通話",
-      "subtitle": "一小時諮詢"
-    },
-    "footer": "接受全球遠端專案"
+    "heading": "準備開始打造專案？",
+    "subheading": "讓我們討論您的專案，一起創造出色的成果。",
+    "button": "預約諮詢",
+    "responseTime": "通常 24 小時內回覆"
   }
 }
