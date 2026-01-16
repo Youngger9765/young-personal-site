@@ -19,23 +19,22 @@ export default function ContactCTA() {
 
       <div className="relative max-w-4xl mx-auto px-6 text-center">
         <GlassCard className="p-12 md:p-16 backdrop-blur-glass-lg">
-          <h2 className="font-sans text-4xl md:text-5xl font-black text-white mb-6">
+          <h2 className="font-sans text-4xl md:text-5xl font-black text-gray-900 mb-6">
             {t('heading')}
           </h2>
-          <p className="font-sans text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="font-sans text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
             {t('subheading')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <GradientButton
               href={`/${locale}/contact`}
-              variant="secondary"
+              variant="primary"
               size="lg"
-              className="bg-white text-purple-primary hover:bg-white/90"
             >
               {t('button')} →
             </GradientButton>
           </div>
-          <p className="font-sans text-sm text-white/80 mt-6">
+          <p className="font-sans text-sm text-gray-600 mt-6">
             {t('responseTime')}
           </p>
         </GlassCard>

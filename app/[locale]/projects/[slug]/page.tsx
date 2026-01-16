@@ -6,7 +6,6 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import Navigation from '@/components/Navigation';
 import QuickConsultForm from '@/components/QuickConsultForm';
 
 interface ProjectDetailProps {
@@ -97,7 +96,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
 
       {/* Back Link */}
       <div className="max-w-4xl mx-auto px-6 pt-24 pb-8">

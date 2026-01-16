@@ -83,14 +83,33 @@ export default function Navigation() {
             </Link>
           ))}
 
-          {/* Language Switcher */}
-          <button
-            onClick={() => switchLocale(locale === 'zh-TW' ? 'en' : 'zh-TW')}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/50 border border-purple-primary/20 hover:bg-purple-primary text-gray-700 hover:text-white font-sans font-semibold text-sm transition-all duration-200 flex items-center justify-center shadow-soft"
-            aria-label={locale === 'zh-TW' ? 'Switch to English' : '切換到繁體中文'}
-          >
-            {locale === 'zh-TW' ? 'EN' : '中'}
-          </button>
+          {/* Language Switcher - Toggle Style */}
+          <div className="flex items-center gap-1 p-1 rounded-xl bg-white/50 border border-purple-primary/20 shadow-soft">
+            <button
+              onClick={() => switchLocale('zh-TW')}
+              className={`px-3 py-2 rounded-lg font-sans font-semibold text-sm transition-all duration-200 ${
+                locale === 'zh-TW'
+                  ? 'bg-purple-primary text-white shadow-soft'
+                  : 'text-gray-700 hover:text-purple-primary'
+              }`}
+              aria-label="切換到繁體中文"
+              aria-current={locale === 'zh-TW' ? 'true' : 'false'}
+            >
+              中
+            </button>
+            <button
+              onClick={() => switchLocale('en')}
+              className={`px-3 py-2 rounded-lg font-sans font-semibold text-sm transition-all duration-200 ${
+                locale === 'en'
+                  ? 'bg-purple-primary text-white shadow-soft'
+                  : 'text-gray-700 hover:text-purple-primary'
+              }`}
+              aria-label="Switch to English"
+              aria-current={locale === 'en' ? 'true' : 'false'}
+            >
+              EN
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -131,17 +150,39 @@ export default function Navigation() {
               </Link>
             ))}
 
-            {/* Language Switcher (Mobile) */}
-            <button
-              onClick={() => {
-                switchLocale(locale === 'zh-TW' ? 'en' : 'zh-TW');
-                setIsMobileMenuOpen(false);
-              }}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/50 border border-purple-primary/20 hover:bg-purple-primary text-gray-700 hover:text-white font-sans font-semibold text-sm transition-all duration-200 flex items-center justify-center shadow-soft"
-              aria-label={locale === 'zh-TW' ? 'Switch to English' : '切換到繁體中文'}
-            >
-              {locale === 'zh-TW' ? 'EN' : '中'}
-            </button>
+            {/* Language Switcher (Mobile) - Toggle Style */}
+            <div className="flex items-center gap-1 p-1 rounded-xl bg-white/50 border border-purple-primary/20 shadow-soft w-fit">
+              <button
+                onClick={() => {
+                  switchLocale('zh-TW');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`px-3 py-2 rounded-lg font-sans font-semibold text-sm transition-all duration-200 ${
+                  locale === 'zh-TW'
+                    ? 'bg-purple-primary text-white shadow-soft'
+                    : 'text-gray-700 hover:text-purple-primary'
+                }`}
+                aria-label="切換到繁體中文"
+                aria-current={locale === 'zh-TW' ? 'true' : 'false'}
+              >
+                中
+              </button>
+              <button
+                onClick={() => {
+                  switchLocale('en');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`px-3 py-2 rounded-lg font-sans font-semibold text-sm transition-all duration-200 ${
+                  locale === 'en'
+                    ? 'bg-purple-primary text-white shadow-soft'
+                    : 'text-gray-700 hover:text-purple-primary'
+                }`}
+                aria-label="Switch to English"
+                aria-current={locale === 'en' ? 'true' : 'false'}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
 import Image from "next/image";
-import Navigation from '@/components/Navigation';
 
 interface ProjectCardData {
   slug: string;
@@ -61,8 +60,6 @@ export default function ProjectsGalleryPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
         <motion.div

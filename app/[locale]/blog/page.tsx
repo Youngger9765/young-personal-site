@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getTranslations } from 'next-intl/server';
-import Navigation from '@/components/Navigation';
 import { getBlogPosts } from '@/lib/blog';
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -32,7 +31,6 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      <Navigation />
 
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section */}

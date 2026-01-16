@@ -6,7 +6,6 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import Navigation from '@/components/Navigation';
 
 interface SpeakingDetailProps {
   params: Promise<{
@@ -80,7 +79,6 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
 
       {/* Back Link */}
       <div className="max-w-4xl mx-auto px-6 pt-24 pb-8">
