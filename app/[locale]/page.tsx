@@ -523,85 +523,65 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section - Brutalist Asymmetric Zigzag */}
-        <section id="projects" className="bg-warm-cream py-30 md:py-42">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Section Title */}
-            <h2 className="font-display font-black text-6xl md:text-7xl text-deep-brown mb-22">
-              {locale === 'zh-TW' ? '精選專案' : 'Featured Projects'}
+        {/* Projects Section - Gradient Glass Minimalism */}
+        <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-sans text-4xl md:text-5xl font-black mb-4 text-center">
+              <span className="bg-gradient-purple-pink bg-clip-text text-transparent">
+                {t('projects.title')}
+              </span>
             </h2>
+            <p className="font-sans text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              {locale === 'zh-TW' ? '精選技術專案與產品開發經驗' : 'Featured technical projects and product development experience'}
+            </p>
 
-            {/* Projects - Asymmetric Zigzag Layout */}
-            <div className="space-y-16 md:space-y-22">
-              {projects.map((project, index) => {
-                const isOdd = index % 2 === 0;
-                const projectIcons = ['🚀', '🎯', '💡', '🔧', '✨'];
-
-                return (
-                  <div key={project.slug}>
-                    {/* Project Card with Asymmetric Layout */}
-                    <div className="grid md:grid-cols-5 gap-6">
-                      <div className={isOdd ? 'md:col-span-3' : 'md:col-span-3 md:col-start-3'}>
-                        <GlassCard className="bg-white">
-                          {/* Icon Placeholder */}
-                          <div className="w-20 h-20 md:w-24 md:h-24 border-3 border-deep-brown bg-amber-gold flex items-center justify-center text-4xl md:text-5xl mb-6" aria-hidden="true">
-                            {projectIcons[index % projectIcons.length]}
-                          </div>
-
-                          {/* Title */}
-                          <h3 className="font-display font-black text-4xl md:text-5xl text-deep-brown mb-4">
-                            {project.title}
-                          </h3>
-
-                          {/* Subtitle */}
-                          {project.subtitle && (
-                            <p className="font-body text-xl text-stone-gray italic mb-6">
-                              {project.subtitle}
-                            </p>
-                          )}
-
-                          {/* Description */}
-                          <p className="font-body text-lg text-charcoal leading-relaxed mb-8">
-                            {project.description}
-                          </p>
-
-                          {/* Tech Tags */}
-                          {project.techStack && project.techStack.length > 0 && (
-                            <div className="flex flex-wrap gap-3 mb-8">
-                              {project.techStack.map((tech) => (
-                                <span
-                                  key={tech}
-                                  className="px-4 py-2 border-3 border-deep-brown bg-warm-cream text-deep-brown font-ui font-medium text-sm"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-
-                          {/* CTA Button */}
-                          <GradientButton
-                            href={`/${locale}/projects/${project.slug}`}
-                            variant="secondary"
-                            size="md"
-                          >
-                            {locale === 'zh-TW' ? '查看專案' : 'View Project'}
-                          </GradientButton>
-                        </GlassCard>
-                      </div>
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {projects.slice(0, 4).map((project, index) => (
+                <motion.div
+                  key={project.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <GlassCard hover className="p-6 h-full flex flex-col">
+                    <h3 className="font-sans text-2xl font-bold text-gray-900 mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-purple-primary font-medium text-sm mb-3">
+                      {project.subtitle}
+                    </p>
+                    <p className="text-gray-600 mb-4 flex-grow">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gradient-to-r from-purple-primary/10 to-orange-primary/10 text-purple-dark text-xs font-medium rounded-pill border border-purple-primary/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-
-                    {/* Divider between projects (except after last) */}
-                    {index < projects.length - 1 && (
-                      <div className="border-t-5 border-bronze my-16 md:my-22 w-3/4 mx-auto" />
-                    )}
-                  </div>
-                );
-              })}
+                    <GradientButton
+                      href={`/${locale}/projects/${project.slug}`}
+                      variant="outline"
+                      size="sm"
+                    >
+                      {locale === 'zh-TW' ? '查看詳情' : 'View Details'}
+                    </GradientButton>
+                  </GlassCard>
+                </motion.div>
+              ))}
             </div>
 
             {/* View All Projects Button */}
-            <div className="flex justify-center mt-16">
+            <div className="text-center">
               <GradientButton
                 href={`/${locale}/projects`}
                 variant="primary"
@@ -610,7 +590,7 @@ export default function Home() {
                 {locale === 'zh-TW' ? '查看所有專案 →' : 'View All Projects →'}
               </GradientButton>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Testimonials - Temporarily Hidden */}
