@@ -83,103 +83,95 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-warm-cream text-charcoal overflow-hidden">
-      {/* Background with geometric shapes */}
-      <div className="fixed inset-0 z-0 bg-warm-cream">
-        {/* Geometric decorations - Brutalist style */}
-        <div className="absolute top-20 right-10 w-64 h-64 border-4 border-deep-brown opacity-20" />
-        <div className="absolute bottom-40 left-20 w-96 h-96 border-8 border-forest-green opacity-10" />
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-amber-gold opacity-20" />
+    <div className="min-h-screen bg-gradient-to-br from-white via-purple-primary/5 to-orange-primary/5 text-gray-900 overflow-hidden">
+      {/* Gradient orbs - subtle background decoration */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute top-20 right-10 w-96 h-96 bg-purple-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 left-20 w-[500px] h-[500px] bg-orange-primary/15 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-accent/10 rounded-full blur-3xl" />
       </div>
 
       {/* Navigation */}
       <Navigation />
 
       <div className="relative z-10">
-        {/* Hero Section - Brutalist + Luxury */}
-        <section id="hero" className="max-w-7xl mx-auto px-6 pt-42 pb-30 min-h-screen flex items-center">
-          <div className="flex flex-col md:flex-row items-center gap-20 w-full">
-            {/* Photo - Brutalist style with thick border */}
-            <div className="flex-shrink-0">
-              <div className="relative w-80 h-80 md:w-96 md:h-96 border-8 border-deep-brown overflow-hidden">
-                <Image
-                  src="/images/young.jpg"
-                  alt="Young Tsai - AI Product Consultant"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Hero Content */}
-            <div className="flex-1 max-w-2xl">
-              {/* Badge */}
-              <div className="inline-flex items-center px-6 py-3 bg-amber-gold border-3 border-deep-brown text-deep-brown text-base md:text-lg font-bold mb-10">
-                <span className="w-3 h-3 bg-warm-orange mr-3"></span>
-                {t('hero.badge')}
+        {/* Hero Section - Gradient Glass Minimalism */}
+        <section id="hero" className="max-w-6xl mx-auto px-6 pt-32 pb-20 min-h-screen flex items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+            {/* Left: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-purple-pink text-white rounded-pill text-sm font-medium mb-6 shadow-gradient-glow">
+                <FaRocket className="w-4 h-4" />
+                <span>{t('hero.badge')}</span>
               </div>
 
-              {/* Headline */}
-              <h1 className="font-display font-black text-6xl md:text-7xl lg:text-8xl text-deep-brown mb-10 leading-none whitespace-pre-line">
-                {t('hero.headline')}
+              <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+                <span className="bg-gradient-purple-orange bg-clip-text text-transparent">
+                  {t('hero.headline')}
+                </span>
               </h1>
 
-              {/* Subheadline */}
-              <p className="font-body text-xl md:text-2xl text-charcoal mb-14 leading-relaxed whitespace-pre-line">
+              <p className="font-sans text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
                 {t('hero.subheadline')}
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-6 mb-14">
+              <div className="flex flex-wrap gap-4">
                 <GradientButton
                   href="https://calendly.com/young-tsai/ai"
-                  variant="primary"
                   size="lg"
+                  variant="primary"
                   external
                 >
                   {t('hero.ctaPrimary')}
                 </GradientButton>
                 <GradientButton
                   href="#projects"
-                  variant="secondary"
                   size="lg"
+                  variant="outline"
                 >
                   {t('hero.ctaSecondary')}
                 </GradientButton>
               </div>
 
-              {/* Social Links - Brutal style */}
-              <div className="flex gap-5">
-                <a
-                  href="https://www.linkedin.com/in/tzu-yang-tsai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 border-3 border-deep-brown bg-warm-cream hover:bg-deep-brown hover:text-warm-cream transition-colors duration-200"
-                  aria-label="LinkedIn"
-                >
+              {/* Social Links */}
+              <div className="flex gap-4 mt-8">
+                <a href="https://www.linkedin.com/in/tzu-yang-tsai/" target="_blank" rel="noopener noreferrer" className="text-purple-primary hover:text-purple-dark transition-colors" aria-label="LinkedIn">
                   <FaLinkedin className="w-6 h-6" />
                 </a>
-                <a
-                  href="https://github.com/Youngger9765"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 border-3 border-deep-brown bg-warm-cream hover:bg-deep-brown hover:text-warm-cream transition-colors duration-200"
-                  aria-label="GitHub"
-                >
+                <a href="https://github.com/Youngger9765" target="_blank" rel="noopener noreferrer" className="text-purple-primary hover:text-purple-dark transition-colors" aria-label="GitHub">
                   <FaGithub className="w-6 h-6" />
                 </a>
-                <a
-                  href="https://medium.com/young-tsai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 border-3 border-deep-brown bg-warm-cream hover:bg-deep-brown hover:text-warm-cream transition-colors duration-200"
-                  aria-label="Medium"
-                >
+                <a href="https://medium.com/young-tsai" target="_blank" rel="noopener noreferrer" className="text-purple-primary hover:text-purple-dark transition-colors" aria-label="Medium">
                   <FaMedium className="w-6 h-6" />
                 </a>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Right: Photo with Glass Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <GlassCard hover className="p-2">
+                <div className="relative aspect-square overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/young.jpg"
+                    alt="Young Tsai - AI Product Consultant"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </GlassCard>
+              {/* Gradient glow behind photo */}
+              <div className="absolute -z-10 top-8 left-8 w-full h-full bg-gradient-purple-orange blur-2xl opacity-30 rounded-2xl" />
+            </motion.div>
           </div>
         </section>
 
@@ -276,151 +268,156 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section - Dark Brutalist Luxury */}
-        <section id="about" className="bg-deep-brown text-warm-cream py-30 md:py-42 border-t-5 border-amber-gold">
-          <div className="container mx-auto px-6 max-w-7xl">
-            {/* Section Title */}
-            <h2 className="font-display font-black text-6xl md:text-7xl text-amber-gold mb-16 md:mb-22">
-              {t('about.title')}
-            </h2>
+        {/* About Section - Gradient Background */}
+        <section id="about" className="relative py-20 overflow-hidden">
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-primary/10 via-pink-accent/5 to-orange-primary/10" />
 
-            {/* Two-column Grid */}
-            <div className="md:grid md:grid-cols-2 gap-16 md:gap-22">
-              {/* Left Column: Personal Story */}
-              <div>
-                <h3 className="font-display font-bold text-3xl md:text-4xl text-warm-cream mb-8">
-                  {t('about.journey.title')}
-                </h3>
-                <p className="font-body text-lg md:text-xl text-warm-cream leading-relaxed mb-6">
-                  {t('about.intro')}
-                </p>
-                <p className="font-body text-lg md:text-xl text-warm-cream leading-relaxed mb-6">
-                  {t('about.paragraph1')}
-                </p>
-                <p className="font-body text-lg md:text-xl text-warm-cream leading-relaxed mb-6">
-                  {t('about.paragraph2')}
-                </p>
-
-                {/* Pull Quote */}
-                <div className="border-l-5 border-amber-gold pl-8 my-12">
-                  <p className="font-body text-2xl md:text-3xl text-amber-gold italic leading-relaxed">
-                    {t('about.brandStatement')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column: Values/Beliefs */}
-              <div>
-                <h3 className="font-display font-bold text-3xl md:text-4xl text-warm-cream mb-8">
-                  {t('about.page.beliefs')}
-                </h3>
-
-                {/* Value Items */}
-                <div className="mb-8">
-                  <div className="w-12 h-12 border-3 border-amber-gold bg-transparent flex items-center justify-center text-amber-gold font-display font-black text-xl mb-4">
-                    1
-                  </div>
-                  <h4 className="font-display font-bold text-xl md:text-2xl text-warm-cream mb-3">
-                    {t('about.beliefs.aiDriven.title')}
-                  </h4>
-                  <p className="font-body text-base md:text-lg text-warm-cream/95 leading-relaxed">
-                    {t('about.page.belief1')}
-                  </p>
-                </div>
-
-                <div className="mb-8">
-                  <div className="w-12 h-12 border-3 border-amber-gold bg-transparent flex items-center justify-center text-amber-gold font-display font-black text-xl mb-4">
-                    2
-                  </div>
-                  <h4 className="font-display font-bold text-xl md:text-2xl text-warm-cream mb-3">
-                    {t('about.beliefs.solveReal.title')}
-                  </h4>
-                  <p className="font-body text-base md:text-lg text-warm-cream/95 leading-relaxed">
-                    {t('about.page.belief2')}
-                  </p>
-                </div>
-
-                <div className="mb-8">
-                  <div className="w-12 h-12 border-3 border-amber-gold bg-transparent flex items-center justify-center text-amber-gold font-display font-black text-xl mb-4">
-                    3
-                  </div>
-                  <h4 className="font-display font-bold text-xl md:text-2xl text-warm-cream mb-3">
-                    {t('about.beliefs.fastIteration.title')}
-                  </h4>
-                  <p className="font-body text-base md:text-lg text-warm-cream/95 leading-relaxed">
-                    {t('about.page.belief3')}
-                  </p>
-                </div>
-
-                {/* Additional Info */}
-                <div className="mt-12 pt-8 border-t-3 border-amber-gold/30">
-                  <p className="font-body text-base md:text-lg text-warm-cream/80 leading-relaxed">
-                    {t('about.paragraph3')}
-                  </p>
-                  <p className="font-body text-base md:text-lg text-warm-cream/80 leading-relaxed mt-6">
-                    {t('about.paragraph4')}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA at Bottom */}
-            <div className="flex justify-center mt-16">
-              <GradientButton
-                href={`/${locale}/contact`}
-                variant="primary"
-                size="lg"
-              >
-                {t('about.cta')} →
-              </GradientButton>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section - Brutalist Design */}
-        <section id="services" className="border-t-5 border-deep-brown bg-forest-green text-warm-cream">
-          <div className="max-w-7xl mx-auto px-6 py-30">
-            {/* Header */}
-            <div className="text-center mb-20">
-              <h2 className="font-display font-black text-5xl md:text-6xl text-warm-cream mb-6">
-                {t('services.title')}
-              </h2>
-              <p className="font-body text-xl md:text-2xl text-warm-cream/80 max-w-3xl mx-auto">
-                {t('services.subtitle')}
-              </p>
-            </div>
-
-            {/* Featured Card - Health Check */}
+          <div className="relative max-w-6xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-20"
+              transition={{ duration: 0.6 }}
             >
-              <GlassCard className="bg-amber-gold">
-                {/* Badge */}
-                <div className="inline-flex items-center px-6 py-3 bg-warm-orange border-3 border-deep-brown text-deep-brown font-bold mb-8">
-                  <span className="w-3 h-3 bg-deep-brown mr-3"></span>
-                  💡 {t('services.featured.recommended')}
+              <h2 className="font-sans text-4xl md:text-5xl font-black mb-4 text-center">
+                <span className="bg-gradient-purple-orange bg-clip-text text-transparent">
+                  {t('about.title')}
+                </span>
+              </h2>
+              <p className="font-sans text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+                {t('about.intro')}
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                {/* Left: Story Cards */}
+                <div className="space-y-6">
+                  <GlassCard className="p-6">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-purple-orange rounded-xl flex items-center justify-center flex-shrink-0 shadow-gradient-glow">
+                        <FaBrain className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-xl font-bold text-gray-900 mb-2">
+                          {t('about.beliefs.aiDriven.title')}
+                        </h3>
+                        <p className="text-gray-600">
+                          {t('about.page.belief1')}
+                        </p>
+                      </div>
+                    </div>
+                  </GlassCard>
+
+                  <GlassCard className="p-6">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-purple-pink rounded-xl flex items-center justify-center flex-shrink-0 shadow-gradient-glow">
+                        <FaCode className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-xl font-bold text-gray-900 mb-2">
+                          {t('about.beliefs.solveReal.title')}
+                        </h3>
+                        <p className="text-gray-600">
+                          {t('about.page.belief2')}
+                        </p>
+                      </div>
+                    </div>
+                  </GlassCard>
+
+                  <GlassCard className="p-6">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-orange-pink rounded-xl flex items-center justify-center flex-shrink-0 shadow-gradient-glow">
+                        <FaLightbulb className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-xl font-bold text-gray-900 mb-2">
+                          {t('about.beliefs.fastIteration.title')}
+                        </h3>
+                        <p className="text-gray-600">
+                          {t('about.page.belief3')}
+                        </p>
+                      </div>
+                    </div>
+                  </GlassCard>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Right: Journey & Brand */}
+                <div className="space-y-6">
+                  <GlassCard gradient className="p-8">
+                    <h3 className="font-sans text-2xl font-bold text-gray-900 mb-4">
+                      {t('about.journey.title')}
+                    </h3>
+                    <p className="text-gray-700 mb-4 leading-relaxed">
+                      {t('about.paragraph1')}
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      {t('about.paragraph2')}
+                    </p>
+                  </GlassCard>
+
+                  <GlassCard className="p-8 bg-gradient-to-br from-purple-primary/5 to-orange-primary/5">
+                    <p className="font-sans text-xl font-semibold text-gray-900 italic leading-relaxed">
+                      &ldquo;{t('about.brandStatement')}&rdquo;
+                    </p>
+                  </GlassCard>
+
+                  <div className="text-center">
+                    <GradientButton
+                      href={`/${locale}/contact`}
+                      variant="primary"
+                      size="lg"
+                    >
+                      {t('about.cta')} →
+                    </GradientButton>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services Section - Glass Cards on Gradient */}
+        <section id="services" className="max-w-6xl mx-auto px-6 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-sans text-4xl md:text-5xl font-black mb-4 text-center">
+              <span className="bg-gradient-purple-orange bg-clip-text text-transparent">
+                {t('services.title')}
+              </span>
+            </h2>
+            <p className="font-sans text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              {t('services.subtitle')}
+            </p>
+            {/* Featured - Health Check */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              <GlassCard gradient hover className="p-8 md:scale-105">
+                <div className="inline-block px-3 py-1 bg-gradient-orange-pink text-white text-xs font-semibold rounded-pill mb-6">
+                  💡 {t('services.featured.recommended')}
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <h3 className="font-display font-black text-4xl md:text-5xl text-deep-brown mb-6">
+                    <h3 className="font-sans text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                       {t('services.healthCheck.title')}
                     </h3>
-                    <p className="font-body text-xl text-deep-brown/80 mb-8 leading-relaxed">
+                    <p className="text-gray-700 mb-6 text-lg">
                       {t('services.healthCheck.tagline')}
                     </p>
-
-                    {/* Pricing - SUPER LARGE */}
-                    <div className="font-display font-black text-6xl md:text-7xl text-deep-brown mb-4">
+                    <div className="text-5xl font-black bg-gradient-purple-orange bg-clip-text text-transparent mb-2">
                       {t('services.healthCheck.price')}
                     </div>
-                    <p className="font-body text-lg text-deep-brown/70 mb-10">
+                    <p className="text-gray-600 mb-6">
                       {t('services.healthCheck.timeline')} • {t('services.healthCheck.ideal')}
                     </p>
-
                     <GradientButton
                       href="https://calendly.com/young-tsai/ai"
                       variant="primary"
@@ -430,118 +427,93 @@ export default function Home() {
                       {locale === 'zh-TW' ? '立即預約' : 'Book Now'}
                     </GradientButton>
                   </div>
-
-                  <GlassCard className="bg-warm-cream/90">
-                    <h4 className="font-display font-bold text-2xl text-deep-brown mb-6">
-                      {locale === 'zh-TW' ? '你會得到' : 'What You Get'}
-                    </h4>
-                    <ul className="space-y-4 mb-8">
-                      {[0, 1, 2].map((i) => (
-                        <li key={i} className="flex gap-4 items-start">
-                          <span className="text-warm-orange font-bold text-2xl mt-1">✓</span>
-                          <span className="font-body text-lg text-charcoal">
-                            {t(`services.healthCheck.deliverables.${i}`)}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="pt-6 border-t-3 border-deep-brown/20">
-                      <p className="font-bold text-sm text-deep-brown/70 mb-2">
-                        {locale === 'zh-TW' ? '流程' : 'Process'}
-                      </p>
-                      <p className="font-body text-charcoal">
-                        {t('services.healthCheck.flow')}
-                      </p>
-                    </div>
-                  </GlassCard>
+                  <div>
+                    <p className="text-gray-700 leading-relaxed">
+                      {t('services.healthCheck.flow')}
+                    </p>
+                  </div>
                 </div>
               </GlassCard>
             </motion.div>
 
-            {/* Other Services */}
+            {/* Other Services Grid */}
             <div className="text-center mb-12">
-              <h3 className="font-display font-bold text-3xl md:text-4xl text-warm-cream mb-4">
+              <h3 className="font-sans text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                 {locale === 'zh-TW' ? '其他方案' : 'Other Options'}
               </h3>
-              <p className="font-body text-lg text-warm-cream/70">
+              <p className="text-gray-600">
                 {locale === 'zh-TW' ? '根據你的時程與預算選擇' : 'Choose based on your timeline and budget'}
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
                   key: 'fastPrototype',
-                  featured: false,
+                  icon: FaRocket,
+                  gradient: 'from-orange-primary to-orange-dark',
                 },
                 {
                   key: 'mvp',
+                  icon: FaBrain,
+                  gradient: 'from-purple-primary to-purple-dark',
                   featured: true,
                 },
               ].map((service, index) => (
                 <motion.div
                   key={service.key}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <GlassCard className="h-full flex flex-col">
+                  <GlassCard hover className={`p-8 h-full flex flex-col ${service.featured ? 'ring-2 ring-purple-primary' : ''}`}>
                     {service.featured && (
-                      <div className="inline-flex items-center px-6 py-2 bg-warm-orange border-3 border-deep-brown text-deep-brown font-bold mb-6 self-start">
+                      <div className="inline-block px-3 py-1 bg-gradient-purple-pink text-white text-xs font-semibold rounded-pill mb-4 self-start">
                         ⭐ {t('services.featured.badge')}
                       </div>
                     )}
-
-                    <h3 className="font-display font-black text-3xl md:text-4xl text-deep-brown mb-4">
+                    
+                    <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-gradient-glow`}>
+                      <service.icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="font-sans text-2xl font-bold text-gray-900 mb-2">
                       {t(`services.${service.key}.title`)}
                     </h3>
-                    <p className="font-body text-lg text-charcoal/80 mb-8 leading-relaxed">
+
+                    <p className="text-gray-700 mb-4">
                       {t(`services.${service.key}.tagline`)}
                     </p>
 
-                    {/* Pricing */}
-                    <div className="mb-8">
-                      <div className="font-display font-black text-6xl text-deep-brown mb-2">
-                        {t(`services.${service.key}.price`)}
-                      </div>
-                      <p className="font-body text-charcoal/70">
-                        {t(`services.${service.key}.timeline`)}
-                      </p>
+                    <div className="text-4xl font-black text-purple-primary mb-2">
+                      {t(`services.${service.key}.price`)}
                     </div>
 
-                    {/* Deliverables */}
-                    <ul className="space-y-3 mb-10 flex-1">
-                      {[0, 1, 2].map((i) => (
-                        <li key={i} className="flex gap-3 items-start">
-                          <span className="text-warm-orange font-bold text-xl mt-1">✓</span>
-                          <span className="font-body text-charcoal">
-                            {t(`services.${service.key}.deliverables.${i}`)}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-sm text-gray-600 mb-6">
+                      {t(`services.${service.key}.timeline`)}
+                    </p>
 
-                    <div className="pt-6 border-t-3 border-deep-brown/20 space-y-4">
-                      <p className="font-body text-sm text-charcoal/70">
+                    <div className="mb-6 flex-grow">
+                      <p className="text-sm text-gray-700">
                         {t(`services.${service.key}.ideal`)}
                       </p>
-                      <GradientButton
-                        href="https://calendly.com/young-tsai/ai"
-                        variant="primary"
-                        size="lg"
-                        external
-                        className="w-full"
-                      >
-                        {t('projects.consultCta')}
-                      </GradientButton>
                     </div>
+                    
+                    <GradientButton
+                      href="https://calendly.com/young-tsai/ai"
+                      variant="primary"
+                      size="lg"
+                      external
+                      className="w-full"
+                    >
+                      {t('projects.consultCta')}
+                    </GradientButton>
                   </GlassCard>
                 </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Quick Consult Form */}

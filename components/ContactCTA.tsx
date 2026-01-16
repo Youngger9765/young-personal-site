@@ -2,48 +2,44 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import GradientButton from './GradientButton';
+import GlassCard from './GlassCard';
 
 export default function ContactCTA() {
   const locale = useLocale();
   const t = useTranslations('contactCTA');
 
   return (
-    <div className="my-20 md:my-30 px-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto relative">
-        {/* Decorative accent - top-left */}
-        <div className="absolute -top-8 -left-8 w-16 h-16 md:w-20 md:h-20 bg-deep-brown border-3 border-deep-brown" aria-hidden="true" />
+    <section className="relative py-20 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-purple-orange opacity-90" />
 
-        {/* Decorative accent - bottom-right */}
-        <div className="absolute -bottom-6 -right-6 w-12 h-12 md:w-16 md:h-16 bg-bronze border-3 border-deep-brown" aria-hidden="true" />
+      {/* Gradient orbs for depth */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-accent/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-dark/30 rounded-full blur-3xl" />
 
-        {/* Main CTA Container */}
-        <div className="bg-amber-gold border-5 border-deep-brown shadow-brutal-lg p-12 md:p-16 lg:p-20 text-center">
-          {/* Heading */}
-          <h2 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-deep-brown mb-6 md:mb-8">
+      <div className="relative max-w-4xl mx-auto px-6 text-center">
+        <GlassCard className="p-12 md:p-16 backdrop-blur-glass-lg">
+          <h2 className="font-sans text-4xl md:text-5xl font-black text-white mb-6">
             {t('heading')}
           </h2>
-
-          {/* Subheading */}
-          <p className="font-body text-xl md:text-2xl text-deep-brown/90 mb-10 md:mb-12">
+          <p className="font-sans text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {t('subheading')}
           </p>
-
-          {/* CTA Button */}
-          <GradientButton
-            href={`/${locale}/contact`}
-            size="lg"
-            className="bg-deep-brown text-warm-cream border-deep-brown hover:bg-deep-brown/90"
-            aria-label={t('button')}
-          >
-            {t('button')} →
-          </GradientButton>
-
-          {/* Secondary Info */}
-          <p className="font-ui text-sm md:text-base text-deep-brown/70 mt-6">
+          <div className="flex flex-wrap gap-4 justify-center">
+            <GradientButton
+              href={`/${locale}/contact`}
+              variant="secondary"
+              size="lg"
+              className="bg-white text-purple-primary hover:bg-white/90"
+            >
+              {t('button')} →
+            </GradientButton>
+          </div>
+          <p className="font-sans text-sm text-white/80 mt-6">
             {t('responseTime')}
           </p>
-        </div>
+        </GlassCard>
       </div>
-    </div>
+    </section>
   );
 }

@@ -57,12 +57,12 @@ export default function Navigation() {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="sticky top-0 z-50 bg-warm-cream border-b-3 border-deep-brown shadow-brutal h-20 md:h-24">
+    <nav className="sticky top-0 z-50 backdrop-blur-glass-lg bg-white/80 border-b border-white/20 shadow-soft-md h-20 md:h-24">
       <div className="container mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link
           href={`/${locale}`}
-          className="font-display font-black text-2xl md:text-3xl text-deep-brown hover:text-amber-gold transition-colors duration-200"
+          className="font-sans font-black text-2xl md:text-3xl bg-gradient-purple-orange bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200"
         >
           Young
         </Link>
@@ -73,10 +73,10 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-ui font-bold text-base pb-1 transition-colors duration-200 ${
+              className={`font-sans font-semibold text-base pb-1 transition-colors duration-200 ${
                 isActive(link.href)
-                  ? 'text-amber-gold border-b-3 border-amber-gold'
-                  : 'text-deep-brown hover:text-amber-gold'
+                  ? 'text-purple-primary border-b-2 border-purple-primary'
+                  : 'text-gray-700 hover:text-purple-primary'
               }`}
             >
               {link.label}
@@ -86,7 +86,7 @@ export default function Navigation() {
           {/* Language Switcher */}
           <button
             onClick={() => switchLocale(locale === 'zh-TW' ? 'en' : 'zh-TW')}
-            className="w-10 h-10 md:w-12 md:h-12 border-3 border-deep-brown bg-transparent hover:bg-deep-brown text-deep-brown hover:text-warm-cream font-ui font-bold text-sm transition-all duration-200 flex items-center justify-center"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/50 border border-purple-primary/20 hover:bg-purple-primary text-gray-700 hover:text-white font-sans font-semibold text-sm transition-all duration-200 flex items-center justify-center shadow-soft"
             aria-label={locale === 'zh-TW' ? 'Switch to English' : '切換到繁體中文'}
           >
             {locale === 'zh-TW' ? 'EN' : '中'}
@@ -96,7 +96,7 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden w-10 h-10 border-3 border-deep-brown bg-transparent hover:bg-deep-brown hover:text-warm-cream text-deep-brown transition-colors duration-200 flex items-center justify-center text-xl font-bold"
+          className="md:hidden w-10 h-10 rounded-xl bg-white/50 border border-purple-primary/20 hover:bg-purple-primary hover:text-white text-gray-700 transition-colors duration-200 flex items-center justify-center text-xl font-bold shadow-soft"
           aria-label="Toggle mobile menu"
           aria-expanded={isMobileMenuOpen}
         >
@@ -107,7 +107,7 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-40 bg-warm-cream border-b-5 border-deep-brown pt-24 px-6"
+          className="md:hidden fixed inset-0 z-40 backdrop-blur-glass-lg bg-white/95 border-b border-white/20 shadow-soft-lg pt-24 px-6"
           onClick={(e) => {
             // Close menu if clicking on backdrop (not on links)
             if (e.target === e.currentTarget) {
@@ -121,10 +121,10 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`font-display font-black text-3xl transition-colors duration-200 ${
+                className={`font-sans font-black text-3xl transition-colors duration-200 ${
                   isActive(link.href)
-                    ? 'text-amber-gold'
-                    : 'text-deep-brown hover:text-amber-gold'
+                    ? 'text-purple-primary'
+                    : 'text-gray-900 hover:text-purple-primary'
                 }`}
               >
                 {link.label}
@@ -137,7 +137,7 @@ export default function Navigation() {
                 switchLocale(locale === 'zh-TW' ? 'en' : 'zh-TW');
                 setIsMobileMenuOpen(false);
               }}
-              className="w-10 h-10 md:w-12 md:h-12 border-3 border-deep-brown bg-transparent hover:bg-deep-brown text-deep-brown hover:text-warm-cream font-ui font-bold text-sm transition-all duration-200 flex items-center justify-center"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/50 border border-purple-primary/20 hover:bg-purple-primary text-gray-700 hover:text-white font-sans font-semibold text-sm transition-all duration-200 flex items-center justify-center shadow-soft"
               aria-label={locale === 'zh-TW' ? 'Switch to English' : '切換到繁體中文'}
             >
               {locale === 'zh-TW' ? 'EN' : '中'}
