@@ -9,7 +9,7 @@ import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
 import QuickConsultForm from '@/components/QuickConsultForm';
 import GradientButton from '@/components/GradientButton';
-import BrutalCard from '@/components/BrutalCard';
+import GlassCard from '@/components/GlassCard';
 
 export default function Home() {
   const t = useTranslations();
@@ -397,7 +397,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="mb-20"
             >
-              <BrutalCard className="bg-amber-gold">
+              <GlassCard className="bg-amber-gold">
                 {/* Badge */}
                 <div className="inline-flex items-center px-6 py-3 bg-warm-orange border-3 border-deep-brown text-deep-brown font-bold mb-8">
                   <span className="w-3 h-3 bg-deep-brown mr-3"></span>
@@ -431,7 +431,7 @@ export default function Home() {
                     </GradientButton>
                   </div>
 
-                  <BrutalCard className="bg-warm-cream/90">
+                  <GlassCard className="bg-warm-cream/90">
                     <h4 className="font-display font-bold text-2xl text-deep-brown mb-6">
                       {locale === 'zh-TW' ? '你會得到' : 'What You Get'}
                     </h4>
@@ -454,9 +454,9 @@ export default function Home() {
                         {t('services.healthCheck.flow')}
                       </p>
                     </div>
-                  </BrutalCard>
+                  </GlassCard>
                 </div>
-              </BrutalCard>
+              </GlassCard>
             </motion.div>
 
             {/* Other Services */}
@@ -487,7 +487,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <BrutalCard className="h-full flex flex-col">
+                  <GlassCard className="h-full flex flex-col">
                     {service.featured && (
                       <div className="inline-flex items-center px-6 py-2 bg-warm-orange border-3 border-deep-brown text-deep-brown font-bold mb-6 self-start">
                         ⭐ {t('services.featured.badge')}
@@ -537,7 +537,7 @@ export default function Home() {
                         {t('projects.consultCta')}
                       </GradientButton>
                     </div>
-                  </BrutalCard>
+                  </GlassCard>
                 </motion.div>
               ))}
             </div>
@@ -570,7 +570,7 @@ export default function Home() {
                     {/* Project Card with Asymmetric Layout */}
                     <div className="grid md:grid-cols-5 gap-6">
                       <div className={isOdd ? 'md:col-span-3' : 'md:col-span-3 md:col-start-3'}>
-                        <BrutalCard className="bg-white">
+                        <GlassCard className="bg-white">
                           {/* Icon Placeholder */}
                           <div className="w-20 h-20 md:w-24 md:h-24 border-3 border-deep-brown bg-amber-gold flex items-center justify-center text-4xl md:text-5xl mb-6" aria-hidden="true">
                             {projectIcons[index % projectIcons.length]}
@@ -615,7 +615,7 @@ export default function Home() {
                           >
                             {locale === 'zh-TW' ? '查看專案' : 'View Project'}
                           </GradientButton>
-                        </BrutalCard>
+                        </GlassCard>
                       </div>
                     </div>
 
