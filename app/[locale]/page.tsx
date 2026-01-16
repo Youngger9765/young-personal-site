@@ -9,6 +9,7 @@ import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
 import QuickConsultForm from '@/components/QuickConsultForm';
 import BrutalButton from '@/components/BrutalButton';
+import BrutalCard from '@/components/BrutalCard';
 
 export default function Home() {
   const t = useTranslations();
@@ -295,90 +296,106 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section - Redesigned with Entry Point Focus */}
-        <section id="services" className="border-t border-gray-200 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white">
-          <div className="max-w-7xl mx-auto px-6 py-32">
+        {/* Services Section - Brutalist Design */}
+        <section id="services" className="border-t-5 border-deep-brown bg-forest-green text-warm-cream">
+          <div className="max-w-7xl mx-auto px-6 py-30">
             {/* Header */}
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-purple-200 to-coral-orange bg-clip-text text-transparent mb-6">
+              <h2 className="font-display font-black text-5xl md:text-6xl text-warm-cream mb-6">
                 {t('services.title')}
               </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              <p className="font-body text-xl md:text-2xl text-warm-cream/80 max-w-3xl mx-auto">
                 {t('services.subtitle')}
               </p>
             </div>
 
-            {/* Entry Point - Featured Large Card */}
+            {/* Featured Card - Health Check */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-16 relative p-12 rounded-3xl bg-gradient-to-br from-orange-500 via-coral-orange to-orange-600 border-4 border-white/20 shadow-2xl"
+              className="mb-20"
             >
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-8 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 text-base font-black rounded-full shadow-xl">
-                💡 {t('services.featured.recommended')}
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-4xl md:text-5xl font-black text-white mb-4">
-                    {t('services.healthCheck.title')}
-                  </h3>
-                  <p className="text-xl text-white/90 mb-6 leading-relaxed">
-                    {t('services.healthCheck.tagline')}
-                  </p>
-                  <div className="text-6xl font-black text-white mb-4">
-                    {t('services.healthCheck.price')}
-                  </div>
-                  <p className="text-white/80 text-lg mb-8">
-                    {t('services.healthCheck.timeline')} • {t('services.healthCheck.ideal')}
-                  </p>
-
-                  <a
-                    href="https://calendly.com/young-tsai/ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-10 py-5 bg-white text-coral-orange rounded-xl font-black text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
-                  >
-                    {locale === 'zh-TW' ? '立即預約' : 'Book Now'}
-                  </a>
+              <BrutalCard className="bg-amber-gold">
+                {/* Badge */}
+                <div className="inline-flex items-center px-6 py-3 bg-warm-orange border-3 border-deep-brown text-deep-brown font-bold mb-8">
+                  <span className="w-3 h-3 bg-deep-brown mr-3"></span>
+                  💡 {t('services.featured.recommended')}
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                  <h4 className="text-2xl font-bold text-white mb-6">{locale === 'zh-TW' ? '你會得到' : 'What You Get'}</h4>
-                  <ul className="space-y-4">
-                    {[0, 1, 2].map((i) => (
-                      <li key={i} className="flex gap-3 items-start text-white/90 text-lg">
-                        <span className="text-yellow-400 mt-1 text-2xl">✓</span>
-                        <span>{t(`services.healthCheck.deliverables.${i}`)}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h3 className="font-display font-black text-4xl md:text-5xl text-deep-brown mb-6">
+                      {t('services.healthCheck.title')}
+                    </h3>
+                    <p className="font-body text-xl text-deep-brown/80 mb-8 leading-relaxed">
+                      {t('services.healthCheck.tagline')}
+                    </p>
 
-                  <div className="mt-8 pt-8 border-t border-white/20">
-                    <p className="text-sm text-white/70 mb-2">{locale === 'zh-TW' ? '流程' : 'Process'}</p>
-                    <p className="text-white/90">{t('services.healthCheck.flow')}</p>
+                    {/* Pricing - SUPER LARGE */}
+                    <div className="font-display font-black text-6xl md:text-7xl text-deep-brown mb-4">
+                      {t('services.healthCheck.price')}
+                    </div>
+                    <p className="font-body text-lg text-deep-brown/70 mb-10">
+                      {t('services.healthCheck.timeline')} • {t('services.healthCheck.ideal')}
+                    </p>
+
+                    <BrutalButton
+                      href="https://calendly.com/young-tsai/ai"
+                      variant="primary"
+                      size="lg"
+                      external
+                    >
+                      {locale === 'zh-TW' ? '立即預約' : 'Book Now'}
+                    </BrutalButton>
                   </div>
+
+                  <BrutalCard className="bg-warm-cream/90">
+                    <h4 className="font-display font-bold text-2xl text-deep-brown mb-6">
+                      {locale === 'zh-TW' ? '你會得到' : 'What You Get'}
+                    </h4>
+                    <ul className="space-y-4 mb-8">
+                      {[0, 1, 2].map((i) => (
+                        <li key={i} className="flex gap-4 items-start">
+                          <span className="text-warm-orange font-bold text-2xl mt-1">✓</span>
+                          <span className="font-body text-lg text-charcoal">
+                            {t(`services.healthCheck.deliverables.${i}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="pt-6 border-t-3 border-deep-brown/20">
+                      <p className="font-bold text-sm text-deep-brown/70 mb-2">
+                        {locale === 'zh-TW' ? '流程' : 'Process'}
+                      </p>
+                      <p className="font-body text-charcoal">
+                        {t('services.healthCheck.flow')}
+                      </p>
+                    </div>
+                  </BrutalCard>
                 </div>
-              </div>
+              </BrutalCard>
             </motion.div>
 
-            {/* Other Options */}
+            {/* Other Services */}
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-white mb-4">{locale === 'zh-TW' ? '其他方案' : 'Other Options'}</h3>
-              <p className="text-gray-300">{locale === 'zh-TW' ? '根據你的時程與預算選擇' : 'Choose based on your timeline and budget'}</p>
+              <h3 className="font-display font-bold text-3xl md:text-4xl text-warm-cream mb-4">
+                {locale === 'zh-TW' ? '其他方案' : 'Other Options'}
+              </h3>
+              <p className="font-body text-lg text-warm-cream/70">
+                {locale === 'zh-TW' ? '根據你的時程與預算選擇' : 'Choose based on your timeline and budget'}
+              </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-10">
               {[
                 {
                   key: 'fastPrototype',
-                  gradient: 'from-purple-500 to-purple-700',
                   featured: false,
                 },
                 {
                   key: 'mvp',
-                  gradient: 'from-blue-500 to-cyan-500',
                   featured: true,
                 },
               ].map((service, index) => (
@@ -388,46 +405,58 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className={`relative p-10 rounded-3xl bg-gradient-to-br from-gray-800 to-gray-900 border-2 ${
-                    service.featured ? 'border-blue-500 ring-4 ring-blue-500/20' : 'border-gray-700'
-                  } hover:border-white/50 transition-all duration-500 shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 flex flex-col`}
                 >
-                  {service.featured && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-black rounded-full shadow-lg">
-                      ⭐ {t('services.featured.badge')}
+                  <BrutalCard className="h-full flex flex-col">
+                    {service.featured && (
+                      <div className="inline-flex items-center px-6 py-2 bg-warm-orange border-3 border-deep-brown text-deep-brown font-bold mb-6 self-start">
+                        ⭐ {t('services.featured.badge')}
+                      </div>
+                    )}
+
+                    <h3 className="font-display font-black text-3xl md:text-4xl text-deep-brown mb-4">
+                      {t(`services.${service.key}.title`)}
+                    </h3>
+                    <p className="font-body text-lg text-charcoal/80 mb-8 leading-relaxed">
+                      {t(`services.${service.key}.tagline`)}
+                    </p>
+
+                    {/* Pricing */}
+                    <div className="mb-8">
+                      <div className="font-display font-black text-6xl text-deep-brown mb-2">
+                        {t(`services.${service.key}.price`)}
+                      </div>
+                      <p className="font-body text-charcoal/70">
+                        {t(`services.${service.key}.timeline`)}
+                      </p>
                     </div>
-                  )}
 
-                  <h3 className="text-3xl font-black text-white mb-3">{t(`services.${service.key}.title`)}</h3>
-                  <p className="text-gray-300 text-lg mb-6 leading-relaxed">{t(`services.${service.key}.tagline`)}</p>
+                    {/* Deliverables */}
+                    <ul className="space-y-3 mb-10 flex-1">
+                      {[0, 1, 2].map((i) => (
+                        <li key={i} className="flex gap-3 items-start">
+                          <span className="text-warm-orange font-bold text-xl mt-1">✓</span>
+                          <span className="font-body text-charcoal">
+                            {t(`services.${service.key}.deliverables.${i}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  <div className="mb-6">
-                    <div className={`text-5xl font-black bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-2`}>
-                      {t(`services.${service.key}.price`)}
+                    <div className="pt-6 border-t-3 border-deep-brown/20 space-y-4">
+                      <p className="font-body text-sm text-charcoal/70">
+                        {t(`services.${service.key}.ideal`)}
+                      </p>
+                      <BrutalButton
+                        href="https://calendly.com/young-tsai/ai"
+                        variant="primary"
+                        size="lg"
+                        external
+                        className="w-full"
+                      >
+                        {t('projects.consultCta')}
+                      </BrutalButton>
                     </div>
-                    <p className="text-gray-400 text-sm">{t(`services.${service.key}.timeline`)}</p>
-                  </div>
-
-                  <ul className="space-y-3 mb-8 flex-1">
-                    {[0, 1, 2].map((i) => (
-                      <li key={i} className="flex gap-3 items-start text-gray-300">
-                        <span className="text-coral-orange mt-1 text-xl">✓</span>
-                        <span className="text-lg">{t(`services.${service.key}.deliverables.${i}`)}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="pt-6 border-t border-gray-700 space-y-4">
-                    <p className="text-sm text-gray-400">{t(`services.${service.key}.ideal`)}</p>
-                    <a
-                      href="https://calendly.com/young-tsai/ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`block w-full text-center px-6 py-4 bg-gradient-to-r ${service.gradient} text-white rounded-xl font-black text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300`}
-                    >
-                      {t('projects.consultCta')}
-                    </a>
-                  </div>
+                  </BrutalCard>
                 </motion.div>
               ))}
             </div>
