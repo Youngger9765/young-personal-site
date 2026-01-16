@@ -259,19 +259,16 @@
       "requirement5": "請事先準備想實作的題目，並思考是否適合用網頁服務處理"
     },
     "strategyConsulting": {
-      "title": "AI 策略顧問",
+      "title": "AI 策略 / 培訓",
       "tagline": "從迷霧到清晰的 AI 轉型路線圖",
-      "description": "AI 轉型戰略規劃、技術可行性評估、實施路線圖設計。不只告訴你該做什麼，更告訴你為什麼這樣做、如何做、以及如何衡量成功。",
-      "suitableFor": "想導入 AI 但不知從何開始的組織、需要驗證 AI 想法的團隊、準備進行 AI 轉型的企業",
-      "deliverable1": "AI 戰略報告（現況分析、機會識別、風險評估）",
-      "deliverable2": "技術架構建議（技術選型、基礎設施、成本估算）",
-      "deliverable3": "分階段實施計畫（Quick Wins → 短期目標 → 長期願景）",
-      "deliverable4": "ROI 預測與 KPI 設計",
-      "timeline": "4-6 週",
-      "pricing": "起價 $20,000 美元",
-      "example1": "知名教育平台 AI 轉型策略",
-      "example2": "企業 AI PoC 規劃",
-      "example3": "醫療 AI 可行性評估"
+      "price": "NT$8,000 起",
+      "timeline": "2-4 週顧問",
+      "deliverables": [
+        "路線圖 + 提案 + 工作坊",
+        "AI 策略路徑規劃與可行性分析",
+        "系統化培訓：從 AI 見習生到 AI 魔法師的完整學習路徑"
+      ],
+      "ideal": "適合：組織想導入 AI 但不知從何開始、需要 AI 轉型教育訓練"
     },
     "implementation": {
       "title": "AI 開發與實作",
@@ -334,8 +331,8 @@
     "fastPrototype": {
       "title": "快速原型驗證",
       "tagline": "我用 7 天把你的 AI 想法變成能演示的原型",
-      "price": "$9,800",
-      "timeline": "7 天",
+      "price": "NT$15,000 起",
+      "timeline": "7 天內交付",
       "deliverables": [
         "可運行 Demo（前端 + AI API）",
         "用戶測試腳本與演示流程",
@@ -360,8 +357,8 @@
     "mvp": {
       "title": "4 週 MVP",
       "tagline": "完整可上線產品，從開發到部署一條龍",
-      "price": "$50,000",
-      "timeline": "4 週",
+      "price": "NT$50,000 起",
+      "timeline": "4 週上線",
       "deliverables": [
         "可上線 MVP（含部署）",
         "資料與事件追蹤設定",

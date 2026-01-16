@@ -259,19 +259,16 @@
       "requirement5": "Prepare a topic you want to implement, consider if it's suitable for web service"
     },
     "strategyConsulting": {
-      "title": "AI Strategy Consulting",
+      "title": "AI Strategy / Training",
       "tagline": "From confusion to clarity: AI transformation roadmap",
-      "description": "AI transformation strategy, technical feasibility assessment, implementation roadmap design. Not just telling you what to do, but why, how, and how to measure success.",
-      "suitableFor": "Organizations wanting AI adoption but unsure where to start, teams needing to validate AI ideas, enterprises preparing for AI transformation",
-      "deliverable1": "AI Strategy Report (current state analysis, opportunity identification, risk assessment)",
-      "deliverable2": "Technical Architecture Recommendations (tech selection, infrastructure, cost estimation)",
-      "deliverable3": "Phased Implementation Plan (Quick Wins → Short-term Goals → Long-term Vision)",
-      "deliverable4": "ROI Forecast & KPI Design",
-      "timeline": "4-6 weeks",
-      "pricing": "Starting at $20,000",
-      "example1": "Leading Education Platform AI Transformation Strategy",
-      "example2": "Enterprise AI PoC Planning",
-      "example3": "Medical AI Feasibility Assessment"
+      "price": "From $8,000",
+      "timeline": "2-4 week consulting",
+      "deliverables": [
+        "Roadmap + Proposal + Workshop",
+        "AI strategy planning & feasibility analysis",
+        "Systematic training: Complete learning path from AI novice to expert"
+      ],
+      "ideal": "For: Organizations wanting AI adoption but unsure where to start, need AI transformation training"
     },
     "implementation": {
       "title": "AI Implementation & Development",
@@ -334,8 +331,8 @@
     "fastPrototype": {
       "title": "Fast Prototype Validation",
       "tagline": "I'll turn your AI idea into a working demo in 7 days",
-      "price": "$9,800",
-      "timeline": "7 days",
+      "price": "From $500",
+      "timeline": "7 day delivery",
       "deliverables": [
         "Working demo (frontend + AI API)",
         "User testing script & demo flow",
@@ -360,8 +357,8 @@
     "mvp": {
       "title": "4-Week MVP",
       "tagline": "Launch-ready product, from development to deployment",
-      "price": "$50,000",
-      "timeline": "4 weeks",
+      "price": "From $1,600",
+      "timeline": "4 week launch",
       "deliverables": [
         "Launch-ready MVP (with deployment)",
         "Data & event tracking setup",

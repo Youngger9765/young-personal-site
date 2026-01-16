@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub, FaMedium, FaRocket, FaBrain, FaCode, FaQuestionCircle, FaLightbulb, FaCheckCircle, FaClock } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
-import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
 import QuickConsultForm from '@/components/QuickConsultForm';
 import GradientButton from '@/components/GradientButton';
@@ -90,9 +89,6 @@ export default function Home() {
         <div className="absolute bottom-40 left-20 w-[500px] h-[500px] bg-orange-primary/15 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-accent/10 rounded-full blur-3xl" />
       </div>
-
-      {/* Navigation */}
-      <Navigation />
 
       <div className="relative z-10">
         {/* Hero Section - Gradient Glass Minimalism */}
@@ -199,7 +195,7 @@ export default function Home() {
                   icon: FaRocket,
                   title: locale === 'zh-TW' ? '1 週原型 Sprint' : '1-week Prototype Sprint',
                   timeline: locale === 'zh-TW' ? '7 天內交付' : 'Delivery in 7 days',
-                  price: locale === 'zh-TW' ? '$15,000 起' : 'From $15,000',
+                  price: locale === 'zh-TW' ? 'NT$15,000 起' : 'From $500',
                   note: locale === 'zh-TW' ? '互動原型 + Demo' : 'Interactive prototype + demo',
                   gradient: 'from-orange-400 to-coral-orange',
                 },
@@ -207,7 +203,7 @@ export default function Home() {
                   icon: FaBrain,
                   title: locale === 'zh-TW' ? '4 週 MVP' : '4-week MVP',
                   timeline: locale === 'zh-TW' ? '4 週上線' : 'Live in 4 weeks',
-                  price: locale === 'zh-TW' ? '$50,000 起' : 'From $50,000',
+                  price: locale === 'zh-TW' ? 'NT$50,000 起' : 'From $1,600',
                   note: locale === 'zh-TW' ? '部署 + 追蹤 + 交接' : 'Deployed, tracked, handed off',
                   gradient: 'from-purple-500 to-purple-600',
                   featured: true,
@@ -216,7 +212,7 @@ export default function Home() {
                   icon: FaCode,
                   title: locale === 'zh-TW' ? 'AI 策略 / 培訓' : 'AI Strategy / Training',
                   timeline: locale === 'zh-TW' ? '2-4 週顧問' : '2-4 weeks advisory',
-                  price: locale === 'zh-TW' ? '$8,000 起' : 'From $8,000',
+                  price: locale === 'zh-TW' ? 'NT$8,000 起' : 'From $8,000',
                   note: locale === 'zh-TW' ? '路線圖 + 選型 + 工作坊' : 'Roadmap, stack, workshop',
                   gradient: 'from-slate-blue to-gray-700',
                 },
@@ -376,8 +372,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section - Glass Cards on Gradient */}
-        <section id="services" className="max-w-6xl mx-auto px-6 py-20">
+        {/* Services Section - Three Cards */}
+        <section id="services" className="max-w-7xl mx-auto px-6 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -392,61 +388,9 @@ export default function Home() {
             <p className="font-sans text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
               {t('services.subtitle')}
             </p>
-            {/* Featured - Health Check */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
-              <GlassCard gradient hover className="p-8 md:scale-105">
-                <div className="inline-block px-3 py-1 bg-gradient-orange-pink text-white text-xs font-semibold rounded-pill mb-6">
-                  💡 {t('services.featured.recommended')}
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="font-sans text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                      {t('services.healthCheck.title')}
-                    </h3>
-                    <p className="text-gray-700 mb-6 text-lg">
-                      {t('services.healthCheck.tagline')}
-                    </p>
-                    <div className="text-5xl font-black bg-gradient-purple-orange bg-clip-text text-transparent mb-2">
-                      {t('services.healthCheck.price')}
-                    </div>
-                    <p className="text-gray-600 mb-6">
-                      {t('services.healthCheck.timeline')} • {t('services.healthCheck.ideal')}
-                    </p>
-                    <GradientButton
-                      href="https://calendly.com/young-tsai/ai"
-                      variant="primary"
-                      size="lg"
-                      external
-                    >
-                      {locale === 'zh-TW' ? '立即預約' : 'Book Now'}
-                    </GradientButton>
-                  </div>
-                  <div>
-                    <p className="text-gray-700 leading-relaxed">
-                      {t('services.healthCheck.flow')}
-                    </p>
-                  </div>
-                </div>
-              </GlassCard>
-            </motion.div>
 
-            {/* Other Services Grid */}
-            <div className="text-center mb-12">
-              <h3 className="font-sans text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                {locale === 'zh-TW' ? '其他方案' : 'Other Options'}
-              </h3>
-              <p className="text-gray-600">
-                {locale === 'zh-TW' ? '根據你的時程與預算選擇' : 'Choose based on your timeline and budget'}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
+            {/* Three Services Grid */}
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
                   key: 'fastPrototype',
@@ -458,6 +402,11 @@ export default function Home() {
                   icon: FaBrain,
                   gradient: 'from-purple-primary to-purple-dark',
                   featured: true,
+                },
+                {
+                  key: 'strategyConsulting',
+                  icon: FaCode,
+                  gradient: 'from-pink-accent to-purple-primary',
                 },
               ].map((service, index) => (
                 <motion.div
