@@ -176,3 +176,6 @@
 
 **Status**: Design approved, ready for implementation
 **Next**: Create detailed implementation plan
+
+
+**SUPERSEDED by 2026-01-16-gradient-glass-migration-completed.md**
