@@ -1,17 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface BrutalButtonProps {
+interface GradientButtonProps {
   href?: string;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
   external?: boolean;
   className?: string;
 }
 
-export default function BrutalButton({
+export default function GradientButton({
   href,
   onClick,
   variant = 'primary',
@@ -19,18 +19,19 @@ export default function BrutalButton({
   children,
   external = false,
   className = '',
-}: BrutalButtonProps) {
-  const baseStyles = 'font-ui font-bold transition-all duration-200 border-3 inline-block';
+}: GradientButtonProps) {
+  const baseStyles = 'font-sans font-semibold transition-all duration-300 inline-block text-center';
 
   const variantStyles = {
-    primary: 'bg-amber-gold text-deep-brown border-deep-brown hover:bg-bronze shadow-brutal hover:shadow-brutal-lg hover:translate-x-1 hover:translate-y-1',
-    secondary: 'bg-transparent text-deep-brown border-deep-brown hover:bg-deep-brown hover:text-warm-cream shadow-brutal hover:shadow-brutal-lg',
+    primary: 'bg-gradient-purple-orange text-white hover:shadow-gradient-glow hover:scale-105 shadow-soft-md',
+    secondary: 'bg-gradient-purple-pink text-white hover:shadow-soft-lg hover:scale-105 shadow-soft',
+    outline: 'bg-transparent text-purple-primary border-2 border-purple-primary hover:bg-purple-primary hover:text-white shadow-soft hover:shadow-soft-md',
   };
 
   const sizeStyles = {
-    sm: 'px-6 py-3 text-sm rounded-lg',
-    md: 'px-10 py-4 text-base rounded-xl',
-    lg: 'px-12 py-6 text-lg rounded-xl',
+    sm: 'px-6 py-2.5 text-sm rounded-pill',
+    md: 'px-8 py-3.5 text-base rounded-pill',
+    lg: 'px-10 py-4 text-lg rounded-pill',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;

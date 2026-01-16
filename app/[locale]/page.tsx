@@ -8,7 +8,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
 import QuickConsultForm from '@/components/QuickConsultForm';
-import BrutalButton from '@/components/BrutalButton';
+import GradientButton from '@/components/GradientButton';
 import BrutalCard from '@/components/BrutalCard';
 
 export default function Home() {
@@ -132,21 +132,21 @@ export default function Home() {
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-6 mb-14">
-                <BrutalButton
+                <GradientButton
                   href="https://calendly.com/young-tsai/ai"
                   variant="primary"
                   size="lg"
                   external
                 >
                   {t('hero.ctaPrimary')}
-                </BrutalButton>
-                <BrutalButton
+                </GradientButton>
+                <GradientButton
                   href="#projects"
                   variant="secondary"
                   size="lg"
                 >
                   {t('hero.ctaSecondary')}
-                </BrutalButton>
+                </GradientButton>
               </div>
 
               {/* Social Links - Brutal style */}
@@ -366,13 +366,13 @@ export default function Home() {
 
             {/* CTA at Bottom */}
             <div className="flex justify-center mt-16">
-              <BrutalButton
+              <GradientButton
                 href={`/${locale}/contact`}
                 variant="primary"
                 size="lg"
               >
                 {t('about.cta')} →
-              </BrutalButton>
+              </GradientButton>
             </div>
           </div>
         </section>
@@ -421,14 +421,14 @@ export default function Home() {
                       {t('services.healthCheck.timeline')} • {t('services.healthCheck.ideal')}
                     </p>
 
-                    <BrutalButton
+                    <GradientButton
                       href="https://calendly.com/young-tsai/ai"
                       variant="primary"
                       size="lg"
                       external
                     >
                       {locale === 'zh-TW' ? '立即預約' : 'Book Now'}
-                    </BrutalButton>
+                    </GradientButton>
                   </div>
 
                   <BrutalCard className="bg-warm-cream/90">
@@ -527,7 +527,7 @@ export default function Home() {
                       <p className="font-body text-sm text-charcoal/70">
                         {t(`services.${service.key}.ideal`)}
                       </p>
-                      <BrutalButton
+                      <GradientButton
                         href="https://calendly.com/young-tsai/ai"
                         variant="primary"
                         size="lg"
@@ -535,7 +535,7 @@ export default function Home() {
                         className="w-full"
                       >
                         {t('projects.consultCta')}
-                      </BrutalButton>
+                      </GradientButton>
                     </div>
                   </BrutalCard>
                 </motion.div>
@@ -608,13 +608,13 @@ export default function Home() {
                           )}
 
                           {/* CTA Button */}
-                          <BrutalButton
+                          <GradientButton
                             href={`/${locale}/projects/${project.slug}`}
                             variant="secondary"
                             size="md"
                           >
                             {locale === 'zh-TW' ? '查看專案' : 'View Project'}
-                          </BrutalButton>
+                          </GradientButton>
                         </BrutalCard>
                       </div>
                     </div>
@@ -630,13 +630,13 @@ export default function Home() {
 
             {/* View All Projects Button */}
             <div className="flex justify-center mt-16">
-              <BrutalButton
+              <GradientButton
                 href={`/${locale}/projects`}
                 variant="primary"
                 size="lg"
               >
                 {locale === 'zh-TW' ? '查看所有專案 →' : 'View All Projects →'}
-              </BrutalButton>
+              </GradientButton>
             </div>
           </div>
         </section>

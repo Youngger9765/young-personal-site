@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import BrutalButton from './BrutalButton';
+import GradientButton from './GradientButton';
 
 export default function ContactCTA() {
   const locale = useLocale();
@@ -29,14 +29,14 @@ export default function ContactCTA() {
           </p>
 
           {/* CTA Button */}
-          <BrutalButton
+          <GradientButton
             href={`/${locale}/contact`}
             size="lg"
             className="bg-deep-brown text-warm-cream border-deep-brown hover:bg-deep-brown/90"
             aria-label={t('button')}
           >
             {t('button')} →
-          </BrutalButton>
+          </GradientButton>
 
           {/* Secondary Info */}
           <p className="font-ui text-sm md:text-base text-deep-brown/70 mt-6">
