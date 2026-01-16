@@ -93,7 +93,7 @@ export default function ProjectsGalleryPage() {
               <Link href={`/${locale}/projects/${project.slug}`}>
                 <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
                   {/* Project Thumbnail */}
-                  <div className="relative h-56 bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50 overflow-hidden">
+                  <div className="relative h-56 bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden">
                     {projectImages[project.slug] ? (
                       <Image
                         src={projectImages[project.slug]!}

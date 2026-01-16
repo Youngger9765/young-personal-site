@@ -74,7 +74,7 @@ export default function AboutPage() {
               <p className="text-2xl text-gray-900">{t('about.intro')}</p>
 
               {/* Brand Statement Highlight */}
-              <div className="my-12 p-8 rounded-2xl bg-gradient-to-br from-warm-cream to-white border-l-4 border-slate-blue">
+              <div className="my-12 p-8 rounded-2xl bg-gradient-to-br from-white to-white border-l-4 border-slate-blue">
                 <p className="text-xl font-semibold text-slate-blue leading-relaxed">
                   {t('about.brandStatement')}
                 </p>
@@ -151,7 +151,7 @@ export default function AboutPage() {
                   >
                     {/* Timeline node */}
                     <div className="relative z-10 flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white to-warm-cream border-4 border-slate-blue flex items-center justify-center text-lg shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white to-white border-4 border-slate-blue flex items-center justify-center text-lg shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                         {milestone.icon}
                       </div>
                     </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2 + 0.3 }}
-                        className="bg-gradient-to-br from-white to-warm-cream/30 rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 hover:border-slate-blue/30"
+                        className="bg-gradient-to-br from-white to-white/30 rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 hover:border-slate-blue/30"
                       >
                         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 whitespace-pre-line leading-tight">
                           {milestone.title}
@@ -243,7 +243,7 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
-                      className="p-6 rounded-2xl bg-gradient-to-br from-white to-warm-cream/20 border border-gray-200 shadow-sm"
+                      className="p-6 rounded-2xl bg-gradient-to-br from-white to-white/20 border border-gray-200 shadow-sm"
                     >
                       <div className="text-3xl font-extrabold text-slate-blue mb-2">
                         {metric.value}
@@ -306,7 +306,7 @@ export default function AboutPage() {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-blue via-slate-blue to-slate-blue/50 rounded-full shadow-[2px_0_8px_rgba(71,85,105,0.15)] transition-all duration-300 group-hover:w-1.5 group-hover:shadow-[3px_0_12px_rgba(71,85,105,0.25)]" />
 
                       {/* Premium content card with refined depth */}
-                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-warm-cream/10 to-warm-cream/20 rounded-r-2xl border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-slate-blue/30 hover:bg-gradient-to-br hover:from-white hover:via-warm-cream/15 hover:to-warm-cream/25">
+                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-white/10 to-white/20 rounded-r-2xl border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-slate-blue/30 hover:bg-gradient-to-br hover:from-white hover:via-white/15 hover:to-white/25">
                         {/* Subtle top-left decorative element */}
                         <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-slate-blue/5 to-transparent rounded-br-3xl pointer-events-none" />
 
@@ -343,7 +343,7 @@ export default function AboutPage() {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-blue via-slate-blue to-slate-blue/50 rounded-full shadow-[2px_0_8px_rgba(71,85,105,0.15)] transition-all duration-300 group-hover:w-1.5 group-hover:shadow-[3px_0_12px_rgba(71,85,105,0.25)]" />
 
                       {/* Premium content card with refined depth */}
-                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-warm-cream/10 to-warm-cream/20 rounded-r-2xl border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-slate-blue/30 hover:bg-gradient-to-br hover:from-white hover:via-warm-cream/15 hover:to-warm-cream/25">
+                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-white/10 to-white/20 rounded-r-2xl border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-slate-blue/30 hover:bg-gradient-to-br hover:from-white hover:via-white/15 hover:to-white/25">
                         {/* Subtle top-left decorative element */}
                         <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-slate-blue/5 to-transparent rounded-br-3xl pointer-events-none" />
 

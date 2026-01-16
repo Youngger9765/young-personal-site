@@ -41,7 +41,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
   };
 
   return (
-    <div className={`p-6 rounded-2xl bg-gradient-to-br from-warm-cream/60 via-white to-blue-50 border border-gray-200 shadow-sm ${className || ''}`}>
+    <div className={`p-6 rounded-2xl bg-gradient-to-br from-white/60 via-white to-blue-50 border border-gray-200 shadow-sm ${className || ''}`}>
           <div className="mb-4">
         <h3 className="text-xl font-bold text-gray-900">{t('quickForm.title')}</h3>
         <p className="text-sm text-gray-600">{t('quickForm.subtitle')}</p>

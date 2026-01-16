@@ -214,7 +214,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
               />
             </div>
           ) : (
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50">
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-white via-blue-50 to-purple-50">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <svg
@@ -310,7 +310,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className={`flex-shrink-0 w-12 h-12 rounded-lg ${index === 1 ? 'bg-coral-orange' : 'bg-slate-blue'} flex items-center justify-center`}>
@@ -358,7 +358,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center p-8 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border border-gray-200"
+          className="text-center p-8 rounded-2xl bg-gradient-to-r from-white to-blue-50 border border-gray-200"
         >
           <Link
             href={`/${locale}/speaking`}

@@ -209,7 +209,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               />
             </div>
           ) : (
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-warm-cream via-blue-50 to-purple-50">
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-white via-blue-50 to-purple-50">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <svg
@@ -241,7 +241,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 gap-4 rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-warm-cream/30 p-6"
+          className="grid md:grid-cols-2 gap-4 rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-white/30 p-6"
         >
           {([
             { label: t('summary.problem'), value: project.summary.problem },
@@ -292,7 +292,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
             {project.features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 rounded-xl bg-warm-cream/30 border border-gray-200 hover:border-slate-blue transition-colors"
+                className="flex items-start gap-3 p-4 rounded-xl bg-white/30 border border-gray-200 hover:border-slate-blue transition-colors"
               >
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-blue flex items-center justify-center text-white text-sm font-bold mt-0.5">
                   {index + 1}
@@ -372,7 +372,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%81%A3hour-ai%E5%95%9F%E5%8B%95-%E5%9D%87-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%94%9C%E6%89%8B%E6%8E%A8%E5%8B%95%E5%85%A8%E6%B0%91ai%E6%95%99%E8%82%B2-101702045.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
@@ -407,7 +407,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://udn.com/news/story/6885/9161998"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
@@ -453,7 +453,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://flipedu.parenting.com.tw/article/009564"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
@@ -488,7 +488,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://vocus.cc/article/66e78933fd89780001ae952f"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
@@ -523,7 +523,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://vocus.cc/article/642b69e5fd897800012b6fce"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
@@ -569,7 +569,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://www.facebook.com/JunyiAcademy/posts/-ai-狐狸貓默默出現啦以平台上原有的課程影片-配合-ai-驅動的新功能-ai-狐狸貓-將逐漸進駐影片下方自動把影片轉化為文本打造師生各自專屬的功能讓自學力-x/852188293619317/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
@@ -605,7 +605,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://sunnyteaching680228.blogspot.com/2024/04/ai.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
@@ -641,7 +641,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://www.thsh.tp.edu.tw/uploads/1725321120011KwiQmzMv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
@@ -687,7 +687,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://flipedu.parenting.com.tw/article/010170"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
@@ -723,7 +723,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://flipedu.parenting.com.tw/teacher_resource/561"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
@@ -767,7 +767,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center p-8 rounded-2xl bg-gradient-to-r from-warm-cream to-blue-50 border border-gray-200 flex flex-col md:flex-row items-center justify-center gap-4"
+          className="text-center p-8 rounded-2xl bg-gradient-to-r from-white to-blue-50 border border-gray-200 flex flex-col md:flex-row items-center justify-center gap-4"
         >
           <Link
             href={`/${locale}/projects`}
