@@ -212,7 +212,7 @@ export default function Home() {
                   icon: FaCode,
                   title: locale === 'zh-TW' ? 'AI 策略 / 培訓' : 'AI Strategy / Training',
                   timeline: locale === 'zh-TW' ? '2-4 週顧問' : '2-4 weeks advisory',
-                  price: locale === 'zh-TW' ? 'NT$8,000 起' : 'From $8,000',
+                  price: locale === 'zh-TW' ? 'NT$8,000 起' : 'From $250',
                   note: locale === 'zh-TW' ? '路線圖 + 選型 + 工作坊' : 'Roadmap, stack, workshop',
                   gradient: 'from-slate-blue to-gray-700',
                 },

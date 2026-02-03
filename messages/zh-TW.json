@@ -261,14 +261,17 @@
     "strategyConsulting": {
       "title": "AI 策略 / 培訓",
       "tagline": "從迷霧到清晰的 AI 轉型路線圖",
-      "price": "NT$8,000 起",
+      "description": "AI 策略路徑規劃與可行性分析。協助組織釐清 AI 導入方向，系統化培訓團隊，從 AI 見習生到 AI 魔法師的完整學習路徑。",
+      "suitableFor": "組織想導入 AI 但不知從何開始、需要 AI 轉型教育訓練、想提升團隊 AI 素養的企業",
+      "deliverable1": "AI 策略路線圖與可行性分析報告",
+      "deliverable2": "客製化提案與技術選型建議",
+      "deliverable3": "實作工作坊（半天或全天）",
+      "deliverable4": "系統化培訓課程與後續支援",
       "timeline": "2-4 週顧問",
-      "deliverables": [
-        "路線圖 + 提案 + 工作坊",
-        "AI 策略路徑規劃與可行性分析",
-        "系統化培訓：從 AI 見習生到 AI 魔法師的完整學習路徑"
-      ],
-      "ideal": "適合：組織想導入 AI 但不知從何開始、需要 AI 轉型教育訓練"
+      "pricing": "NT$8,000 起 / 場",
+      "example1": "企業 AI 轉型策略規劃",
+      "example2": "團隊 AI 素養培訓課程",
+      "example3": "AI 導入可行性評估"
     },
     "implementation": {
       "title": "AI 開發與實作",
@@ -280,7 +283,7 @@
       "deliverable3": "雲端部署方案（Cloud Run / Supabase / GCP）",
       "deliverable4": "成本優化建議與監控設定",
       "timeline": "彈性（時薪制或專案制）",
-      "pricing": "$800 美元/小時 或專案制",
+      "pricing": "NT$3,000/小時 或專案制",
       "example1": "Jutor - AI 英語家教（Meta LLM 前八強）",
       "example2": "AI Square 多語言學習平台",
       "example3": "醫療決策平台"
@@ -295,7 +298,7 @@
       "deliverable3": "課後資源包（簡報、範例、工具清單）",
       "deliverable4": "後續諮詢支援（Email / Slack）",
       "timeline": "半天或全天工作坊",
-      "pricing": "半天起價 $3,000 美元",
+      "pricing": "半天起 NT$10,000",
       "example1": "GAICONF：知名教育平台如何教老師使用 AI",
       "example2": "台大創創：AI 商業模式解構",
       "example3": "聯發科 AI 大會"
@@ -310,7 +313,7 @@
       "deliverable3": "戰略審查會議（每月一次）",
       "deliverable4": "技術決策支援（架構審查、技術選型、成本優化）",
       "timeline": "月度訂閱制",
-      "pricing": "$5,000 美元/月（長期合作）",
+      "pricing": "NT$30,000/月（長期合作）",
       "example1": "教育科技新創長期技術顧問",
       "example2": "醫療 AI 專案陪跑",
       "example3": "企業 AI 轉型教練"

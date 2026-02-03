@@ -6,17 +6,17 @@ export const proposal = {
   version: '完整版',
   date: '2026年2月',
 
-  // 品牌配色
+  // 品牌配色 - TFT 珊瑚橘色系
   theme: {
-    primary: '#1e3a5f',      // TFT 深藍
-    primaryLight: '#2d4a73',
-    accent: '#d4a84b',       // 金色強調
-    colors: ['#f26b5b', '#4caf7c', '#4a90d9', '#f9a825'], // 多彩圓
+    primary: '#E85A4F',      // TFT 珊瑚橘（主色）
+    primaryLight: '#F07167',
+    accent: '#2D3142',       // 深灰藍（強調）
+    colors: ['#E85A4F', '#F4A261', '#2A9D8F', '#264653'], // 溫暖色系
   },
 
   summary: `三個月上線、半年試行可調三次；
 220 萬建置、20 萬／年維護；
-人數不綁、組織可分，雲端與 AI 用多少付多少。`,
+人數不限、組織可獨立分開運作，雲端與 AI 用多少付多少。`,
 
   sections: {
     objective: {
@@ -28,7 +28,7 @@ export const proposal = {
 
     scope: {
       title: '二、系統規格與範圍（Phase 1）',
-      roles: ['管理員', '教學教練', '學生'],
+      roles: ['管理員', '教學教練', '學生（新手老師）'],
       rolesNote: '含角色權限控管',
       features: [
         {
@@ -49,7 +49,7 @@ export const proposal = {
           ],
         },
         {
-          name: 'Rubric 評量',
+          name: '評量規準',
           items: [
             '量化評分',
             '質性回饋',
@@ -86,34 +86,126 @@ export const proposal = {
         },
       ],
       excluded: ['外部系統整合', '功能擴充與流程變更'],
+      architecture: {
+        title: '角色互動流程',
+        roles: [
+          {
+            id: 'admin',
+            name: '管理員',
+            icon: '👤',
+            color: '#264653',
+            actions: ['建立班級', '指派教練', '管理帳號', '查看報表'],
+          },
+          {
+            id: 'coach',
+            name: '教學教練',
+            icon: '👨‍🏫',
+            color: '#E85A4F',
+            actions: ['指派作業', '填寫觀課紀錄', '評量打分', '給予回饋'],
+          },
+          {
+            id: 'student',
+            name: '學生（新手老師）',
+            icon: '🎓',
+            color: '#2A9D8F',
+            actions: ['上傳作業', '觀看影片', '查看評量', '追蹤進度'],
+          },
+        ],
+        flows: [
+          { from: 'admin', to: 'coach', label: '指派班級' },
+          { from: 'coach', to: 'student', label: '派發作業' },
+          { from: 'student', to: 'coach', label: '繳交作業' },
+          { from: 'coach', to: 'student', label: '評量回饋' },
+        ],
+        center: {
+          name: '觀課平台',
+          features: ['班級管理', '作業系統', '評量規準', '儀表板'],
+        },
+      },
     },
 
     timeline: {
       title: '三、時程規劃',
-      phases: [
+      summary: '總期程：約 9 個月（含開發 3 個月 + 試行 6 個月）',
+      milestones: [
         {
-          name: '三個月內完成初次上線',
-          items: [
-            '自專案啟動日起算，完成第一版可實際使用之系統',
-            '以核心觀課與評量流程完整可用為目標',
+          phase: '開發期',
+          duration: '第 1～12 週',
+          color: '#E85A4F',
+          steps: [
+            { week: '1～4', title: '知識轉譯', desc: '與領域專家確認評量邏輯、欄位與流程' },
+            { week: '5～8', title: '系統開發', desc: '核心功能開發與整合' },
+            { week: '9～12', title: '測試上線', desc: '測試、修正、正式上線' },
           ],
         },
         {
-          name: '試行期與合理修改',
-          items: [
-            '系統上線後提供六個月試行期',
-            '試行期間內，包含三次「規格外但屬合理範圍」之修改',
-            '以既有功能之流程調整、欄位微調、使用體驗優化為限',
-            '不包含新增模組、重大邏輯重構或系統擴充',
-            '每次修改於雙方確認範圍後執行',
+          phase: '試行期',
+          duration: '第 13～36 週（6 個月）',
+          color: '#2A9D8F',
+          steps: [
+            { week: '13～20', title: '第一輪試行', desc: '小規模試用、收集回饋、第一次調整' },
+            { week: '21～28', title: '第二輪試行', desc: '擴大使用範圍、第二次調整' },
+            { week: '29～36', title: '第三輪試行', desc: '全面試用、最終優化、正式交付' },
           ],
         },
       ],
-      note: '試行期結束後，後續需求將依功能擴充流程另行評估與報價。',
+      trialTerms: [
+        '試行期間內包含三次「規格外但屬合理範圍」之修改',
+        '以既有功能之流程調整、欄位微調、使用體驗優化為限',
+        '不包含新增模組、重大邏輯重構或系統擴充',
+      ],
+      note: '實際時程依需求確認與回饋速度微調。試行期結束後，後續需求將依功能擴充流程另行評估與報價。',
+    },
+
+    advantages: {
+      title: '四、方案優勢',
+      intro: '相較市面既有觀課平台（如蘇格拉底），本方案具備以下差異化優勢：',
+      items: [
+        {
+          icon: '💰',
+          title: '人數不限、無人頭費',
+          desc: '不採訂閱制，使用人數不設限；避免隨組織規模成長而成本暴增',
+        },
+        {
+          icon: '🎯',
+          title: '專為 TFT 流程設計',
+          desc: '非通用 SaaS 套裝，而是依 TFT 教學教練實際工作流程量身打造',
+        },
+        {
+          icon: '🔧',
+          title: '客製化評量規準',
+          desc: '評量邏輯與欄位可依 TFT 現有表單轉譯，無需遷就系統預設框架',
+        },
+        {
+          icon: '🔄',
+          title: '試行期三次調整',
+          desc: '半年試行內含三次規格調整，確保系統貼合實際使用情境',
+        },
+        {
+          icon: '📦',
+          title: '輕量化、免硬體',
+          desc: '純雲端架構，無需另購錄影設備或 AI 分析硬體，降低導入門檻',
+        },
+        {
+          icon: '🏛️',
+          title: '可擴充至教育部計畫',
+          desc: '架構保留彈性，未來可依教育部或其他單位需求延伸應用，支援跨組織、跨計畫部署',
+        },
+        {
+          icon: '📱',
+          title: 'RWD 響應式設計',
+          desc: '電腦、平板、手機多裝置適配，教練與學生可隨時隨地使用',
+        },
+        {
+          icon: '🤖',
+          title: 'AI 多模態輔助（選配）',
+          desc: '支援教材影音、文檔之 AI 摘要與分析，優化觀課紀錄整理與行政流程',
+        },
+      ],
     },
 
     principles: {
-      title: '四、功能設計原則',
+      title: '五、功能設計原則',
       items: [
         {
           name: '保留未來擴充彈性',
@@ -133,16 +225,16 @@ export const proposal = {
     },
 
     pricing: {
-      title: '五、費用說明',
+      title: '六、費用說明',
       items: [
         {
           name: '一次性建置費',
-          amount: 'NT$ 2,200,000',
+          amount: 'NT$ 220 萬',
           note: '含系統設計、開發、測試與初次上線，不含第一年維護費',
         },
         {
           name: '年度維護費',
-          amount: 'NT$ 200,000 / 年',
+          amount: 'NT$ 2 萬 / 年',
           note: '系統正式上線後起算',
           includes: [
             '系統穩定性維護',
@@ -182,7 +274,7 @@ export const proposal = {
         },
       ],
       threeYearEstimate: {
-        title: '六、三年總成本概念（估）',
+        title: '七、三年總成本概念（估）',
         items: [
           { name: '建置費', amount: '220 萬' },
           { name: '維護費（2 年）', amount: '40 萬' },
@@ -194,7 +286,7 @@ export const proposal = {
     },
 
     cooperation: {
-      title: '七、合作模式說明',
+      title: '八、合作模式說明',
       intro: '本案可依甲方行政與採購流程，彈性採用下列任一模式：',
       modes: [
         {
@@ -216,14 +308,14 @@ export const proposal = {
     },
 
     value: {
-      title: '八、執行與價值參考',
+      title: '九、執行與價值參考',
       items: [
         {
           title: '極度熟悉班／生／師／課之核心系統模組',
           detail: '可直接將教育行政與教學流程轉譯為系統結構',
         },
         {
-          title: 'Rubric 與診斷系統首席設計經驗',
+          title: '評量規準與診斷系統首席設計經驗',
           detail: '實際擔任均一教育平台多套診斷與評量系統之首席設計與製作，負責評量邏輯、資料結構與系統落地',
         },
         {
@@ -231,8 +323,8 @@ export const proposal = {
           detail: '參與課程架構、學習歷程與評量制度整體規劃',
         },
         {
-          title: 'TFT、KIST 多次教育數位合作經驗',
-          detail: '熟悉教育組織行政流程、決策節奏與現場限制',
+          title: 'TFT、KIST、中央縣市局處 多次教育數位合作經驗',
+          detail: '熟悉教育組織行政流程、決策節奏與現場限制，具備跨單位協調能力',
         },
         {
           title: 'AI × 教育 × 數位落地整合經驗',
@@ -244,7 +336,8 @@ export const proposal = {
 
   contact: {
     name: 'Young',
-    email: 'young@example.com', // 請替換
+    email: 'young@example.com',
+    calendar: 'https://calendly.com/young-tsai/ai',
     cta: '聯繫討論',
   },
 };

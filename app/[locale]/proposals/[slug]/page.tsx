@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import ProposalPasswordGate from '@/components/ProposalPasswordGate';
+// import ProposalPasswordGate from '@/components/ProposalPasswordGate';
 import { proposal as tftProposal } from '@/lib/proposals/tft-classroom-observation';
 
 // 提案註冊表
@@ -26,17 +26,8 @@ export default function ProposalPage() {
     );
   }
 
-  const { theme } = proposal;
-
-  return (
-    <ProposalPasswordGate
-      slug={slug}
-      clientName={proposal.client}
-      theme={theme}
-    >
-      <ProposalContent proposal={proposal} />
-    </ProposalPasswordGate>
-  );
+  // 直接顯示內容，不需要密碼
+  return <ProposalContent proposal={proposal} />;
 }
 
 function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
@@ -85,7 +76,7 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
       <main className="max-w-4xl mx-auto px-6 py-16">
         {/* 專案目標 */}
         <Section title={sections.objective.title} theme={theme}>
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+          <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
             {sections.objective.content}
           </p>
         </Section>
@@ -98,7 +89,7 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
               {sections.scope.roles.map((role) => (
                 <span
                   key={role}
-                  className="px-4 py-2 rounded-full text-sm font-medium"
+                  className="px-4 py-2 rounded-full text-base font-medium"
                   style={{
                     backgroundColor: `${theme.primary}10`,
                     color: theme.primary,
@@ -108,7 +99,7 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
                 </span>
               ))}
             </div>
-            <p className="text-sm text-gray-500 mt-2">{sections.scope.rolesNote}</p>
+            <p className="text-base text-gray-500 mt-2">{sections.scope.rolesNote}</p>
           </div>
 
           <div className="space-y-6">
@@ -118,9 +109,122 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
             ))}
           </div>
 
+          {/* User Interaction Flow Diagram */}
+          {sections.scope.architecture && (
+            <div className="mt-10 mb-8">
+              <h4 className="font-semibold text-gray-800 text-lg mb-6 text-center">
+                {sections.scope.architecture.title}
+              </h4>
+              <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 rounded-2xl p-6 md:p-10 border border-gray-200 overflow-hidden min-h-[500px]">
+                {/* Center Platform */}
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-48 md:h-48"
+                >
+                  <div
+                    className="w-full h-full rounded-full flex flex-col items-center justify-center text-white shadow-2xl"
+                    style={{ backgroundColor: theme.primary }}
+                  >
+                    <span className="text-3xl mb-2">🖥️</span>
+                    <span className="font-bold text-sm md:text-base text-center px-2">{sections.scope.architecture.center.name}</span>
+                  </div>
+                  {/* Pulse animation */}
+                  <div
+                    className="absolute inset-0 rounded-full animate-ping opacity-20"
+                    style={{ backgroundColor: theme.primary }}
+                  />
+                </motion.div>
+
+                {/* Role Cards - positioned around center */}
+                {sections.scope.architecture.roles.map((role, i) => {
+                  const positions = [
+                    { top: '5%', left: '50%', transform: 'translateX(-50%)' },
+                    { top: '70%', left: '10%' },
+                    { top: '70%', right: '10%' },
+                  ];
+                  const pos = positions[i] || positions[0];
+
+                  return (
+                    <motion.div
+                      key={role.id}
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.15 }}
+                      className="absolute w-36 md:w-44"
+                      style={pos}
+                    >
+                      <div
+                        className="rounded-2xl p-4 text-white shadow-xl"
+                        style={{ backgroundColor: role.color }}
+                      >
+                        <div className="text-center mb-3">
+                          <span className="text-4xl">{role.icon}</span>
+                          <div className="font-bold mt-1 text-sm">{role.name}</div>
+                        </div>
+                        <div className="space-y-1">
+                          {role.actions.map((action, j) => (
+                            <div
+                              key={j}
+                              className="text-xs bg-white/20 rounded px-2 py-1 text-center"
+                            >
+                              {action}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+
+                {/* Flow Labels */}
+                <div className="absolute top-[35%] left-1/2 -translate-x-1/2 flex flex-col items-center">
+                  <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">指派班級</span>
+                  <svg className="w-4 h-4 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+
+                <div className="absolute top-[55%] left-[25%] md:left-[30%]">
+                  <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">派發作業</span>
+                </div>
+
+                <div className="absolute top-[55%] right-[25%] md:right-[30%]">
+                  <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">評量回饋</span>
+                </div>
+
+                {/* Bottom flow */}
+                <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span>繳交作業</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    <span>查看進度</span>
+                  </div>
+                </div>
+
+                {/* Platform Features */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 flex-wrap justify-center max-w-xs">
+                  {sections.scope.architecture.center.features.map((f, i) => (
+                    <span
+                      key={i}
+                      className="text-xs px-2 py-1 rounded-full"
+                      style={{ backgroundColor: `${theme.primary}15`, color: theme.primary }}
+                    >
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="mt-8 p-4 bg-gray-50 rounded-xl">
             <h4 className="font-semibold text-gray-800 mb-2">本階段不包含</h4>
-            <ul className="text-gray-600 text-sm space-y-1">
+            <ul className="text-gray-600 text-base space-y-1">
               {sections.scope.excluded.map((item, i) => (
                 <li key={i} className="flex items-center gap-2">
                   <span className="text-gray-400">×</span>
@@ -133,33 +237,103 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
 
         {/* 時程規劃 */}
         <Section title={sections.timeline.title} theme={theme}>
-          <div className="space-y-6">
-            {sections.timeline.phases.map((phase, i) => (
-              <div
-                key={i}
-                className="relative pl-8 border-l-2"
-                style={{ borderColor: theme.primary }}
-              >
+          {/* Summary */}
+          <div
+            className="text-center p-4 rounded-xl mb-8 text-lg font-medium"
+            style={{ backgroundColor: `${theme.primary}10`, color: theme.primary }}
+          >
+            {sections.timeline.summary}
+          </div>
+
+          {/* Visual Timeline */}
+          <div className="space-y-8">
+            {sections.timeline.milestones.map((milestone, i) => (
+              <div key={i} className="relative">
+                {/* Phase Header */}
                 <div
-                  className="absolute left-0 top-0 w-4 h-4 rounded-full -translate-x-[9px]"
-                  style={{ backgroundColor: theme.primary }}
-                />
-                <h4 className="font-semibold text-gray-800 mb-2">{phase.name}</h4>
-                <ul className="text-gray-600 space-y-1">
-                  {phase.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-2">
-                      <span style={{ color: theme.accent }}>•</span>
-                      {item}
-                    </li>
+                  className="flex items-center gap-3 mb-4 p-3 rounded-lg text-white"
+                  style={{ backgroundColor: milestone.color }}
+                >
+                  <span className="text-2xl font-bold">{milestone.phase}</span>
+                  <span className="text-sm opacity-80">（{milestone.duration}）</span>
+                </div>
+
+                {/* Steps */}
+                <div className="grid gap-4 ml-4">
+                  {milestone.steps.map((step, j) => (
+                    <div
+                      key={j}
+                      className="relative pl-8 border-l-2 pb-4"
+                      style={{ borderColor: milestone.color }}
+                    >
+                      <div
+                        className="absolute left-0 top-0 w-4 h-4 rounded-full -translate-x-[9px] flex items-center justify-center text-white text-xs font-bold"
+                        style={{ backgroundColor: milestone.color }}
+                      >
+                        {j + 1}
+                      </div>
+                      <div className="flex items-baseline gap-3 mb-1">
+                        <span
+                          className="text-sm font-mono px-2 py-0.5 rounded"
+                          style={{ backgroundColor: `${milestone.color}15`, color: milestone.color }}
+                        >
+                          第 {step.week} 週
+                        </span>
+                        <span className="font-semibold text-gray-800">{step.title}</span>
+                      </div>
+                      <p className="text-gray-600">{step.desc}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-500 mt-6 italic">
+
+          {/* Trial Terms */}
+          <div className="mt-8 p-4 bg-amber-50 rounded-xl border border-amber-200">
+            <h4 className="font-semibold text-amber-800 mb-2">試行期條款</h4>
+            <ul className="text-amber-700 space-y-1">
+              {sections.timeline.trialTerms.map((term, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span>•</span>
+                  {term}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="text-base text-gray-500 mt-6 italic">
             {sections.timeline.note}
           </p>
         </Section>
+
+        {/* 方案優勢 */}
+        {sections.advantages && (
+          <Section title={sections.advantages.title} theme={theme}>
+            <p className="text-gray-700 mb-6">{sections.advantages.intro}</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {sections.advantages.items.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-5 rounded-xl border-2 transition-all hover:shadow-md"
+                  style={{ borderColor: `${theme.primary}30` }}
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-1">{item.title}</h4>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </Section>
+        )}
 
         {/* 設計原則 */}
         <Section title={sections.principles.title} theme={theme}>
@@ -231,7 +405,7 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
                 >
                   {mode.name}
                 </h4>
-                <ul className="text-gray-600 text-sm space-y-1">
+                <ul className="text-gray-600 text-base space-y-1">
                   {mode.details.map((detail, j) => (
                     <li key={j}>• {detail}</li>
                   ))}
@@ -286,7 +460,9 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
             期待與您進一步討論專案細節
           </p>
           <a
-            href={`mailto:${proposal.contact.email}?subject=${encodeURIComponent(`${proposal.client} - ${proposal.title}`)}`}
+            href={proposal.contact.calendar || `mailto:${proposal.contact.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-medium transition-opacity hover:opacity-90"
             style={{ backgroundColor: theme.primary }}
           >
@@ -393,7 +569,7 @@ function PricingCard({
       </div>
       {item.note && <p className="text-sm text-gray-500 mb-3">{item.note}</p>}
       {item.includes && (
-        <ul className="text-gray-600 text-sm space-y-1">
+        <ul className="text-gray-600 text-base space-y-1">
           {item.includes.map((inc, i) => (
             <li key={i} className="flex items-center gap-2">
               <span style={{ color: theme.accent }}>✓</span>
