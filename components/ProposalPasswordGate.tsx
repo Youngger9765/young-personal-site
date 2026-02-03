@@ -125,10 +125,10 @@ export default function ProposalPasswordGate({
               className="text-2xl font-bold mb-2"
               style={{ color: theme.primary }}
             >
-              {clientName}
+              私人提案
             </h1>
             <p className="text-gray-500 text-sm">
-              此提案內容需要密碼才能檢視
+              此內容需要密碼才能檢視
             </p>
           </div>
 
