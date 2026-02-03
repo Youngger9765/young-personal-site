@@ -2,16 +2,17 @@
 export const proposal = {
   slug: 'tft-classroom-observation',
   client: 'TFT 為台灣而教',
+  logo: 'https://yt3.googleusercontent.com/ytc/AIdro_nfgUUqE2DBn3TxwpDXiJtgtc4MMgdzQ8cGBZztF5gGf74=s900-c-k-c0x00ffffff-no-rj',
   title: '觀課平台建置整合提案',
   version: '完整版',
   date: '2026年2月',
 
-  // 品牌配色 - TFT 珊瑚橘色系
+  // 品牌配色 - TFT 桃紅色系
   theme: {
-    primary: '#E85A4F',      // TFT 珊瑚橘（主色）
-    primaryLight: '#F07167',
+    primary: '#E73373',      // TFT 桃紅（主色）
+    primaryLight: '#F05A8C',
     accent: '#2D3142',       // 深灰藍（強調）
-    colors: ['#E85A4F', '#F4A261', '#2A9D8F', '#264653'], // 溫暖色系
+    colors: ['#E73373', '#F4A261', '#2A9D8F', '#264653'], // 品牌色系
   },
 
   summary: `三個月上線、半年試行可調三次；
@@ -100,7 +101,7 @@ export const proposal = {
             id: 'coach',
             name: '教學教練',
             icon: '👨‍🏫',
-            color: '#E85A4F',
+            color: '#E73373',
             actions: ['指派作業', '填寫觀課紀錄', '評量打分', '給予回饋'],
           },
           {
@@ -131,7 +132,7 @@ export const proposal = {
         {
           phase: '開發期',
           duration: '第 1～12 週',
-          color: '#E85A4F',
+          color: '#E73373',
           steps: [
             { week: '1～4', title: '知識轉譯', desc: '與領域專家確認評量邏輯、欄位與流程' },
             { week: '5～8', title: '系統開發', desc: '核心功能開發與整合' },

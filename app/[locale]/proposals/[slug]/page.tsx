@@ -46,6 +46,15 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            {proposal.logo && (
+              <div className="mb-6">
+                <img
+                  src={proposal.logo}
+                  alt={proposal.client}
+                  className="w-20 h-20 mx-auto rounded-full bg-white p-1 shadow-lg"
+                />
+              </div>
+            )}
             <p className="text-sm uppercase tracking-widest opacity-70 mb-4">
               {proposal.client} · {proposal.date}
             </p>
@@ -115,56 +124,197 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
               <h4 className="font-semibold text-gray-800 text-lg mb-6 text-center">
                 {sections.scope.architecture.title}
               </h4>
-              <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 rounded-2xl p-6 md:p-10 border border-gray-200 overflow-hidden min-h-[500px]">
-                {/* Center Platform */}
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-48 md:h-48"
-                >
-                  <div
-                    className="w-full h-full rounded-full flex flex-col items-center justify-center text-white shadow-2xl"
-                    style={{ backgroundColor: theme.primary }}
-                  >
-                    <span className="text-3xl mb-2">🖥️</span>
-                    <span className="font-bold text-sm md:text-base text-center px-2">{sections.scope.architecture.center.name}</span>
+              <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+                {/* Desktop Layout */}
+                <div className="hidden md:block">
+                  {/* Top Role Card (Admin) */}
+                  <div className="flex justify-center mb-6">
+                    <motion.div
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="w-48"
+                    >
+                      <div
+                        className="rounded-2xl p-4 text-white shadow-xl"
+                        style={{ backgroundColor: sections.scope.architecture.roles[0].color }}
+                      >
+                        <div className="text-center mb-3">
+                          <span className="text-3xl">{sections.scope.architecture.roles[0].icon}</span>
+                          <div className="font-bold mt-1 text-sm">{sections.scope.architecture.roles[0].name}</div>
+                        </div>
+                        <div className="space-y-1.5">
+                          {sections.scope.architecture.roles[0].actions.map((action, j) => (
+                            <div
+                              key={j}
+                              className="text-xs bg-white/20 rounded px-2 py-1 text-center"
+                            >
+                              {action}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
-                  {/* Pulse animation */}
-                  <div
-                    className="absolute inset-0 rounded-full animate-ping opacity-20"
-                    style={{ backgroundColor: theme.primary }}
-                  />
-                </motion.div>
 
-                {/* Role Cards - positioned around center */}
-                {sections.scope.architecture.roles.map((role, i) => {
-                  const positions = [
-                    { top: '5%', left: '50%', transform: 'translateX(-50%)' },
-                    { top: '70%', left: '10%' },
-                    { top: '70%', right: '10%' },
-                  ];
-                  const pos = positions[i] || positions[0];
+                  {/* Flow Arrow: Admin to Platform */}
+                  <div className="flex justify-center mb-2">
+                    <div className="flex flex-col items-center">
+                      <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium mb-1">指派班級</span>
+                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  </div>
 
-                  return (
+                  {/* Center Platform */}
+                  <div className="flex justify-center my-6">
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      className="relative"
+                    >
+                      <div
+                        className="w-40 h-40 rounded-full flex flex-col items-center justify-center text-white shadow-2xl"
+                        style={{ backgroundColor: theme.primary }}
+                      >
+                        <span className="text-3xl mb-2">🖥️</span>
+                        <span className="font-bold text-sm text-center px-2">{sections.scope.architecture.center.name}</span>
+                      </div>
+                      {/* Pulse animation */}
+                      <div
+                        className="absolute inset-0 rounded-full animate-ping opacity-20"
+                        style={{ backgroundColor: theme.primary }}
+                      />
+                    </motion.div>
+                  </div>
+
+                  {/* Platform Features */}
+                  <div className="flex justify-center gap-2 flex-wrap mb-6">
+                    {sections.scope.architecture.center.features.map((f, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1.5 rounded-full"
+                        style={{ backgroundColor: `${theme.primary}15`, color: theme.primary }}
+                      >
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Flow Arrows to Bottom Roles */}
+                  <div className="flex justify-between max-w-2xl mx-auto px-8 mb-2">
+                    <div className="flex flex-col items-center">
+                      <svg className="w-5 h-5 text-gray-400 mb-1 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                      <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">派發作業</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <svg className="w-5 h-5 text-gray-400 mb-1 rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                      <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">評量回饋</span>
+                    </div>
+                  </div>
+
+                  {/* Bottom Role Cards (Coach & Student) */}
+                  <div className="flex justify-center gap-8 mt-6">
+                    {sections.scope.architecture.roles.slice(1).map((role, i) => (
+                      <motion.div
+                        key={role.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.15 }}
+                        className="w-48"
+                      >
+                        <div
+                          className="rounded-2xl p-4 text-white shadow-xl"
+                          style={{ backgroundColor: role.color }}
+                        >
+                          <div className="text-center mb-3">
+                            <span className="text-3xl">{role.icon}</span>
+                            <div className="font-bold mt-1 text-sm">{role.name}</div>
+                          </div>
+                          <div className="space-y-1.5">
+                            {role.actions.map((action, j) => (
+                              <div
+                                key={j}
+                                className="text-xs bg-white/20 rounded px-2 py-1 text-center"
+                              >
+                                {action}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Horizontal Flow Between Coach and Student */}
+                  <div className="flex justify-center mt-4">
+                    <div className="flex items-center gap-3 text-xs text-gray-500 bg-white px-3 py-2 rounded-lg shadow">
+                      <span className="font-medium text-gray-600">繳交作業</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                      </svg>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                      <span className="font-medium text-gray-600">查看進度</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Layout - Vertical Stack */}
+                <div className="md:hidden space-y-4">
+                  {/* Center Platform - First on mobile */}
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col items-center"
+                  >
+                    <div
+                      className="w-32 h-32 rounded-full flex flex-col items-center justify-center text-white shadow-2xl"
+                      style={{ backgroundColor: theme.primary }}
+                    >
+                      <span className="text-2xl mb-1">🖥️</span>
+                      <span className="font-bold text-xs text-center px-2">{sections.scope.architecture.center.name}</span>
+                    </div>
+                    <div className="flex gap-2 flex-wrap justify-center mt-3">
+                      {sections.scope.architecture.center.features.map((f, i) => (
+                        <span
+                          key={i}
+                          className="text-xs px-2 py-1 rounded-full"
+                          style={{ backgroundColor: `${theme.primary}15`, color: theme.primary }}
+                        >
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Role Cards - Stacked */}
+                  {sections.scope.architecture.roles.map((role, i) => (
                     <motion.div
                       key={role.id}
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.15 }}
-                      className="absolute w-36 md:w-44"
-                      style={pos}
+                      transition={{ delay: i * 0.1 }}
                     >
                       <div
                         className="rounded-2xl p-4 text-white shadow-xl"
                         style={{ backgroundColor: role.color }}
                       >
-                        <div className="text-center mb-3">
-                          <span className="text-4xl">{role.icon}</span>
-                          <div className="font-bold mt-1 text-sm">{role.name}</div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-3xl">{role.icon}</span>
+                          <div className="font-bold text-sm">{role.name}</div>
                         </div>
-                        <div className="space-y-1">
+                        <div className="grid grid-cols-2 gap-1.5">
                           {role.actions.map((action, j) => (
                             <div
                               key={j}
@@ -176,46 +326,6 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
                         </div>
                       </div>
                     </motion.div>
-                  );
-                })}
-
-                {/* Flow Labels */}
-                <div className="absolute top-[35%] left-1/2 -translate-x-1/2 flex flex-col items-center">
-                  <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">指派班級</span>
-                  <svg className="w-4 h-4 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-
-                <div className="absolute top-[55%] left-[25%] md:left-[30%]">
-                  <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">派發作業</span>
-                </div>
-
-                <div className="absolute top-[55%] right-[25%] md:right-[30%]">
-                  <span className="text-xs bg-white px-2 py-1 rounded shadow text-gray-600 font-medium">評量回饋</span>
-                </div>
-
-                {/* Bottom flow */}
-                <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span>繳交作業</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                    <span>查看進度</span>
-                  </div>
-                </div>
-
-                {/* Platform Features */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 flex-wrap justify-center max-w-xs">
-                  {sections.scope.architecture.center.features.map((f, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 rounded-full"
-                      style={{ backgroundColor: `${theme.primary}15`, color: theme.primary }}
-                    >
-                      {f}
-                    </span>
                   ))}
                 </div>
               </div>
