@@ -12,7 +12,7 @@ export const proposal = {
     primary: '#E73373',      // TFT 桃紅（主色）
     primaryLight: '#F05A8C',
     accent: '#2D3142',       // 深灰藍（強調）
-    colors: ['#E73373', '#F4A261', '#2A9D8F', '#264653'], // 品牌色系
+    colors: ['#FFD93D', '#FFFFFF', '#FF6B9D', '#1E3A5F'], // 黃、白、粉紅、深藍
   },
 
   summary: `三個月上線、半年試行可調三次；
@@ -160,7 +160,7 @@ export const proposal = {
 
     advantages: {
       title: '四、方案優勢',
-      intro: '相較市面既有觀課平台（如蘇格拉底），本方案具備以下差異化優勢：',
+      intro: '相較市面既有觀課平台，本方案具備以下差異化優勢：',
       items: [
         {
           icon: '💰',

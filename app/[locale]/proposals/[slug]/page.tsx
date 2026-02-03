@@ -69,11 +69,11 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
 
         {/* Decorative circles */}
         <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden">
-          <div className="flex justify-center gap-3 opacity-30">
+          <div className="flex justify-center gap-4 opacity-90">
             {theme.colors.map((color, i) => (
               <div
                 key={i}
-                className="w-10 h-10 rounded-full"
+                className="w-12 h-12 rounded-full shadow-md"
                 style={{ backgroundColor: color }}
               />
             ))}
