@@ -13,7 +13,7 @@ export const proposal = {
     primaryLight: '#F05A8C',
     accent: '#2D3142',       // 深灰藍（強調）
     colors: ['#FFD93D', '#FFFFFF', '#FF6B9D', '#1E3A5F'], // 裝飾圓圈：黃、白、粉紅、深藍
-    featureColors: ['#E73373', '#F4A261', '#2A9D8F', '#264653', '#FF6B9D', '#1E3A5F', '#FFD93D'], // 功能卡 icon
+    featureColors: ['#E73373', '#F4A261', '#7FB3AA', '#264653', '#FF6B9D', '#1E3A5F', '#FFD93D'], // 功能卡 icon
   },
 
   summary: `三個月上線、半年試行可調三次
@@ -131,7 +131,7 @@ export const proposal = {
             id: 'student',
             name: '學員',
             icon: '🎓',
-            color: '#2A9D8F',
+            color: '#7FB3AA',
             actions: ['上傳作業', '觀看影片', '查看評量', '追蹤進度'],
           },
         ],
@@ -174,7 +174,7 @@ export const proposal = {
         {
           phase: '正式交付期',
           duration: '第 29～36 週',
-          color: '#2A9D8F',
+          color: '#7FB3AA',
           steps: [
             { week: '29～32', title: '全面上線', desc: '全面試用、最終優化' },
             { week: '33～36', title: '正式交付', desc: '文件交接、教育訓練、結案' },
