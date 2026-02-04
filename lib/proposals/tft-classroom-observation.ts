@@ -157,7 +157,7 @@ export const proposal = {
           duration: '第 1～12 週',
           color: '#E73373',
           steps: [
-            { week: '1～4', title: '需求訪談', desc: '與領域專家確認評量邏輯、欄位與流程' },
+            { week: '1～4', title: '需求訪談與知識轉譯', desc: '與領域專家確認評量邏輯、欄位與流程' },
             { week: '5～8', title: '系統開發', desc: '核心功能開發與整合' },
             { week: '9～12', title: '測試上線', desc: '測試、修正、正式上線' },
           ],
