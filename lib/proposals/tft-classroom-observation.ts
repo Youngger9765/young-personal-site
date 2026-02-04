@@ -291,7 +291,7 @@ export const proposal = {
             {
               name: 'AI 輔助機制（選配）',
               details: [
-                'Phase 1 核心功能不含 AI，不產生 Token 費用',
+                '如 Phase 1 不導入 AI，則不產生任何 Token 費用',
                 'AI 不作為自動評分或決策依據',
                 '可依需求彈性導入以下應用場景：',
               ],
