@@ -150,7 +150,7 @@ export const proposal = {
 
     timeline: {
       title: '三、時程規劃',
-      summary: '總期程：約 9 個月（含開發 3 個月 + 試行 6 個月）',
+      summary: '總期程：約 9 個月（開發 3 個月 + 試行 4 個月 + 交付 2 個月）',
       milestones: [
         {
           phase: '開發期',
@@ -164,12 +164,20 @@ export const proposal = {
         },
         {
           phase: '試行期',
-          duration: '第 13～36 週（6 個月）',
-          color: '#2A9D8F',
+          duration: '第 13～28 週',
+          color: '#FFD93D',
           steps: [
             { week: '13～20', title: '第一輪試行', desc: '小規模試用、收集回饋、第一次調整' },
             { week: '21～28', title: '第二輪試行', desc: '擴大使用範圍、第二次調整' },
-            { week: '29～36', title: '第三輪試行', desc: '全面試用、最終優化、正式交付' },
+          ],
+        },
+        {
+          phase: '正式交付期',
+          duration: '第 29～36 週',
+          color: '#2A9D8F',
+          steps: [
+            { week: '29～32', title: '全面上線', desc: '全面試用、最終優化' },
+            { week: '33～36', title: '正式交付', desc: '文件交接、教育訓練、結案' },
           ],
         },
       ],
