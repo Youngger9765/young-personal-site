@@ -172,7 +172,7 @@ export const proposal = {
         {
           icon: '🎯',
           title: '專為 TFT 流程設計',
-          desc: '非通用 SaaS 套裝，而是依 TFT 教學教練實際工作流程量身打造',
+          desc: '以 TFT 教學教練工作流程為核心量身打造，同時保留業界通用架構，可彈性串接 Slack、LINE、Notion、Google Calendar 等既有工具',
         },
         {
           icon: '🔧',
