@@ -345,46 +345,53 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
 
           {/* Visual Timeline */}
           <div className="space-y-8">
-            {sections.timeline.milestones.map((milestone, i) => (
-              <div key={i} className="relative">
-                {/* Phase Header */}
-                <div
-                  className="flex items-center gap-3 mb-4 p-3 rounded-lg text-white"
-                  style={{ backgroundColor: milestone.color }}
-                >
-                  <span className="text-2xl font-bold">{milestone.phase}</span>
-                  <span className="text-sm opacity-80">（{milestone.duration}）</span>
-                </div>
+            {sections.timeline.milestones.map((milestone, i) => {
+              // 判斷是否為亮色背景（黃色），需要用深色文字
+              const isLightBg = milestone.color === '#FFD93D';
+              const textColor = isLightBg ? '#2D3142' : 'white';
+              const badgeTextColor = isLightBg ? '#6B5B00' : milestone.color;
 
-                {/* Steps */}
-                <div className="grid gap-4 ml-4">
-                  {milestone.steps.map((step, j) => (
-                    <div
-                      key={j}
-                      className="relative pl-8 border-l-2 pb-4"
-                      style={{ borderColor: milestone.color }}
-                    >
+              return (
+                <div key={i} className="relative">
+                  {/* Phase Header */}
+                  <div
+                    className="flex items-center gap-3 mb-4 p-3 rounded-lg"
+                    style={{ backgroundColor: milestone.color, color: textColor }}
+                  >
+                    <span className="text-2xl font-bold">{milestone.phase}</span>
+                    <span className="text-sm opacity-80">（{milestone.duration}）</span>
+                  </div>
+
+                  {/* Steps */}
+                  <div className="grid gap-4 ml-4">
+                    {milestone.steps.map((step, j) => (
                       <div
-                        className="absolute left-0 top-0 w-4 h-4 rounded-full -translate-x-[9px] flex items-center justify-center text-white text-xs font-bold"
-                        style={{ backgroundColor: milestone.color }}
+                        key={j}
+                        className="relative pl-8 border-l-2 pb-4"
+                        style={{ borderColor: milestone.color }}
                       >
-                        {j + 1}
-                      </div>
-                      <div className="flex items-baseline gap-3 mb-1">
-                        <span
-                          className="text-sm font-mono px-2 py-0.5 rounded"
-                          style={{ backgroundColor: `${milestone.color}15`, color: milestone.color }}
+                        <div
+                          className="absolute left-0 top-0 w-4 h-4 rounded-full -translate-x-[9px] flex items-center justify-center text-xs font-bold"
+                          style={{ backgroundColor: milestone.color, color: textColor }}
                         >
-                          第 {step.week} 週
-                        </span>
-                        <span className="font-semibold text-gray-800">{step.title}</span>
+                          {j + 1}
+                        </div>
+                        <div className="flex items-baseline gap-3 mb-1">
+                          <span
+                            className="text-sm font-mono px-2 py-0.5 rounded"
+                            style={{ backgroundColor: `${milestone.color}20`, color: badgeTextColor }}
+                          >
+                            第 {step.week} 週
+                          </span>
+                          <span className="font-semibold text-gray-800">{step.title}</span>
+                        </div>
+                        <p className="text-gray-600">{step.desc}</p>
                       </div>
-                      <p className="text-gray-600">{step.desc}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Trial Terms */}
