@@ -331,18 +331,6 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
               </div>
             </div>
           )}
-
-          <div className="mt-8 p-4 bg-gray-50 rounded-xl">
-            <h4 className="font-semibold text-gray-800 mb-2">本階段不包含</h4>
-            <ul className="text-gray-600 text-base space-y-1">
-              {sections.scope.excluded.map((item, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="text-gray-400">×</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
         </Section>
 
         {/* 時程規劃 */}
@@ -538,7 +526,7 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
               >
                 <div
                   className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                  style={{ backgroundColor: theme.colors[i % theme.colors.length] }}
+                  style={{ backgroundColor: (theme.featureColors || theme.colors)[i % (theme.featureColors || theme.colors).length] }}
                 >
                   {i + 1}
                 </div>
@@ -628,15 +616,16 @@ function FeatureCard({
   index,
 }: {
   feature: { name: string; items: string[] };
-  theme: { primary: string; colors: string[] };
+  theme: { primary: string; colors: string[]; featureColors?: string[] };
   index: number;
 }) {
+  const iconColors = theme.featureColors || theme.colors;
   return (
     <div className="p-5 rounded-xl bg-gray-50 border border-gray-100">
       <div className="flex items-center gap-3 mb-3">
         <div
           className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-          style={{ backgroundColor: theme.colors[index % theme.colors.length] }}
+          style={{ backgroundColor: iconColors[index % iconColors.length] }}
         >
           {index + 1}
         </div>
