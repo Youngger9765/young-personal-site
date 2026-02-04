@@ -687,10 +687,46 @@ function PricingCard({
                   <li key={j}>• {d}</li>
                 ))}
               </ul>
+              {/* AI Scenarios Table */}
+              {renderAIScenarios(sub)}
             </div>
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+// Helper function to render AI scenarios table
+function renderAIScenarios(sub: { name: string; details: string[] }) {
+  const subWithScenarios = sub as {
+    name: string;
+    details: string[];
+    scenarios?: Array<{ category: string; desc: string; usage: string }>
+  };
+
+  if (!subWithScenarios.scenarios) return null;
+
+  return (
+    <div className="mt-3 overflow-x-auto">
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="text-left p-2 border border-gray-200">類別</th>
+            <th className="text-left p-2 border border-gray-200">應用場景</th>
+            <th className="text-left p-2 border border-gray-200">Token 用量</th>
+          </tr>
+        </thead>
+        <tbody>
+          {subWithScenarios.scenarios.map((s, j) => (
+            <tr key={j} className="hover:bg-gray-50">
+              <td className="p-2 border border-gray-200 whitespace-nowrap">{s.category}</td>
+              <td className="p-2 border border-gray-200">{s.desc}</td>
+              <td className="p-2 border border-gray-200 whitespace-nowrap">{s.usage}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

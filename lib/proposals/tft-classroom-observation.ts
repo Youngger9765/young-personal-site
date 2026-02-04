@@ -17,8 +17,9 @@ export const proposal = {
   },
 
   summary: `三個月上線、半年試行可調三次；
-220 萬建置、20 萬／年維護；
-人數不限、組織可獨立分開運作，雲端與 AI 用多少付多少。`,
+220 萬從零打造專屬系統，高度彈性可調整；2 萬／年維護。
+人數不限、組織可獨立分開運作，雲端與 AI 用多少付多少。
+智慧財產版權歸公司所有。`,
 
   sections: {
     objective: {
@@ -290,16 +291,26 @@ export const proposal = {
             {
               name: 'AI 輔助機制（選配）',
               details: [
-                '可依需求導入 AI 輔助（摘要、提示、分析輔助）',
+                'Phase 1 核心功能不含 AI，不產生 Token 費用',
                 'AI 不作為自動評分或決策依據',
-                '導入範圍另行討論與報價',
+                '可依需求彈性導入以下應用場景：',
+              ],
+              scenarios: [
+                { category: '🎬 影音處理', desc: '影片轉逐字稿、自動摘要', usage: '中～高' },
+                { category: '📝 教練輔助', desc: '學員進度摘要、評核建議、回饋草稿', usage: '中' },
+                { category: '💬 智慧問答', desc: '學員 Chatbot、文件推薦', usage: '低～中' },
+                { category: '📊 數據分析', desc: '群體分析、教學斷點偵測、統計協作', usage: '中' },
+                { category: '📋 評量建置', desc: 'AI 導引輸入 Rubrics、格式轉換', usage: '低' },
+                { category: '🔍 資源推薦', desc: '教案教材配對、影片推薦', usage: '低' },
+                { category: '📄 文件處理', desc: '書面掃描 OCR、照片描述生成', usage: '低～中' },
               ],
             },
             {
               name: 'AI 使用費',
               details: [
-                'AI API / Token 使用費',
-                '依實際使用量計費，由甲方自行負擔',
+                'AI API / Token 依實際使用量計費',
+                '系統建置於 Google Cloud，可彈性串接 Vertex AI / Gemini 或其他服務',
+                '由甲方自行負擔，用多少付多少',
               ],
             },
           ],
