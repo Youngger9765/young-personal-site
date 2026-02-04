@@ -84,6 +84,27 @@ export const proposal = {
           ],
         },
         {
+          name: '通知機制',
+          items: [
+            'Email 通知（作業指派、觀課提醒、評量完成）',
+            '可擴充串接 LINE / Slack 等即時通訊',
+          ],
+        },
+        {
+          name: '行動裝置支援',
+          items: [
+            '響應式網頁設計（RWD），支援手機與平板操作',
+            '教練可於現場以行動裝置填寫觀課紀錄',
+          ],
+        },
+        {
+          name: '資料匯入',
+          items: [
+            '支援既有 Excel 資料批次匯入',
+            '學員名單、班級資料一次匯入建檔',
+          ],
+        },
+        {
           name: '資安與資料保護',
           items: ['HTTPS', '權限分級（RBAC）', '操作紀錄', '定期備份'],
         },
@@ -136,7 +157,7 @@ export const proposal = {
           duration: '第 1～12 週',
           color: '#E73373',
           steps: [
-            { week: '1～4', title: '知識轉譯', desc: '與領域專家確認評量邏輯、欄位與流程' },
+            { week: '1～4', title: '需求訪談', desc: '與領域專家確認評量邏輯、欄位與流程' },
             { week: '5～8', title: '系統開發', desc: '核心功能開發與整合' },
             { week: '9～12', title: '測試上線', desc: '測試、修正、正式上線' },
           ],
@@ -287,7 +308,7 @@ export const proposal = {
         },
       ],
       threeYearEstimate: {
-        title: '七、三年總成本概念（估）',
+        title: '七、三年總成本預估',
         items: [
           { name: '建置費', amount: '220 萬' },
           { name: '維護費（2 年）', amount: '40 萬' },
