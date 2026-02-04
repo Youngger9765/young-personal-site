@@ -526,23 +526,27 @@ function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
         {/* 執行價值 */}
         <Section title={sections.value.title} theme={theme}>
           <div className="space-y-4">
-            {sections.value.items.map((item, i) => (
-              <div
-                key={i}
-                className="flex gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
-              >
+            {(() => {
+              // TFT 粉紅同色系漸變
+              const valueColors = ['#E73373', '#C42D63', '#F05A8C', '#B02858', '#FF6B9D'];
+              return sections.value.items.map((item, i) => (
                 <div
-                  className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                  style={{ backgroundColor: (theme.featureColors || theme.colors)[i % (theme.featureColors || theme.colors).length] }}
+                  key={i}
+                  className="flex gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
                 >
-                  {i + 1}
-                </div>
+                  <div
+                    className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                    style={{ backgroundColor: valueColors[i % valueColors.length] }}
+                  >
+                    {i + 1}
+                  </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">{item.title}</h4>
                   <p className="text-gray-600 text-sm mt-1">{item.detail}</p>
                 </div>
               </div>
-            ))}
+              ));
+            })()}
           </div>
         </Section>
 
