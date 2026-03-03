@@ -269,8 +269,8 @@
       "deliverable3": "實作工作坊（半天或全天）",
       "deliverable4": "系統化培訓課程與後續支援",
       "timeline": "2-4 週顧問",
-      "pricing": "NT$8,000 起 / 場",
-      "price": "NT$8,000 起",
+      "pricing": "NT$8,000-30,000 / 月",
+      "price": "NT$8,000-30,000",
       "example1": "企業 AI 轉型策略規劃",
       "example2": "團隊 AI 素養培訓課程",
       "example3": "AI 導入可行性評估"
@@ -336,7 +336,7 @@
     "fastPrototype": {
       "title": "快速原型驗證",
       "tagline": "我用 7 天把你的 AI 想法變成能演示的原型",
-      "price": "NT$15,000 起",
+      "price": "NT$15,000-30,000",
       "timeline": "7 天內交付",
       "deliverables": [
         "可運行 Demo（前端 + AI API）",
@@ -362,7 +362,7 @@
     "mvp": {
       "title": "4 週 MVP",
       "tagline": "完整可上線產品，從開發到部署一條龍",
-      "price": "NT$50,000 起",
+      "price": "NT$50,000-100,000",
       "timeline": "4 週上線",
       "deliverables": [
         "可上線 MVP（含部署）",
@@ -447,6 +447,33 @@
           "quote": "AI 輔助寫作證明可以兼顧嚴謹與規模化。"
         }
       ]
+    },
+    "medVision": {
+      "title": "Med Vision",
+      "subtitle": "白內障 SDM AI 平台",
+      "description": "為眼科診所打造的共享決策 (SDM) AI 系統。整合 HIS/FHIR 醫療數據，運用 AI 生成個人化衛教內容，協助病患理解手術選項。採用 FastAPI + Next.js 技術，Base44 快速原型驗證。",
+      "problem": "白內障病患面對多種人工水晶體選擇時，難以理解差異並做出適合自己的決定。",
+      "solution": "AI 驅動的 SDM 平台，根據病患個人數據生成客製化衛教內容，以對話方式引導理解各選項利弊。",
+      "result": "顯著提升病患對手術選項的理解度，醫師諮詢效率提高。",
+      "timeline": "持續迭代中，已上線核心 SDM 流程。"
+    },
+    "xian": {
+      "title": "喜安護理之家",
+      "subtitle": "長照 PDCA 智慧管理系統",
+      "description": "為長照機構打造的 PDCA 活動管理系統。語音優先設計（40-60 歲照護人員），支援活動規劃、執行紀錄、照片上傳、AI 自動生成評估報告。採用 Next.js 16 + React 19 技術。",
+      "problem": "長照機構的活動管理仍靠紙本，記錄耗時、難以追蹤成效、評鑑準備費時。",
+      "solution": "語音優先的數位 PDCA 系統，照護人員可用語音記錄活動，AI 自動整理成評估報告。",
+      "result": "記錄時間大幅縮短，評鑑資料準備從數天縮短至數小時。",
+      "timeline": "4 週完成 MVP，持續迭代中。"
+    },
+    "careerCreator": {
+      "title": "Career Creator Card",
+      "subtitle": "線上牌卡諮詢系統",
+      "description": "為職涯諮詢師打造的線上牌卡系統。將實體牌卡數位化，支援遠端諮詢、牌陣展示、諮詢記錄。採用 Next.js 14 + FastAPI 技術，GCS 圖片存儲。",
+      "problem": "職涯諮詢師的牌卡工具僅限實體使用，無法進行遠端諮詢。",
+      "solution": "將牌卡數位化，打造線上諮詢平台，支援即時牌陣展示與諮詢紀錄。",
+      "result": "成功進入 Beta 測試階段，諮詢師可遠端為個案進行牌卡諮詢。",
+      "timeline": "6 週完成 Beta 版。"
     },
     "aiSquare": {
       "title": "專案實境式學習模組",
@@ -728,5 +755,10 @@
     "subheading": "讓我們討論您的專案，一起創造出色的成果。",
     "button": "預約諮詢",
     "responseTime": "通常 24 小時內回覆"
+  },
+  "blog": {
+    "title": "最新文章",
+    "viewAll": "查看所有文章",
+    "readMore": "閱讀全文"
   }
 }

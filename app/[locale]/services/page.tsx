@@ -9,17 +9,11 @@ import ContactCTA from '@/components/ContactCTA';
 function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
   const t = useTranslations('services');
   
-  const gradients = {
-    coaching: "from-violet-600 via-purple-600 to-indigo-600",
-    workshop: "from-amber-500 via-orange-500 to-red-500"
-  };
-  
   const icons = {
     coaching: <FaUsers className="w-8 h-8" />,
     workshop: <FaRocket className="w-8 h-8" />
   };
 
-  const gradient = gradients[planType];
   const icon = icons[planType];
 
   // Build deliverables dynamically based on plan type
@@ -128,37 +122,37 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
 
   return (
     <div className="relative group">
-      {/* Gradient border effect */}
-      <div className={`absolute -inset-0.5 bg-gradient-to-r ${gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500`}></div>
+      {/* Accent border glow effect */}
+      <div className="absolute -inset-0.5 bg-accent rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
       
-      <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-8 h-full border border-gray-100 dark:border-gray-800">
+      <div className="relative bg-white rounded-2xl p-8 h-full border border-gray-100">
         {/* Badge */}
         <div className="flex items-center justify-between mb-6">
-          <span className={`px-4 py-1.5 bg-gradient-to-r ${gradient} text-white text-sm font-bold rounded-full`}>
+          <span className="px-4 py-1.5 bg-accent text-white text-sm font-bold rounded-full">
             {t(`${planType}.badge`)}
           </span>
-          <div className={`p-3 rounded-xl bg-gradient-to-r ${gradient} text-white`}>
+          <div className="p-3 rounded-xl bg-accent text-white">
             {icon}
           </div>
         </div>
 
         {/* Title & Subtitle */}
-        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
           {t(`${planType}.title`)}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-gray-600 mb-6">
           {t(`${planType}.subtitle`)}
         </p>
 
         {/* Pricing */}
-        <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+        <div className="mb-6 p-4 bg-gray-50 rounded-xl">
           <div className="flex items-baseline gap-1">
-            <span className={`text-4xl font-black bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
+            <span className="text-4xl font-black text-accent">
               {t(`${planType}.price`)}
             </span>
-            <span className="text-gray-500 dark:text-gray-400 text-lg">{t(`${planType}.priceNote`)}</span>
+            <span className="text-gray-500 text-lg">{t(`${planType}.priceNote`)}</span>
           </div>
-          <div className="mt-2 flex flex-col gap-1 text-sm text-gray-600 dark:text-gray-400">
+          <div className="mt-2 flex flex-col gap-1 text-sm text-gray-600">
             <span className="flex items-center gap-2">
               <FaCalendarAlt className="w-4 h-4" />
               {t(`${planType}.duration`)}
@@ -171,20 +165,20 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         </div>
 
         {/* Description */}
-        <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+        <p className="text-gray-700 mb-6 leading-relaxed">
           {t(`${planType}.description`)}
         </p>
 
         {/* Flexibility - only show if has items */}
         {flexibility.length > 0 && (
           <div className="mb-6">
-            <h4 className="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+            <h4 className="font-bold text-sm text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
               <FaCog className="w-4 h-4" />
               {t('page.flexibilityTitle')}
             </h4>
             <ul className="space-y-2">
               {flexibility.map((item, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
                   <FaCheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -197,7 +191,7 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         <div className="mb-6 space-y-4">
           {deliverables.map((section, sectionIndex) => (
             <div key={sectionIndex}>
-              <h4 className="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+              <h4 className="font-bold text-sm text-gray-900 uppercase tracking-wider mb-2 flex items-center gap-2">
                 {sectionIndex === 0 && <FaFileAlt className="w-4 h-4" />}
                 {sectionIndex === 1 && <FaLaptopCode className="w-4 h-4" />}
                 {sectionIndex === 2 && <FaMagic className="w-4 h-4" />}
@@ -205,8 +199,8 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
               </h4>
               <ul className="space-y-1.5">
                 {section.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                    <span className="text-purple-500 mt-0.5">•</span>
+                  <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                    <span className="text-accent mt-0.5">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -217,14 +211,14 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
 
         {/* Requirements */}
         {requirements.length > 0 && (
-          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
-            <h4 className="font-bold text-sm text-amber-800 dark:text-amber-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+          <div className="mb-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
+            <h4 className="font-bold text-sm text-amber-800 uppercase tracking-wider mb-2 flex items-center gap-2">
               <FaLightbulb className="w-4 h-4" />
               {t('page.requirementsTitle')}
             </h4>
             <ul className="space-y-1.5">
               {requirements.map((item, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-amber-700 dark:text-amber-400">
+                <li key={index} className="flex items-start gap-2 text-sm text-amber-700">
                   <span className="mt-0.5">📌</span>
                   <span>{item}</span>
                 </li>
@@ -236,19 +230,19 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         {/* Learnings - only for coaching plan */}
         {learnings.length > 0 && (
           <div className="mb-6">
-            <h4 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
               <FaGraduationCap className="w-5 h-5" />
               {t('page.learningsTitle')}
             </h4>
             <div className="grid gap-4">
               {learnings.map((learning, learningIndex) => (
-                <div key={learningIndex} className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-800/30 rounded-xl">
-                  <h5 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">
+                <div key={learningIndex} className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl">
+                  <h5 className="font-semibold text-gray-900 mb-2 text-sm">
                     {learningIndex + 1}. {learning.title}
                   </h5>
                   <ul className="space-y-1">
                     {learning.items.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400">
+                      <li key={index} className="flex items-start gap-2 text-xs text-gray-600">
                         <span className="text-green-500">✓</span>
                         <span>{item}</span>
                       </li>
@@ -262,13 +256,13 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
 
         {/* Extras */}
         {extras.length > 0 && (
-          <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
-            <h4 className="font-bold text-sm text-green-800 dark:text-green-300 uppercase tracking-wider mb-2">
+          <div className="mb-6 p-4 bg-green-50 rounded-xl border border-green-200">
+            <h4 className="font-bold text-sm text-green-800 uppercase tracking-wider mb-2">
               {t('page.promiseTitle')}
             </h4>
             <ul className="space-y-1.5">
               {extras.map((item, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-green-700 dark:text-green-400">
+                <li key={index} className="flex items-start gap-2 text-sm text-green-700">
                   <FaCheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -282,7 +276,7 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
           href="https://www.linkedin.com/in/tzu-yang-tsai/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r ${gradient} text-white rounded-xl font-bold hover:opacity-90 transition-all hover:scale-[1.02] shadow-lg`}
+          className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-accent hover:bg-accent-hover text-white rounded-xl font-bold transition-all hover:scale-[1.02] shadow-lg"
         >
           <FaComments className="w-5 h-5" />
           <span>{t('page.consultThisPlan')}</span>
@@ -317,44 +311,44 @@ function ServiceCard({ serviceType }: { serviceType: 'strategyConsulting' | 'imp
   ];
 
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-xl transition-all">
+    <div className="border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all">
       {/* Icon & Title */}
       <div className="flex items-start gap-4 mb-6">
-        <div className="text-blue-600 dark:text-blue-400 mt-1">
+        <div className="text-accent mt-1">
           {icons[serviceType]}
         </div>
         <div className="flex-1">
           <h3 className="text-2xl font-bold mb-2">{t(`${serviceType}.title`)}</h3>
-          <p className="text-lg text-purple-600 dark:text-purple-400 font-medium">
+          <p className="text-lg text-accent font-medium">
             {t(`${serviceType}.tagline`)}
           </p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+      <p className="text-gray-600 mb-6 leading-relaxed">
         {t(`${serviceType}.description`)}
       </p>
 
       {/* Suitable For */}
       <div className="mb-6">
-        <h4 className="font-semibold text-sm text-gray-500 dark:text-gray-400 uppercase mb-2">
+        <h4 className="font-semibold text-sm text-gray-500 uppercase mb-2">
           {t('page.suitableFor')}
         </h4>
-        <p className="text-gray-700 dark:text-gray-300 text-sm">
+        <p className="text-gray-700 text-sm">
           {t(`${serviceType}.suitableFor`)}
         </p>
       </div>
 
       {/* Deliverables */}
       <div className="mb-6">
-        <h4 className="font-semibold text-sm text-gray-500 dark:text-gray-400 uppercase mb-2">
+        <h4 className="font-semibold text-sm text-gray-500 uppercase mb-2">
           {t('page.deliverables')}
         </h4>
         <ul className="space-y-2">
           {deliverables.map((item, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-              <span className="text-green-600 dark:text-green-400 mt-0.5">✓</span>
+            <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+              <span className="text-green-600 mt-0.5">✓</span>
               <span>{item}</span>
             </li>
           ))}
@@ -362,27 +356,27 @@ function ServiceCard({ serviceType }: { serviceType: 'strategyConsulting' | 'imp
       </div>
 
       {/* Timeline & Pricing */}
-      <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
         <div>
-          <div className="text-xs text-gray-500 dark:text-gray-400 uppercase mb-1">{t('page.timeline')}</div>
-          <div className="font-semibold text-gray-900 dark:text-gray-100">{t(`${serviceType}.timeline`)}</div>
+          <div className="text-xs text-gray-500 uppercase mb-1">{t('page.timeline')}</div>
+          <div className="font-semibold text-gray-900">{t(`${serviceType}.timeline`)}</div>
         </div>
         <div>
-          <div className="text-xs text-gray-500 dark:text-gray-400 uppercase mb-1">{t('page.investment')}</div>
-          <div className="font-semibold text-blue-600 dark:text-blue-400">{t(`${serviceType}.pricing`)}</div>
+          <div className="text-xs text-gray-500 uppercase mb-1">{t('page.investment')}</div>
+          <div className="font-semibold text-accent">{t(`${serviceType}.pricing`)}</div>
         </div>
       </div>
 
       {/* Examples */}
       <div className="mb-6">
-        <h4 className="font-semibold text-sm text-gray-500 dark:text-gray-400 uppercase mb-2">
+        <h4 className="font-semibold text-sm text-gray-500 uppercase mb-2">
           {t('page.examples')}
         </h4>
         <div className="flex flex-wrap gap-2">
           {examples.map((example, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs"
+              className="px-3 py-1 bg-amber-50 text-accent rounded-full text-xs"
             >
               {example}
             </span>
@@ -395,7 +389,7 @@ function ServiceCard({ serviceType }: { serviceType: 'strategyConsulting' | 'imp
         href="https://www.linkedin.com/in/tzu-yang-tsai/"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full justify-center"
+        className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition-colors w-full justify-center"
       >
         <span>{t('page.consultThisService')}</span>
         <FaArrowRight className="w-4 h-4" />
@@ -415,10 +409,10 @@ export default function ServicesPage() {
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
           {t('page.heroTitle')}
         </h1>
-        <p className="text-2xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
+        <p className="text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
           {t('page.heroSubtitle')}
         </p>
-        <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
           {t('page.heroDescription')}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
@@ -426,13 +420,13 @@ export default function ServicesPage() {
             href="https://www.linkedin.com/in/tzu-yang-tsai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-8 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition-colors"
           >
             {t('page.ctaConsult')}
           </Link>
           <Link
             href={`/${locale}/projects`}
-            className="px-8 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="px-8 py-3 border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors"
           >
             {t('page.ctaPortfolio')}
           </Link>
@@ -440,27 +434,27 @@ export default function ServicesPage() {
       </div>
 
       {/* Differentiation Statement */}
-      <div className="max-w-4xl mx-auto mb-20 p-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl">
+      <div className="max-w-4xl mx-auto mb-20 p-8 bg-slate-50 border border-slate-200 rounded-2xl">
         <h2 className="text-3xl font-bold text-center mb-4">{t('page.whyChooseMe')}</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <div className="text-center">
             <div className="text-4xl mb-3">🎯</div>
             <h3 className="font-bold mb-2">{t('page.expert3in1')}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            <p className="text-sm text-gray-600 whitespace-pre-line">
               {t('page.expert3in1Desc')}
             </p>
           </div>
           <div className="text-center">
             <div className="text-4xl mb-3">🚀</div>
             <h3 className="font-bold mb-2">{t('page.battleTested')}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            <p className="text-sm text-gray-600 whitespace-pre-line">
               {t('page.battleTestedDesc')}
             </p>
           </div>
           <div className="text-center">
             <div className="text-4xl mb-3">📊</div>
             <h3 className="font-bold mb-2">{t('page.quantifiedResults')}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            <p className="text-sm text-gray-600 whitespace-pre-line">
               {t('page.quantifiedResultsDesc')}
             </p>
           </div>
@@ -470,13 +464,13 @@ export default function ServicesPage() {
       {/* Featured Plans Section - 精選方案 */}
       <div className="mb-24">
         <div className="text-center mb-12">
-          <span className="inline-block px-4 py-2 bg-gradient-to-r from-violet-600 to-orange-500 text-white text-sm font-bold rounded-full mb-4">
+          <span className="inline-block px-4 py-2 bg-accent text-white text-sm font-bold rounded-full mb-4">
             {t('page.featuredBadge')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t('page.featuredTitle')}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             {t('page.featuredSubtitle')}
           </p>
         </div>
@@ -491,10 +485,10 @@ export default function ServicesPage() {
       <div className="max-w-4xl mx-auto mb-16">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
+            <div className="w-full border-t border-gray-300"></div>
           </div>
           <div className="relative flex justify-center">
-            <span className="px-4 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 text-sm font-medium">
+            <span className="px-4 bg-white text-gray-500 text-sm font-medium">
               {t('page.otherServices')}
             </span>
           </div>
@@ -514,53 +508,53 @@ export default function ServicesPage() {
         <h2 className="text-4xl font-bold text-center mb-12">{t('page.workProcess')}</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">1</span>
+            <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-accent">1</span>
             </div>
             <h3 className="text-xl font-bold mb-3">{t('page.step1Title')}</h3>
-            <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            <p className="text-gray-600 whitespace-pre-line">
               {t('page.step1Desc')}
             </p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">2</span>
+            <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-accent">2</span>
             </div>
             <h3 className="text-xl font-bold mb-3">{t('page.step2Title')}</h3>
-            <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            <p className="text-gray-600 whitespace-pre-line">
               {t('page.step2Desc')}
             </p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-green-600 dark:text-green-400">3</span>
+            <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-accent">3</span>
             </div>
             <h3 className="text-xl font-bold mb-3">{t('page.step3Title')}</h3>
-            <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            <p className="text-gray-600 whitespace-pre-line">
               {t('page.step3Desc')}
             </p>
           </div>
         </div>
-        <div className="text-center mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
-          <p className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+        <div className="text-center mt-12 p-6 bg-gray-50 rounded-xl">
+          <p className="text-xl font-semibold text-gray-900 mb-2">
             {t('page.processGuarantee')}
           </p>
         </div>
       </div>
 
       {/* Pricing Note */}
-      <div className="max-w-4xl mx-auto text-center p-8 border-2 border-gray-200 dark:border-gray-700 rounded-2xl mb-20">
+      <div className="max-w-4xl mx-auto text-center p-8 border-2 border-gray-200 rounded-2xl mb-20">
         <h3 className="text-2xl font-bold mb-4">{t('page.pricingNote')}</h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-4 whitespace-pre-line">
+        <p className="text-gray-600 mb-4 whitespace-pre-line">
           {t('page.pricingNoteDesc')}
         </p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-500">
           {t('page.pricingNoteFooter')}
         </p>
       </div>
 
       {/* CTA Section */}
-      <div className="text-center p-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl">
+      <div className="text-center p-12 bg-slate-900 text-white rounded-2xl">
         <h2 className="text-4xl font-bold mb-4">{t('page.readyToStart')}</h2>
         <p className="text-xl mb-8 opacity-90">
           {t('page.readyToStartDesc')}
@@ -570,7 +564,7 @@ export default function ServicesPage() {
             href="https://www.linkedin.com/in/tzu-yang-tsai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+            className="px-8 py-4 bg-accent text-white rounded-lg hover:bg-accent-hover transition-colors font-semibold"
           >
             {t('page.linkedinChat')}
           </Link>
@@ -581,7 +575,7 @@ export default function ServicesPage() {
                 chatWidget.click();
               }
             }}
-            className="px-8 py-4 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors font-semibold"
+            className="px-8 py-4 bg-white text-slate-900 rounded-lg hover:bg-slate-100 transition-colors font-semibold"
           >
             {t('page.aiAssistant')}
           </button>

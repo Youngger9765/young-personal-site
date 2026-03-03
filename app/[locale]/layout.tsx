@@ -3,14 +3,14 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navigation from '@/components/Navigation';
-import AIChatWidget from '@/components/AIChatWidget';
-import { Inter, Noto_Sans_TC, Merriweather } from 'next/font/google';
+import { DM_Sans, Noto_Sans_TC } from 'next/font/google';
 import '../globals.css';
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
 });
 
 const notoSansTC = Noto_Sans_TC({
@@ -18,13 +18,6 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-sans-tc',
-});
-
-const merriweather = Merriweather({
-  subsets: ['latin'],
-  weight: ['300', '400', '700', '900'],
-  variable: '--font-merriweather',
-  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -50,13 +43,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
-      <body className={`${inter.variable} ${notoSansTC.variable} ${merriweather.variable} font-body antialiased`}>
+      <body className={`${dmSans.variable} ${notoSansTC.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <main className="min-h-screen">
             {children}
           </main>
-          {/* <AIChatWidget /> */}
         </NextIntlClientProvider>
       </body>
     </html>
@@ -66,10 +58,39 @@ export default async function LocaleLayout({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
+  const title = locale === 'zh-TW' ? 'Young Tsai — Full-Stack AI 開發者' : 'Young Tsai — Full-Stack AI Developer';
+  const description = locale === 'zh-TW'
+    ? 'Full-Stack AI 開發者，專精 FastAPI、Next.js 與 GCP 雲端架構，提供接案與技術顧問服務'
+    : 'Full-Stack AI Developer specializing in FastAPI, Next.js, and GCP cloud architecture';
+
   return {
-    title: locale === 'zh-TW' ? 'Young 的個人網站' : "Young's Personal Site",
-    description: locale === 'zh-TW'
-      ? '展示專案、部落格和 AI 助理的個人品牌網站'
-      : 'Personal brand website showcasing projects, blog, and AI assistant',
+    title,
+    description,
+    metadataBase: new URL('https://young-tsai.vercel.app'),
+    openGraph: {
+      title,
+      description,
+      type: 'website' as const,
+      locale: locale === 'zh-TW' ? 'zh_TW' : 'en_US',
+      url: '/',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title,
+      description,
+      images: ['/og-image.png'],
+    },
+    alternates: {
+      canonical: '/',
+      languages: {
+        'zh-TW': '/zh-TW',
+        'en': '/en',
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }

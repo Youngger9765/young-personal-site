@@ -11,14 +11,12 @@ export default function GlassCard({
   children,
   className = '',
   hover = false,
-  gradient = false,
 }: GlassCardProps) {
-  const baseStyles = 'backdrop-blur-glass bg-white/80 rounded-2xl shadow-glass border border-white/20';
-  const hoverStyles = hover ? 'hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300' : '';
-  const gradientStyles = gradient ? 'bg-gradient-to-br from-white/90 to-purple-primary/10' : '';
+  const baseStyles = 'bg-white rounded-xl border border-slate-200 shadow-soft';
+  const hoverStyles = hover ? 'hover:shadow-soft-md hover:border-slate-300 transition-all duration-200' : '';
 
   return (
-    <div className={`${baseStyles} ${hoverStyles} ${gradientStyles} ${className}`}>
+    <div className={`${baseStyles} ${hoverStyles} ${className}`}>
       {children}
     </div>
   );

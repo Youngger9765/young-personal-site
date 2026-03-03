@@ -269,8 +269,8 @@
       "deliverable3": "Hands-on Workshop (half or full day)",
       "deliverable4": "Systematic Training Program & Ongoing Support",
       "timeline": "2-4 week consulting",
-      "pricing": "From $250 / session",
-      "price": "From $250",
+      "pricing": "$250-1,000 / month",
+      "price": "$250-1,000",
       "example1": "Enterprise AI Transformation Strategy",
       "example2": "Team AI Literacy Training",
       "example3": "AI Adoption Feasibility Assessment"
@@ -336,7 +336,7 @@
     "fastPrototype": {
       "title": "Fast Prototype Validation",
       "tagline": "I'll turn your AI idea into a working demo in 7 days",
-      "price": "From $500",
+      "price": "$500-1,000",
       "timeline": "7 day delivery",
       "deliverables": [
         "Working demo (frontend + AI API)",
@@ -362,7 +362,7 @@
     "mvp": {
       "title": "4-Week MVP",
       "tagline": "Launch-ready product, from development to deployment",
-      "price": "From $1,600",
+      "price": "$1,600-3,200",
       "timeline": "4 week launch",
       "deliverables": [
         "Launch-ready MVP (with deployment)",
@@ -447,6 +447,33 @@
           "quote": "Proof that AI-assisted writing can be both rigorous and scalable."
         }
       ]
+    },
+    "medVision": {
+      "title": "Med Vision",
+      "subtitle": "Cataract SDM AI Platform",
+      "description": "Shared Decision Making AI system for ophthalmology clinics. Integrates HIS/FHIR medical data, uses AI to generate personalized patient education content, helping patients understand surgical options. Built with FastAPI + Next.js, rapid prototyping with Base44.",
+      "problem": "Cataract patients struggle to understand differences between IOL options and make informed decisions.",
+      "solution": "AI-driven SDM platform that generates customized education content based on patient data, guiding understanding through conversational interface.",
+      "result": "Significantly improved patient understanding of surgical options, increased consultation efficiency.",
+      "timeline": "Ongoing iteration, core SDM flow already live."
+    },
+    "xian": {
+      "title": "Xian Nursing Home",
+      "subtitle": "Eldercare PDCA Management System",
+      "description": "PDCA activity management system for long-term care facilities. Voice-first design for caregivers (age 40-60), supporting activity planning, execution records, photo uploads, and AI-generated assessment reports. Built with Next.js 16 + React 19.",
+      "problem": "Long-term care facilities still rely on paper-based activity management, making records time-consuming and evaluation prep difficult.",
+      "solution": "Voice-first digital PDCA system where caregivers can record activities via voice, with AI auto-generating assessment reports.",
+      "result": "Recording time dramatically reduced, evaluation preparation shortened from days to hours.",
+      "timeline": "MVP in 4 weeks, ongoing iteration."
+    },
+    "careerCreator": {
+      "title": "Career Creator Card",
+      "subtitle": "Online Card Counseling System",
+      "description": "Online card-based counseling system for career counselors. Digitizes physical career cards, supporting remote sessions, card spread display, and consultation records. Built with Next.js 14 + FastAPI, GCS image storage.",
+      "problem": "Career counselors' card tools are limited to in-person use, unable to conduct remote sessions.",
+      "solution": "Digitized card platform enabling online counseling with real-time card spread display and session records.",
+      "result": "Successfully entered Beta testing, counselors can conduct remote card-based sessions.",
+      "timeline": "Beta version in 6 weeks."
     },
     "aiSquare": {
       "title": "Project-Based Learning Module",
@@ -728,5 +755,10 @@
     "subheading": "Let's discuss your project and create something amazing together.",
     "button": "Schedule a Consultation",
     "responseTime": "Usually respond within 24 hours"
+  },
+  "blog": {
+    "title": "Latest Posts",
+    "viewAll": "View all posts",
+    "readMore": "Read more"
   }
 }

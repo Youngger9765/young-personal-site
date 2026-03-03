@@ -12,19 +12,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Brand Colors - 2025 Warm Professional
-        'slate-blue': '#334155',
-        'coral-orange': '#FF8A65',
-        // Gradient Glass Minimalism
-        'purple-primary': '#6366f1',
-        'purple-light': '#818cf8',
-        'purple-dark': '#4f46e5',
-        'orange-primary': '#f97316',
-        'orange-light': '#fb923c',
-        'orange-dark': '#ea580c',
-        'pink-accent': '#ec4899',
-        'glass-white': 'rgba(255, 255, 255, 0.1)',
-        'glass-dark': 'rgba(0, 0, 0, 0.1)',
+        'accent': '#D97706',
+        'accent-hover': '#B45309',
       },
       spacing: {
         '18': '4.5rem',   // 72px
@@ -45,7 +34,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          'var(--font-inter)',
+          'var(--font-dm-sans)',
           'var(--font-noto-sans-tc)',
           'PingFang TC',
           'Microsoft JhengHei',
@@ -53,26 +42,12 @@ const config: Config = {
           '-apple-system',
           'sans-serif',
         ],
-        'ui': ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 2px 8px rgba(0, 0, 0, 0.08)',
         'soft-md': '0 4px 16px rgba(0, 0, 0, 0.12)',
         'soft-lg': '0 8px 32px rgba(0, 0, 0, 0.16)',
         'soft-xl': '0 12px 48px rgba(0, 0, 0, 0.20)',
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-        'gradient-glow': '0 4px 24px rgba(99, 102, 241, 0.3)',
-      },
-      backdropBlur: {
-        'glass': '12px',
-        'glass-lg': '24px',
-        'glass-xl': '30px',
-      },
-      backgroundImage: {
-        'gradient-purple-orange': 'linear-gradient(135deg, #6366f1 0%, #f97316 100%)',
-        'gradient-purple-pink': 'linear-gradient(135deg, #6366f1 0%, #ec4899 100%)',
-        'gradient-orange-pink': 'linear-gradient(315deg, #f97316 0%, #ec4899 100%)',
-        'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
       },
       typography: {
         DEFAULT: {
