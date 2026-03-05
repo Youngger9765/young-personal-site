@@ -49,7 +49,7 @@ const i18n = {
         audience: '主管、數位轉型推動者、醫療產業相關人員',
         format: '經驗分享 + 案例討論',
         description:
-          '以長庚、仁愛等醫療院所的 AI 產品開發經驗為基礎，分享從需求訪談、系統設計、法規合規到現場導入的完整歷程，以及讓第一線人員真正採用的關鍵策略。',
+          '以南部大型醫學中心、中小型連鎖醫院等場域的 AI 產品開發經驗為基礎，分享從需求訪談、系統設計、法規合規到現場導入的完整歷程，以及讓第一線人員真正採用的關鍵策略。',
         outcomes: [
           '了解醫療場域導入 AI 的實際挑戰與解法',
           '掌握「現場落地」vs「技術開發」的節奏差異',
@@ -58,7 +58,7 @@ const i18n = {
       },
     ],
     notes: [
-      '含課前需求訪談（30 分鐘線上），依貴司實際情境客製內容',
+      '含課前問卷調查，依貴司實際情境客製內容',
       '講師自備設備，貴司提供投影及網路環境即可',
       '建議人數：8–25 人',
       '地點：貴司辦公室（杭州北路）',
@@ -66,7 +66,7 @@ const i18n = {
     instructor: {
       name: 'Young Tsai',
       title: 'AI 產品顧問',
-      bio: '專精 AI 產品開發與傳統產業數位轉型，合作對象涵蓋醫療院所、護理機構、教育平台。現為多間機構技術顧問，實際參與長庚體系、仁愛醫院等場域的 AI 系統設計與導入。',
+      bio: '專精 AI 產品開發與傳統產業數位轉型，合作對象涵蓋醫療院所、護理機構、教育平台。現為多間機構技術顧問，實際參與南部大型醫學中心及中小型連鎖醫院等場域的 AI 系統設計與導入。',
     },
   },
   en: {
@@ -117,7 +117,7 @@ const i18n = {
         audience: 'Managers, digital transformation leads, healthcare professionals',
         format: 'Experience sharing + case discussion',
         description:
-          'First-hand experience building AI products for hospitals (Chang Gung, Jen-Ai). Covers the full journey from requirement interviews, system design, regulatory compliance to on-site deployment — and the key strategies to get frontline staff to actually adopt it.',
+          'First-hand experience building AI products for major medical centers and regional hospital chains. Covers the full journey from requirement interviews, system design, regulatory compliance to on-site deployment — and the key strategies to get frontline staff to actually adopt it.',
         outcomes: [
           'Understand real challenges and solutions for AI adoption in healthcare',
           'Grasp the pace gap between "field deployment" vs "tech development"',
@@ -126,7 +126,7 @@ const i18n = {
       },
     ],
     notes: [
-      'Includes a 30-minute pre-workshop consultation (online) to customize content for your team',
+      'Includes a pre-workshop survey to customize content for your team',
       'Instructor provides own equipment — projector and Wi-Fi needed from your side',
       'Recommended group size: 8–25 participants',
       'Location: Your office (Hangzhou N. Rd.)',
@@ -134,7 +134,7 @@ const i18n = {
     instructor: {
       name: 'Young Tsai',
       title: 'AI Product Consultant',
-      bio: 'Specializes in AI product development and digital transformation for traditional industries. Currently serves as technical consultant for multiple healthcare institutions, with hands-on experience designing and deploying AI systems at Chang Gung and Jen-Ai hospital systems.',
+      bio: 'Specializes in AI product development and digital transformation for traditional industries. Currently serves as technical consultant for multiple healthcare institutions, with hands-on experience designing and deploying AI systems at major medical centers and regional hospital chains.',
     },
   },
 } as const;
@@ -145,7 +145,7 @@ export const proposal = {
   contactPerson: 'Carolyn Huang',
   date: '2026/03/05',
   validDays: 30,
-  bundlePrice: 'NT$21,000',
+  bundlePrice: 'NT$20,000',
   bundleHours: '3hr',
   theme: {
     primary: '#d97706', // amber-600
