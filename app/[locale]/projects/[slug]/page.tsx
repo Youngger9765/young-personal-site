@@ -242,6 +242,26 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                 priority
               />
             </div>
+          ) : slug === 'jutor' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/jutor-hero.png"
+                alt="Jutor - AI English Learning Platform"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'cutor' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/cutor-hero.png"
+                alt="Cutor - AI Writing Assistant"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           ) : (
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-white via-blue-50 to-purple-50">
               <div className="absolute inset-0 flex items-center justify-center">
