@@ -200,7 +200,7 @@
       "badge": "Most Popular",
       "title": "AI / Product Coaching Consultant",
       "subtitle": "3-month deep coaching to make your AI product real",
-      "price": "NT$3,000",
+      "price": "NT$5,000",
       "priceNote": "/ hour",
       "duration": "Duration: 3 months",
       "frequency": "Weekly sessions, 1-2 hours each (can include team)",
@@ -238,7 +238,7 @@
       "badge": "2-Hour Combat Ready",
       "title": "Base44 Hands-on AI Workshop",
       "subtitle": "Quick start with AI tools, build your own product",
-      "price": "NT$15,000",
+      "price": "NT$20,000",
       "priceNote": "/ session",
       "duration": "Duration: 2 hours",
       "frequency": "In-person workshop (lecture + hands-on)",
@@ -270,8 +270,8 @@
       "deliverable3": "Hands-on Workshop (half or full day)",
       "deliverable4": "Systematic Training Program & Ongoing Support",
       "timeline": "2-4 week consulting",
-      "pricing": "$250-1,000 / month",
-      "price": "$250-1,000",
+      "pricing": "$1,000-2,500 / month",
+      "price": "$1,000-2,500",
       "example1": "Enterprise AI Transformation Strategy",
       "example2": "Team AI Literacy Training",
       "example3": "AI Adoption Feasibility Assessment"
@@ -286,7 +286,7 @@
       "deliverable3": "Cloud Deployment Solution (Cloud Run / Supabase / GCP)",
       "deliverable4": "Cost Optimization Recommendations & Monitoring Setup",
       "timeline": "Flexible (hourly or project-based)",
-      "pricing": "$800/hour or project-based",
+      "pricing": "$1,500/hour or project-based",
       "example1": "Jutor - AI English Tutor (Meta LLM Top 8)",
       "example2": "AI Square Multilingual Learning Platform",
       "example3": "Medical Decision Platform"
@@ -301,7 +301,7 @@
       "deliverable3": "Post-workshop Resource Pack (slides, examples, tool lists)",
       "deliverable4": "Follow-up Consultation Support (Email / Slack)",
       "timeline": "Half-day or full-day workshop",
-      "pricing": "Half-day from $3,000",
+      "pricing": "From NT$8,000/hr",
       "example1": "GAICONF: How Leading Platform Teaches Teachers AI",
       "example2": "NTU Innovation: AI Business Model Deconstruction",
       "example3": "MediaTek AI Conference"
@@ -316,7 +316,7 @@
       "deliverable3": "Strategic Review Meetings (monthly)",
       "deliverable4": "Technical Decision Support (architecture review, tech selection, cost optimization)",
       "timeline": "Monthly subscription",
-      "pricing": "$5,000/month (retainer)",
+      "pricing": "$2,000/month (retainer)",
       "example1": "EdTech Startup Long-term Technical Advisor",
       "example2": "Healthcare AI Project Coaching",
       "example3": "Enterprise AI Transformation Coach"
@@ -337,7 +337,7 @@
     "fastPrototype": {
       "title": "Fast Prototype Validation",
       "tagline": "I'll turn your AI idea into a working demo in 7 days",
-      "price": "$500-1,000",
+      "price": "$1,000-2,000",
       "timeline": "7 day delivery",
       "deliverables": [
         "Working demo (frontend + AI API)",
@@ -363,7 +363,7 @@
     "mvp": {
       "title": "4-Week MVP",
       "tagline": "Launch-ready product, from development to deployment",
-      "price": "$1,600-3,200",
+      "price": "$2,500-5,000",
       "timeline": "4 week launch",
       "deliverables": [
         "Launch-ready MVP (with deployment)",
