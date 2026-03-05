@@ -217,6 +217,16 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                 priority
               />
             </div>
+          ) : slug === 'ntu-cep-2024' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/ntu-cep-talk.jpg"
+                alt="NTU CEP Guest Lecture"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           ) : slug === 'techorange-ai-agent-2025' ? (
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
               <Image

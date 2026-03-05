@@ -80,7 +80,7 @@ const eventImages: Record<string, string | null> = {
   "teacher-ai-workshop": "/images/vibe-coding.jpg",
   "mediatek-ai-day-2024": null,
   "meta-llm-taiwan-pitch": "/images/meta-jutor.jpg",
-  "ntu-cep-2024": null,
+  "ntu-cep-2024": "/images/ntu-cep-talk.jpg",
   "techorange-ai-agent-2025": "/images/techorange-ai-agent.jpg",
 };
 
