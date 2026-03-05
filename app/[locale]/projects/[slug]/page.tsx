@@ -182,7 +182,37 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {slug === 'duotopia' ? (
+          {slug === 'med-vision' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/med-vision-hero.png"
+                alt="Medical AI SDM Platform"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'xian' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/xian-hero.png"
+                alt="Long-term Care PDCA Management System"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'career-creator' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/career-creator-hero.png"
+                alt="Interactive Card Counseling System"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'duotopia' ? (
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/duotopia-banner.jpg"
