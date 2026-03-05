@@ -8,7 +8,8 @@
     "contact": "Get in touch",
     "home": "Home",
     "blog": "Blog",
-    "speaking": "Speaking"
+    "speaking": "Speaking",
+    "workshops": "Training"
   },
   "hero": {
     "badge": "AI Product Consultant",
@@ -760,5 +761,44 @@
     "title": "Latest Posts",
     "viewAll": "View all posts",
     "readMore": "Read more"
+  },
+  "workshops": {
+    "badge": "Corporate AI Training",
+    "title": "Get Your Team Actually Using AI",
+    "subtitle": "Practical AI workshops built around real workplace scenarios — not generic overviews",
+    "ctaPrimary": "Schedule a Free Consultation",
+    "cardCta": "Ask About This Course",
+    "audience": {
+      "all": "For All Staff",
+      "marketing": "For Marketing / PM",
+      "managers": "For Leadership",
+      "digital": "For Digital Transformation"
+    },
+    "courses": {
+      "automation": {
+        "title": "Workflow Automation",
+        "description": "Connect your everyday digital tools through voice commands — no coding required. Use Make / Zapier to automate Email, spreadsheets, Notion, and LINE Bot workflows."
+      },
+      "webpage": {
+        "title": "Build Your Own Website",
+        "description": "Quickly build landing pages and registration forms with no-code tools, complete with analytics to track user behavior and engagement."
+      },
+      "aiTools": {
+        "title": "AI Tools Workshop",
+        "description": "Hands-on practice with ChatGPT / Claude / Gemini for real work tasks — document summarization, meeting notes, data analysis, and presentation generation."
+      },
+      "strategy": {
+        "title": "AI Adoption Strategy",
+        "description": "Help leadership evaluate which processes are worth AI-ifying. Includes ROI assessment, technical feasibility frameworks, and vendor selection guidelines."
+      },
+      "healthcare": {
+        "title": "AI in Healthcare: Field Experience",
+        "description": "Real-world insights from building AI products in medical settings — implementation challenges, regulatory considerations, and keys to actual adoption by frontline staff."
+      }
+    },
+    "pastSpeaking": {
+      "title": "Past Speaking",
+      "subtitle": "Conference talks, university lectures, and corporate training sessions"
+    }
   }
 }

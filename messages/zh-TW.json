@@ -8,7 +8,8 @@
     "contact": "聯絡我",
     "home": "首頁",
     "blog": "部落格",
-    "speaking": "演講"
+    "speaking": "演講",
+    "workshops": "培訓 & 演講"
   },
   "hero": {
     "badge": "AI 產品顧問",
@@ -760,5 +761,44 @@
     "title": "最新文章",
     "viewAll": "查看所有文章",
     "readMore": "閱讀全文"
+  },
+  "workshops": {
+    "badge": "企業 AI 培訓",
+    "title": "讓你的團隊真的會用 AI",
+    "subtitle": "針對企業實際工作場景設計的 AI 工作坊，不是通識課",
+    "ctaPrimary": "預約 30 分鐘課程諮詢",
+    "cardCta": "詢問此課程",
+    "audience": {
+      "all": "適合全員",
+      "marketing": "適合行銷 / PM",
+      "managers": "適合主管 / 決策層",
+      "digital": "適合數位轉型部門"
+    },
+    "courses": {
+      "automation": {
+        "title": "自動化流程",
+        "description": "如何讓常見的數位工具都可以靠說的去自動化串接在一起，不需要寫程式。用 Make / Zapier 串接 Email、試算表、Notion、LINE Bot，把重複性工作交給自動化。"
+      },
+      "webpage": {
+        "title": "快速建立網頁",
+        "description": "如何快速建立自己的網頁，且可以看到用戶歷程。用 no-code 工具建立落地頁、活動報名頁，並接上分析工具追蹤用戶行為。"
+      },
+      "aiTools": {
+        "title": "AI 工具實戰工作坊",
+        "description": "ChatGPT / Claude / Gemini 在日常工作的應用 — 文件摘要、會議紀錄、數據分析、簡報生成。每個環節都用真實工作情境練習。"
+      },
+      "strategy": {
+        "title": "AI 導入策略",
+        "description": "企業該怎麼評估哪些流程適合 AI 化，避免花錢踩坑。包含 ROI 評估、技術可行性框架、供應商選擇指南。"
+      },
+      "healthcare": {
+        "title": "AI × 醫療的落地經驗",
+        "description": "從實際在醫療場域做 AI 產品的角度，分享導入過程的挑戰、法規考量、以及讓現場人員真正用起來的關鍵。"
+      }
+    },
+    "pastSpeaking": {
+      "title": "過去演講紀錄",
+      "subtitle": "在研討會、大學、企業內訓的演講足跡"
+    }
   }
 }
