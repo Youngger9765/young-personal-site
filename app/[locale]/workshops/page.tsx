@@ -61,6 +61,18 @@ const speakingEvents: SpeakingEventData[] = [
     subtitleKey: "metaLlmPitch.subtitle",
     descriptionKey: "metaLlmPitch.description",
   },
+  {
+    slug: "ntu-cep-2024",
+    titleKey: "ntuCep.title",
+    subtitleKey: "ntuCep.subtitle",
+    descriptionKey: "ntuCep.description",
+  },
+  {
+    slug: "techorange-ai-agent-2025",
+    titleKey: "techOrangeAiAgent.title",
+    subtitleKey: "techOrangeAiAgent.subtitle",
+    descriptionKey: "techOrangeAiAgent.description",
+  },
 ];
 
 const eventImages: Record<string, string | null> = {
@@ -68,6 +80,8 @@ const eventImages: Record<string, string | null> = {
   "teacher-ai-workshop": "/images/vibe-coding.jpg",
   "mediatek-ai-day-2024": null,
   "meta-llm-taiwan-pitch": "/images/meta-jutor.jpg",
+  "ntu-cep-2024": null,
+  "techorange-ai-agent-2025": "/images/techorange-ai-agent.jpg",
 };
 
 const fadeUp = {
@@ -191,7 +205,7 @@ export default function WorkshopsPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {speakingEvents.map((event, index) => (
               <motion.div
                 key={event.slug}

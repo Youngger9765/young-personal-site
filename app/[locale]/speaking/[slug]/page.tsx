@@ -18,7 +18,9 @@ const speakingSlugs = [
   'userxper-ai-ux-2024',
   'teacher-ai-workshop',
   'mediatek-ai-day-2024',
-  'meta-llm-taiwan-pitch'
+  'meta-llm-taiwan-pitch',
+  'ntu-cep-2024',
+  'techorange-ai-agent-2025'
 ];
 
 export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
@@ -49,7 +51,9 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
     'userxper-ai-ux-2024': 'userxperAiUx',
     'teacher-ai-workshop': 'teacherAiWorkshop',
     'mediatek-ai-day-2024': 'mediatekAiDay',
-    'meta-llm-taiwan-pitch': 'metaLlmPitch'
+    'meta-llm-taiwan-pitch': 'metaLlmPitch',
+    'ntu-cep-2024': 'ntuCep',
+    'techorange-ai-agent-2025': 'techOrangeAiAgent'
   };
 
   const eventKey = slugToKey[slug];
@@ -57,7 +61,9 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
     'userxperAiUxDetail' |
     'teacherAiWorkshopDetail' |
     'mediatekAiDayDetail' |
-    'metaLlmPitchDetail';
+    'metaLlmPitchDetail' |
+    'ntuCepDetail' |
+    'techOrangeAiAgentDetail';
 
   const event = {
     title: t(`${eventKey}.title`),
@@ -206,6 +212,16 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
               <Image
                 src="/images/Uxer.png"
                 alt="2024 AI/UX Workshop - UserXper"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : slug === 'techorange-ai-agent-2025' ? (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/techorange-ai-agent.jpg"
+                alt="TechOrange AI Agent Forum"
                 fill
                 className="object-cover"
                 priority
@@ -377,6 +393,8 @@ function getYoutubeUrl(slug: string): string | null {
     'teacher-ai-workshop': null,
     'mediatek-ai-day-2024': 'https://www.youtube.com/watch?v=EBLfH5-VxwE',
     'meta-llm-taiwan-pitch': null,
+    'ntu-cep-2024': null,
+    'techorange-ai-agent-2025': 'https://www.youtube.com/watch?v=8yiDMF1kx8c',
   };
   return urls[slug] || null;
 }
@@ -387,6 +405,8 @@ function getEventUrl(slug: string): string | null {
     'teacher-ai-workshop': 'https://flipedu.parenting.com.tw/article/009501',
     'mediatek-ai-day-2024': 'https://www.mediatekfoundation.org/app-list/view/064B83Ceb9c0',
     'meta-llm-taiwan-pitch': 'https://www.jutor.ai/',
+    'ntu-cep-2024': null,
+    'techorange-ai-agent-2025': 'https://techorange.com/forum/2025-ai-agent-forum/',
   };
   return urls[slug] || null;
 }
@@ -429,7 +449,9 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
         url: 'https://flipedu.parenting.com.tw/article/009564',
         source: '親子天下翻轉教育'
       }
-    ]
+    ],
+    'ntu-cep-2024': null,
+    'techorange-ai-agent-2025': null
   };
 
   const linksEn: Record<string, Array<{ title: string; url: string; source: string }> | null> = {
@@ -469,7 +491,9 @@ function getMediaLinks(slug: string, locale: string): Array<{ title: string; url
         url: 'https://flipedu.parenting.com.tw/article/009564',
         source: 'FlipEdu by CommonWealth Parenting'
       }
-    ]
+    ],
+    'ntu-cep-2024': null,
+    'techorange-ai-agent-2025': null
   };
 
   const links = locale === 'zh-TW' ? linksZh : linksEn;

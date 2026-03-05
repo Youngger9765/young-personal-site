@@ -669,6 +669,36 @@
       "subtitle": "Large Language Model Application Hackathon",
       "description": "Meta's LLM application hackathon Taiwan region, reached top 8 with English Skills AI learning platform"
     },
+    "ntuCep": {
+      "title": "NTU CEP — Business Model Deconstruction Workshop",
+      "subtitle": "AI EdTech Case Study Sharing",
+      "description": "Invited to speak at NTU's Creativity & Entrepreneurship Program core course, sharing AI technology application strategies at a leading education platform, including product development experiences with JUTOR AI and CUTOR AI"
+    },
+    "ntuCepDetail": {
+      "organization": "NTU Creativity & Entrepreneurship Program (NTU CEP)",
+      "role": "Guest Lecturer",
+      "date": "November 2024",
+      "description": "Invited to speak at NTU's Creativity & Entrepreneurship Program 113-1 core course on 'Business Model Deconstruction — Quality Education.' Shared the overall scale of a leading education platform (5M+ users), AI Lab product line (JUTOR AI, CUTOR AI), and growth strategies, competitive analysis, and user retention optimization for the new product PlayGo AI.",
+      "highlight1": "Invited lecture at NTU CEP core curriculum",
+      "highlight2": "Shared AI product line: JUTOR / CUTOR / PlayGo AI",
+      "highlight3": "Real-world cases: user growth strategies and competitive analysis methods",
+      "highlight4": "Explored AI-driven personalized education and digital transformation"
+    },
+    "techOrangeAiAgent": {
+      "title": "Super Learning by Doing: Personalized Education in the AI Era",
+      "subtitle": "TechOrange AI Agent Knowledge Work Revolution Forum",
+      "description": "Spoke at TechOrange AI Agent Forum on AI-driven efficient learning models, exploring how to transform workplaces and campuses into PBL environments through task-driven and role-playing personalized growth paths"
+    },
+    "techOrangeAiAgentDetail": {
+      "organization": "TechOrange",
+      "role": "Forum Speaker",
+      "date": "August 2025",
+      "description": "Spoke at TechOrange's 'AI Agent Knowledge Work Revolution Forum' on 'Super Learning by Doing: Personalized Education and Talent Development in the AI Era.' Explored how to transform workplaces and campuses into authentic PBL (Problem-Based Learning) environments, designing personalized growth paths through task-driven and role-playing approaches, and learning to identify direction, set tasks, and adjust strategies in the AI era.",
+      "highlight1": "Keynote at TechOrange AI Agent Forum",
+      "highlight2": "PBL Problem-Based Learning: transforming workplaces into authentic learning environments",
+      "highlight3": "Task-driven and role-playing personalized growth path design",
+      "highlight4": "Direction identification, task setting, and strategy adjustment in the AI era"
+    },
     "metaLlmPitchDetail": {
       "organization": "Meta",
       "role": "Participant / Product Lead",

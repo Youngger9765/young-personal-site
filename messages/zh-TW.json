@@ -669,6 +669,36 @@
       "subtitle": "大型語言模型應用黑客松",
       "description": "Meta 舉辦的 LLM 應用黑客松台灣賽區，以英文聽說讀寫 AI 學習平台入圍前八強"
     },
+    "ntuCep": {
+      "title": "臺大創意創業學程 — 商模解構演練",
+      "subtitle": "AI 教育科技案例分享",
+      "description": "受邀於臺大創創學程核心課程演講，分享均一教育平台的 AI 技術應用策略，包括 JUTOR AI、CUTOR AI 等產品的開發經驗與客製化教育突破"
+    },
+    "ntuCepDetail": {
+      "organization": "臺大創意創業學程 (NTU CEP)",
+      "role": "客座講師",
+      "date": "2024 年 11 月",
+      "description": "受邀於臺大創意創業學程 113-1 核心課程演講，主題為「商模解構演練 — 優質教育」。分享均一教育平台的整體規模（超過 500 萬用戶）、AI 實驗室產品線（JUTOR AI、CUTOR AI），以及新產品 PlayGo AI 的成長策略、競品分析與用戶黏著度優化經驗。",
+      "highlight1": "臺大創創學程核心課程受邀演講",
+      "highlight2": "分享均一 AI 產品線：JUTOR / CUTOR / PlayGo AI",
+      "highlight3": "實戰案例：用戶成長策略與競品分析方法",
+      "highlight4": "探討 AI 驅動的個性化教育與數位轉型"
+    },
+    "techOrangeAiAgent": {
+      "title": "超級做中學：AI 時代下以戰養戰的個人化教育",
+      "subtitle": "TechOrange AI Agent 知識工作革命論壇",
+      "description": "於科技報橘 AI Agent 論壇分享 AI 驅動的高效學習模式，探討如何將職場與校園打造為 PBL 場域，透過任務驅動與角色扮演設計個人化成長路徑"
+    },
+    "techOrangeAiAgentDetail": {
+      "organization": "TechOrange 科技報橘",
+      "role": "論壇講者",
+      "date": "2025 年 8 月",
+      "description": "於科技報橘「AI Agent 知識工作革命論壇」擔任講者，主題為「超級做中學：AI 時代下以戰養戰的個人化教育與人才培育模式」。深入探討如何將職場與校園打造為真實的 PBL（問題導向學習）場域，透過任務驅動與角色扮演設計個人化成長路徑，以及在 AI 時代學會辨識方向、設定任務、調整策略。",
+      "highlight1": "科技報橘 AI Agent 論壇主題演講",
+      "highlight2": "PBL 問題導向學習：將職場打造為真實學習場域",
+      "highlight3": "任務驅動與角色扮演的個人化成長路徑設計",
+      "highlight4": "AI 時代的方向辨識、任務設定與策略調整"
+    },
     "metaLlmPitchDetail": {
       "organization": "Meta",
       "role": "參賽者 / 產品負責人",
