@@ -45,7 +45,16 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getBlogPostSchema(post: { title: string; description?: string; date: string; slug: string }) {
+export function getBlogPostSchema(post: {
+  title: string;
+  description?: string;
+  date: string;
+  slug: string;
+  author?: string;
+  tags?: string[];
+  locale?: string;
+}) {
+  const locale = post.locale || 'en';
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -54,14 +63,21 @@ export function getBlogPostSchema(post: { title: string; description?: string; d
     datePublished: post.date,
     author: {
       '@type': 'Person',
-      name: 'Young Tsai',
+      name: post.author || 'Young Tsai',
       url: 'https://young-tsai.vercel.app',
     },
     publisher: {
       '@type': 'Person',
       name: 'Young Tsai',
+      url: 'https://young-tsai.vercel.app',
     },
-    url: `https://young-tsai.vercel.app/en/blog/${post.slug}`,
+    url: `https://young-tsai.vercel.app/${locale}/blog/${post.slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://young-tsai.vercel.app/${locale}/blog/${post.slug}`,
+    },
+    ...(post.tags && post.tags.length > 0 && { keywords: post.tags.join(', ') }),
+    inLanguage: locale === 'zh-TW' ? 'zh-TW' : 'en',
   };
 }
 

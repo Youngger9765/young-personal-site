@@ -1,17 +1,32 @@
 import { Metadata } from 'next';
 
+const SITE_URL = 'https://young-tsai.vercel.app';
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const isZh = locale === 'zh-TW';
 
+  const title = isZh ? '專案作品' : 'Projects';
+  const description = isZh
+    ? '精選 AI 產品開發專案：醫療 SDM 決策支援、長照 PDCA 智慧管理、教育科技 AI 學習平台。'
+    : 'Featured AI product projects: Medical SDM decision support, Eldercare PDCA management, EdTech AI learning platforms.';
+
   return {
-    title: isZh ? '專案作品 | Young Tsai' : 'Projects | Young Tsai',
-    description: isZh
-      ? '精選 AI 產品開發專案：醫療 SDM、長照 PDCA、教育科技'
-      : 'Featured AI product projects: Medical SDM, Eldercare PDCA, EdTech',
+    title,
+    description,
     openGraph: {
-      title: isZh ? '專案作品集' : 'Project Portfolio',
-      description: isZh ? 'AI 產品開發實績' : 'AI product development portfolio',
+      title,
+      description,
+      type: 'website',
+      url: `${SITE_URL}/${locale}/projects`,
+      siteName: 'Young Tsai',
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/projects`,
+      languages: {
+        'zh-TW': `${SITE_URL}/zh-TW/projects`,
+        en: `${SITE_URL}/en/projects`,
+      },
     },
   };
 }

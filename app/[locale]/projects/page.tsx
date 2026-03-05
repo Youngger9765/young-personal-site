@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
 import Image from "next/image";
+import ContactCTA from '@/components/ContactCTA';
 
 interface ProjectCardData {
   slug: string;
@@ -85,7 +86,7 @@ export default function ProjectsGalleryPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
             {t('gallery.title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             {t('gallery.subtitle')}
           </p>
         </motion.div>
@@ -102,7 +103,7 @@ export default function ProjectsGalleryPage() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={`/${locale}/projects/${project.slug}`}>
-                <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
+                <div className="group h-full rounded-2xl bg-white border border-slate-200 hover:border-accent transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
                   {/* Project Thumbnail */}
                   <div className="relative h-56 bg-slate-50 overflow-hidden">
                     {projectImages[project.slug] ? (
@@ -146,13 +147,13 @@ export default function ProjectsGalleryPage() {
 
                   {/* Project Info */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-sm text-accent font-medium mb-3">
                       {project.subtitle}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
                       {project.description}
                     </p>
                   </div>
@@ -162,6 +163,9 @@ export default function ProjectsGalleryPage() {
           ))}
         </div>
       </section>
+
+      {/* CTA */}
+      <ContactCTA />
     </div>
   );
 }

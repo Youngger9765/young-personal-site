@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from "next/link";
 import Image from "next/image";
+import ContactCTA from '@/components/ContactCTA';
 
 interface SpeakingCardData {
   slug: string;
@@ -87,10 +88,10 @@ export default function SpeakingGalleryPage() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
             {t('gallery.title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             {t('gallery.subtitle')}
           </p>
         </motion.div>
@@ -107,7 +108,7 @@ export default function SpeakingGalleryPage() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={`/${locale}/speaking/${event.slug}`}>
-                <div className="group h-full rounded-2xl bg-white border border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
+                <div className="group h-full rounded-2xl bg-white border border-slate-200 hover:border-accent transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
                   {/* Event Thumbnail */}
                   <div className="relative h-56 bg-gradient-to-br from-white via-blue-50 to-purple-50 overflow-hidden">
                     {eventImages[event.slug] ? (
@@ -162,13 +163,13 @@ export default function SpeakingGalleryPage() {
 
                   {/* Event Info */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-accent transition-colors">
                       {event.title}
                     </h3>
                     <p className="text-sm text-accent font-medium mb-3">
                       {event.subtitle}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
                       {event.description}
                     </p>
                   </div>
@@ -178,6 +179,9 @@ export default function SpeakingGalleryPage() {
           ))}
         </div>
       </section>
+
+      {/* CTA */}
+      <ContactCTA />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
@@ -8,6 +9,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import "highlight.js/styles/github-dark.css";
 import { getTranslations } from "next-intl/server";
+import StructuredData, { getBlogPostSchema } from "@/components/StructuredData";
+
+const SITE_URL = 'https://young-tsai.vercel.app';
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -16,17 +20,52 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const { slug, locale } = await params;
   const post = await getBlogPost(slug);
 
   if (!post) {
     return {};
   }
 
+  const isZh = locale === 'zh-TW';
+  const url = `${SITE_URL}/${locale}/blog/${slug}`;
+
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description || '',
+      type: 'article',
+      locale: isZh ? 'zh_TW' : 'en_US',
+      url,
+      siteName: 'Young Tsai',
+      publishedTime: post.date,
+      authors: [post.author || 'Young Tsai'],
+      tags: post.tags,
+      images: [
+        {
+          url: '/images/young.jpg',
+          width: 800,
+          height: 800,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description || '',
+      images: ['/images/young.jpg'],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        'zh-TW': `${SITE_URL}/zh-TW/blog/${slug}`,
+        en: `${SITE_URL}/en/blog/${slug}`,
+      },
+    },
   };
 }
 
@@ -46,6 +85,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData data={getBlogPostSchema({ ...post, locale })} />
       {/* Article Header */}
       <header className="max-w-3xl mx-auto px-6 pt-32 pb-10">
         {/* Category + Reading Time */}

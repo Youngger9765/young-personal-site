@@ -1,6 +1,39 @@
+import type { Metadata } from 'next';
 import Link from "next/link";
 import { getTranslations } from 'next-intl/server';
 import { getBlogPosts } from '@/lib/blog';
+import ContactCTA from '@/components/ContactCTA';
+
+const SITE_URL = 'https://young-tsai.vercel.app';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isZh = locale === 'zh-TW';
+
+  const title = isZh ? '技術文章與洞察' : 'Insights & Articles';
+  const description = isZh
+    ? 'AI 產品開發、技術實戰與創業心得。分享 FastAPI、Next.js、GCP 雲端架構的實務經驗。'
+    : 'Thoughts on AI product development, engineering, and building products that scale. Real-world experience with FastAPI, Next.js, and GCP.';
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `${SITE_URL}/${locale}/blog`,
+      siteName: 'Young Tsai',
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/blog`,
+      languages: {
+        'zh-TW': `${SITE_URL}/zh-TW/blog`,
+        en: `${SITE_URL}/en/blog`,
+      },
+    },
+  };
+}
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -16,7 +49,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
             {t('insights.title')}
           </h1>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-xl mx-auto">
             {locale === 'zh-TW'
               ? 'AI 產品開發、技術實戰與創業心得'
               : 'Thoughts on AI product development, engineering, and building products that scale'}
@@ -30,12 +63,12 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
               <Link
                 key={post.slug}
                 href={`/${locale}/blog/${post.slug}`}
-                className="group block p-6 md:p-8 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 shadow-soft hover:shadow-soft-md transition-all"
+                className="group block p-6 md:p-8 rounded-2xl bg-white border border-slate-100 hover:border-slate-200 shadow-soft hover:shadow-soft-md transition-all"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:gap-8">
                   {/* Date column */}
                   <div className="md:w-32 md:flex-shrink-0 mb-3 md:mb-0 md:pt-1">
-                    <time className="text-sm text-gray-400 font-medium">
+                    <time className="text-sm text-slate-400 font-medium">
                       {new Date(post.date).toLocaleDateString(locale === 'zh-TW' ? 'zh-TW' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                     </time>
                   </div>
@@ -50,7 +83,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                         </span>
                       )}
                       {post.readingTime && (
-                        <span className="text-xs text-gray-400">{post.readingTime}</span>
+                        <span className="text-xs text-slate-400">{post.readingTime}</span>
                       )}
                     </div>
 
@@ -59,7 +92,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                     </h3>
 
                     {post.description && (
-                      <p className="text-gray-500 mb-4 line-clamp-2 text-sm leading-relaxed">
+                      <p className="text-slate-600 mb-4 line-clamp-2 text-sm leading-relaxed">
                         {post.description}
                       </p>
                     )}
@@ -70,7 +103,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                           {post.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="px-2 py-0.5 bg-gray-50 rounded text-xs text-gray-400 border border-gray-100"
+                              className="px-2 py-0.5 bg-slate-50 rounded text-xs text-slate-400 border border-slate-100"
                             >
                               {tag}
                             </span>
@@ -87,7 +120,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 text-gray-400">
+          <div className="text-center py-20 text-slate-400">
             {locale === 'zh-TW' ? '文章即將推出，敬請期待！' : 'Articles coming soon!'}
           </div>
         )}
@@ -104,6 +137,9 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </a>
         </div>
       </div>
+
+      {/* CTA */}
+      <ContactCTA />
     </div>
   );
 }
