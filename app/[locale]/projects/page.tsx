@@ -57,11 +57,11 @@ export default function ProjectsGalleryPage() {
 
   // Map project slugs to their banner images
   const projectImages: Record<string, string | null> = {
-    'med-vision': null,
-    'xian': null,
-    'career-creator': null,
-    'jutor': null,
-    'cutor': null,
+    'med-vision': '/images/med-vision-hero.png',
+    'xian': '/images/xian-hero.png',
+    'career-creator': '/images/career-creator-hero.png',
+    'jutor': '/images/jutor-hero.png',
+    'cutor': '/images/cutor-hero.png',
     'ai-square': '/images/hourofai.jpeg',
   };
 
