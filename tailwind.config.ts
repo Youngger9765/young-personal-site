@@ -44,6 +44,13 @@ const config: Config = {
           '-apple-system',
           'sans-serif',
         ],
+        serif: [
+          'var(--font-noto-serif-tc)',
+          'Georgia',
+          'Cambria',
+          'Times New Roman',
+          'serif',
+        ],
       },
       boxShadow: {
         'soft': '0 2px 8px rgba(28, 25, 23, 0.06)',
@@ -62,6 +69,7 @@ const config: Config = {
 
             // Headings — clean, no border-bottom
             h1: {
+              fontFamily: 'var(--font-noto-serif-tc), Georgia, serif',
               fontWeight: '800',
               fontSize: '2em',
               marginTop: '0',
@@ -71,6 +79,7 @@ const config: Config = {
               letterSpacing: '-0.025em',
             },
             h2: {
+              fontFamily: 'var(--font-noto-serif-tc), Georgia, serif',
               fontWeight: '700',
               fontSize: '1.625em',
               marginTop: '2em',
@@ -80,6 +89,7 @@ const config: Config = {
               letterSpacing: '-0.02em',
             },
             h3: {
+              fontFamily: 'var(--font-noto-serif-tc), Georgia, serif',
               fontWeight: '700',
               fontSize: '1.375em',
               marginTop: '1.8em',

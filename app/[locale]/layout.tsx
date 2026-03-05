@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navigation from '@/components/Navigation';
 import StructuredData, { getPersonSchema, getWebSiteSchema } from '@/components/StructuredData';
-import { DM_Sans, Noto_Sans_TC } from 'next/font/google';
+import { DM_Sans, Noto_Sans_TC, Noto_Serif_TC } from 'next/font/google';
 import '../globals.css';
 
 const SITE_URL = 'https://young-tsai.vercel.app';
@@ -22,6 +22,13 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-noto-sans-tc',
+});
+
+const notoSerifTC = Noto_Serif_TC({
+  weight: ['400', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-noto-serif-tc',
 });
 
 export function generateStaticParams() {
@@ -51,7 +58,7 @@ export default async function LocaleLayout({
         <StructuredData data={getPersonSchema(locale)} />
         <StructuredData data={getWebSiteSchema()} />
       </head>
-      <body className={`${dmSans.variable} ${notoSansTC.variable} font-sans antialiased`}>
+      <body className={`${dmSans.variable} ${notoSansTC.variable} ${notoSerifTC.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <main className="min-h-screen">

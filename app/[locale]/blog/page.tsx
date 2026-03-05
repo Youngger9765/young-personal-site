@@ -46,7 +46,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       <div className="max-w-5xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section */}
         <div className="mb-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-stone-900">
             {t('insights.title')}
           </h1>
           <p className="text-lg text-stone-600 max-w-xl mx-auto">
@@ -87,7 +87,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                       )}
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="font-serif text-xl md:text-2xl font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors leading-snug">
                       {post.title}
                     </h3>
 
