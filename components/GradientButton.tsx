@@ -24,8 +24,8 @@ export default function GradientButton({
 
   const variantStyles = {
     primary: 'bg-accent text-white hover:bg-accent-hover shadow-soft hover:shadow-soft-md',
-    secondary: 'bg-slate-900 text-white hover:bg-slate-800 shadow-soft',
-    outline: 'bg-transparent text-slate-900 border-2 border-slate-300 hover:border-accent hover:text-accent',
+    secondary: 'bg-stone-900 text-white hover:bg-stone-800 shadow-soft',
+    outline: 'bg-transparent text-stone-900 border-2 border-stone-300 hover:border-accent hover:text-accent',
   };
 
   const sizeStyles = {

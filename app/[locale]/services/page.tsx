@@ -125,7 +125,7 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
       {/* Accent border glow effect */}
       <div className="absolute -inset-0.5 bg-accent rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
       
-      <div className="relative bg-white rounded-2xl p-8 h-full border border-slate-100">
+      <div className="relative bg-white rounded-2xl p-8 h-full border border-stone-100">
         {/* Badge */}
         <div className="flex items-center justify-between mb-6">
           <span className="px-4 py-1.5 bg-accent text-white text-sm font-bold rounded-full">
@@ -137,22 +137,22 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         </div>
 
         {/* Title & Subtitle */}
-        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900">
+        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-stone-900">
           {t(`${planType}.title`)}
         </h3>
-        <p className="text-slate-600 mb-6">
+        <p className="text-stone-600 mb-6">
           {t(`${planType}.subtitle`)}
         </p>
 
         {/* Pricing */}
-        <div className="mb-6 p-4 bg-slate-50 rounded-xl">
+        <div className="mb-6 p-4 bg-stone-50 rounded-xl">
           <div className="flex items-baseline gap-1">
             <span className="text-4xl font-black text-accent">
               {t(`${planType}.price`)}
             </span>
-            <span className="text-slate-500 text-lg">{t(`${planType}.priceNote`)}</span>
+            <span className="text-stone-500 text-lg">{t(`${planType}.priceNote`)}</span>
           </div>
-          <div className="mt-2 flex flex-col gap-1 text-sm text-slate-600">
+          <div className="mt-2 flex flex-col gap-1 text-sm text-stone-600">
             <span className="flex items-center gap-2">
               <FaCalendarAlt className="w-4 h-4" />
               {t(`${planType}.duration`)}
@@ -165,20 +165,20 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         </div>
 
         {/* Description */}
-        <p className="text-slate-600 mb-6 leading-relaxed">
+        <p className="text-stone-600 mb-6 leading-relaxed">
           {t(`${planType}.description`)}
         </p>
 
         {/* Flexibility - only show if has items */}
         {flexibility.length > 0 && (
           <div className="mb-6">
-            <h4 className="font-bold text-sm text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <h4 className="font-bold text-sm text-stone-900 uppercase tracking-wider mb-3 flex items-center gap-2">
               <FaCog className="w-4 h-4" />
               {t('page.flexibilityTitle')}
             </h4>
             <ul className="space-y-2">
               {flexibility.map((item, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-slate-600">
+                <li key={index} className="flex items-start gap-2 text-sm text-stone-600">
                   <FaCheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -191,7 +191,7 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         <div className="mb-6 space-y-4">
           {deliverables.map((section, sectionIndex) => (
             <div key={sectionIndex}>
-              <h4 className="font-bold text-sm text-slate-900 uppercase tracking-wider mb-2 flex items-center gap-2">
+              <h4 className="font-bold text-sm text-stone-900 uppercase tracking-wider mb-2 flex items-center gap-2">
                 {sectionIndex === 0 && <FaFileAlt className="w-4 h-4" />}
                 {sectionIndex === 1 && <FaLaptopCode className="w-4 h-4" />}
                 {sectionIndex === 2 && <FaMagic className="w-4 h-4" />}
@@ -199,7 +199,7 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
               </h4>
               <ul className="space-y-1.5">
                 {section.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-slate-600">
+                  <li key={index} className="flex items-start gap-2 text-sm text-stone-600">
                     <span className="text-accent mt-0.5">•</span>
                     <span>{item}</span>
                   </li>
@@ -230,19 +230,19 @@ function FeaturedPlanCard({ planType }: { planType: 'coaching' | 'workshop' }) {
         {/* Learnings - only for coaching plan */}
         {learnings.length > 0 && (
           <div className="mb-6">
-            <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <h4 className="font-bold text-stone-900 mb-4 flex items-center gap-2">
               <FaGraduationCap className="w-5 h-5" />
               {t('page.learningsTitle')}
             </h4>
             <div className="grid gap-4">
               {learnings.map((learning, learningIndex) => (
-                <div key={learningIndex} className="p-4 bg-gradient-to-r from-slate-50 to-slate-100 rounded-xl">
-                  <h5 className="font-semibold text-slate-900 mb-2 text-sm">
+                <div key={learningIndex} className="p-4 bg-gradient-to-r from-stone-50 to-stone-100 rounded-xl">
+                  <h5 className="font-semibold text-stone-900 mb-2 text-sm">
                     {learningIndex + 1}. {learning.title}
                   </h5>
                   <ul className="space-y-1">
                     {learning.items.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-xs text-slate-600">
+                      <li key={index} className="flex items-start gap-2 text-xs text-stone-600">
                         <span className="text-green-500">✓</span>
                         <span>{item}</span>
                       </li>
@@ -311,7 +311,7 @@ function ServiceCard({ serviceType }: { serviceType: 'strategyConsulting' | 'imp
   ];
 
   return (
-    <div className="border border-slate-200 rounded-xl p-8 hover:shadow-xl transition-all">
+    <div className="border border-stone-200 rounded-xl p-8 hover:shadow-xl transition-all">
       {/* Icon & Title */}
       <div className="flex items-start gap-4 mb-6">
         <div className="text-accent mt-1">
@@ -326,28 +326,28 @@ function ServiceCard({ serviceType }: { serviceType: 'strategyConsulting' | 'imp
       </div>
 
       {/* Description */}
-      <p className="text-slate-600 mb-6 leading-relaxed">
+      <p className="text-stone-600 mb-6 leading-relaxed">
         {t(`${serviceType}.description`)}
       </p>
 
       {/* Suitable For */}
       <div className="mb-6">
-        <h4 className="font-semibold text-sm text-slate-500 uppercase mb-2">
+        <h4 className="font-semibold text-sm text-stone-500 uppercase mb-2">
           {t('page.suitableFor')}
         </h4>
-        <p className="text-slate-600 text-sm">
+        <p className="text-stone-600 text-sm">
           {t(`${serviceType}.suitableFor`)}
         </p>
       </div>
 
       {/* Deliverables */}
       <div className="mb-6">
-        <h4 className="font-semibold text-sm text-slate-500 uppercase mb-2">
+        <h4 className="font-semibold text-sm text-stone-500 uppercase mb-2">
           {t('page.deliverables')}
         </h4>
         <ul className="space-y-2">
           {deliverables.map((item, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-slate-600">
+            <li key={index} className="flex items-start gap-2 text-sm text-stone-600">
               <span className="text-green-600 mt-0.5">✓</span>
               <span>{item}</span>
             </li>
@@ -356,20 +356,20 @@ function ServiceCard({ serviceType }: { serviceType: 'strategyConsulting' | 'imp
       </div>
 
       {/* Timeline & Pricing */}
-      <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-slate-50 rounded-lg">
+      <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-stone-50 rounded-lg">
         <div>
-          <div className="text-xs text-slate-500 uppercase mb-1">{t('page.timeline')}</div>
-          <div className="font-semibold text-slate-900">{t(`${serviceType}.timeline`)}</div>
+          <div className="text-xs text-stone-500 uppercase mb-1">{t('page.timeline')}</div>
+          <div className="font-semibold text-stone-900">{t(`${serviceType}.timeline`)}</div>
         </div>
         <div>
-          <div className="text-xs text-slate-500 uppercase mb-1">{t('page.investment')}</div>
+          <div className="text-xs text-stone-500 uppercase mb-1">{t('page.investment')}</div>
           <div className="font-semibold text-accent">{t(`${serviceType}.pricing`)}</div>
         </div>
       </div>
 
       {/* Examples */}
       <div className="mb-6">
-        <h4 className="font-semibold text-sm text-slate-500 uppercase mb-2">
+        <h4 className="font-semibold text-sm text-stone-500 uppercase mb-2">
           {t('page.examples')}
         </h4>
         <div className="flex flex-wrap gap-2">
@@ -403,17 +403,17 @@ export default function ServicesPage() {
   const locale = useLocale();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
     <div className="max-w-6xl mx-auto px-6 pt-32 pb-20">
       {/* Hero Section */}
       <div className="text-center mb-20">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-900">
           {t('page.heroTitle')}
         </h1>
-        <p className="text-2xl text-slate-600 mb-4 max-w-3xl mx-auto">
+        <p className="text-2xl text-stone-600 mb-4 max-w-3xl mx-auto">
           {t('page.heroSubtitle')}
         </p>
-        <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-stone-500 max-w-2xl mx-auto mb-8">
           {t('page.heroDescription')}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
@@ -427,7 +427,7 @@ export default function ServicesPage() {
           </Link>
           <Link
             href={`/${locale}/projects`}
-            className="px-8 py-3 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
+            className="px-8 py-3 border-2 border-stone-300 rounded-lg hover:bg-stone-100 transition-colors"
           >
             {t('page.ctaPortfolio')}
           </Link>
@@ -435,27 +435,27 @@ export default function ServicesPage() {
       </div>
 
       {/* Differentiation Statement */}
-      <div className="max-w-4xl mx-auto mb-20 p-8 bg-slate-50 border border-slate-200 rounded-2xl">
+      <div className="max-w-4xl mx-auto mb-20 p-8 bg-amber-50/50 border border-amber-200/50 rounded-2xl">
         <h2 className="text-3xl font-bold text-center mb-4">{t('page.whyChooseMe')}</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <div className="text-center">
             <div className="text-4xl mb-3">🎯</div>
             <h3 className="font-bold mb-2">{t('page.expert3in1')}</h3>
-            <p className="text-sm text-slate-600 whitespace-pre-line">
+            <p className="text-sm text-stone-600 whitespace-pre-line">
               {t('page.expert3in1Desc')}
             </p>
           </div>
           <div className="text-center">
             <div className="text-4xl mb-3">🚀</div>
             <h3 className="font-bold mb-2">{t('page.battleTested')}</h3>
-            <p className="text-sm text-slate-600 whitespace-pre-line">
+            <p className="text-sm text-stone-600 whitespace-pre-line">
               {t('page.battleTestedDesc')}
             </p>
           </div>
           <div className="text-center">
             <div className="text-4xl mb-3">📊</div>
             <h3 className="font-bold mb-2">{t('page.quantifiedResults')}</h3>
-            <p className="text-sm text-slate-600 whitespace-pre-line">
+            <p className="text-sm text-stone-600 whitespace-pre-line">
               {t('page.quantifiedResultsDesc')}
             </p>
           </div>
@@ -471,7 +471,7 @@ export default function ServicesPage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t('page.featuredTitle')}
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-stone-600 max-w-2xl mx-auto">
             {t('page.featuredSubtitle')}
           </p>
         </div>
@@ -486,10 +486,10 @@ export default function ServicesPage() {
       <div className="max-w-4xl mx-auto mb-16">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-slate-300"></div>
+            <div className="w-full border-t border-stone-300"></div>
           </div>
           <div className="relative flex justify-center">
-            <span className="px-4 bg-white text-slate-500 text-sm font-medium">
+            <span className="px-4 bg-white text-stone-500 text-sm font-medium">
               {t('page.otherServices')}
             </span>
           </div>
@@ -513,7 +513,7 @@ export default function ServicesPage() {
               <span className="text-2xl font-bold text-accent">1</span>
             </div>
             <h3 className="text-xl font-bold mb-3">{t('page.step1Title')}</h3>
-            <p className="text-slate-600 whitespace-pre-line">
+            <p className="text-stone-600 whitespace-pre-line">
               {t('page.step1Desc')}
             </p>
           </div>
@@ -522,7 +522,7 @@ export default function ServicesPage() {
               <span className="text-2xl font-bold text-accent">2</span>
             </div>
             <h3 className="text-xl font-bold mb-3">{t('page.step2Title')}</h3>
-            <p className="text-slate-600 whitespace-pre-line">
+            <p className="text-stone-600 whitespace-pre-line">
               {t('page.step2Desc')}
             </p>
           </div>
@@ -531,31 +531,31 @@ export default function ServicesPage() {
               <span className="text-2xl font-bold text-accent">3</span>
             </div>
             <h3 className="text-xl font-bold mb-3">{t('page.step3Title')}</h3>
-            <p className="text-slate-600 whitespace-pre-line">
+            <p className="text-stone-600 whitespace-pre-line">
               {t('page.step3Desc')}
             </p>
           </div>
         </div>
-        <div className="text-center mt-12 p-6 bg-slate-50 rounded-xl">
-          <p className="text-xl font-semibold text-slate-900 mb-2">
+        <div className="text-center mt-12 p-6 bg-stone-50 rounded-xl">
+          <p className="text-xl font-semibold text-stone-900 mb-2">
             {t('page.processGuarantee')}
           </p>
         </div>
       </div>
 
       {/* Pricing Note */}
-      <div className="max-w-4xl mx-auto text-center p-8 border-2 border-slate-200 rounded-2xl mb-20">
+      <div className="max-w-4xl mx-auto text-center p-8 border-2 border-stone-200 rounded-2xl mb-20">
         <h3 className="text-2xl font-bold mb-4">{t('page.pricingNote')}</h3>
-        <p className="text-slate-600 mb-4 whitespace-pre-line">
+        <p className="text-stone-600 mb-4 whitespace-pre-line">
           {t('page.pricingNoteDesc')}
         </p>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-stone-500">
           {t('page.pricingNoteFooter')}
         </p>
       </div>
 
       {/* CTA Section */}
-      <div className="text-center p-12 bg-slate-900 text-white rounded-2xl">
+      <div className="text-center p-12 bg-stone-900 text-white rounded-2xl">
         <h2 className="text-4xl font-bold mb-4">{t('page.readyToStart')}</h2>
         <p className="text-xl mb-8 opacity-90">
           {t('page.readyToStartDesc')}
@@ -576,7 +576,7 @@ export default function ServicesPage() {
                 chatWidget.click();
               }
             }}
-            className="px-8 py-4 bg-white text-slate-900 rounded-lg hover:bg-slate-100 transition-colors font-semibold"
+            className="px-8 py-4 bg-white text-stone-900 rounded-lg hover:bg-stone-100 transition-colors font-semibold"
           >
             {t('page.aiAssistant')}
           </button>

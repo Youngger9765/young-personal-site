@@ -8,12 +8,12 @@ export default function ContactCTA() {
   const t = useTranslations('contactCTA');
 
   return (
-    <section className="border-t border-slate-200 bg-slate-50">
+    <section className="bg-stone-900">
       <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           {t('heading')}
         </h2>
-        <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-stone-300 mb-8 max-w-2xl mx-auto">
           {t('subheading')}
         </p>
         <GradientButton
@@ -24,7 +24,7 @@ export default function ContactCTA() {
         >
           {t('button')}
         </GradientButton>
-        <p className="text-sm text-slate-500 mt-4">
+        <p className="text-sm text-stone-400 mt-4">
           {t('responseTime')}
         </p>
       </div>

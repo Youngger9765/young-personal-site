@@ -122,7 +122,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-background text-stone-900">
       {/* ========== Section 1: HERO ========== */}
       <section id="hero" className="max-w-6xl mx-auto px-6 pt-32 pb-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -137,11 +137,11 @@ export default function Home() {
               {t('hero.badge')}
             </span>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-slate-900 leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-stone-900 leading-tight mb-6">
               {t('hero.headline')}
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-8 whitespace-pre-line">
+            <p className="text-xl text-stone-600 leading-relaxed mb-8 whitespace-pre-line">
               {t('hero.subheadline')}
             </p>
 
@@ -169,7 +169,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/tzu-yang-tsai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-accent transition-colors"
+                className="text-stone-400 hover:text-accent transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-6 h-6" />
@@ -178,7 +178,7 @@ export default function Home() {
                 href="https://github.com/Youngger9765"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-accent transition-colors"
+                className="text-stone-400 hover:text-accent transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub className="w-6 h-6" />
@@ -187,7 +187,7 @@ export default function Home() {
                 href="https://medium.com/young-tsai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-accent transition-colors"
+                className="text-stone-400 hover:text-accent transition-colors"
                 aria-label="Medium"
               >
                 <FaMedium className="w-6 h-6" />
@@ -201,7 +201,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <div className="rounded-2xl border border-slate-200 shadow-soft-md overflow-hidden">
+            <div className="rounded-2xl border border-stone-200 shadow-soft-md overflow-hidden">
               <div className="relative aspect-square">
                 <Image
                   src="/images/young.jpg"
@@ -217,7 +217,7 @@ export default function Home() {
       </section>
 
       {/* ========== Section 2: SERVICES ========== */}
-      <section className="bg-slate-50 border-y border-slate-200">
+      <section className="bg-stone-900">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -226,10 +226,10 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               {locale === 'zh-TW' ? '快速啟動方案' : 'Quick Start Packages'}
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-stone-300">
               {locale === 'zh-TW' ? '選擇最適合您的合作方式' : 'Choose the right way to work together'}
             </p>
           </motion.div>
@@ -245,7 +245,7 @@ export default function Home() {
                 className={`relative bg-white rounded-xl border p-8 shadow-soft hover:shadow-soft-md transition-all ${
                   pkg.featured
                     ? 'border-accent ring-2 ring-accent/20'
-                    : 'border-slate-200'
+                    : 'border-stone-200'
                 }`}
               >
                 {pkg.featured && (
@@ -260,14 +260,14 @@ export default function Home() {
                   <pkg.icon className="w-7 h-7" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                <h3 className="text-2xl font-bold text-stone-900 mb-2">
                   {pkg.title}
                 </h3>
-                <p className="text-sm text-slate-600 mb-2">{pkg.timeline}</p>
-                <p className="text-3xl font-bold text-slate-900 mb-2">
+                <p className="text-sm text-stone-600 mb-2">{pkg.timeline}</p>
+                <p className="text-3xl font-bold text-stone-900 mb-2">
                   {pkg.price}
                 </p>
-                <p className="text-sm text-slate-600 mb-6 pb-6 border-b border-slate-200">
+                <p className="text-sm text-stone-600 mb-6 pb-6 border-b border-stone-200">
                   {pkg.note}
                 </p>
 
@@ -294,10 +294,10 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-3">
             {t('projects.title')}
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-stone-600 max-w-3xl mx-auto">
             {locale === 'zh-TW'
               ? '精選技術專案與產品開發經驗'
               : 'Featured technical projects and product development experience'}
@@ -315,20 +315,20 @@ export default function Home() {
             >
               <Link href={`/${locale}/projects/${project.slug}`} className="block h-full">
               <GlassCard hover className="p-6 h-full flex flex-col cursor-pointer">
-                <h3 className="text-xl font-bold text-slate-900 mb-1">
+                <h3 className="text-xl font-bold text-stone-900 mb-1">
                   {project.title}
                 </h3>
                 <p className="text-accent text-sm font-medium mb-3">
                   {project.subtitle}
                 </p>
-                <p className="text-slate-600 mb-4 flex-grow text-sm leading-relaxed">
+                <p className="text-stone-600 mb-4 flex-grow text-sm leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full"
+                      className="px-3 py-1 bg-stone-100 text-stone-600 text-xs font-medium rounded-full"
                     >
                       {tech}
                     </span>
@@ -352,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* ========== Section 4: BLOG ========== */}
-      <section className="border-t border-slate-200">
+      <section className="bg-amber-50/50">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -361,7 +361,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-3">
               {t('blog.title')}
             </h2>
           </motion.div>
@@ -377,13 +377,13 @@ export default function Home() {
               >
                 <Link
                   href={`/${locale}/blog/${post.slug}`}
-                  className="block h-full p-6 bg-white rounded-xl border border-slate-200 shadow-soft hover:shadow-soft-md transition-all group"
+                  className="block h-full p-6 bg-white rounded-xl border border-stone-200 shadow-soft hover:shadow-warm-glow transition-all group"
                 >
-                  <p className="text-sm text-slate-500 mb-2">{post.date}</p>
-                  <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-accent transition-colors">
+                  <p className="text-sm text-stone-500 mb-2">{post.date}</p>
+                  <h3 className="font-semibold text-stone-900 mb-2 group-hover:text-accent transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-stone-600 text-sm mb-4 leading-relaxed">
                     {post.description}
                   </p>
                   <span className="text-accent font-medium text-sm hover:text-accent-hover transition-colors">

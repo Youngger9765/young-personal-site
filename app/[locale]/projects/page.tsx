@@ -74,7 +74,7 @@ export default function ProjectsGalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-16">
         <motion.div
@@ -83,10 +83,10 @@ export default function ProjectsGalleryPage() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-stone-900">
             {t('gallery.title')}
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
             {t('gallery.subtitle')}
           </p>
         </motion.div>
@@ -103,9 +103,9 @@ export default function ProjectsGalleryPage() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={`/${locale}/projects/${project.slug}`}>
-                <div className="group h-full rounded-2xl bg-white border border-slate-200 hover:border-accent transition-all shadow-sm hover:shadow-xl overflow-hidden cursor-pointer">
+                <div className="group h-full rounded-2xl bg-white border border-stone-200 hover:border-accent transition-all shadow-sm hover:shadow-warm-glow overflow-hidden cursor-pointer">
                   {/* Project Thumbnail */}
-                  <div className="relative h-56 bg-slate-50 overflow-hidden">
+                  <div className="relative h-56 bg-stone-50 overflow-hidden">
                     {projectImages[project.slug] ? (
                       <Image
                         src={projectImages[project.slug]!}
@@ -117,7 +117,7 @@ export default function ProjectsGalleryPage() {
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <svg
-                          className="w-20 h-20 text-slate-400 group-hover:text-slate-500 transition-colors"
+                          className="w-20 h-20 text-stone-400 group-hover:text-stone-500 transition-colors"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -133,7 +133,7 @@ export default function ProjectsGalleryPage() {
                     )}
 
                     {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-slate-900/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div className="absolute inset-0 bg-stone-900/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <div className="text-center px-6">
                         <div className="text-white text-lg font-semibold mb-2">
                           {t('gallery.viewDetails')}
@@ -147,13 +147,13 @@ export default function ProjectsGalleryPage() {
 
                   {/* Project Info */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-accent transition-colors">
+                    <h3 className="text-2xl font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-sm text-accent font-medium mb-3">
                       {project.subtitle}
                     </p>
-                    <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-stone-600 text-sm leading-relaxed line-clamp-3">
                       {project.description}
                     </p>
                   </div>

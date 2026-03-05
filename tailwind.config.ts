@@ -14,6 +14,8 @@ const config: Config = {
         foreground: "var(--foreground)",
         'accent': '#D97706',
         'accent-hover': '#B45309',
+        'warm-dark': '#1C1917',
+        'warm-cream': '#FFFBEB',
       },
       spacing: {
         '18': '4.5rem',   // 72px
@@ -44,10 +46,11 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        'soft': '0 2px 8px rgba(0, 0, 0, 0.08)',
-        'soft-md': '0 4px 16px rgba(0, 0, 0, 0.12)',
-        'soft-lg': '0 8px 32px rgba(0, 0, 0, 0.16)',
-        'soft-xl': '0 12px 48px rgba(0, 0, 0, 0.20)',
+        'soft': '0 2px 8px rgba(28, 25, 23, 0.06)',
+        'soft-md': '0 4px 16px rgba(28, 25, 23, 0.10)',
+        'soft-lg': '0 8px 32px rgba(28, 25, 23, 0.14)',
+        'soft-xl': '0 12px 48px rgba(28, 25, 23, 0.18)',
+        'warm-glow': '0 4px 20px rgba(217, 119, 6, 0.15)',
       },
       typography: {
         DEFAULT: {

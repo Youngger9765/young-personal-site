@@ -35,7 +35,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
   if (!resolvedParams) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-gray-400">Loading...</div>
+        <div className="text-stone-400">Loading...</div>
       </div>
     );
   }
@@ -90,7 +90,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
       <div className="max-w-4xl mx-auto px-6 pt-24 pb-8">
         <Link
           href={`/${locale}/speaking`}
-          className="inline-flex items-center gap-2 text-slate-700 hover:text-gray-900 transition-colors font-medium group"
+          className="inline-flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors font-medium group"
         >
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           {t('gallery.backToSpeaking')}
@@ -105,27 +105,27 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r text-stone-900">
             {event.title}
           </h1>
-          <p className="text-xl text-slate-600 font-medium mb-4">
+          <p className="text-xl text-stone-600 font-medium mb-4">
             {event.subtitle}
           </p>
-          <div className="flex flex-wrap gap-4 mb-8 text-gray-600 justify-center">
+          <div className="flex flex-wrap gap-4 mb-8 text-stone-600 justify-center">
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
               <span>{event.organization}</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               <span>{event.role}</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <span>{event.date}</span>
@@ -152,7 +152,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                 href={event.eventUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-900 transition-all font-semibold shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-stone-800 text-white rounded-lg hover:bg-stone-900 transition-all font-semibold shadow-md hover:shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -242,7 +242,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <svg
-                    className="w-24 h-24 text-slate-400 mx-auto mb-4"
+                    className="w-24 h-24 text-stone-400 mx-auto mb-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -254,7 +254,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                       d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
                     />
                   </svg>
-                  <p className="text-slate-600 text-sm font-medium">
+                  <p className="text-stone-600 text-sm font-medium">
                     {t('gallery.eventPlaceholder')}
                   </p>
                 </div>
@@ -273,7 +273,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
           className="prose prose-lg max-w-none"
         >
           {event.description.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="text-gray-700 leading-relaxed mb-6">
+            <p key={index} className="text-stone-600 leading-relaxed mb-6">
               {paragraph}
             </p>
           ))}
@@ -287,14 +287,14 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent mb-8">
+          <h2 className="text-3xl font-bold bg-gradient-to-r text-stone-900 mb-8">
             {t('gallery.keyHighlights')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {event.highlights.map((highlight, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
+                className="p-6 rounded-2xl bg-white border-2 border-stone-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
               >
                 <div className="flex items-start gap-3">
                   <svg
@@ -308,7 +308,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p className="text-gray-700 leading-relaxed">{highlight}</p>
+                  <p className="text-stone-600 leading-relaxed">{highlight}</p>
                 </div>
               </div>
             ))}
@@ -324,7 +324,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl font-bold text-stone-900 mb-6">
               {locale === 'zh-TW' ? '媒體報導' : 'Media Coverage'}
             </h3>
             <div className="space-y-4">
@@ -334,24 +334,24 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-amber-50/50 border-2 border-stone-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-lg ${index === 1 ? 'bg-accent' : 'bg-slate-800'} flex items-center justify-center`}>
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-lg ${index === 1 ? 'bg-accent' : 'bg-stone-800'} flex items-center justify-center`}>
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className={`px-3 py-1 ${index === 1 ? 'bg-accent' : 'bg-slate-800'} text-white text-xs font-semibold rounded-full`}>
+                        <span className={`px-3 py-1 ${index === 1 ? 'bg-accent' : 'bg-stone-800'} text-white text-xs font-semibold rounded-full`}>
                           {link.source}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+                      <h4 className="text-xl font-bold text-stone-900 mb-2 group-hover:text-accent transition-colors">
                         {link.title}
                       </h4>
-                      <p className="text-gray-600 text-sm mb-3">
+                      <p className="text-stone-600 text-sm mb-3">
                         {index === 0
                           ? (locale === 'zh-TW'
                               ? '知名教育平台 AI 英語家教 Jutor 獲 Meta Llama 黑客松決賽肯定...'
@@ -361,7 +361,7 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
                               : 'CommonWealth Parenting reports on how a leading education platform uses Meta LLM to build AI English learning tools...')
                         }
                       </p>
-                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
+                      <div className="flex items-center gap-2 text-stone-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -382,11 +382,11 @@ export default function SpeakingDetailPage({ params }: SpeakingDetailProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center p-8 rounded-2xl bg-gradient-to-r from-white to-blue-50 border border-gray-200"
+          className="text-center p-8 rounded-2xl bg-gradient-to-r from-white to-amber-50/50 border border-stone-200"
         >
           <Link
             href={`/${locale}/speaking`}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white rounded-lg hover:bg-slate-900 transition-colors font-semibold group"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-stone-800 text-white rounded-lg hover:bg-stone-900 transition-colors font-semibold group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
             {t('gallery.backToSpeaking')}

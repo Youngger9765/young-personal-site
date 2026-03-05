@@ -96,34 +96,34 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </span>
           )}
           {post.readingTime && (
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-stone-400">
               {post.readingTime}
             </span>
           )}
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-900 leading-tight mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-stone-900 leading-tight mb-6">
           {post.title}
         </h1>
 
         {/* Description */}
         {post.description && (
-          <p className="text-lg text-gray-500 leading-relaxed mb-8">
+          <p className="text-lg text-stone-500 leading-relaxed mb-8">
             {post.description}
           </p>
         )}
 
         {/* Meta: Author + Date */}
-        <div className="flex items-center gap-4 pb-8 border-b border-gray-200">
+        <div className="flex items-center gap-4 pb-8 border-b border-stone-200">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-amber-400 flex items-center justify-center text-white font-bold text-sm">
             {post.author ? post.author.charAt(0).toUpperCase() : 'Y'}
           </div>
           <div>
-            <div className="text-sm font-semibold text-slate-800">
+            <div className="text-sm font-semibold text-stone-800">
               {post.author || 'Young'}
             </div>
-            <time className="text-sm text-gray-400">{formattedDate}</time>
+            <time className="text-sm text-stone-400">{formattedDate}</time>
           </div>
         </div>
       </header>
@@ -131,15 +131,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Article Content */}
       <article className="max-w-3xl mx-auto px-6 pb-16">
         <div className="prose prose-lg max-w-none
-          prose-headings:text-slate-900
+          prose-headings:text-stone-900
           prose-p:text-gray-700 prose-p:leading-[1.85]
           prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-slate-800
+          prose-strong:text-stone-800
           prose-blockquote:border-l-accent prose-blockquote:bg-amber-50/50 prose-blockquote:text-gray-600
-          prose-code:text-slate-800 prose-code:bg-gray-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
+          prose-code:text-stone-800 prose-code:bg-stone-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
           prose-pre:bg-[#0d1117] prose-pre:border-0 prose-pre:rounded-xl
           prose-img:rounded-xl prose-img:shadow-soft
-          prose-hr:border-gray-200
+          prose-hr:border-stone-200
         ">
           <MDXRemote
             source={post.content}
@@ -160,11 +160,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Tags */}
       {post.tags && post.tags.length > 0 && (
         <div className="max-w-3xl mx-auto px-6 pb-10">
-          <div className="flex flex-wrap gap-2 pt-8 border-t border-gray-100">
+          <div className="flex flex-wrap gap-2 pt-8 border-t border-stone-100">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 bg-gray-50 text-gray-500 rounded-lg text-sm border border-gray-100 hover:border-gray-200 transition-colors"
+                className="px-3 py-1.5 bg-stone-50 text-stone-500 rounded-lg text-sm border border-stone-100 hover:border-stone-200 transition-colors"
               >
                 {tag}
               </span>
@@ -175,10 +175,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Footer */}
       <footer className="max-w-3xl mx-auto px-6 pb-24">
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-gray-200">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-stone-200">
           <Link
             href={`/${locale}/blog`}
-            className="inline-flex items-center gap-2 text-gray-500 hover:text-slate-800 font-medium transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-800 font-medium transition-colors text-sm"
           >
             <span className="text-lg">←</span> {t('insights.title')}
           </Link>

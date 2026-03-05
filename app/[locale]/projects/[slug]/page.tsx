@@ -318,7 +318,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       {/* Hero */}
       <header className="max-w-3xl mx-auto px-6 pb-10">
         <motion.div {...fade} transition={{ duration: 0.5 }}>
-          <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-900 leading-tight mb-3">
+          <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-stone-900 leading-tight mb-3">
             {project.title}
           </h1>
           <p className="text-lg text-gray-500 font-medium mb-6">
@@ -399,7 +399,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       {project.features.length > 0 && (
         <section className="max-w-3xl mx-auto px-6 pb-16">
           <motion.div {...fade} transition={{ duration: 0.5, delay: 0.25 }}>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl font-bold text-stone-900 mb-6">
               {t('gallery.keyFeatures')}
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -420,7 +420,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       {/* Tech Stack */}
       <section className="max-w-3xl mx-auto px-6 pb-16">
         <motion.div {...fade} transition={{ duration: 0.5, delay: 0.3 }}>
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl font-bold text-stone-900 mb-6">
             {t('techStackLabel')}
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -440,7 +440,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       {project.results.length > 0 && (
         <section className="max-w-3xl mx-auto px-6 pb-16">
           <motion.div {...fade} transition={{ duration: 0.5, delay: 0.35 }}>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl font-bold text-stone-900 mb-6">
               {t('gallery.results')}
             </h2>
             <div className="space-y-3">
@@ -461,7 +461,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       {media && media.length > 0 && (
         <section className="max-w-3xl mx-auto px-6 pb-16">
           <motion.div {...fade} transition={{ duration: 0.5, delay: 0.4 }}>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl font-bold text-stone-900 mb-6">
               {isZh ? '媒體報導' : 'Media Coverage'}
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -487,7 +487,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
         >
           <Link
             href={`/${locale}/projects`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors text-sm font-semibold group"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white rounded-lg hover:bg-stone-800 transition-colors text-sm font-semibold group"
           >
             <span className="group-hover:-translate-x-0.5 transition-transform">&larr;</span>
             {t('gallery.backToProjects')}

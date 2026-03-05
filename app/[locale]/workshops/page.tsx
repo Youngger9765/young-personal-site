@@ -23,10 +23,10 @@ const courses: CourseData[] = [
 ];
 
 const audienceStyles: Record<AudienceType, string> = {
-  all: "bg-slate-100 text-slate-600",
-  marketing: "bg-slate-100 text-slate-600",
+  all: "bg-stone-100 text-stone-600",
+  marketing: "bg-stone-100 text-stone-600",
   managers: "bg-amber-50 text-accent",
-  digital: "bg-slate-100 text-slate-600",
+  digital: "bg-stone-100 text-stone-600",
 };
 
 interface SpeakingEventData {
@@ -95,7 +95,7 @@ export default function WorkshopsPage() {
   const locale = useLocale();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto px-6 pt-32 pb-20 text-center">
         <motion.div
@@ -105,10 +105,10 @@ export default function WorkshopsPage() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-amber-50 text-accent text-sm font-semibold mb-6">
             {t("badge")}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 mb-6 leading-tight">
             {t("title")}
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-10">
             {t("subtitle")}
           </p>
           <a
@@ -143,7 +143,7 @@ export default function WorkshopsPage() {
               key={course.key}
               {...fadeUp}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group rounded-xl border border-slate-200 bg-white p-6 hover:shadow-soft-md transition-all duration-200 flex flex-col"
+              className="group rounded-xl border border-stone-200 bg-white p-6 hover:shadow-soft-md transition-all duration-200 flex flex-col"
             >
               {/* Audience Pill */}
               <span
@@ -153,12 +153,12 @@ export default function WorkshopsPage() {
               </span>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
+              <h3 className="text-xl font-bold text-stone-900 mb-3">
                 {t(`courses.${course.key}.title`)}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
+              <p className="text-sm text-stone-600 leading-relaxed mb-6 flex-1">
                 {t(`courses.${course.key}.description`)}
               </p>
 
@@ -190,17 +190,17 @@ export default function WorkshopsPage() {
       </section>
 
       {/* Past Speaking Section */}
-      <section className="bg-slate-50 py-24">
+      <section className="bg-stone-50 py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">
               {t("pastSpeaking.title")}
             </h2>
-            <p className="text-slate-600 max-w-xl mx-auto">
+            <p className="text-stone-600 max-w-xl mx-auto">
               {t("pastSpeaking.subtitle")}
             </p>
           </motion.div>
@@ -213,9 +213,9 @@ export default function WorkshopsPage() {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
                 <Link href={`/${locale}/speaking/${event.slug}`}>
-                  <div className="group h-full rounded-xl bg-white border border-slate-200 hover:shadow-soft-md transition-all duration-200 overflow-hidden cursor-pointer">
+                  <div className="group h-full rounded-xl bg-white border border-stone-200 hover:shadow-soft-md transition-all duration-200 overflow-hidden cursor-pointer">
                     {/* Thumbnail */}
-                    <div className="relative h-40 bg-slate-100 overflow-hidden">
+                    <div className="relative h-40 bg-stone-100 overflow-hidden">
                       {eventImages[event.slug] ? (
                         <Image
                           src={eventImages[event.slug]!}
@@ -227,7 +227,7 @@ export default function WorkshopsPage() {
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <svg
-                            className="w-12 h-12 text-slate-300"
+                            className="w-12 h-12 text-stone-300"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -245,10 +245,10 @@ export default function WorkshopsPage() {
 
                     {/* Info */}
                     <div className="p-4">
-                      <h3 className="text-base font-bold text-slate-900 mb-1 group-hover:text-accent transition-colors duration-200 line-clamp-2">
+                      <h3 className="text-base font-bold text-stone-900 mb-1 group-hover:text-accent transition-colors duration-200 line-clamp-2">
                         {tSpeaking(event.titleKey)}
                       </h3>
-                      <p className="text-xs text-slate-500 line-clamp-2">
+                      <p className="text-xs text-stone-500 line-clamp-2">
                         {tSpeaking(event.subtitleKey)}
                       </p>
                     </div>
@@ -266,7 +266,7 @@ export default function WorkshopsPage() {
           {...fadeUp}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-6">
             {t("ctaPrimary")}
           </h2>
           <a

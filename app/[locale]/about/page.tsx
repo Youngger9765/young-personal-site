@@ -41,7 +41,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-background text-stone-900">
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-6 pt-32 pb-16 text-center">
           <motion.div
@@ -49,29 +49,29 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-stone-900">
               {t('about.page.title')}
             </h1>
-            <p className="text-2xl text-slate-600 leading-relaxed">
+            <p className="text-2xl text-stone-600 leading-relaxed">
               {t('about.page.subtitle')}
             </p>
           </motion.div>
         </section>
 
         {/* Personal Story */}
-        <section className="border-t border-slate-200">
+        <section className="bg-amber-50/30">
           <div className="max-w-4xl mx-auto px-6 py-24 text-left">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="space-y-8 text-lg text-slate-600 leading-relaxed"
+              className="space-y-8 text-lg text-stone-600 leading-relaxed"
             >
-              <p className="text-2xl text-slate-900">{t('about.intro')}</p>
+              <p className="text-2xl text-stone-900">{t('about.intro')}</p>
 
               {/* Brand Statement Highlight */}
               <div className="my-12 p-8 rounded-2xl bg-gradient-to-br from-white to-white border-l-4 border-accent">
-                <p className="text-xl font-semibold text-slate-900 leading-relaxed">
+                <p className="text-xl font-semibold text-stone-900 leading-relaxed">
                   {t('about.brandStatement')}
                 </p>
               </div>
@@ -84,9 +84,9 @@ export default function AboutPage() {
         </section>
 
         {/* Career Highlights - Timeline */}
-        <section className="border-t border-slate-200">
+        <section className="border-t border-stone-200">
           <div className="max-w-4xl mx-auto px-6 py-24 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-16">
               {t('about.careerHighlights')}
             </h2>
 
@@ -173,9 +173,9 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2 + 0.3 }}
-                        className="bg-gradient-to-br from-white to-white/30 rounded-2xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 hover:border-accent/30"
+                        className="bg-gradient-to-br from-white to-white/30 rounded-2xl p-6 border border-stone-200 shadow-md hover:shadow-xl transition-all duration-300 hover:border-accent/30"
                       >
-                        <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 whitespace-pre-line leading-tight">
+                        <h3 className="text-xl md:text-2xl font-bold text-stone-900 mb-4 whitespace-pre-line leading-tight">
                           {milestone.title}
                         </h3>
 
@@ -187,7 +187,7 @@ export default function AboutPage() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: index * 0.2 + 0.4 + i * 0.1 }}
-                              className="flex items-start gap-3 text-slate-600 group/item"
+                              className="flex items-start gap-3 text-stone-600 group/item"
                             >
                               <span className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2 transition-transform duration-300 group-hover/item:scale-125" />
                               <span className="leading-relaxed text-base">{highlight}</span>
@@ -223,12 +223,12 @@ export default function AboutPage() {
         </section>
 
         {/* Metrics & Skills */}
-        <section className="border-t border-slate-200">
+        <section className="border-t border-stone-200 bg-stone-50">
           <div className="max-w-5xl mx-auto px-6 py-24">
             <div className="grid lg:grid-cols-3 gap-12">
               {/* Impact Numbers */}
               <div className="lg:col-span-2">
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-8">
                   {t('about.metrics.title')}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -239,13 +239,13 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
-                      className="p-6 rounded-2xl bg-gradient-to-br from-white to-white/20 border border-slate-200 shadow-sm"
+                      className="p-6 rounded-2xl bg-gradient-to-br from-white to-white/20 border border-stone-200 shadow-sm"
                     >
                       <div className="text-3xl font-extrabold text-accent mb-2">
                         {metric.value}
                       </div>
-                      <div className="text-slate-900 font-semibold mb-2">{metric.label}</div>
-                      <p className="text-slate-600 text-sm leading-relaxed">{metric.description}</p>
+                      <div className="text-stone-900 font-semibold mb-2">{metric.label}</div>
+                      <p className="text-stone-600 text-sm leading-relaxed">{metric.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
 
               {/* Skills */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-8">
                   {t('about.skills.title')}
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -264,7 +264,7 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
-                      className="px-4 py-2 bg-white border-2 border-slate-200 rounded-full text-slate-800 font-medium hover:border-accent transition-colors"
+                      className="px-4 py-2 bg-white border-2 border-stone-200 rounded-full text-stone-800 font-medium hover:border-accent transition-colors"
                     >
                       {skill}
                     </motion.span>
@@ -276,12 +276,12 @@ export default function AboutPage() {
         </section>
 
         {/* Values & Beliefs + Working Style */}
-        <section className="border-t border-slate-200">
+        <section className="border-t border-stone-200">
           <div className="max-w-4xl mx-auto px-6 py-24 text-left">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {/* Beliefs Column */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-12 tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-12 tracking-tight">
                   {t('about.page.beliefs')}
                 </h2>
                 <div className="space-y-5">
@@ -302,12 +302,12 @@ export default function AboutPage() {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent rounded-full shadow-[2px_0_8px_rgba(217,119,6,0.15)] transition-all duration-300 group-hover:w-1.5 group-hover:shadow-[3px_0_12px_rgba(217,119,6,0.25)]" />
 
                       {/* Premium content card with refined depth */}
-                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-white/10 to-white/20 rounded-r-2xl border border-slate-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-accent/30 hover:bg-gradient-to-br hover:from-white hover:via-white/15 hover:to-white/25">
+                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-white/10 to-white/20 rounded-r-2xl border border-stone-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-accent/30 hover:bg-gradient-to-br hover:from-white hover:via-white/15 hover:to-white/25">
                         {/* Subtle top-left decorative element */}
                         <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-accent/5 to-transparent rounded-br-3xl pointer-events-none" />
 
                         {/* Text content with enhanced typography */}
-                        <p className="relative text-slate-800 leading-[1.7] text-[16.5px] font-medium tracking-wide text-center">
+                        <p className="relative text-stone-800 leading-[1.7] text-[16.5px] font-medium tracking-wide text-center">
                           {belief.text}
                         </p>
                       </div>
@@ -318,7 +318,7 @@ export default function AboutPage() {
 
               {/* Working Style Column */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-12 tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-12 tracking-tight">
                   {t('about.page.workingStyle')}
                 </h2>
                 <div className="space-y-5">
@@ -339,12 +339,12 @@ export default function AboutPage() {
                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent rounded-full shadow-[2px_0_8px_rgba(217,119,6,0.15)] transition-all duration-300 group-hover:w-1.5 group-hover:shadow-[3px_0_12px_rgba(217,119,6,0.25)]" />
 
                       {/* Premium content card with refined depth */}
-                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-white/10 to-white/20 rounded-r-2xl border border-slate-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-accent/30 hover:bg-gradient-to-br hover:from-white hover:via-white/15 hover:to-white/25">
+                      <div className="relative pl-7 pr-7 py-6 bg-gradient-to-br from-white via-white/10 to-white/20 rounded-r-2xl border border-stone-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-accent/30 hover:bg-gradient-to-br hover:from-white hover:via-white/15 hover:to-white/25">
                         {/* Subtle top-left decorative element */}
                         <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-accent/5 to-transparent rounded-br-3xl pointer-events-none" />
 
                         {/* Text content with enhanced typography */}
-                        <p className="relative text-slate-800 leading-[1.7] text-[16.5px] font-medium tracking-wide text-center">
+                        <p className="relative text-stone-800 leading-[1.7] text-[16.5px] font-medium tracking-wide text-center">
                           {style.text}
                         </p>
                       </div>

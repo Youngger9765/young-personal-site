@@ -12,8 +12,8 @@ export default function GlassCard({
   className = '',
   hover = false,
 }: GlassCardProps) {
-  const baseStyles = 'bg-white rounded-xl border border-slate-200 shadow-soft';
-  const hoverStyles = hover ? 'hover:shadow-soft-md hover:border-slate-300 transition-all duration-200' : '';
+  const baseStyles = 'bg-white rounded-xl border border-stone-200 shadow-soft';
+  const hoverStyles = hover ? 'hover:shadow-warm-glow hover:border-amber-300/50 transition-all duration-200' : '';
 
   return (
     <div className={`${baseStyles} ${hoverStyles} ${className}`}>
