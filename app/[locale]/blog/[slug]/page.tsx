@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
   const post = await getBlogPost(slug);
   const t = await getTranslations();
 
@@ -82,21 +82,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         />
       </div>
 
-      <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <footer className="mt-12 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
         <Link
-          href="/blog"
-          className="text-blue-600 hover:underline"
+          href={`/${locale}/blog`}
+          className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium transition-colors"
         >
-          ← Back to Blog
+          ← {t('insights.title')}
         </Link>
         <a
           href="https://calendly.com/young-tsai/ai"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-blue-600 hover:underline"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl shadow-soft hover:shadow-soft-md transition-all"
         >
-          {t('projects.consultCta')}
-          <span>→</span>
+          {t('projects.consultCta')} →
         </a>
       </footer>
     </article>

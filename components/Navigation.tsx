@@ -19,6 +19,7 @@ export default function Navigation() {
     { href: `/${locale}/projects`, label: t('projects') },
     { href: `/${locale}/services`, label: t('services') },
     { href: `/${locale}/workshops`, label: t('workshops') },
+    { href: `/${locale}/blog`, label: t('blog') },
   ];
 
   // Check if a nav link is active
