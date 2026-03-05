@@ -39,65 +39,119 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const formattedDate = new Date(post.date).toLocaleDateString(
+    locale === 'zh-TW' ? 'zh-TW' : 'en-US',
+    { year: 'numeric', month: 'long', day: 'numeric' }
+  );
+
   return (
-    <article className="max-w-4xl mx-auto px-4 py-20">
-      <header className="mb-12">
-        <h1 className="text-5xl font-bold mb-4">{post.title}</h1>
-        <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-          <time>{post.date}</time>
-          {post.author && <span>• {post.author}</span>}
+    <div className="min-h-screen bg-white">
+      {/* Article Header */}
+      <header className="max-w-3xl mx-auto px-6 pt-32 pb-10">
+        {/* Category + Reading Time */}
+        <div className="flex items-center gap-3 mb-6">
+          {post.category && (
+            <span className="px-3 py-1 bg-amber-50 text-accent text-sm font-semibold rounded-full border border-amber-200">
+              {post.category}
+            </span>
+          )}
+          {post.readingTime && (
+            <span className="text-sm text-gray-400">
+              {post.readingTime}
+            </span>
+          )}
         </div>
-        {post.tags && post.tags.length > 0 && (
-          <div className="flex gap-2 mb-6">
+
+        {/* Title */}
+        <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-900 leading-tight mb-6">
+          {post.title}
+        </h1>
+
+        {/* Description */}
+        {post.description && (
+          <p className="text-lg text-gray-500 leading-relaxed mb-8">
+            {post.description}
+          </p>
+        )}
+
+        {/* Meta: Author + Date */}
+        <div className="flex items-center gap-4 pb-8 border-b border-gray-200">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-amber-400 flex items-center justify-center text-white font-bold text-sm">
+            {post.author ? post.author.charAt(0).toUpperCase() : 'Y'}
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-slate-800">
+              {post.author || 'Young'}
+            </div>
+            <time className="text-sm text-gray-400">{formattedDate}</time>
+          </div>
+        </div>
+      </header>
+
+      {/* Article Content */}
+      <article className="max-w-3xl mx-auto px-6 pb-16">
+        <div className="prose prose-lg max-w-none
+          prose-headings:text-slate-900
+          prose-p:text-gray-700 prose-p:leading-[1.85]
+          prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-800
+          prose-blockquote:border-l-accent prose-blockquote:bg-amber-50/50 prose-blockquote:text-gray-600
+          prose-code:text-slate-800 prose-code:bg-gray-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
+          prose-pre:bg-[#0d1117] prose-pre:border-0 prose-pre:rounded-xl
+          prose-img:rounded-xl prose-img:shadow-soft
+          prose-hr:border-gray-200
+        ">
+          <MDXRemote
+            source={post.content}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [
+                  rehypeHighlight,
+                  rehypeSlug,
+                  [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+                ],
+              },
+            }}
+          />
+        </div>
+      </article>
+
+      {/* Tags */}
+      {post.tags && post.tags.length > 0 && (
+        <div className="max-w-3xl mx-auto px-6 pb-10">
+          <div className="flex flex-wrap gap-2 pt-8 border-t border-gray-100">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm"
+                className="px-3 py-1.5 bg-gray-50 text-gray-500 rounded-lg text-sm border border-gray-100 hover:border-gray-200 transition-colors"
               >
                 {tag}
               </span>
             ))}
           </div>
-        )}
-        {post.description && (
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            {post.description}
-          </p>
-        )}
-      </header>
+        </div>
+      )}
 
-      <div className="prose prose-lg dark:prose-invert max-w-none">
-        <MDXRemote
-          source={post.content}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [remarkGfm],
-              rehypePlugins: [
-                rehypeHighlight,
-                rehypeSlug,
-                [rehypeAutolinkHeadings, { behavior: 'wrap' }],
-              ],
-            },
-          }}
-        />
-      </div>
-
-      <footer className="mt-12 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
-        <Link
-          href={`/${locale}/blog`}
-          className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium transition-colors"
-        >
-          ← {t('insights.title')}
-        </Link>
-        <a
-          href="https://calendly.com/young-tsai/ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl shadow-soft hover:shadow-soft-md transition-all"
-        >
-          {t('projects.consultCta')} →
-        </a>
+      {/* Footer */}
+      <footer className="max-w-3xl mx-auto px-6 pb-24">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-gray-200">
+          <Link
+            href={`/${locale}/blog`}
+            className="inline-flex items-center gap-2 text-gray-500 hover:text-slate-800 font-medium transition-colors text-sm"
+          >
+            <span className="text-lg">←</span> {t('insights.title')}
+          </Link>
+          <a
+            href="https://calendly.com/young-tsai/ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl shadow-soft hover:shadow-soft-md transition-all text-sm"
+          >
+            {t('projects.consultCta')} →
+          </a>
+        </div>
       </footer>
-    </article>
+    </div>
   );
 }

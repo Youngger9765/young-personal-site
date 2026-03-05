@@ -452,36 +452,36 @@
     "medVision": {
       "title": "醫療 AI 平台",
       "subtitle": "共享決策 SDM 系統",
-      "description": "為醫療院所打造的共享決策 (SDM) AI 系統。整合 HIS/FHIR 醫療數據，運用 AI 生成個人化衛教內容，協助病患理解治療選項。採用 FastAPI + Next.js 技術，Base44 快速原型驗證。",
-      "problem": "病患面對多種治療選擇時，難以理解差異並做出適合自己的決定。",
-      "solution": "AI 驅動的 SDM 平台，根據病患個人數據生成客製化衛教內容，以對話方式引導理解各選項利弊。",
-      "result": "顯著提升病患對手術選項的理解度，醫師諮詢效率提高。",
-      "timeline": "持續迭代中，已上線核心 SDM 流程。"
+      "description": "為多家醫療院所打造的共享決策 (SDM) AI 平台。整合 QR Code 病患追蹤系統、IOL 加權推薦演算法與 LLM 知識庫，實現從掃碼掛號到術後追蹤的完整數位化流程。採用 FastAPI async-first 架構，部署於 Vercel Serverless，支援 137 個 Jinja2 模板的 SSR 無障礙介面設計。",
+      "problem": "病患面對多種治療選擇時，難以理解差異並做出適合自己的決定；醫師逐一解釋耗時且品質不一。",
+      "solution": "混合式 AI 推薦系統：規則引擎（IOL 加權評分，6 項醫療指標）產生可審計的推薦結果，LLM 生成病患友善的個人化衛教內容。QR Code 追蹤系統串聯轉介醫師→病患旅程→KPI 儀表板。",
+      "result": "已上線多家醫療中心，病患手術理解度顯著提升，醫師諮詢效率提高，SDM-Q-9 品質評分可量化追蹤。",
+      "timeline": "持續迭代中，100+ API 端點，27+ 路由模組。"
     },
     "xian": {
       "title": "長照機構評鑑管理",
       "subtitle": "智慧活動管理系統",
-      "description": "為長照機構打造的 PDCA 活動管理系統。語音優先設計（40-60 歲照護人員），支援活動規劃、執行紀錄、照片上傳、AI 自動生成評估報告。採用 Next.js 16 + React 19 技術。",
-      "problem": "長照機構的活動管理仍靠紙本，記錄耗時、難以追蹤成效、評鑑準備費時。",
-      "solution": "語音優先的數位 PDCA 系統，照護人員可用語音記錄活動，AI 自動整理成評估報告。",
-      "result": "記錄時間大幅縮短，評鑑資料準備從數天縮短至數小時。",
+      "description": "為長照機構打造的評鑑管理與 PDCA 活動追蹤平台。內建 115 項官方評鑑標準的多層樹狀結構、PDCA 完成度自動計算、台灣個資去識別化引擎與 DOCX 會議紀錄自動產生。採用 Next.js 16 + React 19 + Turbopack 技術，整合 Claude AI 與 OCR（Tesseract.js）。",
+      "problem": "長照機構評鑑準備仍靠紙本與人工整理，115 項標準逐一對應佐證資料極為耗時，且記錄品質參差不齊。",
+      "solution": "數位化評鑑管理平台：自動建構標準→佐證資料對應、PDCA 相位完成率計算（4 維度加權平均）、AI 缺口分析與改善建議。語音優先設計，照護人員可用語音記錄，系統自動結構化。",
+      "result": "評鑑資料準備從數天縮短至數小時，佐證文件分類自動化省下 70% 整理時間。",
       "timeline": "4 週完成 MVP，持續迭代中。"
     },
     "careerCreator": {
       "title": "即時互動牌卡系統",
       "subtitle": "線上諮詢平台",
-      "description": "為職涯諮詢師打造的線上牌卡系統。將實體牌卡數位化，支援遠端諮詢、牌陣展示、諮詢記錄。採用 Next.js 14 + FastAPI 技術，GCS 圖片存儲。",
-      "problem": "職涯諮詢師的牌卡工具僅限實體使用，無法進行遠端諮詢。",
-      "solution": "將牌卡數位化，打造線上諮詢平台，支援即時牌陣展示與諮詢紀錄。",
-      "result": "成功進入 Beta 測試階段，諮詢師可遠端為個案進行牌卡諮詢。",
-      "timeline": "6 週完成 Beta 版。"
+      "description": "為職涯諮詢師打造的即時互動牌卡諮詢平台。7 種獨立遊戲模式（性格分析、職涯收集、價值排序等）共享統一元件架構，Supabase Realtime 三層同步（Presence + Broadcast + Postgres Changes），事件溯源模式記錄完整牌卡操作歷程。採用 Next.js 14 App Router + FastAPI async 技術，GCP Cloud Run 自動擴展部署。",
+      "problem": "職涯諮詢師的牌卡工具僅限實體使用，無法進行遠端諮詢，且諮詢紀錄難以數位化回溯。",
+      "solution": "全端即時同步平台：@dnd-kit 拖曳互動、Zustand 狀態管理、Supabase 即時廣播（300ms 節流防額度耗盡），遊戲狀態 JSON 快照取代像素截圖，支援歷程重播與 AI 分析。",
+      "result": "成功進入 Beta 測試，支援 50+ 同時在線的諮詢房間，每個 Issue 自動部署 Cloud Run 預覽環境。",
+      "timeline": "6 週完成 Beta 版，36,700+ 行 TypeScript 前端 + 7,000+ 行 Python 後端。"
     },
     "aiSquare": {
       "title": "專案實境式學習模組",
       "subtitle": "互動式 AI 素養教育平台",
-      "description": "知名教育平台推出的 AI 教育計畫，目標 25 萬參與者，力拼全球前 5。獲得微軟、Meta、台積電等企業支持，提供「產業主題探索」和「AI 基礎認知」兩大教學模組。",
+      "description": "知名教育平台推出的「1小時玩AI」教育計畫，響應 Code.org Hour of AI 全球運動。採用 Next.js 15 + React 19 + TypeScript 全端架構，Prisma ORM 搭配 PostgreSQL，Vertex AI Gemini 驅動適性評量與 AI 批改。支援 14 種語言的 i18n 系統，3 種學習模式（PBL 問題導向/Discovery 探索/Assessment 評量），65+ API 路由使用 Repository Pattern + Raw SQL 優化查詢效能。",
       "problem": "全國 AI 素養推廣需要多語、好理解、可快速上線的教材與平台。",
-      "solution": "打造 14 語言的 AI 學習平台，提供互動模組（產業主題探索、AI 基礎認知）。",
+      "solution": "14 語言的 AI 學習平台：多模態學習路徑（DAG 圖結構生成）、適性難度調整、AI 作文批改（Rubric 四種評分維度）、Per-Issue 自動部署 Cloud Run 預覽環境。",
       "result": "獲微軟、Meta、台積電支持，目標 25 萬參與者，力拼全球前 5 參與度。",
       "timeline": "8 週推出核心模組，持續迭代內容。",
       "quotes": [

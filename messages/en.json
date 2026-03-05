@@ -452,36 +452,36 @@
     "medVision": {
       "title": "Medical AI Platform",
       "subtitle": "Shared Decision Making System",
-      "description": "Shared Decision Making AI system for medical institutions. Integrates HIS/FHIR medical data, uses AI to generate personalized patient education content, helping patients understand treatment options. Built with FastAPI + Next.js, rapid prototyping with Base44.",
-      "problem": "Patients struggle to understand differences between treatment options and make informed decisions.",
-      "solution": "AI-driven SDM platform that generates customized education content based on patient data, guiding understanding through conversational interface.",
-      "result": "Significantly improved patient understanding of surgical options, increased consultation efficiency.",
-      "timeline": "Ongoing iteration, core SDM flow already live."
+      "description": "Multi-hospital Shared Decision Making AI platform with QR code patient tracking, IOL weighted recommendation engine, and LLM-powered knowledge base. Fully digitized patient journey from scan-to-register through post-op follow-up. Built with async-first FastAPI, deployed on Vercel Serverless with 137 Jinja2 SSR templates for accessibility-first design (elderly patients).",
+      "problem": "Patients struggle to understand treatment options; physicians spend excessive time explaining with inconsistent quality across consultations.",
+      "solution": "Hybrid AI recommendation: rule-based engine (6 medical criteria weighted scoring) for auditable results + LLM for patient-friendly education content. QR code tracking links referring physician → patient journey → KPI dashboards.",
+      "result": "Deployed across multiple medical centers, measurably improved patient surgical comprehension, SDM-Q-9 quality scores tracked quantitatively.",
+      "timeline": "Ongoing iteration, 100+ API endpoints, 27+ route modules."
     },
     "xian": {
       "title": "Eldercare Accreditation",
       "subtitle": "Smart Activity Management",
-      "description": "PDCA activity management system for long-term care facilities. Voice-first design for caregivers (age 40-60), supporting activity planning, execution records, photo uploads, and AI-generated assessment reports. Built with Next.js 16 + React 19.",
-      "problem": "Long-term care facilities still rely on paper-based activity management, making records time-consuming and evaluation prep difficult.",
-      "solution": "Voice-first digital PDCA system where caregivers can record activities via voice, with AI auto-generating assessment reports.",
-      "result": "Recording time dramatically reduced, evaluation preparation shortened from days to hours.",
+      "description": "Accreditation management and PDCA tracking platform for long-term care facilities. Features 115-criteria hierarchical tree structure, automated PDCA completion scoring, Taiwan-specific PII de-identification engine, and programmatic DOCX meeting minutes generation. Built with Next.js 16 + React 19 + Turbopack, integrating Claude AI and OCR (Tesseract.js).",
+      "problem": "Accreditation prep relies on paper and manual sorting — mapping 115 criteria to evidence documents is extremely time-consuming with inconsistent record quality.",
+      "solution": "Digital accreditation platform: automated standard-to-evidence mapping, PDCA phase completion calculation (4-dimension weighted average), AI gap analysis with improvement recommendations. Voice-first design for caregivers to record activities, auto-structured by the system.",
+      "result": "Evaluation prep shortened from days to hours, evidence document classification automation saves 70% sorting time.",
       "timeline": "MVP in 4 weeks, ongoing iteration."
     },
     "careerCreator": {
       "title": "Interactive Card System",
       "subtitle": "Real-time Online Counseling",
-      "description": "Online card-based counseling system for career counselors. Digitizes physical career cards, supporting remote sessions, card spread display, and consultation records. Built with Next.js 14 + FastAPI, GCS image storage.",
-      "problem": "Career counselors' card tools are limited to in-person use, unable to conduct remote sessions.",
-      "solution": "Digitized card platform enabling online counseling with real-time card spread display and session records.",
-      "result": "Successfully entered Beta testing, counselors can conduct remote card-based sessions.",
-      "timeline": "Beta version in 6 weeks."
+      "description": "Real-time interactive card counseling platform for career counselors. 7 independent game modes (personality analysis, career collection, value ranking, etc.) sharing unified component architecture, Supabase Realtime 3-layer sync (Presence + Broadcast + Postgres Changes), event sourcing pattern for complete card operation audit trail. Built with Next.js 14 App Router + async FastAPI, auto-scaling on GCP Cloud Run.",
+      "problem": "Career counselors' card tools are limited to in-person use, unable to conduct remote sessions or digitally trace consultation history.",
+      "solution": "Full-stack real-time sync platform: @dnd-kit drag-and-drop, Zustand state management, Supabase broadcast (300ms throttle to prevent quota exhaustion), JSON game-state snapshots replacing pixel screenshots for history replay and AI analysis.",
+      "result": "Successfully entered Beta testing, supports 50+ concurrent counseling rooms, per-issue auto-deployed Cloud Run preview environments.",
+      "timeline": "Beta in 6 weeks, 36,700+ lines TypeScript frontend + 7,000+ lines Python backend."
     },
     "aiSquare": {
       "title": "Project-Based Learning Module",
       "subtitle": "Interactive AI Literacy Education Platform",
-      "description": "Leading Education Platform's AI education initiative targeting 250,000 participants, aiming for global top 5. Supported by Microsoft, Meta, and TSMC, featuring 'Industry Exploration' and 'AI Fundamentals' modules.",
+      "description": "Leading education platform's 'Hour of AI' initiative inspired by Code.org's global movement. Full-stack Next.js 15 + React 19 + TypeScript architecture, Prisma ORM with PostgreSQL, Vertex AI Gemini powering adaptive assessment and AI grading. 14-language i18n system, 3 learning modes (PBL/Discovery/Assessment), 65+ API routes using Repository Pattern + raw SQL optimization.",
       "problem": "A nationwide AI literacy push needed engaging, multi-language content for 250K learners.",
-      "solution": "Built a 14-language AI learning platform with interactive modules ('Industry Exploration', 'AI Fundamentals').",
+      "solution": "14-language AI learning platform: multi-modal learning paths (DAG graph generation), adaptive difficulty, AI essay grading (4 rubric dimensions), per-issue auto-deployed Cloud Run preview environments.",
       "result": "Backed by Microsoft, Meta, TSMC; targeting global top 5 participation with 250K learners.",
       "timeline": "Launched core modules in 8 weeks; ongoing content rollout.",
       "quotes": [

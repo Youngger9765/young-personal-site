@@ -36,6 +36,12 @@ export default function ProjectsGalleryPage() {
       description: t('careerCreator.description'),
     },
     {
+      slug: 'duotopia',
+      title: t('duotopia.title'),
+      subtitle: t('duotopia.subtitle'),
+      description: t('duotopia.description'),
+    },
+    {
       slug: 'jutor',
       title: t('jutor.title'),
       subtitle: t('jutor.subtitle'),
@@ -60,6 +66,7 @@ export default function ProjectsGalleryPage() {
     'med-vision': '/images/med-vision-hero.png',
     'xian': '/images/xian-hero.png',
     'career-creator': '/images/career-creator-hero.png',
+    'duotopia': '/images/duotopia-banner.jpg',
     'jutor': '/images/jutor-hero.png',
     'cutor': '/images/cutor-hero.png',
     'ai-square': '/images/hourofai.jpeg',

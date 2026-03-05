@@ -11,6 +11,8 @@ export interface BlogPost {
   description?: string;
   author?: string;
   tags?: string[];
+  category?: string;
+  readingTime?: string;
   content: string;
 }
 
@@ -50,6 +52,8 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       description: data.description,
       author: data.author,
       tags: data.tags,
+      category: data.category,
+      readingTime: data.readingTime,
       content,
     };
   } catch (error) {

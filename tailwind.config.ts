@@ -52,79 +52,83 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
-            // GitHub-like styling
             maxWidth: 'none',
-            color: '#1f2937',
-            lineHeight: '1.75',
+            color: '#374151',
+            lineHeight: '1.85',
+            fontSize: '1.0625rem',
 
-            // Headings - GitHub style with clear hierarchy
+            // Headings — clean, no border-bottom
             h1: {
-              fontWeight: '700',
-              fontSize: '2.25em',
+              fontWeight: '800',
+              fontSize: '2em',
               marginTop: '0',
-              marginBottom: '0.8888889em',
-              lineHeight: '1.1111111',
-              borderBottom: '1px solid #e5e7eb',
-              paddingBottom: '0.3em',
+              marginBottom: '0.75em',
+              lineHeight: '1.2',
+              color: '#0f172a',
+              letterSpacing: '-0.025em',
             },
             h2: {
               fontWeight: '700',
-              fontSize: '1.875em',
-              marginTop: '1.6em',
-              marginBottom: '0.8em',
-              lineHeight: '1.3333333',
-              borderBottom: '1px solid #e5e7eb',
-              paddingBottom: '0.3em',
+              fontSize: '1.625em',
+              marginTop: '2em',
+              marginBottom: '0.75em',
+              lineHeight: '1.3',
+              color: '#0f172a',
+              letterSpacing: '-0.02em',
             },
             h3: {
               fontWeight: '700',
-              fontSize: '1.5em',
-              marginTop: '1.6em',
+              fontSize: '1.375em',
+              marginTop: '1.8em',
               marginBottom: '0.6em',
-              lineHeight: '1.6',
+              lineHeight: '1.4',
+              color: '#1e293b',
             },
             h4: {
-              fontWeight: '700',
-              fontSize: '1.25em',
+              fontWeight: '600',
+              fontSize: '1.125em',
               marginTop: '1.5em',
               marginBottom: '0.5em',
               lineHeight: '1.5',
+              color: '#1e293b',
             },
 
-            // Paragraphs
+            // Paragraphs — generous spacing
             p: {
-              marginTop: '1.25em',
-              marginBottom: '1.25em',
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
             },
 
-            // Links - GitHub blue
+            // Links — accent color
             a: {
-              color: '#0969da',
+              color: '#D97706',
               textDecoration: 'none',
               fontWeight: '500',
+              borderBottom: '1px solid transparent',
+              transition: 'border-color 0.2s',
               '&:hover': {
-                textDecoration: 'underline',
+                borderBottomColor: '#D97706',
               },
             },
 
-            // Code blocks - GitHub style
+            // Code blocks — dark theme
             pre: {
-              backgroundColor: '#f6f8fa',
-              border: '1px solid #d0d7de',
-              borderRadius: '6px',
-              padding: '16px',
+              backgroundColor: '#0d1117',
+              border: 'none',
+              borderRadius: '12px',
+              padding: '20px 24px',
               overflowX: 'auto',
               fontSize: '0.875em',
-              lineHeight: '1.7142857',
+              lineHeight: '1.7',
             },
             code: {
-              color: '#24292f',
-              backgroundColor: '#f6f8fa',
+              color: '#1e293b',
+              backgroundColor: '#f1f5f9',
               borderRadius: '6px',
               padding: '0.2em 0.4em',
               fontSize: '0.875em',
-              fontWeight: '400',
-              border: '1px solid #d0d7de',
+              fontWeight: '500',
+              border: 'none',
             },
             'code::before': {
               content: '""',
@@ -138,21 +142,22 @@ const config: Config = {
               padding: '0',
               fontSize: 'inherit',
               color: 'inherit',
+              fontWeight: '400',
             },
 
-            // Blockquotes - GitHub style with left border
+            // Blockquotes — accent left border
             blockquote: {
               fontWeight: '400',
               fontStyle: 'normal',
-              color: '#57606a',
-              borderLeftWidth: '0.25em',
-              borderLeftColor: '#d0d7de',
-              paddingLeft: '1em',
-              marginTop: '1em',
-              marginBottom: '1em',
-              backgroundColor: '#f6f8fa',
-              padding: '0.5em 1em',
-              borderRadius: '0 6px 6px 0',
+              color: '#6b7280',
+              borderLeftWidth: '3px',
+              borderLeftColor: '#D97706',
+              paddingLeft: '1.25em',
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+              backgroundColor: '#fffbeb',
+              padding: '1em 1.25em',
+              borderRadius: '0 8px 8px 0',
             },
             'blockquote p:first-of-type::before': {
               content: '""',
@@ -163,13 +168,13 @@ const config: Config = {
 
             // Lists
             ul: {
-              marginTop: '1em',
-              marginBottom: '1em',
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
               paddingLeft: '1.625em',
             },
             ol: {
-              marginTop: '1em',
-              marginBottom: '1em',
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
               paddingLeft: '1.625em',
             },
             li: {
@@ -177,47 +182,53 @@ const config: Config = {
               marginBottom: '0.5em',
             },
 
-            // Horizontal rule
+            // Horizontal rule — subtle
             hr: {
-              borderColor: '#d0d7de',
-              marginTop: '2em',
-              marginBottom: '2em',
+              borderColor: '#e5e7eb',
+              marginTop: '2.5em',
+              marginBottom: '2.5em',
             },
 
-            // Tables - GitHub style
+            // Tables
             table: {
               width: '100%',
               marginTop: '2em',
               marginBottom: '2em',
               fontSize: '0.875em',
-              lineHeight: '1.7142857',
+              lineHeight: '1.7',
             },
             thead: {
               borderBottomWidth: '2px',
-              borderBottomColor: '#d0d7de',
+              borderBottomColor: '#e5e7eb',
             },
             'thead th': {
               fontWeight: '600',
+              color: '#1e293b',
               verticalAlign: 'bottom',
-              paddingRight: '0.5714286em',
-              paddingBottom: '0.5714286em',
-              paddingLeft: '0.5714286em',
+              paddingRight: '0.75em',
+              paddingBottom: '0.75em',
+              paddingLeft: '0.75em',
             },
             'tbody tr': {
               borderBottomWidth: '1px',
-              borderBottomColor: '#d0d7de',
+              borderBottomColor: '#f1f5f9',
             },
             'tbody td': {
-              paddingTop: '0.5714286em',
-              paddingRight: '0.5714286em',
-              paddingBottom: '0.5714286em',
-              paddingLeft: '0.5714286em',
+              paddingTop: '0.75em',
+              paddingRight: '0.75em',
+              paddingBottom: '0.75em',
+              paddingLeft: '0.75em',
             },
 
             // Strong/Bold
             strong: {
-              color: '#1f2937',
+              color: '#0f172a',
               fontWeight: '700',
+            },
+
+            // Images
+            img: {
+              borderRadius: '12px',
             },
           },
         },
