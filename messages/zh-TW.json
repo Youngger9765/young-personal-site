@@ -450,17 +450,17 @@
       ]
     },
     "medVision": {
-      "title": "Med Vision",
-      "subtitle": "白內障 SDM AI 平台",
-      "description": "為眼科診所打造的共享決策 (SDM) AI 系統。整合 HIS/FHIR 醫療數據，運用 AI 生成個人化衛教內容，協助病患理解手術選項。採用 FastAPI + Next.js 技術，Base44 快速原型驗證。",
-      "problem": "白內障病患面對多種人工水晶體選擇時，難以理解差異並做出適合自己的決定。",
+      "title": "醫療 AI 平台",
+      "subtitle": "共享決策 SDM 系統",
+      "description": "為醫療院所打造的共享決策 (SDM) AI 系統。整合 HIS/FHIR 醫療數據，運用 AI 生成個人化衛教內容，協助病患理解治療選項。採用 FastAPI + Next.js 技術，Base44 快速原型驗證。",
+      "problem": "病患面對多種治療選擇時，難以理解差異並做出適合自己的決定。",
       "solution": "AI 驅動的 SDM 平台，根據病患個人數據生成客製化衛教內容，以對話方式引導理解各選項利弊。",
       "result": "顯著提升病患對手術選項的理解度，醫師諮詢效率提高。",
       "timeline": "持續迭代中，已上線核心 SDM 流程。"
     },
     "xian": {
-      "title": "喜安護理之家",
-      "subtitle": "長照 PDCA 智慧管理系統",
+      "title": "長照機構評鑑管理",
+      "subtitle": "智慧活動管理系統",
       "description": "為長照機構打造的 PDCA 活動管理系統。語音優先設計（40-60 歲照護人員），支援活動規劃、執行紀錄、照片上傳、AI 自動生成評估報告。採用 Next.js 16 + React 19 技術。",
       "problem": "長照機構的活動管理仍靠紙本，記錄耗時、難以追蹤成效、評鑑準備費時。",
       "solution": "語音優先的數位 PDCA 系統，照護人員可用語音記錄活動，AI 自動整理成評估報告。",
@@ -468,8 +468,8 @@
       "timeline": "4 週完成 MVP，持續迭代中。"
     },
     "careerCreator": {
-      "title": "Career Creator Card",
-      "subtitle": "線上牌卡諮詢系統",
+      "title": "即時互動牌卡系統",
+      "subtitle": "線上諮詢平台",
       "description": "為職涯諮詢師打造的線上牌卡系統。將實體牌卡數位化，支援遠端諮詢、牌陣展示、諮詢記錄。採用 Next.js 14 + FastAPI 技術，GCS 圖片存儲。",
       "problem": "職涯諮詢師的牌卡工具僅限實體使用，無法進行遠端諮詢。",
       "solution": "將牌卡數位化，打造線上諮詢平台，支援即時牌陣展示與諮詢紀錄。",
@@ -495,8 +495,8 @@
       "impact3": "台灣首創大規模 AI 教育普及計畫，響應 Code.org Hour of AI 全球運動"
     },
     "gallery": {
-      "title": "作品集",
-      "subtitle": "精選專案展示 AI 產品開發、資料基礎設施與教育科技創新",
+      "title": "精選專案",
+      "subtitle": "AI 產品開發、醫療數位轉型與教育科技的實戰案例",
       "viewDetails": "查看詳情",
       "backToProjects": "返回專案列表",
       "keyFeatures": "主要功能",

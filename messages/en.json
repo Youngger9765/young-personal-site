@@ -450,17 +450,17 @@
       ]
     },
     "medVision": {
-      "title": "Med Vision",
-      "subtitle": "Cataract SDM AI Platform",
-      "description": "Shared Decision Making AI system for ophthalmology clinics. Integrates HIS/FHIR medical data, uses AI to generate personalized patient education content, helping patients understand surgical options. Built with FastAPI + Next.js, rapid prototyping with Base44.",
-      "problem": "Cataract patients struggle to understand differences between IOL options and make informed decisions.",
+      "title": "Medical AI Platform",
+      "subtitle": "Shared Decision Making System",
+      "description": "Shared Decision Making AI system for medical institutions. Integrates HIS/FHIR medical data, uses AI to generate personalized patient education content, helping patients understand treatment options. Built with FastAPI + Next.js, rapid prototyping with Base44.",
+      "problem": "Patients struggle to understand differences between treatment options and make informed decisions.",
       "solution": "AI-driven SDM platform that generates customized education content based on patient data, guiding understanding through conversational interface.",
       "result": "Significantly improved patient understanding of surgical options, increased consultation efficiency.",
       "timeline": "Ongoing iteration, core SDM flow already live."
     },
     "xian": {
-      "title": "Xian Nursing Home",
-      "subtitle": "Eldercare PDCA Management System",
+      "title": "Eldercare Accreditation",
+      "subtitle": "Smart Activity Management",
       "description": "PDCA activity management system for long-term care facilities. Voice-first design for caregivers (age 40-60), supporting activity planning, execution records, photo uploads, and AI-generated assessment reports. Built with Next.js 16 + React 19.",
       "problem": "Long-term care facilities still rely on paper-based activity management, making records time-consuming and evaluation prep difficult.",
       "solution": "Voice-first digital PDCA system where caregivers can record activities via voice, with AI auto-generating assessment reports.",
@@ -468,8 +468,8 @@
       "timeline": "MVP in 4 weeks, ongoing iteration."
     },
     "careerCreator": {
-      "title": "Career Creator Card",
-      "subtitle": "Online Card Counseling System",
+      "title": "Interactive Card System",
+      "subtitle": "Real-time Online Counseling",
       "description": "Online card-based counseling system for career counselors. Digitizes physical career cards, supporting remote sessions, card spread display, and consultation records. Built with Next.js 14 + FastAPI, GCS image storage.",
       "problem": "Career counselors' card tools are limited to in-person use, unable to conduct remote sessions.",
       "solution": "Digitized card platform enabling online counseling with real-time card spread display and session records.",
@@ -495,8 +495,8 @@
       "impact3": "Taiwan's pioneering large-scale AI education initiative, joining Code.org's Hour of AI global movement"
     },
     "gallery": {
-      "title": "Portfolio",
-      "subtitle": "Selected projects showcasing AI product development, data infrastructure, and EdTech innovation",
+      "title": "Featured Projects",
+      "subtitle": "Real-world cases in AI product development, healthcare digital transformation, and EdTech",
       "viewDetails": "View Details",
       "backToProjects": "Back to Projects",
       "keyFeatures": "Key Features",

@@ -313,7 +313,8 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
-              <GlassCard hover className="p-6 h-full flex flex-col">
+              <Link href={`/${locale}/projects/${project.slug}`} className="block h-full">
+              <GlassCard hover className="p-6 h-full flex flex-col cursor-pointer">
                 <h3 className="text-xl font-bold text-slate-900 mb-1">
                   {project.title}
                 </h3>
@@ -334,6 +335,7 @@ export default function Home() {
                   ))}
                 </div>
               </GlassCard>
+              </Link>
             </motion.div>
           ))}
         </div>
