@@ -49,10 +49,11 @@ const i18n = {
         audience: '主管、數位轉型推動者、醫療產業相關人員',
         format: '經驗分享 + 案例討論',
         description:
-          '以大型醫學中心、中小型連鎖醫院等場域的 AI 產品開發經驗為基礎，分享從需求訪談、系統設計、法規合規到現場導入的完整歷程，以及讓第一線人員真正採用的關鍵策略。',
+          '以大型醫學中心、中小型連鎖醫院等場域的 AI 產品開發經驗為基礎，分享從需求訪談、系統設計、法規合規到現場導入的完整歷程。其中包含實際案例：如何設計 AI 輔助的 SDM（共享決策）流程——從臨床情境分析、決策輔助工具設計、病人端衛教素材生成，到醫病溝通介面的落地，讓第一線人員真正採用的關鍵策略。',
         outcomes: [
           '了解醫療場域導入 AI 的實際挑戰與解法',
           '掌握「現場落地」vs「技術開發」的節奏差異',
+          '理解 SDM 共享決策流程中 AI 的角色：臨床情境分析 → 決策輔助 → 衛教素材 → 醫病溝通',
           '獲得可複製的導入評估框架',
         ],
       },
@@ -117,10 +118,11 @@ const i18n = {
         audience: 'Managers, digital transformation leads, healthcare professionals',
         format: 'Experience sharing + case discussion',
         description:
-          'First-hand experience building AI products for major medical centers and regional hospital chains. Covers the full journey from requirement interviews, system design, regulatory compliance to on-site deployment — and the key strategies to get frontline staff to actually adopt it.',
+          'First-hand experience building AI products for major medical centers and regional hospital chains. Covers the full journey from requirement interviews, system design, regulatory compliance to on-site deployment. Includes a real-world case study: designing an AI-assisted SDM (Shared Decision-Making) workflow — from clinical scenario analysis, decision-aid tool design, patient education content generation, to the doctor-patient communication interface — and the key strategies to get frontline staff to actually adopt it.',
         outcomes: [
           'Understand real challenges and solutions for AI adoption in healthcare',
           'Grasp the pace gap between "field deployment" vs "tech development"',
+          'Learn how AI fits into the SDM workflow: clinical analysis → decision aids → patient education → doctor-patient communication',
           'Gain a replicable framework for evaluating AI readiness',
         ],
       },
