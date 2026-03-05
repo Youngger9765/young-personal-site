@@ -41,6 +41,18 @@ export default function SpeakingGalleryPage() {
       subtitle: t('metaLlmPitch.subtitle'),
       description: t('metaLlmPitch.description'),
     },
+    {
+      slug: 'ntu-cep-2024',
+      title: t('ntuCep.title'),
+      subtitle: t('ntuCep.subtitle'),
+      description: t('ntuCep.description'),
+    },
+    {
+      slug: 'techorange-ai-agent-2025',
+      title: t('techOrangeAiAgent.title'),
+      subtitle: t('techOrangeAiAgent.subtitle'),
+      description: t('techOrangeAiAgent.description'),
+    },
   ];
 
   const eventImages: Record<string, string | null> = {
@@ -48,6 +60,8 @@ export default function SpeakingGalleryPage() {
     'teacher-ai-workshop': '/images/vibe-coding.jpg',
     'mediatek-ai-day-2024': null, // has video; show play overlay
     'meta-llm-taiwan-pitch': '/images/meta-jutor.jpg',
+    'ntu-cep-2024': '/images/ntu-cep-talk.jpg',
+    'techorange-ai-agent-2025': '/images/techorange-ai-agent.jpg',
   };
 
   const slugHasYoutube = (slug: string) => {
@@ -56,6 +70,8 @@ export default function SpeakingGalleryPage() {
       'teacher-ai-workshop': null,
       'mediatek-ai-day-2024': 'https://www.youtube.com/watch?v=EBLfH5-VxwE',
       'meta-llm-taiwan-pitch': null,
+      'ntu-cep-2024': null,
+      'techorange-ai-agent-2025': 'https://www.youtube.com/watch?v=8yiDMF1kx8c',
     };
     return Boolean(urls[slug]);
   };
