@@ -13,7 +13,8 @@
   },
   "hero": {
     "badge": "AI 產品顧問",
-    "headline": "別再規劃 AI 了\n開始做吧！",
+    "headlineLine1": "別再規劃 AI 了",
+    "headlineLine2": "開始做吧！",
     "subheadline": "嗨！我是 Young\n十年產品開發經驗，工程精準交付\n從想法到上線，一週搞定",
     "timeline": {
       "day1": "1 天：看到成果",

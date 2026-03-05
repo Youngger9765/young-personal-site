@@ -14,15 +14,22 @@ import StructuredData, { getBlogPostSchema } from "@/components/StructuredData";
 const SITE_URL = 'https://young-tsai.vercel.app';
 
 export async function generateStaticParams() {
-  const posts = await getBlogPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  const locales = ['en', 'zh-TW'];
+  const params: { slug: string; locale: string }[] = [];
+
+  for (const locale of locales) {
+    const posts = await getBlogPosts(locale);
+    for (const post of posts) {
+      params.push({ slug: post.slug, locale });
+    }
+  }
+
+  return params;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const post = await getBlogPost(slug);
+  const post = await getBlogPost(slug, locale);
 
   if (!post) {
     return {};
@@ -71,7 +78,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const post = await getBlogPost(slug);
+  const post = await getBlogPost(slug, locale);
   const t = await getTranslations();
 
   if (!post) {

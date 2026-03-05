@@ -138,7 +138,8 @@ export default function Home() {
             </span>
 
             <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-stone-900 leading-tight mb-6">
-              {t('hero.headline')}
+              {t('hero.headlineLine1')}<br />
+              {t('hero.headlineLine2')}
             </h1>
 
             <p className="text-xl text-stone-600 leading-relaxed mb-8 whitespace-pre-line">

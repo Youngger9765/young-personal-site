@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Project slugs
-  const projectSlugs = ['med-vision', 'xian', 'career-creator', 'jutor', 'cutor', 'ai-square', 'duotopia', 'vaitor'];
+  const projectSlugs = ['med-vision', 'xian', 'career-creator', 'jutor', 'cutor', 'ai-square', 'vaitor'];
 
   // Speaking event slugs
   const speakingSlugs = [

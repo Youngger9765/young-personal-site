@@ -1,0 +1,616 @@
+---
+title: "Are We on the Wrong Path? An Organizational Experiment in How AI Learns"
+date: "2025-12-28"
+description: "When AI kept making the same mistakes, I realized this wasn't a technical problem — it was a philosophical one. An experiment on the LLM vs. RL debate, and an exploration of ORL (Organizational Reinforcement Learning)."
+author: "Young + Claude Sonnet 4.5"
+tags: ["ai", "machine-learning", "organizational-learning", "llm", "reinforcement-learning"]
+---
+
+# Are We on the Wrong Path? An Organizational Experiment in How AI Learns
+
+**When AI kept making the same mistakes, I realized this wasn't a technical problem — it was a philosophical one**
+
+---
+
+## Research Status Disclosure
+
+**This article is an early-stage exploratory framework, still in hypothesis territory.**
+
+The experimental data isn't sufficient to support full scientific validation. But I've chosen to establish the theoretical framework now, reasoning through **philosophical argument** and **organizational governance logic** to explore its feasibility. This is a thought experiment that starts from practical observation and attempts to distill a methodology.
+
+What I have at this point is closer to "direction exploration" than "proven conclusions." I'm calling this framework **ORL (Organizational Reinforcement Learning)**, but it still needs larger-scale validation, more rigorous controlled experiments, and longer-term tracking.
+
+**Why publish now?**
+
+Because I believe that in an era of rapid AI progress, the value of **asking the right question** and **building a thinking framework** is no less than providing a definitive answer. Rather than wait for perfect data, I'd rather share the direction now — invite challenge, invite collaboration, and refine it together.
+
+If you're interested in this direction, have questions, or have better ideas, I'd love to hear from you.
+
+---
+
+## Act 1: The Cost of Hallucination
+
+December 22, 2025. 2 AM.
+
+I was staring at my client's third round of feedback: "You broke it again."
+
+The AI had tried three different widths: 600px, then 900px, then back again. Every time, it confidently declared "understood." Every time, the client said "wrong."
+
+This wasn't the first time. Last week, the same AI was dealing with a "flashcard ordering" issue and needed two attempts to fix it. The client had written it out clearly: "Correct order: 1. Word 2. Video 3. Part of speech GROUP..." — but the AI only caught "add video" and completely missed the ordering requirement.
+
+At that moment, I thought of Turing Award winner Richard Sutton's words:
+
+> **"LLMs are imitators without 'goals.' Their core task is 'predict the next token,' which does not change the external world and cannot receive feedback from the real world."**
+
+It hit me: **the AI wasn't unintelligent — it simply wasn't "learning."**
+
+---
+
+## Act 2: The Armchair Expert Who Never Got Wet
+
+Yann LeCun (one of the three godfathers of deep learning) once used a brilliant analogy to critique current LLMs:
+
+> **"LLMs are like someone who has read ten thousand books but never been in the water."**
+
+Andrej Karpathy (former Head of AI at Tesla) made a similar observation. He described what happens when you talk to a paper's author over a beer at a conference — they explain the core idea in three sentences and you understand it instantly:
+
+> **"They'll say: oh, this paper is just taking this idea, combining it with that idea, trying this experiment... that's it. Why can't papers be written that way?"**
+
+The analogy is precise.
+
+My AI assistant had read tens of thousands of GitHub issues, countless lines of code, massive volumes of technical documentation. But it had never truly "experienced" the pain of a client rejection. Never felt the consequences of misunderstanding a requirement. Never tried something in a real environment, adjusted, and tried again.
+
+It was **imitating** the surface patterns of successful cases without understanding the causal relationships underneath.
+
+Sutton put it even more bluntly:
+
+> **"The 'hallucinations' of LLMs aren't simply due to incorrect training data — they arise from the fundamental nature of the learning process as statistical 'pattern matching.' It cannot judge whether information reflects the true state of the physical world, because it has never 'personally' experienced the world."**
+
+This reminded me of a classic management dilemma:
+
+**You can give a new employee a 500-page SOP handbook. But they really learn how to do the job after the first time they mess up a client requirement, get criticized by their manager, and then sit down to reflect on what went wrong.**
+
+That moment of realization beats reading a thousand pages of documentation.
+
+---
+
+## Act 3: What Kind of Intelligence Do We Want?
+
+This led me to a deeper question:
+
+**What kind of AI do we actually want?**
+
+**Option A: A knowledgeable imitator**
+- Has read everything on the internet
+- Can perfectly reproduce human language patterns
+- But doesn't know why a given response is correct
+- And doesn't know what the consequences of being wrong are
+
+**Option B: A clumsy learner**
+- Starts off knowing nothing
+- But learns through trial and error in real tasks
+- Every failure produces a takeaway
+- Gradually builds causal understanding of the world
+
+The current AI mainstream has chosen A. We've poured trillions of dollars into compute, trained ever-larger models, and filled them with more and more human knowledge.
+
+But Sutton believes this is the wrong road:
+
+> **"Any method that relies on 'human knowledge' as its primary input will eventually hit a ceiling. What's truly scalable is methods that can learn directly from 'experience.'"**
+
+He uses AlphaGo as the example.
+
+The original version (AlphaGo Lee) learned from a massive library of human games and defeated Lee Sedol. The later version (AlphaZero) learned from zero human knowledge, through pure self-play.
+
+**The result? AlphaZero crushed the human-knowledge-trained version by a massive margin.**
+
+This proved a harsh truth: **human knowledge can be a rocket booster for AI — or it can be its ceiling.**
+
+---
+
+## Act 4: A Counter-Mainstream Experiment
+
+I decided to run an experiment.
+
+Not training a bigger model. Not feeding in more data. But **changing the way AI learns**.
+
+My core hypothesis was simple:
+
+> **If AI could work like a new employee — making mistakes in real tasks, learning from feedback, summarizing its own lessons — would it actually "learn"?**
+
+This sounds like the Reinforcement Learning (RL) that Sutton advocates, but with one key difference:
+
+**I wasn't training model parameters — I was training the "way of working" (Policy).**
+
+In organizational terms:
+- I wasn't changing the employee's "brain" (model weights)
+- I was building the "workflow" (Prompt + Skills + SOP)
+- So the organization could learn from each failure
+- And externalize experience into reusable knowledge
+
+I called this **ORL (Organizational Reinforcement Learning)**.
+
+---
+
+## Act 5: Testing on a Real Battlefield
+
+I designed a simple but rigorous test:
+
+**Find 6 real client requirement cases**:
+- 3 cases where AI had previously failed (needed 2+ rounds to fix)
+- 3 cases where AI had previously succeeded (solved in one shot)
+
+**Round 1: BEFORE baseline test**
+
+Have the AI redo these 6 cases, with no new "rules" or "knowledge."
+
+Results:
+- Failed cases: 0/3 succeeded (0%)
+- Successful cases: 3/3 succeeded (100%)
+- Overall success rate: **50%**
+
+**The AI showed a classic "armchair expert" pattern**:
+- Perfect on simple, clear tasks (multiple choice needs 4 options)
+- Completely lost on complex, ambiguous tasks (flashcard ordering, width issues)
+
+**Round 2: Create a Skill**
+
+I didn't write more rules for the AI. Instead, I created a Skill called `requirements-parser`.
+
+Its job was simple:
+1. Carefully extract **all explicit requirements** from the client (don't miss any)
+2. Identify which parts are **ambiguous** (e.g., "the previous version," "the original design")
+3. If ambiguous, generate **clarifying questions** (options A/B/C) rather than guessing blindly
+
+**The key**: this wasn't a rule. It was a "way of thinking."
+
+Like how you wouldn't tell a new employee "when the client says X, do Y" — instead you teach them:
+
+> "When you get a requirement, first make a list. Identify what's clear and what's ambiguous. Ask about the ambiguous parts first. Don't guess."
+
+**Round 3: AFTER comparison test**
+
+Have the AI redo these 6 cases, this time with `requirements-parser` active.
+
+Results:
+- Failed cases: **3/3 succeeded** (100%)
+- Successful cases: **3/3 succeeded** (100%)
+- Overall success rate: **100%**
+
+**Improvement**:
+- Overall success rate: 50% → 100% (+100%)
+- Expected client feedback rounds: 1.5/issue → 0.15/issue (-90%)
+
+---
+
+## Act 6: The Strict Test — Before/After Confusion Matrix
+
+At this point, my collaborator (a product manager) asked a critical question:
+
+> **"What if you improved the failed cases but broke the successful ones?"**
+
+This question cuts deep.
+
+It gets at a more fundamental dilemma: **how do you ensure a system doesn't regress as it evolves?**
+
+This isn't just an AI problem — it's the core challenge of all organizational learning:
+- A company introduces a new process and it breaks what was already working
+- A government pushes reform and creates new problems
+- An education reform causes good students to perform worse
+
+We used a **2x2 Confusion Matrix** to validate the effectiveness of the improvement:
+
+**BEFORE success → AFTER success** (TT = 3)
+→ Good stays good, no regression ✅
+
+**BEFORE success → AFTER failure** (TF = 0)
+→ If this isn't 0, that's a **regression**! ❌
+
+**BEFORE failure → AFTER success** (FT = 3)
+→ Bad becomes good, genuine improvement ✅
+
+**BEFORE failure → AFTER failure** (FF = 0)
+→ If this isn't 0, the improvement failed ⚠️
+
+Our results: **a perfect regression test matrix**
+- TT = 3 (success stays success)
+- TF = 0 (no regression, Regression-free)
+- FT = 3 (failure becomes success)
+- FF = 0 (no persistent failures)
+
+**Quantified metrics (all passed)**:
+- **Improvement rate (FT rate)** = 100% (target: ≥80%)
+- **Regression rate (TF rate)** = 0% (target: ≤10%)
+- **Net improvement (FT - TF)** = +3 (target: >0)
+- **Quality score** = 1.0 (target: ≥0.7)
+
+**This matrix validated a key proposition**:
+
+> **A system can evolve and improve without breaking existing stable functionality.**
+
+In software engineering, this is called **Regression Testing** — verifying that new changes don't break existing features.
+
+---
+
+## Act 7: Lessons from Three Success Cases
+
+**Case 1: Breaking Down a Complex Requirement (Issue #4)**
+
+Client feedback:
+> "The flashcard order is still wrong. Correct order: 1. Word 2. Video 3. Part of speech GROUP (internal order: morphology → synonyms → word roots) 4. Export content"
+
+**BEFORE (armchair expert mode)**:
+The AI saw "video" and happily went to add a video section, completely missing the 1-2-3-4 ordering the client specified, and also missing the sub-ordering inside GROUP.
+
+Like a new employee where the manager says "organize these files," and he only hears "files" and starts sorting randomly — completely missing "sort by date, group same-project files together."
+
+**AFTER (learner mode)**:
+The AI activates `requirements-parser` and carefully extracts:
+- Requirement 1: Position 1 = Word section
+- Requirement 2: Position 2 = Video section
+- Requirement 3: Position 3 = Part of speech GROUP (internal order: morphology → synonyms → word roots)
+- Requirement 4: Position 4 = Export content section
+
+**Result**: Fixed in one shot, avoided 1 round of client feedback.
+
+**Lesson**: Understanding isn't pattern matching — it's structured decomposition.
+
+---
+
+**Case 2: Identifying Ambiguous Requirements (Issue #19)**
+
+Client feedback:
+> "You broke it! Please go back to the previous version"
+
+**BEFORE (armchair expert mode)**:
+AI guesses: "The previous version was probably 600px."
+Client: "Wrong."
+AI guesses again: "Then it must be 900px."
+Client: "Wrong again!"
+
+This is exactly what Sutton described as "an imitator without goals." The AI is guessing in statistical space, because it has never "experienced" what "the previous version" means.
+
+**AFTER (learner mode)**:
+The AI activates `requirements-parser` and identifies:
+- Clear requirement: front and back widths must be consistent
+- Ambiguous requirement: "the previous version" ← what is this?
+  - Option A: Commit 65f497b (the very first version)
+  - Option B: Commit 713a353 (after the first fix)
+  - Option C: Some other version
+
+**Recommended action**: Post a clarifying comment first, wait for client response, **do not guess blindly**.
+
+**Result**: Avoided 2 failed attempts.
+
+**Lesson**: True intelligence knows when it doesn't know.
+
+---
+
+**Case 3: Regression Detection on Simple Requirements (Issue #5)**
+
+Client requirement:
+> "Multiple choice questions must have exactly four options"
+
+**Potential risk**:
+The AI might over-analyze and incorrectly judge: does "four" mean at least 4 or exactly 4? Do we need to clarify?
+
+If so, that's **over-diagnosis** — like someone who studied medicine and suspects cancer every time someone sneezes.
+
+**AFTER (learner mode)**:
+The AI activates `requirements-parser` and analyzes:
+- "Must have exactly four options" = hard requirement, exactly 4
+- "Must" = mandatory, not a "suggestion"
+- "Four" = specific number, not a range
+- Product common sense: multiple choice questions typically have a fixed number of options
+
+**Judgment**: No ambiguous requirements — safe to implement directly.
+
+**Result**: Success stays success, no regression.
+
+**Lesson**: Intelligence isn't about questioning everything — it's about knowing when to question.
+
+---
+
+## Act 8: Revealing the Bigger Picture
+
+After finishing this experiment, I realized something:
+
+**This method doesn't just apply to AI — it applies to human organizations too.**
+
+Remove AI from the equation, and the structure is identical:
+
+**AI Agent** ↔ **Employee**
+**Core Prompt** ↔ **Company mission / values**
+**Skills** ↔ **SOPs / competency models / training programs**
+**GitHub Issues** ↔ **Tickets / real tasks**
+**Client feedback** ↔ **Performance review / retrospective**
+**Skill iteration** ↔ **Organizational learning**
+**Drift** ↔ **Culture decay**
+
+What I was really doing was:
+
+> **"Applying corporate governance techniques to AI"**
+
+Using real tasks as the training environment,
+human feedback as the learning signal,
+layered governance to prevent the system from going off the rails,
+letting the intelligent agent (whether AI or human) learn in the real world,
+while maintaining alignment with core values.
+
+---
+
+## Act 9: Three Fatal Risks
+
+But this path isn't smooth.
+
+The debate between Sutton and LeCun showed me three fatal risks — they're pitfalls for AI, and also classic traps in organizational governance:
+
+**Risk 1: Treating human feedback as a stable reward signal**
+
+Problem: PM feedback is inconsistent, emotional, and political.
+Consequence: AI/people learn to "please their boss" rather than "do the right thing."
+
+As Sutton criticized: LLMs learn "how humans describe the world" rather than "the world itself."
+
+Solution: **Classify feedback first**
+- Is this a capability problem? (Update the Skill)
+- Or a preference issue? (Record preference, don't pollute capabilities)
+- Or unclear specs? (Add requirements documentation, don't blame the AI)
+
+**Risk 2: Conflating "capability learning" with "preference learning"**
+
+Problem: Preferences, unclear specs, and political pressure get mistaken for capability issues.
+Consequence: Skills accumulate layers of temporary rules, and the system distorts.
+
+Like a company's SOP handbook that turns into a pile of contradictory patches:
+- "For Client A, do it this way"
+- "For Client B, do it that way"
+- "On Mondays like this, on Tuesdays like that"
+
+Solution: **Layered governance**
+- Core Prompt (constitutional level): mission / values, almost never changes
+- Skill Modules (capability layer): pluggable, independently testable
+- Context Memory (preference layer): resettable, doesn't affect core
+
+**Risk 3: Changing the core prompt every time there's a failure**
+
+Problem: Touching the core = changing values daily.
+Consequence: Rules conflict, no auditability, system entropy explodes (culture decay).
+
+Like a company that rewrites its "company mission" every time something goes wrong — eventually nobody knows what the company is even trying to do.
+
+Solution: **Core Prompt version control**
+- Changes require the highest-level review
+- Changes must have philosophical justification
+- 99% of problems are solved by updating Skills, never touching the core
+
+---
+
+## Act 10: A Bigger Ambition
+
+Sutton said something in a podcast that shook me:
+
+> **"Human society has no unified will, scientific progress is unstoppable, the development of intelligence won't stop at the human level, and the most intelligent will ultimately gain the most resources and power. Therefore, as the most intelligent beings currently on Earth, humans will ultimately pass this position on to more intelligent AI."**
+
+He calls this **"AI Succession."**
+
+It sounds grand and distant. But from this experiment, I see a more practical question:
+
+**What, exactly, do we want to pass on to AI?**
+
+**Option A: Pass on human language patterns**
+→ The LLM route: teach AI to speak like humans, imitate human text, reproduce human knowledge.
+
+**Option B: Pass on the ability to learn**
+→ The RL route: teach AI to learn through trial and error in the real world, and build causal understanding from experience.
+
+Sutton believes the LLM route is wrong, because what it passes on is "human knowledge" (which has a ceiling) rather than "learning capability" (which can scale).
+
+But my experiment suggests a third possibility:
+
+**Option C: Pass on organizational wisdom**
+→ The ORL route: teach AI to accumulate experience like an organization, externalize knowledge, govern in layers, and evolve continuously.
+
+This isn't about making AI superhuman. It's about making it a **sustainably learning system**:
+- Can't forget (externalized as Skills)
+- Can't decay (layered governance)
+- No ceiling (people and models can be replaced)
+- Won't go off the rails (feedback classification + regression testing)
+
+---
+
+## Act 11: The North Star
+
+I set an ultimate validation test for myself:
+
+> **If this system were applied to people, would it be a good company?**
+
+**If yes ✅**
+- The AI direction is roughly right
+- The feedback mechanism is healthy
+- The learning approach is sustainable
+- Values can be transmitted
+
+**If no ❌**
+- The AI will definitely go wrong
+- It'll turn into people-pleasing, politics, fear, and drift
+- The system will eventually collapse
+
+This question is simple, but it cuts to the heart of the AI route debate.
+
+The LeCun vs. Adam Brown debate ultimately comes down to:
+
+**What is the nature of "understanding"?**
+
+Adam Brown (DeepMind researcher) believes:
+> "Understanding can 'emerge' from a task as simple as predicting the next word."
+
+LeCun counters:
+> "LLMs lack grounding in the physical world. They build a model of 'how humans describe the world,' not the world itself."
+
+Sutton is even more forceful:
+> "LLMs are imitators without 'goals.' They cannot receive feedback from the real world, so they lack a 'ground truth' from the real world."
+
+**My experiment offers an answer somewhere in between**:
+
+Understanding isn't emergence, and it isn't just grounding. It's:
+1. **Trial and error in real tasks** (experience)
+2. **Extracting patterns from feedback** (induction)
+3. **Externalizing into reusable knowledge** (transmission)
+4. **Applying to new contexts and validating** (generalization)
+
+This cycle is how a baby learns to walk. It's how science advances. It's how organizations evolve.
+
+---
+
+## Epilogue: The Age of Designers
+
+Sutton says we are entering what he calls the **"Designers"** era:
+
+> "Intelligence will iterate through rapid, purposeful engineering design, not through slow biological evolution."
+
+He urges us to regard future superintelligence as our "descendants," not our "replacements."
+
+That made me think about my experiment:
+
+**I'm not replacing AI's thinking — I'm designing how it learns.**
+
+**I'm not writing rules — I'm building a sustainable evolution mechanism.**
+
+**I'm not chasing short-term performance gains — I'm ensuring long-term alignment of values.**
+
+If the LLM route is "filling someone with ten thousand books," and the RL route is "throwing them into the real world," then the ORL route is:
+
+> **Build an apprenticeship system — let the intelligent agent learn in the real world while inheriting our values.**
+
+---
+
+## Postscript: Early Evidence from the Data
+
+Let's look at what the small-scale experiment produced:
+
+**BEFORE (armchair expert mode)**
+- Overall success rate: 50%
+- Failed cases success rate: 0%
+- Successful cases success rate: 100%
+- Expected client feedback: 1.5 rounds/issue
+
+**AFTER (learner mode)**
+- Overall success rate: 100% (+100%)
+- Failed cases success rate: 100% (+100%)
+- Successful cases success rate: 100% (no regression)
+- Expected client feedback: 0.15 rounds/issue (-90%)
+
+**TT TF FT FF Matrix**
+- TT (success stays success) = 3
+- TF (success becomes failure / regression) = 0
+- FT (failure becomes success / improvement) = 3
+- FF (persistent failure) = 0
+
+**Quantified metrics (all PASS)**
+- FT rate = 100% (target: ≥80%)
+- TF rate = 0% (target: ≤10%)
+- Net improvement = +3 (target: >0)
+- Quality score = 1.0 (target: ≥0.7)
+
+**Key limitations**:
+- ⚠️ Sample size is only 6 cases (3 successful + 3 failed)
+- ⚠️ Single-project environment, generalizability unknown
+- ⚠️ No long-term tracking data (drift risk)
+- ⚠️ No blind testing or independent validation
+
+**The value of this experiment isn't to "prove" — it's to "inspire"**:
+
+It demonstrates a possible direction — **organizational learning systems (ORL) may be viable**. We might be able to use real tasks, human feedback, and layered governance to let intelligent agents accumulate wisdom like organizations rather than chase local optima like algorithms.
+
+But more validation is needed. This is just the beginning.
+
+---
+
+## An Unfinished Thought
+
+The technical route debate is fundamentally a **values debate**.
+
+Sutton says:
+> "The 'reward function' of the RL paradigm can be designed and shaped to define values beneficial to humanity. But LLMs imitate all language on the internet — their values are inherently chaotic, unpredictable, and potentially dangerous."
+
+But I **imagine** there's a third path:
+
+**Not designing a reward function. Not imitating human language. Building a sustainable governance mechanism.**
+
+The core of this mechanism (in theory):
+- Real tasks as the environment
+- Human feedback as the signal
+- Layered governance to prevent drift
+- Regression testing to maintain stability
+- Externalized knowledge to enable transmission
+
+**If this direction is right, this mechanism might work for AI — and for human organizations too.**
+
+**Because it's fundamentally the same problem**:
+
+> **How do you let an intelligent agent learn in a real environment while maintaining alignment with core values?**
+
+That's a philosophical question, and a governance challenge. Right now I have only early evidence from a small experiment, and analogies borrowed from organizational management experience.
+
+**But I believe this question is worth exploring.**
+
+This might be one of the most important questions of our time.
+
+---
+
+**Experiment date**: 2025-12-26
+
+---
+
+## References
+
+### Core Sources
+
+**Richard Sutton - The Bitter Lesson**
+- Original: [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019)
+- Wikipedia: [Bitter Lesson](https://en.wikipedia.org/wiki/Bitter_lesson)
+
+**Richard Sutton - 2024 Podcast Interviews**
+- [Dwarkesh Podcast: Father of RL thinks LLMs are a dead end](https://www.dwarkesh.com/p/richard-sutton) (Sep 26, 2024)
+- [Apple Podcasts: Eye on AI #170](https://podcasts.apple.com/podcast/id1438378439?i=1000646258802) (Feb 22, 2024)
+- Chinese breakdown: [Turing Award winner slams ChatGPT: are we on the wrong AI path?](https://youtu.be/rv9vhv8AGuc)
+
+**Yann LeCun vs Adam Brown - The LLM Understanding Debate**
+- Debate transcript: [Do LLMs Understand? Yann LeCun vs DeepMind's Adam Brown](https://jannalevin.substack.com/p/do-llms-understand-ai-pioneer-yann) (Pioneer Works)
+- Chinese breakdown: [LeCun vs Google's Adam: current AI has no common sense!](https://youtu.be/ekSXhCofRTE)
+
+**AlphaGo / AlphaZero Papers**
+- [AlphaGo Zero - Nature (2017)](https://www.nature.com/articles/nature24270): Mastering the game of Go without human knowledge
+- [AlphaZero - Science (2018)](https://www.science.org/doi/10.1126/science.aar6404): Mastering chess, shogi, and Go through self-play
+- [AlphaZero - arXiv (2017)](https://arxiv.org/abs/1712.01815): Mastering Chess and Shogi by Self-Play
+
+### Further Reading
+
+**Andrej Karpathy - AI Education**
+- [Karpathy's AI education revolution: a lesson from learning Korean](https://youtu.be/9JnKguUQv9w)
+
+**Ilya Sutskever - Learning Efficiency**
+- [Humans learn faster than AI because we have better algorithms](https://youtu.be/556Z3rz2YBw)
+
+---
+
+**P.S.**
+
+When I finished writing this article, I noticed something interesting:
+
+**This article itself is a demonstration of the "human-AI collaboration" I'm advocating.**
+
+The AI (Claude) handled execution, documentation, and organization.
+The human (me) handled questioning, insight, and decision-making.
+
+I didn't have the AI imitate a good existing article.
+I let it collaborate on a real writing task — make mistakes, adjust, try again.
+
+That process itself validates the article's core argument:
+
+> **The most effective intelligent system isn't pure LLM imitation, isn't pure RL trial-and-error — it's organizational learning through human-AI collaboration.**
+
+**This is what the future of work looks like.**
+
+**Maybe this is also what the future of intelligence looks like.**

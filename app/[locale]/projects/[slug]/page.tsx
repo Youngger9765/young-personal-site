@@ -19,7 +19,6 @@ const projectSlugs = [
   'med-vision',
   'xian',
   'career-creator',
-  'duotopia',
   'ai-square',
   'vaitor',
   'jutor',

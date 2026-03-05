@@ -27,6 +27,11 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
+/* Prevent orphaned words in large headings */
+h1, h2 {
+  text-wrap: balance;
+}
+
 body:lang(zh) h1,
 body:lang(zh-TW) h1,
 body:lang(zh-CN) h1,

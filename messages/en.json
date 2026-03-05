@@ -13,7 +13,8 @@
   },
   "hero": {
     "badge": "AI Product Consultant",
-    "headline": "Stop Planning AI\nStart Building!",
+    "headlineLine1": "Stop Planning AI.",
+    "headlineLine2": "Start Building!",
     "subheadline": "Hey! I'm Young\n10 years building products with engineering precision\nFrom idea to launch in one week",
     "timeline": {
       "day1": "Day 1: See Results",

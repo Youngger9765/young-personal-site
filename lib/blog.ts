@@ -16,15 +16,16 @@ export interface BlogPost {
   content: string;
 }
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
+export async function getBlogPosts(locale: string = 'zh-TW'): Promise<BlogPost[]> {
   try {
-    const files = await fs.readdir(contentDirectory);
+    const localeDir = path.join(contentDirectory, locale);
+    const files = await fs.readdir(localeDir);
     const mdxFiles = files.filter((file) => file.endsWith(".mdx"));
 
     const posts = await Promise.all(
       mdxFiles.map(async (filename) => {
         const slug = filename.replace(/\.mdx$/, "");
-        const post = await getBlogPost(slug);
+        const post = await getBlogPost(slug, locale);
         return post;
       })
     );
@@ -34,14 +35,14 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       .filter((post): post is BlogPost => post !== null)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (error) {
-    console.error("Error reading blog posts:", error);
+    console.error(`Error reading blog posts for locale ${locale}:`, error);
     return [];
   }
 }
 
-export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+export async function getBlogPost(slug: string, locale: string = 'zh-TW'): Promise<BlogPost | null> {
   try {
-    const filePath = path.join(contentDirectory, `${slug}.mdx`);
+    const filePath = path.join(contentDirectory, locale, `${slug}.mdx`);
     const fileContent = await fs.readFile(filePath, "utf-8");
     const { data, content } = matter(fileContent);
 
@@ -57,7 +58,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       content,
     };
   } catch (error) {
-    console.error(`Error reading blog post ${slug}:`, error);
+    console.error(`Error reading blog post ${slug} for locale ${locale}:`, error);
     return null;
   }
 }

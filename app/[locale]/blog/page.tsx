@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations();
-  const blogPosts = await getBlogPosts();
+  const blogPosts = await getBlogPosts(locale);
 
   return (
     <div className="min-h-screen bg-background">
