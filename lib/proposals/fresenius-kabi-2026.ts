@@ -144,7 +144,7 @@ const i18n = {
 export const proposal = {
   slug: 'fresenius-kabi-2026',
   type: 'quotation' as const,
-  contactPerson: 'Carolyn Huang',
+  contactPerson: '',
   date: '2026/03/05',
   validDays: 30,
   bundlePrice: 'NT$20,000',

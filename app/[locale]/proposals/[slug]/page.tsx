@@ -787,10 +787,12 @@ function QuotationContent({ proposal, locale }: { proposal: QuotationProposal; l
                 <span className="text-gray-400">{l.client}</span>{' '}
                 <span className="text-gray-800 font-medium">{t.client}</span>
               </div>
+              {proposal.contactPerson && (
               <div>
                 <span className="text-gray-400">{l.contact}</span>{' '}
                 <span className="text-gray-800 font-medium">{proposal.contactPerson}</span>
               </div>
+              )}
               <div>
                 <span className="text-gray-400">{l.date}</span>{' '}
                 <span className="text-gray-800 font-medium">{proposal.date}</span>
