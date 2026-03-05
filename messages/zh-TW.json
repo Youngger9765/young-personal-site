@@ -610,48 +610,9 @@
     }
   },
   "insights": {
-    "title": "最新見解",
-    "viewAll": "在 Medium 查看全部",
-    "article1": {
-      "title": "建立可擴展的 AI 產品",
-      "excerpt": "從將 AI 產品從原型擴展到擁有 30 萬以上用戶的生產環境中學到的經驗。",
-      "date": "2024 年 12 月",
-      "readTime": "5 分鐘閱讀"
-    },
-    "article2": {
-      "title": "外部分析工具的隱藏成本",
-      "excerpt": "我們如何透過建立客製化分析儀表板而非使用 SaaS 解決方案來節省 120 萬美元。",
-      "date": "2024 年 11 月",
-      "readTime": "7 分鐘閱讀"
-    },
-    "article3": {
-      "title": "在 AI 時代領導工程團隊",
-      "excerpt": "在擴展過程中指導技術領導者並維持低團隊流失率的策略。",
-      "date": "2024 年 10 月",
-      "readTime": "6 分鐘閱讀"
-    },
+    "title": "文章與見解",
+    "viewAll": "查看全部文章",
     "readMore": "閱讀更多"
-  },
-  "testimonials": {
-    "title": "客戶評價",
-    "testimonial1": {
-      "quote": "Young 在 AI 產品開發方面的專業知識改變了我們的教育科技平台。他的策略方法幫助我們在一年內從 20 萬用戶擴展到 30 萬用戶。",
-      "author": "Sarah Chen",
-      "role": "產品副總裁,教育科技公司",
-      "company": "領先教育科技平台"
-    },
-    "testimonial2": {
-      "quote": "Young 建立的分析儀表板每年為我們節省 120 萬美元。他理解商業需求並將其轉化為技術解決方案的能力非常出色。",
-      "author": "David Park",
-      "role": "技術長",
-      "company": "醫療保健分析公司"
-    },
-    "testimonial3": {
-      "quote": "與 Young 合作改變了遊戲規則。他不僅在技術執行方面表現出色,還指導我們的團隊,幫助我們建立更強大的工程實踐。",
-      "author": "Lisa Wang",
-      "role": "工程經理",
-      "company": "AI 新創公司"
-    }
   },
   "speaking": {
     "title": "演講與獎項",

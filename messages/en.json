@@ -610,48 +610,9 @@
     }
   },
   "insights": {
-    "title": "Latest insights",
-    "viewAll": "View all on Medium",
-    "article1": {
-      "title": "Building AI Products That Scale",
-      "excerpt": "Lessons learned from scaling AI products from prototype to production with 300K+ users.",
-      "date": "Dec 2024",
-      "readTime": "5 min read"
-    },
-    "article2": {
-      "title": "The Hidden Costs of External Analytics Tools",
-      "excerpt": "How we saved $1.2M by building a custom analytics dashboard instead of using SaaS solutions.",
-      "date": "Nov 2024",
-      "readTime": "7 min read"
-    },
-    "article3": {
-      "title": "Leading Engineering Teams in AI Era",
-      "excerpt": "Strategies for mentoring technical leaders and maintaining low team turnover while scaling.",
-      "date": "Oct 2024",
-      "readTime": "6 min read"
-    },
+    "title": "Articles & Insights",
+    "viewAll": "View all articles",
     "readMore": "Read more"
-  },
-  "testimonials": {
-    "title": "What clients say",
-    "testimonial1": {
-      "quote": "Young's expertise in AI product development transformed our EdTech platform. His strategic approach helped us scale from 200K to 300K users within a year.",
-      "author": "Sarah Chen",
-      "role": "VP of Product, EdTech Company",
-      "company": "Leading EdTech Platform"
-    },
-    "testimonial2": {
-      "quote": "The analytics dashboard Young built saved us $1.2M annually. His ability to understand business needs and translate them into technical solutions is exceptional.",
-      "author": "David Park",
-      "role": "CTO",
-      "company": "Healthcare Analytics Firm"
-    },
-    "testimonial3": {
-      "quote": "Working with Young was a game-changer. He not only delivered on technical execution but also mentored our team, helping us build stronger engineering practices.",
-      "author": "Lisa Wang",
-      "role": "Engineering Manager",
-      "company": "AI Startup"
-    }
   },
   "speaking": {
     "title": "Speaking & Recognition",

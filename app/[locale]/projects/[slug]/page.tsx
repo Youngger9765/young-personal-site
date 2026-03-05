@@ -16,6 +16,9 @@ interface ProjectDetailProps {
 }
 
 const projectSlugs = [
+  'med-vision',
+  'xian',
+  'career-creator',
   'duotopia',
   'ai-square',
   'vaitor',
@@ -48,6 +51,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
   // Map slugs to translation keys
   const slugToKey: Record<string, string> = {
+    'med-vision': 'medVision',
+    'xian': 'xian',
+    'career-creator': 'careerCreator',
     'duotopia': 'duotopia',
     'ai-square': 'aiSquare',
     'vaitor': 'vaitor',
@@ -56,41 +62,41 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
   };
 
   const projectKey = slugToKey[slug];
-  const detailKey = `${projectKey}Detail` as
-    'duotopiaDetail' |
-    'aiSquareDetail' |
-    'vaitorDetail' |
-    'jutorDetail' |
-    'cutorDetail';
+  const detailKey = `${projectKey}Detail`;
+
+  // Projects with full detail data
+  const hasDetailData = ['duotopia', 'aiSquare', 'vaitor', 'jutor', 'cutor'].includes(projectKey);
 
   const project = {
     title: t(`${projectKey}.title`),
     subtitle: t(`${projectKey}.subtitle`),
-    description: t(`${detailKey}.description`),
+    description: hasDetailData
+      ? t(`${detailKey}.description`)
+      : t(`${projectKey}.description`),
     summary: {
       problem: t(`${projectKey}.problem`),
       solution: t(`${projectKey}.solution`),
       result: t(`${projectKey}.result`),
       timeline: t(`${projectKey}.timeline`),
     },
-    features: [
+    features: hasDetailData ? [
       t(`${detailKey}.feature1`),
       t(`${detailKey}.feature2`),
       t(`${detailKey}.feature3`),
       t(`${detailKey}.feature4`),
       t(`${detailKey}.feature5`),
-    ],
-    results: [
+    ] : [],
+    results: hasDetailData ? [
       t(`${detailKey}.result1`),
       t(`${detailKey}.result2`),
       t(`${detailKey}.result3`),
       t(`${detailKey}.result4`),
-    ],
-    impacts: [
+    ] : [],
+    impacts: hasDetailData ? [
       t(`${projectKey}.impact1`),
       t(`${projectKey}.impact2`),
       t(`${projectKey}.impact3`),
-    ],
+    ] : [],
     techStack: getTechStack(slug),
   };
 
@@ -277,6 +283,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       </section>
 
       {/* Key Features */}
+      {project.features.length > 0 && (
       <section className="max-w-4xl mx-auto px-6 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -301,6 +308,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           </div>
         </motion.div>
       </section>
+      )}
 
       {/* Tech Stack */}
       <section className="max-w-4xl mx-auto px-6 pb-16">
@@ -326,6 +334,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       </section>
 
       {/* Impact & Results */}
+      {project.results.length > 0 && (
       <section className="max-w-4xl mx-auto px-6 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -758,6 +767,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
         </motion.div>
       </section>
+      )}
 
       {/* Back to Gallery CTA */}
       <section className="max-w-4xl mx-auto px-6 pb-24">
@@ -790,6 +800,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
 
 function getTechStack(slug: string): string[] {
   const techStacks: Record<string, string[]> = {
+    'med-vision': ["FastAPI", "Next.js", "Vertex AI", "FHIR", "Base44"],
+    'xian': ["Next.js 16", "React 19", "Voice AI", "PDCA"],
+    'career-creator': ["Next.js 14", "FastAPI", "GCS", "WebSocket"],
     'duotopia': ["Next.js", "React", "OpenAI Whisper", "Speech Recognition", "PostgreSQL", "Redis"],
     'ai-square': ["Next.js 15", "React 19", "Vertex AI", "i18n (14 languages)", "TypeScript"],
     'vaitor': ["Next.js", "Claude AI", "Video Processing", "React", "TypeScript"],
