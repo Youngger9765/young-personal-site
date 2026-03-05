@@ -11,7 +11,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: isProduction ? '/' : undefined,
-        disallow: isProduction ? ['/api/', '/_next/', '/admin/'] : '/',
+        disallow: isProduction
+            ? ['/api/', '/_next/', '/admin/', '/en/proposals/', '/zh-TW/proposals/']
+            : '/',
       },
       {
         userAgent: 'GPTBot',

@@ -4,10 +4,15 @@ import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 // import ProposalPasswordGate from '@/components/ProposalPasswordGate';
 import { proposal as tftProposal } from '@/lib/proposals/tft-classroom-observation';
+import {
+  proposal as fkProposal,
+  type QuotationProposal,
+} from '@/lib/proposals/fresenius-kabi-2026';
 
-// 提案註冊表
-const proposals: Record<string, typeof tftProposal> = {
+// 提案註冊表（支援多種提案類型）
+const proposals: Record<string, typeof tftProposal | typeof fkProposal> = {
   'tft-classroom-observation': tftProposal,
+  'fresenius-kabi-2026': fkProposal,
 };
 
 export default function ProposalPage() {
@@ -26,8 +31,13 @@ export default function ProposalPage() {
     );
   }
 
+  // 根據提案類型選擇不同的渲染元件
+  if ('type' in proposal && proposal.type === 'quotation') {
+    return <QuotationContent proposal={proposal as QuotationProposal} />;
+  }
+
   // 直接顯示內容，不需要密碼
-  return <ProposalContent proposal={proposal} />;
+  return <ProposalContent proposal={proposal as typeof tftProposal} />;
 }
 
 function ProposalContent({ proposal }: { proposal: typeof tftProposal }) {
@@ -738,6 +748,336 @@ function renderAIScenarios(sub: { name: string; details: string[] }) {
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+// --- Quotation-type Proposal (課程報價單) ---
+
+function QuotationContent({ proposal }: { proposal: QuotationProposal }) {
+  const { theme } = proposal;
+
+  return (
+    <div className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      {/* Header - clean editorial style */}
+      <header className="border-b border-gray-200">
+        <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p
+              className="text-sm font-medium tracking-widest uppercase mb-4"
+              style={{ color: theme.primary }}
+            >
+              Quotation
+            </p>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              {proposal.title}
+            </h1>
+
+            {/* Meta info */}
+            <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-500">
+              <div>
+                <span className="text-gray-400">報價對象</span>{' '}
+                <span className="text-gray-800 font-medium">
+                  {proposal.client}
+                </span>
+              </div>
+              <div>
+                <span className="text-gray-400">聯絡窗口</span>{' '}
+                <span className="text-gray-800 font-medium">
+                  {proposal.contactPerson}
+                </span>
+              </div>
+              <div>
+                <span className="text-gray-400">報價日期</span>{' '}
+                <span className="text-gray-800 font-medium">{proposal.date}</span>
+              </div>
+              <div>
+                <span className="text-gray-400">有效期限</span>{' '}
+                <span className="text-gray-800 font-medium">
+                  {proposal.validDays} 天
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </header>
+
+      <main className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+        {/* Course Cards */}
+        <div className="space-y-12 mb-16">
+          {proposal.courses.map((course, i) => (
+            <motion.div
+              key={course.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              {/* Course number label */}
+              <div className="flex items-center gap-3 mb-4">
+                <span
+                  className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white text-xs font-bold"
+                  style={{ backgroundColor: theme.primary }}
+                >
+                  {course.id}
+                </span>
+                <span className="text-xs font-medium tracking-widest uppercase text-gray-400">
+                  Course {course.id}
+                </span>
+              </div>
+
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                {course.title}
+              </h2>
+
+              {/* Course meta row */}
+              <div className="flex flex-wrap gap-3 mb-5">
+                <span
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
+                  style={{
+                    backgroundColor: `${theme.primary}12`,
+                    color: theme.primary,
+                  }}
+                >
+                  {course.hours}
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
+                  style={{
+                    backgroundColor: `${theme.primary}12`,
+                    color: theme.primary,
+                  }}
+                >
+                  {course.format}
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  {course.audience}
+                </span>
+              </div>
+
+              {/* Price */}
+              <div className="flex items-baseline gap-2 mb-5">
+                <span
+                  className="text-2xl font-bold"
+                  style={{ color: theme.primary }}
+                >
+                  {course.price}
+                </span>
+                <span className="text-sm text-gray-400">
+                  {course.priceNote}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {course.description}
+              </p>
+
+              {/* Outcomes */}
+              <div className="bg-gray-50 rounded-xl p-5">
+                <h4 className="text-sm font-semibold text-gray-800 mb-3 uppercase tracking-wide">
+                  學員收穫
+                </h4>
+                <ul className="space-y-2">
+                  {course.outcomes.map((outcome, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm text-gray-600">
+                      <span
+                        className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] font-bold mt-0.5"
+                        style={{ backgroundColor: theme.primary }}
+                      >
+                        {j + 1}
+                      </span>
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Divider (except last) */}
+              {i < proposal.courses.length - 1 && (
+                <div className="mt-12 border-b border-gray-100" />
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Pricing Summary Table */}
+        <motion.section
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2
+            className="text-xl font-bold mb-6 pb-2 border-b-2"
+            style={{ borderColor: theme.primary, color: theme.primary }}
+          >
+            費用總覽
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b-2 border-gray-200">
+                  <th className="text-left py-3 pr-4 font-semibold text-gray-800">
+                    課程
+                  </th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-800">
+                    時數
+                  </th>
+                  <th className="text-right py-3 pl-4 font-semibold text-gray-800">
+                    費用
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {proposal.courses.map((course) => (
+                  <tr key={course.id} className="border-b border-gray-100">
+                    <td className="py-3 pr-4 text-gray-700">{course.title}</td>
+                    <td className="py-3 px-4 text-gray-500">{course.hours}</td>
+                    <td className="py-3 pl-4 text-right font-medium text-gray-800">
+                      {course.price}
+                    </td>
+                  </tr>
+                ))}
+                <tr
+                  className="border-t-2"
+                  style={{ borderColor: theme.primary }}
+                >
+                  <td className="py-4 pr-4 font-bold text-gray-900">
+                    兩場合報
+                  </td>
+                  <td className="py-4 px-4 text-gray-500">
+                    {proposal.bundleHours}
+                  </td>
+                  <td
+                    className="py-4 pl-4 text-right text-xl font-bold"
+                    style={{ color: theme.primary }}
+                  >
+                    {proposal.bundlePrice}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </motion.section>
+
+        {/* Notes */}
+        <motion.section
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2
+            className="text-xl font-bold mb-6 pb-2 border-b-2"
+            style={{ borderColor: theme.primary, color: theme.primary }}
+          >
+            備註
+          </h2>
+          <ul className="space-y-3">
+            {proposal.notes.map((note, i) => (
+              <li key={i} className="flex items-start gap-3 text-gray-600 text-sm leading-relaxed">
+                <span
+                  className="flex-shrink-0 mt-1 w-1.5 h-1.5 rounded-full"
+                  style={{ backgroundColor: theme.primary }}
+                />
+                {note}
+              </li>
+            ))}
+          </ul>
+        </motion.section>
+
+        {/* Instructor */}
+        <motion.section
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2
+            className="text-xl font-bold mb-6 pb-2 border-b-2"
+            style={{ borderColor: theme.primary, color: theme.primary }}
+          >
+            講師簡介
+          </h2>
+          <div className="bg-gray-50 rounded-xl p-6 md:p-8">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white text-lg font-bold"
+                style={{ backgroundColor: theme.primary }}
+              >
+                {proposal.instructor.name.charAt(0)}
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">
+                  {proposal.instructor.name}
+                </h3>
+                <p
+                  className="text-sm font-medium mb-3"
+                  style={{ color: theme.primary }}
+                >
+                  {proposal.instructor.title}
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {proposal.instructor.bio}
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* CTA */}
+        <motion.div
+          className="text-center py-12 border-t border-gray-100"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-gray-500 text-sm mb-6">
+            如有任何問題，歡迎隨時聯繫
+          </p>
+          <a
+            href={
+              proposal.contact.calendar ||
+              `mailto:${proposal.contact.email}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white text-sm font-medium transition-opacity hover:opacity-90"
+            style={{ backgroundColor: theme.primary }}
+          >
+            {proposal.contact.cta}
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
+        </motion.div>
+      </main>
+
+      {/* Footer */}
+      <footer className="py-8 text-center text-sm text-gray-400 border-t">
+        <p>
+          &copy; {new Date().getFullYear()} &middot; 此報價單為機密文件，請勿外流
+        </p>
+      </footer>
     </div>
   );
 }
