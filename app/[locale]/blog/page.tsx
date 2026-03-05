@@ -13,7 +13,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section */}
         <div className="mb-20 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent">
             {t('insights.title')}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -81,7 +81,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
             href="https://calendly.com/young-tsai/ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-accent font-semibold hover:text-accent-hover transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl shadow-soft hover:shadow-soft-md transition-all"
           >
             {t('projects.consultCta')} →
           </a>

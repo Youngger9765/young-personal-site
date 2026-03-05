@@ -78,7 +78,7 @@ const speakingEvents: SpeakingEventData[] = [
 const eventImages: Record<string, string | null> = {
   "userxper-ai-ux-2024": "/images/Uxer.png",
   "teacher-ai-workshop": "/images/vibe-coding.jpg",
-  "mediatek-ai-day-2024": null,
+  "mediatek-ai-day-2024": "/images/mediatek-ai-day.png",
   "meta-llm-taiwan-pitch": "/images/meta-jutor.jpg",
   "ntu-cep-2024": "/images/ntu-cep-talk.jpg",
   "techorange-ai-agent-2025": "/images/techorange-ai-agent.jpg",

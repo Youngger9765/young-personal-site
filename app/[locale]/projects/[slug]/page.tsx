@@ -107,7 +107,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
       <div className="max-w-4xl mx-auto px-6 pt-24 pb-8">
         <Link
           href={`/${locale}/projects`}
-          className="inline-flex items-center gap-2 text-slate-blue hover:text-gray-900 transition-colors font-medium group"
+          className="inline-flex items-center gap-2 text-slate-700 hover:text-gray-900 transition-colors font-medium group"
         >
           <span className="group-hover:-translate-x-1 transition-transform">←</span>
           {t('gallery.backToProjects')}
@@ -121,10 +121,10 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent">
             {project.title}
           </h1>
-          <p className="text-xl text-slate-blue font-medium mb-8">
+          <p className="text-xl text-slate-600 font-medium mb-8">
             {project.subtitle}
           </p>
           {slug === 'ai-square' && (
@@ -133,7 +133,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                 href="https://ai-square.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-semibold shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition-all font-semibold shadow-md hover:shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -148,7 +148,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                 href="https://duotopia.co/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-semibold shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition-all font-semibold shadow-md hover:shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -163,7 +163,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                 href="https://www.jutor.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-coral-orange text-white rounded-lg hover:bg-[#FF7043] transition-all font-semibold shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-hover transition-all font-semibold shadow-md hover:shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -267,7 +267,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <svg
-                    className="w-24 h-24 text-slate-blue/40 mx-auto mb-4"
+                    className="w-24 h-24 text-slate-400 mx-auto mb-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -279,7 +279,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                       d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
-                  <p className="text-slate-blue text-sm font-medium">
+                  <p className="text-slate-600 text-sm font-medium">
                     {t('projectScreenshot')}
                   </p>
                 </div>
@@ -304,7 +304,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
             { label: t('summary.timeline'), value: project.summary.timeline },
           ] as const).map((item) => (
             <div key={item.label} className="space-y-1">
-              <div className="text-sm font-semibold text-slate-blue uppercase tracking-wide">{item.label}</div>
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">{item.label}</div>
               <p className="text-gray-800 leading-relaxed text-sm md:text-base">{item.value}</p>
             </div>
           ))}
@@ -340,16 +340,16 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-8">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent mb-8">
             {t('gallery.keyFeatures')}
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {project.features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 rounded-xl bg-white/30 border border-gray-200 hover:border-slate-blue transition-colors"
+                className="flex items-start gap-3 p-4 rounded-xl bg-white/30 border border-gray-200 hover:border-accent transition-colors"
               >
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-blue flex items-center justify-center text-white text-sm font-bold mt-0.5">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-white text-sm font-bold mt-0.5">
                   {index + 1}
                 </div>
                 <p className="text-gray-700 leading-relaxed">{feature}</p>
@@ -367,14 +367,14 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-8">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent mb-8">
             {t('techStackLabel')}
           </h2>
           <div className="flex flex-wrap gap-3">
             {project.techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg text-gray-700 font-medium hover:border-slate-blue transition-colors"
+                className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg text-gray-700 font-medium hover:border-accent transition-colors"
               >
                 {tech}
               </span>
@@ -391,18 +391,18 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-blue to-gray-600 bg-clip-text text-transparent mb-8">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-gray-600 bg-clip-text text-transparent mb-8">
             {t('gallery.results')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {project.results.map((result, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
               >
                 <div className="flex items-start gap-3">
                   <svg
-                    className="w-6 h-6 text-coral-orange flex-shrink-0 mt-1"
+                    className="w-6 h-6 text-accent flex-shrink-0 mt-1"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -429,21 +429,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%81%A3hour-ai%E5%95%9F%E5%8B%95-%E5%9D%87-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%94%9C%E6%89%8B%E6%8E%A8%E5%8B%95%E5%85%A8%E6%B0%91ai%E6%95%99%E8%82%B2-101702045.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? 'Yahoo 財經' : 'Yahoo Finance'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? '台灣Hour of AI啟動！知名教育平台、台積電攜手推動全民AI教育' : "Taiwan's Hour of AI Launches! Leading Education Platform and TSMC Join Forces for AI Education"}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -451,7 +451,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '知名教育平台與台積電等企業攜手推動「1小時玩AI」計畫，讓全民都能參與 AI 教育...'
                           : "Leading Education Platform partners with TSMC to promote 'Hour of AI' initiative, making AI education accessible to everyone..."}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -464,21 +464,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://udn.com/news/story/6885/9161998"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-slate-800 text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? '聯合報' : 'United Daily News'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? '知名教育平台推『1小時玩AI』 企業相挺助學生入門' : "Leading Education Platform Launches 'Hour of AI' - Corporate Support Helps Students Get Started"}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -486,7 +486,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '知名教育平台推出 AI 教育計畫，目標 25 萬參與者，獲微軟、Meta、台積電等企業支持...'
                           : 'Leading Education Platform launches AI education initiative targeting 250,000 participants, supported by Microsoft, Meta, TSMC...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -510,21 +510,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://flipedu.parenting.com.tw/article/009564"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? '親子天下翻轉教育' : 'FlipEdu by CommonWealth Parenting'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? 'Meta LLM應用於教育：知名教育平台 AI英文學習工具' : 'Meta LLM Applied to Education: Leading Education Platform AI English Learning Tool'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -532,7 +532,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '親子天下報導知名教育平台如何運用 Meta LLM 技術打造 AI 英文學習工具...'
                           : 'CommonWealth Parenting reports on how a leading education platform uses Meta LLM to build AI English learning tools...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -545,21 +545,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://vocus.cc/article/66e78933fd89780001ae952f"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-slate-800 text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? 'Vocus' : 'Vocus'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? 'Jutor AI 英語家教：結合 Meta Llama 的創新教育應用' : 'Jutor AI English Tutor: Innovative Educational Application with Meta Llama'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -567,7 +567,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '深入探討 Jutor 如何利用 Meta Llama 模型打造個人化 AI 英語學習體驗...'
                           : 'In-depth look at how Jutor leverages Meta Llama models to create personalized AI English learning experiences...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -580,21 +580,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://vocus.cc/article/642b69e5fd897800012b6fce"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? 'Vocus' : 'Vocus'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? 'AI 賦能教育：Jutor 的誕生與發展' : 'AI-Powered Education: The Birth and Development of Jutor'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -602,7 +602,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '從概念到實現，探索 Jutor AI 英語家教平台的發展歷程與技術創新...'
                           : 'From concept to implementation, explore the development journey and technological innovation of Jutor AI English tutoring platform...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -626,21 +626,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://www.facebook.com/JunyiAcademy/posts/-ai-狐狸貓默默出現啦以平台上原有的課程影片-配合-ai-驅動的新功能-ai-狐狸貓-將逐漸進駐影片下方自動把影片轉化為文本打造師生各自專屬的功能讓自學力-x/852188293619317/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-slate-800 text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? '知名教育平台' : 'Leading Education Platform Foundation'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? 'AI 狐狸貓功能發表' : 'AI Fox Cat Feature Launch'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -648,7 +648,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '以平台上原有的課程影片，配合 AI 驅動的新功能「AI 狐狸貓」，將逐漸進駐影片下方，自動把影片轉化為文本，打造師生各自專屬的功能...'
                           : 'Using existing course videos on the platform, combined with the AI-powered new feature "AI Fox Cat", which will gradually appear below videos, automatically converting videos into text...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -662,21 +662,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://sunnyteaching680228.blogspot.com/2024/04/ai.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? 'Sunny Teaching' : 'Sunny Teaching'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? 'AI 教學應用分享' : 'AI Teaching Application Sharing'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -684,7 +684,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '教學現場如何運用 AI 影片家教系統提升學習成效，實際應用案例與心得分享...'
                           : 'How to use AI video tutoring system in the classroom to enhance learning outcomes, practical application cases and experience sharing...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -698,21 +698,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://www.thsh.tp.edu.tw/uploads/1725321120011KwiQmzMv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-slate-800 text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? '教育部推薦' : 'Ministry of Education Recommended'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? '教育部推薦 AI 教學工具' : 'Ministry of Education Recommended AI Teaching Tool'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -720,7 +720,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '獲教育部推薦之 AI 輔助教學工具，協助教師提升教學品質與學生學習成效...'
                           : 'Recommended by the Ministry of Education as an AI-assisted teaching tool to help teachers improve teaching quality and student learning outcomes...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '查看文件' : 'View Document'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -744,21 +744,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://flipedu.parenting.com.tw/article/010170"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-blue flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-slate-blue text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-slate-800 text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? '親子天下翻轉教育' : 'FlipEdu by CommonWealth Parenting'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? '樂寫公益學習網獲「誠致程有威先生教育科技獎」金獎' : 'Happy Writing Charity Learning Network Wins Gold Award in Education Technology'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -766,7 +766,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? '藉由平台內建 AI 功能，提供寫作靈感，學生可以輕鬆掌握文章架構，同時透過 AI 輔助批改，將圖片轉成文字，提供建議評語，可以大幅節省批閱負擔...'
                           : 'With built-in AI features, the platform provides writing inspiration, helping students easily grasp essay structure, while AI-assisted grading converts images to text and provides suggestion comments, significantly reducing grading workload...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '閱讀完整報導' : 'Read Full Article'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -780,21 +780,21 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                   href="https://flipedu.parenting.com.tw/teacher_resource/561"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-slate-blue transition-all shadow-sm hover:shadow-md"
+                  className="group block p-6 rounded-2xl bg-gradient-to-r from-white to-blue-50 border-2 border-gray-200 hover:border-accent transition-all shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-coral-orange flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 bg-coral-orange text-white text-xs font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">
                           {locale === 'zh-TW' ? '親子天下翻轉教育' : 'FlipEdu by CommonWealth Parenting'}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-slate-blue transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                         {locale === 'zh-TW' ? 'AI 寫作助理教學應用資源' : 'AI Writing Assistant Teaching Resources'}
                       </h4>
                       <p className="text-gray-600 text-sm mb-3">
@@ -802,7 +802,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
                           ? 'AI 寫作助理在教學現場的實際應用方式、教學資源與使用指南，協助教師運用 AI 技術提升寫作教學品質...'
                           : 'Practical application methods, teaching resources, and usage guides for AI writing assistants in the classroom, helping teachers use AI technology to improve writing instruction quality...'}
                       </p>
-                      <div className="flex items-center gap-2 text-slate-blue text-sm font-medium">
+                      <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                         <span>{locale === 'zh-TW' ? '查看資源' : 'View Resources'}</span>
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -829,7 +829,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailProps) {
         >
           <Link
             href={`/${locale}/projects`}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-blue text-white rounded-lg hover:bg-gray-900 transition-colors font-semibold group"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-semibold group"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
             {t('gallery.backToProjects')}

@@ -58,7 +58,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
             {t('quickForm.labels.goal')}
           </label>
           <textarea
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue resize-none"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent resize-none"
             rows={3}
             placeholder={t('quickForm.placeholders.goal')}
             value={goal}
@@ -72,7 +72,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
           </label>
           <input
             type="email"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
             placeholder={t('quickForm.placeholders.email')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -85,7 +85,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
               {t('quickForm.labels.timeline')}
             </label>
             <select
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
               value={timeline}
               onChange={(e) => setTimeline(e.target.value)}
             >
@@ -103,7 +103,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
               {t('quickForm.labels.budget')}
             </label>
             <select
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-blue focus:border-slate-blue"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
             >
@@ -118,7 +118,7 @@ export default function QuickConsultForm({ className }: QuickConsultFormProps) {
 
         <button
           type="submit"
-          className="w-full md:w-auto px-6 py-3 bg-slate-blue text-white rounded-lg font-semibold hover:bg-gray-900 transition-colors"
+          className="w-full md:w-auto px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors"
         >
           {t('quickForm.cta')}
         </button>
