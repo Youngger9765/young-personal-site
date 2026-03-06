@@ -915,13 +915,29 @@ function QuotationContent({ proposal, locale }: { proposal: QuotationProposal; l
                     <td className="py-3 pl-4 text-right font-medium text-gray-800">{course.price}</td>
                   </tr>
                 ))}
-                <tr className="border-t-2" style={{ borderColor: theme.primary }}>
-                  <td className="py-4 pr-4 font-bold text-gray-900">{l.bundle}</td>
-                  <td className="py-4 px-4 text-gray-500">{proposal.bundleHours}</td>
-                  <td className="py-4 pl-4 text-right text-xl font-bold" style={{ color: theme.primary }}>
-                    {proposal.bundlePrice}
-                  </td>
-                </tr>
+                {'bundles' in proposal && Array.isArray((proposal as any).bundles) ? (
+                  (proposal as any).bundles.map((bundle: any, i: number) => (
+                    <tr key={i} className={i === 0 ? "border-t-2" : "border-t"} style={i === 0 ? { borderColor: theme.primary } : {}}>
+                      <td className="py-4 pr-4 font-bold text-gray-900">
+                        {l.bundle} ({bundle.label})
+                        <span className="ml-2 text-xs font-normal text-gray-400 line-through">{bundle.originalPrice}</span>
+                        <span className="ml-1 text-xs font-normal" style={{ color: theme.primary }}>省 {bundle.save}</span>
+                      </td>
+                      <td className="py-4 px-4 text-gray-500">{bundle.hours}</td>
+                      <td className="py-4 pl-4 text-right text-xl font-bold" style={{ color: theme.primary }}>
+                        {bundle.bundlePrice}
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr className="border-t-2" style={{ borderColor: theme.primary }}>
+                    <td className="py-4 pr-4 font-bold text-gray-900">{l.bundle}</td>
+                    <td className="py-4 px-4 text-gray-500">{(proposal as any).bundleHours}</td>
+                    <td className="py-4 pl-4 text-right text-xl font-bold" style={{ color: theme.primary }}>
+                      {(proposal as any).bundlePrice}
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
@@ -996,18 +1012,20 @@ function QuotationContent({ proposal, locale }: { proposal: QuotationProposal; l
           transition={{ duration: 0.5 }}
         >
           <p className="text-gray-500 text-sm mb-6">{l.ctaHint}</p>
-          <a
-            href={proposal.contact.calendar || `mailto:${proposal.contact.email}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white text-sm font-medium transition-opacity hover:opacity-90"
-            style={{ backgroundColor: theme.primary }}
-          >
-            {l.cta}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
+          {('email' in proposal.contact || 'calendar' in proposal.contact) && (
+            <a
+              href={(proposal.contact as any).calendar || `mailto:${(proposal.contact as any).email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white text-sm font-medium transition-opacity hover:opacity-90"
+              style={{ backgroundColor: theme.primary }}
+            >
+              {l.cta}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          )}
         </motion.div>
       </main>
 
