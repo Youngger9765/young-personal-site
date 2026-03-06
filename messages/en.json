@@ -9,7 +9,8 @@
     "home": "Home",
     "blog": "Blog",
     "speaking": "Speaking",
-    "workshops": "Training"
+    "workshops": "Training",
+    "readings": "Readings"
   },
   "hero": {
     "badge": "AI Product Consultant",
@@ -748,6 +749,13 @@
     "subheading": "Let's discuss your project and create something amazing together.",
     "button": "Schedule a Consultation",
     "responseTime": "Usually respond within 24 hours"
+  },
+  "readings": {
+    "title": "Weekly Readings",
+    "subtitle": "Weekly curated intelligence from global tech, AI, and economic sources. Key insights distilled from hundreds of articles.",
+    "readMore": "Read more",
+    "articles": "articles",
+    "sources": "sources"
   },
   "blog": {
     "title": "Latest Posts",

@@ -1,0 +1,337 @@
+---
+title: "AI 巨變、地緣風暴、開發者工具全面重塑"
+date: "2026-03-07"
+week: "2026-W10"
+excerpt: "GPT-5.4 反擊、Anthropic 五角大廈風波、Claude Code 登頂開發者工具、Code Review 已死論戰、Cline 供應鏈攻擊、油價破 $90"
+articleCount: 392
+sourceCount: 40
+tags: ["AI", "開發者工具", "地緣政治", "經濟"]
+---
+
+## 本期目錄
+
+1. [GPT-5.4：OpenAI 史上最全面的一次反擊](#gpt54)
+2. [Anthropic 的雙面戰場：五角大廈 vs 消費市場](#claude)
+3. [開發者工具大洗牌：Claude Code 稱王](#devtools)
+4. [Code Review 已死？新時代的品質把關](#codereview)
+5. [Cursor 的第三紀元：雲端 Agent 時代](#cursor)
+6. [供應鏈安全警報：一個 Issue 標題感染 4000 台電腦](#security)
+7. [Qwen 3.5 團隊崩解：開源 AI 最大危機](#qwen)
+8. [Donald Knuth 改口了：承認 AI 的創造力](#knuth)
+9. [全球經濟：中東戰火推油價破 $90、美國失業劇增](#economy)
+10. [給 Young 的行動建議](#takeaway)
+11. [參考來源（全部外媒連結）](#references)
+
+---
+
+## GPT-5.4：OpenAI 史上最全面的一次反擊 {#gpt54}
+
+| 指標 | 數據 |
+|------|------|
+| Token 上下文長度 | **1M** |
+| 投行試算表任務得分 | **87.3%**（GPT-5.2 僅 68.4%） |
+| OSWorld 電腦操作 | **75%**（人類基線 72.4%） |
+| SWE-Bench Pro 程式修復 | **57.7%** |
+
+OpenAI 這週放了一個大招：**GPT-5.4 是第一個把 Codex 級編程能力融入主線模型的版本**。之前 GPT-5.3 Codex 只專精寫程式，但 5.4 同時在知識工作（試算表、簡報、文件分析）和程式碼上都達到了新標準。
+
+更重要的是，**電腦操作（Computer Use）成為原生能力**——模型不只是生成文字，還能直接操作螢幕上的 GUI，打開應用程式、填表格、點按鈕。OSWorld 測試中得分 75%，超過人類基線 72.4%。
+
+Latent Space 的評價最到位：「我們在試用 5.4 時不小心忘了切回 Opus，結果完全沒注意到差異。」這代表 OpenAI 終於追上甚至超越 Claude Opus 在日常工作中的表現。
+
+> **關鍵細節：** 5.4 Pro 和 5.4 同天發佈（以前 Pro 通常晚幾週）。272K token 以上有加價。知識截止日期是 2025 年 8 月 31 日。GDPval 測試中，5.4 在 69-71% 的情境下勝過領域專家。
+
+同時，**OpenAI 發布了 Codex Security**——一個 AI 應用安全 Agent，能分析專案上下文來偵測、驗證並修補複雜漏洞。這是 AI 不只寫程式、還能保護程式的重要一步。
+
+**ChatGPT for Excel** 也正式發布，搭配財務數據整合。GPT-5.4 能直接在 Excel 裡做投行級的建模和分析——這對金融業是重大衝擊。
+
+---
+
+## Anthropic 的雙面戰場：五角大廈 vs 消費市場 {#claude}
+
+本週 Anthropic 最大的新聞不是技術，而是**政治**。
+
+五角大廈正式將 Anthropic 列為「供應鏈風險」，原因是雙方在 AI 模型控制權上談不攏——軍方想要無限制使用 Claude，包括自主武器和大規模國內監控，Anthropic 拒絕了。**2 億美元的合約就此破裂。**
+
+> AI 模型正在快速商品化。Anthropic、OpenAI、Google 的頂級模型性能差不多，每隔幾個月就互相超車一小步。在這樣的市場裡，**品牌定位非常重要**。Anthropic 正在把自己定位為「道德且可信賴的 AI 供應商」——這對消費者和企業客戶都有市場價值。
+>
+> — Bruce Schneier & Nathan E. Sanders
+
+諷刺的是，**Claude 的消費者增長反而加速了**。TechCrunch 報導 Claude App 的新安裝量已超過 ChatGPT，日活用戶持續攀升。Anthropic 的年營收已達 $19B ARR（對比 OpenAI 的 $25B）。
+
+另一個重磅：**Claude 在兩週內找到了 Firefox 的 22 個漏洞**，其中 14 個被歸類為「高嚴重性」。這是 Anthropic 與 Mozilla 的安全合作成果，也是 AI 在安全領域實用性的最佳案例。
+
+---
+
+## 開發者工具大洗牌：Claude Code 稱王 {#devtools}
+
+The Pragmatic Engineer 做了一個 900+ 人的調查，結論非常明確：
+
+| 指標 | 數據 |
+|------|------|
+| Claude Code 登頂耗時 | **僅 8 個月** |
+| 工程師每週使用 AI 工具 | **95%** |
+| 最受歡迎工具：Claude Code | **46%** |
+| 用 AI 完成 70%+ 工作 | **56%** |
+
+**Claude Code 從零到第一只花了 8 個月**，超越了 GitHub Copilot（穩定但沒增長）和 Cursor（成長 35% 但仍居第二）。關鍵數據：
+
+- **Staff+ 工程師**是 Agent 最大使用者（63.5%），比一般工程師高 14%
+- **公司規模影響工具選擇**：小公司 75% 用 Claude Code，大企業 56% 用 Copilot（因為採購流程）
+- **Director 和 VP 特別愛 Claude Code**，是低階職位的兩倍
+- **Codex（OpenAI 的 CLI Agent）**爆發式增長，已達 Cursor 60% 的使用量
+- 用 Agent 的人對 AI 的興奮程度是不用的人的**兩倍**
+
+### Boris Cherny 談 Claude Code 的構建
+
+Claude Code 的創造者 Boris Cherny 在 Pragmatic Engineer 播客分享了幾個重要觀察：
+
+1. **他每天用 5 個平行 Claude 實例發 20-30 個 PR**——先用 plan mode 反覆調整計畫，然後讓 Claude 一次性實作。「一旦計畫夠好，它幾乎每次都能一次完成。」
+2. **Claude Code 的搜索用的就是 glob 和 grep**，打敗了 RAG、向量資料庫和各種花俏方案。簡單暴力最有效。
+3. **PRD 已死**——Claude Code 團隊不寫需求文件了，直接做大量原型。「如果我們從 Figma 或 PRD 開始，絕對不可能這麼快出貨。」
+4. **Claude Cowork 只花 10 天就做出來了**，目標是非工程師使用者。主要工程量不在產品邏輯，而在安全性（分類器、VM 隔離、OS 級防護）。
+5. **軟體工程師是現代的「抄寫員」？** 中世紀抄寫員在印刷術發明後「失業」，但很多人變成了作家，書寫市場爆炸性增長。Boris 認為軟體工程師可能也在經歷同樣的轉變。
+
+> **Anthropic 的文化細節：** 所有人頭銜都是「Member of Technical Staff」——沒有 PM、沒有 Designer、沒有 EM。每個人什麼都做。這也是 Claude Code 能快速迭代的原因之一。
+
+---
+
+## Code Review 已死？新時代的品質把關 {#codereview}
+
+Latent Space 發了一篇爭議性文章：**人類寫的程式碼在 2025 年就死了，Code Review 會在 2026 年死掉。**
+
+核心論點：AI 高度採用的團隊完成的任務多了 21%、合併的 PR 多了 98%，但 **PR review 時間增加了 91%**。程式碼量和變更大小都在指數增長，人類已經不可能讀完所有程式碼了。
+
+作者提出的替代方案是**「Spec-Driven Development」**：
+
+- **人類審查意圖，不審查程式碼**——審 spec、plan、constraint、acceptance criteria
+- **Layer 1**：讓多個 Agent 競爭，選最好的結果
+- **Layer 2**：確定性護欄——測試、型別檢查、合約驗證。Agent 無法跟失敗的測試「協商」
+- **Layer 3**：BDD（行為驅動開發）重新崛起——spec 不再是「額外工作」，而是主要產出物
+- **Layer 4**：權限系統成為架構決策——修 bug 的 Agent 不需要碰 CI pipeline
+
+同時，**GitHub 宣布 Copilot 已完成 6000 萬次 Code Review**。AI review 不是在取代人類 review，而是在幫助團隊跟上 AI 加速產生的程式碼量。
+
+---
+
+## Cursor 的第三紀元：雲端 Agent 時代 {#cursor}
+
+Cursor（估值 $50B）宣布**雲端 Agent 的使用量已超過傳統的 IDE tab 補全功能**——他們稱之為「軟體開發的第三紀元」。
+
+三大支柱：
+
+1. **Agent 自己測試**：模型不只寫程式碼，還會啟動 server、跑測試、反覆修正。PR 交付時已經驗證過了
+2. **影片回顧**：Agent 完成後錄一段操作影片。看影片比讀 diff 容易得多
+3. **完整的遠端控制**：你可以直接進入 VM，滑鼠點擊、鍵盤輸入，完全接管
+
+Cursor 收購了 Graphite（Git 工具）和 Autotab（Computer Use 先驅），正在打造一個完整的「Agent Lab」。
+
+> 未來的重大突破不是一個人配一個模型做更多，而是**把水管變粗**——平行 Agent、Agent 群、同時做更多事。
+>
+> — Jonas（Cursor 聯合創辦人）
+
+值得注意的是，**不同模型供應商的 Agent 「協同」效果比單一供應商更好**。Cursor 發現混用不同家的模型在 Best-of-N 策略下能產生比單一模型更好的結果。
+
+---
+
+## 供應鏈安全警報：一個 Issue 標題感染 4000 台電腦 {#security}
+
+本週最令人不安的安全事件：**Cline（一個知名的 AI 編程助手）的生產版本被攻擊者透過一個 Issue 標題就滲透了**。
+
+攻擊鏈非常精巧：
+
+1. 攻擊者在 Cline GitHub repo 開了一個 Issue，標題裡藏了 **Prompt Injection**
+2. Cline 使用 Claude Code Action 做自動化 Issue 分類，會執行 Bash 命令
+3. 被注入的指令讓 Claude 執行了 `npm install` 一個惡意套件
+4. 惡意套件的 preinstall script 塞了 11GB 垃圾到 GitHub Actions Cache
+5. GitHub 的快取超過 10GB 自動清除舊快取——攻擊者用新的毒化快取取代了原本的 `node_modules`
+6. Cline 的夜間發布 workflow 共享同一個 cache key，**載入了被毒化的快取**，攻擊者拿到了 NPM 發布的 secret
+7. **cline@2.3.0 被攻擊者發布了**（後來已撤回）
+
+Cline 在收到負責任揭露報告後沒有及時處理，導致被真正攻擊。幸運的是，攻擊者只加了 OpenClaw 安裝，沒做更危險的事。
+
+> **教訓：**
+> - AI 驅動的 Issue 分類器**不能有執行 shell 命令的權限**
+> - GitHub Actions 的 cache key 在不同 workflow 之間**不應共享**
+> - 任何接收使用者輸入的 AI Agent 都必須做**Prompt Injection 防護**
+> - 安全揭露必須**立即處理**，不能拖延
+
+---
+
+## Qwen 3.5 團隊崩解：開源 AI 最大危機 {#qwen}
+
+阿里巴巴旗下的 Qwen 團隊正在崩解。技術負責人**林俊陽**在 X 上突然宣布辭職：「me stepping down. bye my beloved qwen.」
+
+隨後多位核心成員也宣布離開：
+
+- **Binyuan Hui**：領導 Qwen-Coder 系列，負責 Agent 訓練
+- **Bowen Yu**：領導 Qwen 後訓練研究，開發 Instruct 系列
+- **Kaixin Li**：Qwen 3.5/VL/Coder 核心貢獻者
+
+據 36Kr 報導，導火線是阿里巴巴從 Google Gemini 團隊挖來了新主管接管 Qwen。阿里巴巴 CEO 吳永明親自出席了緊急全員會議。
+
+這件事打擊特別大，因為 **Qwen 3.5 是近期最出色的開源模型家族**。從 2 月 17 日開始，他們發布了 8 個尺寸的模型（397B 到 0.8B），其中：
+
+- 27B 和 35B 在 Mac 上的編程任務表現優異
+- 2B 模型只有 4.57GB（量化後 1.27GB），卻是完整的推理+多模態（視覺）模型
+- 在資源遠少於競爭對手的情況下取得這些成果
+
+> 如果核心成員開始新計畫或加入其他實驗室，我很期待看到他們的下一步。但如果 Qwen 團隊就此解散，那將是開源 AI 的一大損失。
+>
+> — Simon Willison
+
+---
+
+## Donald Knuth 改口了：承認 AI 的創造力 {#knuth}
+
+計算機科學之父 Donald Knuth 寫了一段話，在社群引發巨大迴響：
+
+> 震驚！震驚！我昨天得知我花了幾週研究的一個開放問題，剛剛被 Claude Opus 4.6（Anthropic 三週前發布的混合推理模型）解決了！看來有一天我得修正我對「生成式 AI」的看法了。**能知道我的猜想有一個漂亮的解答，同時見證自動推理和創造性問題求解的戲劇性進展，真是一件快樂的事。**
+>
+> — Donald Knuth,《Claude's Cycles》
+
+Knuth 長期以來對 AI 持保守態度。他公開承認 Claude Opus 4.6 解決了他正在研究的數學問題，這是一個**里程碑式的背書**。
+
+---
+
+## 全球經濟：中東戰火推油價破 $90、美國失業劇增 {#economy}
+
+### 中東局勢急劇升溫
+
+布蘭特原油衝破 **$90/桶**，是伊朗戰爭以來首次。荷莫茲海峽的船隻通行幾乎停擺。關鍵發展：
+
+- **卡達警告**：戰爭將迫使波斯灣在「數天內」停止能源出口，恢復需「數週到數月」
+- **油輪費率飆升**：美國原油出口商被迫使用小型船隻
+- 至少 10 艘船隻在海灣宣稱自己是「中國船」以避免被攻擊
+- **俄羅斯正協助伊朗**瞄準美軍資產（FT 報導）
+- 全球債券遭遇數年來最大拋售，能源價格飆升引發通膨恐慌
+- Bloomberg 分析師討論油價是否會突破 **$200/桶**
+
+### 美國就業市場震撼
+
+2 月美國經濟**意外流失 92,000 個工作機會**——這是疫情以來最大的單月降幅之一，遠低於市場預期。華爾街震驚。
+
+### 關稅混亂
+
+- 法官下令美國政府**開始退還超過 $1,300 億的非法關稅**（最高法院已裁定 Trump 的關稅違法）
+- 但海關官員正在**拒絕退款申請**
+- Nintendo 正式**起訴美國政府**，要求退還已繳關稅加利息
+- 科技業仍深陷關稅地獄——即使退款自動化，物流和定價混亂仍在持續
+
+### 金融市場
+
+- **BlackRock 限制其 $260 億私募信貸基金的贖回**——客戶申請贖回量飆至淨資產價值的 9.3%
+- PIMCO 警告私募債務將面臨「全面違約週期」
+- Fed Cleveland 主席 Hammack 表示利率可能長時間維持不變
+
+### AWS 歷史首次：無人機攻擊導致雲端服務中斷
+
+巴林和阿聯酋的無人機攻擊導致 AWS 資料中心部分或完全下線——這是**歷史上第一次軍事打擊導致雲端服務中斷**。
+
+---
+
+## 給 Young 的行動建議 {#takeaway}
+
+> **本週最重要的訊號：開發者工具正在從「輔助寫程式」轉向「Agent 自主開發」。**
+
+### 立即行動
+
+1. **檢查你的 GitHub Actions 安全性**：確保 AI 驅動的 workflow（如 auto-pr-review）沒有過大的權限，cache key 要跟發布 workflow 分開
+2. **試用 GPT-5.4**：特別是 Computer Use 能力。如果它真的能操作 GUI，對你的測試自動化會是大躍進
+3. **關注油價走勢**：如果中東衝突擴大，可能影響你的投資部位和客戶預算
+
+### 中期思考
+
+1. **Spec-Driven Development**：考慮把你的 prd-workflow 升級為更嚴格的 BDD 流程。未來的品質把關會在 spec 階段，不在 code review 階段
+2. **Boris 的工作流是你的標杆**：5 個平行 Claude 實例、plan mode 先行、一次性實作。你已經在做類似的事，但可以更系統化
+3. **Qwen 3.5 值得關注**：如果團隊穩定下來，他們的小模型（2B-27B）對本地推理和低成本應用很有價值
+
+### 長期趨勢
+
+- **AI 已是主流**：95% 的工程師每週用 AI，56% 用 AI 完成 70%+ 工作。不用 AI 的人將成為少數
+- **IDE 正在死亡**：Cursor 的數據顯示雲端 Agent > tab 補全。未來的「IDE」是一個 Agent 管理介面
+- **Knuth 的改口是風向標**：連最保守的學術權威都承認 AI 有創造力了。阻力會越來越小
+
+---
+
+## 參考來源 {#references}
+
+本文所有資訊均來自以下外媒原始報導，經 AI 綜合消化後編輯而成。
+
+### GPT-5.4
+
+- [Introducing GPT-5.4](https://openai.com/index/introducing-gpt-5-4) — OpenAI Blog (03/05)
+- [GPT-5.4 Thinking System Card](https://openai.com/index/gpt-5-4-thinking-system-card) — OpenAI (03/05)
+- [Codex Security: now in research preview](https://openai.com/index/codex-security-now-in-research-preview) — OpenAI (03/06)
+- [Introducing ChatGPT for Excel and new financial data integrations](https://openai.com/index/chatgpt-for-excel) — OpenAI (03/05)
+- [\[AINews\] GPT 5.4: SOTA Knowledge Work -and- Coding -and- CUA Model](https://www.latent.space/p/ainews-gpt-54-sota-knowledge-work) — Latent Space (03/06)
+- [Introducing GPT-5.4](https://simonwillison.net/2026/Mar/5/introducing-gpt54/#atom-everything) — Simon Willison (03/06)
+
+### Anthropic 五角大廈 vs 消費市場
+
+- [Anthropic and the Pentagon](https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything) — Simon Willison / Bruce Schneier & Nathan Sanders (03/07)
+- [Claude's consumer growth surge continues after Pentagon deal debacle](https://techcrunch.com/2026/03/06/claudes-consumer-growth-surge-continues-after-pentagon-deal-debacle/) — TechCrunch (03/07)
+- [Anthropic's Pentagon deal is a cautionary tale for startups chasing federal contracts](https://techcrunch.com/video/anthropics-pentagon-deal-is-a-cautionary-tale-for-startups-chasing-federal-contracts/) — TechCrunch (03/07)
+- [Anthropic's Claude found 22 vulnerabilities in Firefox over two weeks](https://techcrunch.com/2026/03/06/anthropics-claude-found-22-vulnerabilities-in-firefox-over-two-weeks/) — TechCrunch (03/07)
+- [Microsoft: Anthropic Claude remains available except Defense Department](https://techcrunch.com/2026/03/06/microsoft-anthropic-claude-remains-available-to-customers-except-the-defense-department/) — TechCrunch (03/07)
+- [\[AINews\] Anthropic @ $19B ARR, Qwen team leaves](https://www.latent.space/p/ainews-anthropic-19b-arr-qwen-team) — Latent Space (03/04)
+- [When AI Companies Go to War, Safety Gets Left Behind](https://www.wired.com/story/when-ai-companies-go-to-war-safety-gets-left-behind/) — Wired (03/07)
+- [OpenAI's "compromise" with the Pentagon is what Anthropic feared](https://www.technologyreview.com/2026/03/02/1133850/openais-compromise-with-the-pentagon-is-what-anthropic-feared/) — MIT Technology Review (03/03)
+
+### 開發者工具：Claude Code 稱王
+
+- [AI Tooling for Software Engineers in 2026](https://newsletter.pragmaticengineer.com/p/ai-tooling-2026) — The Pragmatic Engineer (03/04)
+- [Building Claude Code with Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) — The Pragmatic Engineer (03/05)
+
+### Code Review 已死
+
+- [How to Kill the Code Review](https://www.latent.space/p/reviews-dead) — Latent Space (03/03)
+- [60 million Copilot code reviews and counting](https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/) — GitHub Blog (03/06)
+- [Anti-patterns: things to avoid](https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/#atom-everything) — Simon Willison (03/05)
+
+### Cursor 第三紀元
+
+- [Cursor's Third Era: Cloud Agents](https://www.latent.space/p/cursor-third-era) — Latent Space (03/06)
+
+### 供應鏈安全：Cline 攻擊事件
+
+- [Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager](https://simonwillison.net/2026/Mar/6/clinejection/#atom-everything) — Simon Willison / Adnan Khan (03/06)
+- [Agentic manual testing](https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/#atom-everything) — Simon Willison (03/06)
+
+### Qwen 3.5 團隊崩解
+
+- [Something is afoot in the land of Qwen](https://simonwillison.net/2026/Mar/4/qwen/#atom-everything) — Simon Willison (03/04)
+- [Junyang Lin has left Qwen :(](https://www.reddit.com/r/LocalLLaMA/comments/1rjtzyn/junyang_lin_has_left_qwen/) — Reddit r/LocalLLaMA (03/04)
+- [Alibaba CEO: Qwen will remain open-source](https://www.reddit.com/r/LocalLLaMA/comments/1rl6lnl/alibaba_ceo_qwen_will_remain_opensource/) — Reddit r/LocalLLaMA (03/05)
+- [Final Qwen3.5 Unsloth GGUF Update](https://www.reddit.com/r/LocalLLaMA/comments/1rlkptk/final_qwen35_unsloth_gguf_update/) — Reddit r/LocalLLaMA (03/05)
+
+### Donald Knuth 改口
+
+- [Quoting Donald Knuth](https://simonwillison.net/2026/Mar/3/donald-knuth/#atom-everything) — Simon Willison (03/04)
+
+### 全球經濟
+
+- [How Much Higher Can Oil Go?](https://www.bloomberg.com/news/videos/2026-03-06/brent-oil-surges-as-middle-east-war-paralyzes-hormuz-traffic) — Bloomberg (03/07)
+- [Oil surges above $90 a barrel for first time in Iran war](https://www.ft.com/content/d3e2c2a1-73aa-4952-b1f1-08c87042b507) — Financial Times (03/07)
+- [Qatar warns war will force Gulf to stop energy exports 'within days'](https://www.ft.com/content/be122b17-e667-478d-be19-89d605e978ea) — Financial Times (03/06)
+- [US economy sheds 92,000 jobs in February in sharp slide](https://www.ft.com/content/6542bd0c-59ca-493b-ab5d-2d69e4e00cae) — Financial Times (03/06)
+- [US Payrolls Shock Wall Street](https://www.bloomberg.com/news/videos/2026-03-06/open-interest-3-6-2026-video) — Bloomberg (03/07)
+- [Ships in Gulf declare themselves Chinese to dodge attack](https://www.ft.com/content/eaecc3ce-ba4e-4e19-9d0a-6cf1536a5aed) — Financial Times (03/07)
+- [Russia is helping Iran to target US military assets in Middle East](https://www.ft.com/content/19be57d7-6299-4a1d-b761-3d699d07de94) — Financial Times (03/07)
+- [Global bonds suffer one of worst routs in years](https://www.ft.com/content/d0b40a4d-9cd8-4904-8c0a-ea14326341b7) — Financial Times (03/07)
+- [BlackRock $26B Private Credit Fund Limits Withdrawals](https://www.bloomberg.com/news/videos/2026-03-06/blackrock-26b-private-credit-fund-limits-withdrawals-video) — Bloomberg (03/07)
+- [Private Debt Should Face 'Full-Blown Default Cycle,' Pimco Says](https://www.bloomberg.com/news/articles/2026-03-06/pimco-says-private-debt-should-face-full-blown-default-cycle) — Bloomberg (03/07)
+- [Fed's Hammack Says She Sees Two-Sided Risks to Interest Rates](https://www.bloomberg.com/news/articles/2026-03-06/fed-s-hammack-says-she-sees-two-sided-risks-to-interest-rates) — Bloomberg (03/07)
+- [Nintendo is suing the US government for a refund of Trump's illegal tariffs](https://www.theverge.com/games/890861/nintendo-lawsuit-tariffs-donald-trump) — The Verge (03/07)
+- [Tech industry is in tariff hell, even if refunds are automated](https://arstechnica.com/tech-policy/2026/03/tech-industry-is-in-tariff-hell-even-if-refunds-are-automated/) — Ars Technica (03/06)
+- [The Pulse: AWS region knocked offline by drone attack in historic first](https://newsletter.pragmaticengineer.com/p/the-pulse-164) — The Pragmatic Engineer (03/06)
+
+### 其他值得關注
+
+- [Can coding agents relicense open source through a "clean room" implementation?](https://simonwillison.net/2026/Mar/5/chardet/#atom-everything) — Simon Willison (03/06)
+- [Reasoning models struggle to control their chains of thought, and that's good](https://openai.com/index/reasoning-models-chain-of-thought-controllability) — OpenAI (03/05)
+- [LangChain Skills — bumps Claude Code performance from 29% to 95%](https://blog.langchain.com/langchain-skills/) — LangChain Blog (03/05)
+- [The design process is dead — Jenny Wen (head of design at Claude)](https://www.lennysnewsletter.com/p/the-design-process-is-dead) — Lenny's Newsletter (03/01)
+- [We Have 30 AI Agents in Production — Top 5 Issues No One Talks About](https://www.saastr.com/we-have-30-ai-agents-in-production-here-are-the-top-5-issues-no-one-talks-about/) — SaaStr (03/04)
+- [On-device speech toolkit for Apple Silicon — ASR, TTS, diarization in Swift](https://www.reddit.com/r/MachineLearning/comments/1rm7rox/p_ondevice_speech_toolkit_for_apple_silicon_asr/) — Reddit r/MachineLearning (03/06)
+- [Apple unveils M5 Pro and M5 Max — up to 4x faster LLM prompt processing](https://www.reddit.com/r/LocalLLaMA/comments/1rjqsv6/apple_unveils_m5_pro_and_m5_max_citing_up_to_4/) — Reddit r/LocalLLaMA (03/03)

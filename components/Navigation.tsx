@@ -20,6 +20,7 @@ export default function Navigation() {
     { href: `/${locale}/services`, label: t('services') },
     { href: `/${locale}/workshops`, label: t('workshops') },
     { href: `/${locale}/blog`, label: t('blog') },
+    { href: `/${locale}/readings`, label: t('readings') },
   ];
 
   // Check if a nav link is active

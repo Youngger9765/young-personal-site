@@ -9,7 +9,8 @@
     "home": "首頁",
     "blog": "部落格",
     "speaking": "演講",
-    "workshops": "培訓 & 演講"
+    "workshops": "培訓 & 演講",
+    "readings": "閱讀筆記"
   },
   "hero": {
     "badge": "AI 產品顧問",
@@ -748,6 +749,13 @@
     "subheading": "讓我們討論您的專案，一起創造出色的成果。",
     "button": "預約諮詢",
     "responseTime": "通常 24 小時內回覆"
+  },
+  "readings": {
+    "title": "每週閱讀筆記",
+    "subtitle": "每週精選全球科技、AI、經濟情報，消化數百篇文章後的關鍵洞察",
+    "readMore": "閱讀全文",
+    "articles": "篇文章",
+    "sources": "來源"
   },
   "blog": {
     "title": "最新文章",
