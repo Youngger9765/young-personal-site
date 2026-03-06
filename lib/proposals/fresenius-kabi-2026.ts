@@ -25,15 +25,33 @@ const i18n = {
     },
     courses: [
       {
-        id: 1,
-        title: 'AI 一人軍團 — 自動化你的日常工作',
+        id: '1A',
+        title: 'AI 一人軍團 — 自動化你的日常工作（講座版）',
         hours: '1.5 小時',
-        price: 'NT$8,000',
+        price: 'NT$10,000',
+        priceNote: '含稅',
+        audience: '全員皆適合，無需技術背景',
+        format: '經驗分享 + 現場示範',
+        description:
+          '我如何用 AI 聽說讀寫，同時管理 5 家公司、15 個專案。以真實工作流為基礎，拆解 AI 時代的四大核心能力：聽 — AI 語音辨識與智慧會議摘要（Plaud AI / ChatGPT Whisper）；說 — Mac 聽寫功能驅動 AI 即時協作，自然語言下達複雜指令（Mac Dictation / Claude）；讀 — 文件智慧解析與企業知識庫建構（NotebookLM / Claude Projects）；寫 — 從數據分析到簡報的自動化產出（Advanced Data Analysis / Gamma）。全程使用免費工具，講師現場示範完整流程。',
+        outcomes: [
+          '掌握 AI「聽說讀寫」四大核心能力，建立個人 AI 工作流',
+          '聽 — 運用 AI 語音辨識自動產出結構化會議記錄與待辦事項',
+          '說 — 用 Mac 聽寫功能對 AI 下達複雜指令，語音驅動即時協作',
+          '讀 — 用 NotebookLM 即時解析長文件，建立可查詢的知識庫',
+          '寫 — 了解從原始數據 → AI 分析 → 自動生成簡報的完整流程',
+        ],
+      },
+      {
+        id: '1B',
+        title: 'AI 一人軍團 — 自動化你的日常工作（工作坊版）',
+        hours: '1.5 小時',
+        price: 'NT$15,000',
         priceNote: '含稅',
         audience: '全員皆適合，無需技術背景',
         format: '經驗分享 + 現場實作工作坊',
         description:
-          '我如何用 AI 聽說讀寫，同時管理 5 家公司、15 個專案。以真實工作流為基礎，拆解 AI 時代的四大核心能力：聽 — AI 語音辨識與智慧會議摘要（Plaud AI / ChatGPT Whisper）；說 — Mac 聽寫功能驅動 AI 即時協作，自然語言下達複雜指令（Mac Dictation / Claude）；讀 — 文件智慧解析與企業知識庫建構（NotebookLM / Claude Projects）；寫 — 從數據分析到簡報的自動化產出（Advanced Data Analysis / Gamma）。全程使用免費工具，現場實作，上完課明天就能用。',
+          '我如何用 AI 聽說讀寫，同時管理 5 家公司、15 個專案。以真實工作流為基礎，拆解 AI 時代的四大核心能力：聽 — AI 語音辨識與智慧會議摘要（Plaud AI / ChatGPT Whisper）；說 — Mac 聽寫功能驅動 AI 即時協作，自然語言下達複雜指令（Mac Dictation / Claude）；讀 — 文件智慧解析與企業知識庫建構（NotebookLM / Claude Projects）；寫 — 從數據分析到簡報的自動化產出（Advanced Data Analysis / Gamma）。全程使用免費工具，學員現場跟著做，上完課明天就能用。',
         outcomes: [
           '掌握 AI「聽說讀寫」四大核心能力，建立個人 AI 工作流',
           '聽 — 運用 AI 語音辨識自動產出結構化會議記錄與待辦事項',
@@ -46,7 +64,7 @@ const i18n = {
         id: 2,
         title: 'AI × 醫療長照 — 從開發到現場的實戰分享',
         hours: '1.5 小時',
-        price: 'NT$15,000',
+        price: 'NT$10,000',
         priceNote: '含稅',
         audience: '主管、數位轉型推動者、醫療產業相關人員',
         format: '經驗分享 + 案例討論',
@@ -96,10 +114,28 @@ const i18n = {
     },
     courses: [
       {
-        id: 1,
-        title: 'AI One-Person Army — Automate Your Daily Work',
+        id: '1A',
+        title: 'AI One-Person Army — Automate Your Daily Work (Lecture)',
         hours: '1.5 hours',
-        price: 'NT$8,000',
+        price: 'NT$10,000',
+        priceNote: 'tax incl.',
+        audience: 'All staff — no technical background required',
+        format: 'Experience sharing + live demo',
+        description:
+          'How I use AI to Listen, Speak, Read, and Write — managing 5 companies and 15 projects simultaneously. Four core AI capabilities based on real workflows: Listen — AI speech recognition and intelligent meeting summarization (Plaud AI / ChatGPT Whisper); Speak — voice-driven AI collaboration via Mac Dictation, issue complex commands in natural language (Mac Dictation / Claude); Read — intelligent document parsing and enterprise knowledge base construction (NotebookLM / Claude Projects); Write — automated pipeline from data analysis to presentation (Advanced Data Analysis / Gamma). All free tools, instructor demonstrates the complete workflow live.',
+        outcomes: [
+          'Master the four core AI capabilities — Listen, Speak, Read, Write — to build a personal AI workflow',
+          'Listen — Use AI speech recognition to auto-generate structured meeting notes and action items',
+          'Speak — Use Mac Dictation to issue complex commands to AI in natural language for voice-driven collaboration',
+          'Read — Parse long documents instantly with NotebookLM and build searchable knowledge bases',
+          'Write — Understand the complete raw data → AI analysis → auto-generated presentation pipeline',
+        ],
+      },
+      {
+        id: '1B',
+        title: 'AI One-Person Army — Automate Your Daily Work (Workshop)',
+        hours: '1.5 hours',
+        price: 'NT$15,000',
         priceNote: 'tax incl.',
         audience: 'All staff — no technical background required',
         format: 'Experience sharing + hands-on workshop',
@@ -117,7 +153,7 @@ const i18n = {
         id: 2,
         title: 'AI × Healthcare — Field Experience from Dev to Deployment',
         hours: '1.5 hours',
-        price: 'NT$15,000',
+        price: 'NT$10,000',
         priceNote: 'tax incl.',
         audience: 'Managers, digital transformation leads, healthcare professionals',
         format: 'Experience sharing + case discussion',
@@ -151,8 +187,10 @@ export const proposal = {
   contactPerson: '',
   date: '2026/03/05',
   validDays: 30,
-  bundlePrice: 'NT$20,000',
-  bundleHours: '3hr',
+  bundles: [
+    { label: '1A + 2', labelEn: '1A + 2', originalPrice: 'NT$20,000', bundlePrice: 'NT$16,000', hours: '3hr', save: 'NT$4,000' },
+    { label: '1B + 2', labelEn: '1B + 2', originalPrice: 'NT$25,000', bundlePrice: 'NT$20,000', hours: '3hr', save: 'NT$5,000' },
+  ],
   theme: {
     primary: '#d97706', // amber-600
     accent: '#78350f',  // amber-900
