@@ -49,6 +49,12 @@ export default function ProjectsGalleryPage() {
       description: t('cutor.description'),
     },
     {
+      slug: 'duotopia',
+      title: t('duotopia.title'),
+      subtitle: t('duotopia.subtitle'),
+      description: t('duotopia.description'),
+    },
+    {
       slug: 'ai-square',
       title: t('aiSquare.title'),
       subtitle: t('aiSquare.subtitle'),
@@ -63,6 +69,7 @@ export default function ProjectsGalleryPage() {
     'career-creator': '/images/career-creator-hero.png',
 'jutor': '/images/jutor-hero.png',
     'cutor': '/images/cutor-hero.png',
+    'duotopia': '/images/duotopia-hero.png',
     'ai-square': '/images/hourofai.jpeg',
   };
 
