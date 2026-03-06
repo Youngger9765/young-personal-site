@@ -1,0 +1,325 @@
+---
+title: "AI Upheaval, Geopolitical Storms, and the Developer Tools Shake-Up"
+date: "2026-03-07"
+week: "2026-W10"
+excerpt: "GPT-5.4 strikes back, Anthropic vs Pentagon, Claude Code tops dev tools, Code Review is dead, Cline supply chain attack, oil breaks $90"
+articleCount: 392
+sourceCount: 40
+tags: ["AI", "Dev Tools", "Geopolitics", "Economy"]
+---
+
+**In this issue:** GPT-5.4 strikes back → Anthropic vs Pentagon → Claude Code crowned king → Code Review is dead → Cursor cloud agents → Cline supply chain attack → Qwen team collapse → Knuth recants → Global economic storm → Action items → References
+
+---
+
+## GPT-5.4: OpenAI's Most Comprehensive Counterattack
+
+| Metric | Data |
+|--------|------|
+| Token context length | **1M** |
+| Investment banking spreadsheet score | **87.3%** (GPT-5.2 was 68.4%) |
+| OSWorld computer use | **75%** (human baseline 72.4%) |
+| SWE-Bench Pro code repair | **57.7%** |
+
+OpenAI dropped a bombshell this week: **GPT-5.4 is the first model to merge Codex-level coding into the mainline model**. GPT-5.3 Codex only specialized in coding, but 5.4 simultaneously hits new standards in knowledge work (spreadsheets, presentations, document analysis) and code.
+
+More importantly, **Computer Use became a native capability** — the model doesn't just generate text, it can directly operate on-screen GUIs, open apps, fill forms, and click buttons. It scored 75% on OSWorld, surpassing the human baseline of 72.4%.
+
+Latent Space put it best: "We accidentally forgot to switch back from 5.4 to Opus, and didn't even notice the difference." This signals OpenAI has caught up to — or surpassed — Claude Opus in everyday work.
+
+> **Key details:** 5.4 Pro and 5.4 launched on the same day (Pro usually ships weeks later). Price premium above 272K tokens. Knowledge cutoff is August 31, 2025. On GDPval, 5.4 outperformed domain experts in 69-71% of scenarios.
+
+Meanwhile, **OpenAI released Codex Security** — an AI application security agent that analyzes project context to detect, validate, and patch complex vulnerabilities. AI isn't just writing code anymore — it's protecting it.
+
+**ChatGPT for Excel** also launched with financial data integrations. GPT-5.4 can do investment-banking-grade modeling and analysis directly in Excel — a massive disruption for finance.
+
+---
+
+## Anthropic's Two-Front War: Pentagon vs Consumer Market
+
+The biggest Anthropic news this week wasn't about technology — it was **politics**.
+
+The Pentagon officially designated Anthropic a "supply chain risk" after failing to agree on AI model control — the military wanted unrestricted use of Claude, including for autonomous weapons and mass domestic surveillance. Anthropic refused. **The $200M contract collapsed.**
+
+> AI models are rapidly commoditizing. Anthropic, OpenAI, and Google's top models perform similarly, leapfrogging each other every few months. In such a market, **brand positioning matters enormously**. Anthropic is positioning itself as the "ethical and trustworthy AI provider" — and that has real market value for both consumers and enterprises.
+>
+> — Bruce Schneier & Nathan E. Sanders
+
+Ironically, **Claude's consumer growth actually accelerated**. TechCrunch reports Claude App new installs have surpassed ChatGPT, with daily active users climbing steadily. Anthropic's annual revenue has reached $19B ARR (vs OpenAI's $25B).
+
+Another blockbuster: **Claude found 22 vulnerabilities in Firefox in two weeks**, 14 classified as "high severity." This was a security partnership with Mozilla and the strongest case yet for AI's utility in security.
+
+---
+
+## Developer Tools Shake-Up: Claude Code Is King
+
+The Pragmatic Engineer surveyed 900+ engineers, and the conclusions are crystal clear:
+
+| Metric | Data |
+|--------|------|
+| Time for Claude Code to reach #1 | **Just 8 months** |
+| Engineers using AI tools weekly | **95%** |
+| Most popular tool: Claude Code | **46%** |
+| Using AI for 70%+ of work | **56%** |
+
+**Claude Code went from zero to #1 in just 8 months**, overtaking GitHub Copilot (stable but stagnant) and Cursor (up 35% but still #2). Key findings:
+
+- **Staff+ engineers** are the biggest agent users (63.5%), 14% more than regular engineers
+- **Company size matters**: 75% of small companies use Claude Code, 56% of enterprises use Copilot (procurement)
+- **Directors and VPs love Claude Code** — twice the usage of junior roles
+- **Codex (OpenAI's CLI agent)** is growing explosively, reaching 60% of Cursor's usage
+- Agent users are **twice as excited** about AI as non-users
+
+### Boris Cherny on Building Claude Code
+
+Claude Code creator Boris Cherny shared key insights on the Pragmatic Engineer podcast:
+
+1. **He uses 5 parallel Claude instances daily, shipping 20-30 PRs** — plan mode to iterate on the plan, then Claude implements in one shot. "Once the plan is good enough, it nails it almost every time."
+2. **Claude Code's search uses plain glob and grep**, beating RAG, vector databases, and all fancy approaches. Simple brute force wins.
+3. **PRDs are dead** — the Claude Code team doesn't write requirements docs anymore, they prototype heavily. "If we started from Figma or PRDs, there's no way we'd ship this fast."
+4. **Claude Cowork was built in just 10 days**, targeting non-engineers. The engineering effort wasn't in product logic but in security (classifiers, VM isolation, OS-level protection).
+5. **Are software engineers the modern "scribes"?** Medieval scribes "lost their jobs" after the printing press, but many became authors, and the writing market exploded. Boris believes software engineers may be experiencing the same transformation.
+
+> **Anthropic culture detail:** Everyone's title is "Member of Technical Staff" — no PMs, no Designers, no EMs. Everyone does everything. This is one reason Claude Code iterates so fast.
+
+---
+
+## Is Code Review Dead? Quality Gates for a New Era
+
+Latent Space published a controversial piece: **Human-written code died in 2025. Code reviews will die in 2026.**
+
+The core argument: Teams with high AI adoption complete 21% more tasks and merge 98% more PRs, but **PR review time increased by 91%**. Code volume and change size are growing exponentially — humans can no longer read all the code.
+
+The proposed alternative is **"Spec-Driven Development"**:
+
+- **Humans review intent, not code** — review specs, plans, constraints, acceptance criteria
+- **Layer 1**: Multiple agents compete, select the best result
+- **Layer 2**: Deterministic guardrails — tests, type checks, contract verification. Agents can't "negotiate" with failing tests
+- **Layer 3**: BDD (Behavior-Driven Development) rises again — specs are no longer "extra work" but the primary deliverable
+- **Layer 4**: Permission systems become architectural decisions — a bug-fix agent doesn't need access to the CI pipeline
+
+Meanwhile, **GitHub announced Copilot has completed 60 million Code Reviews**. AI review isn't replacing human review — it's helping teams keep up with the code volume AI acceleration produces.
+
+---
+
+## Cursor's Third Era: Cloud Agent Age
+
+Cursor ($50B valuation) announced that **cloud agent usage has surpassed traditional IDE tab completion** — they call it the "Third Era of Software Development."
+
+Three pillars:
+
+1. **Agents test their own code**: Models don't just write code — they spin up servers, run tests, and iterate. PRs are pre-verified on delivery
+2. **Video playback**: Agents record a video of their work. Watching video is far easier than reading diffs
+3. **Full remote control**: You can drop into the VM, click with your mouse, type on the keyboard — full takeover
+
+Cursor acquired Graphite (Git tools) and Autotab (Computer Use pioneer), building a complete "Agent Lab."
+
+> The next major breakthrough isn't one person with one model doing more — it's **widening the pipe** — parallel agents, agent swarms, doing more things simultaneously.
+>
+> — Jonas (Cursor co-founder)
+
+Notably, **agents from different model providers "collaborate" better than a single provider**. Cursor found that mixing different vendors' models in a Best-of-N strategy produces better results than any single model.
+
+---
+
+## Supply Chain Security Alert: One Issue Title Infected 4,000 Machines
+
+The most disturbing security incident this week: **Cline (a popular AI coding assistant) had its production release compromised through a single Issue title**.
+
+The attack chain was elegant:
+
+1. Attacker opened an Issue on Cline's GitHub repo with **Prompt Injection** hidden in the title
+2. Cline used Claude Code Action for automated Issue triage, which could execute Bash commands
+3. The injected instructions made Claude run `npm install` of a malicious package
+4. The malicious package's preinstall script stuffed 11GB of junk into GitHub Actions Cache
+5. GitHub's cache auto-evicts entries above 10GB — the attacker's poisoned cache replaced the original `node_modules`
+6. Cline's nightly release workflow shared the same cache key, **loading the poisoned cache**, giving the attacker NPM publish secrets
+7. **cline@2.3.0 was published by the attacker** (later reverted)
+
+Cline failed to act promptly after receiving a responsible disclosure report, leading to the actual attack. Fortunately, the attacker only added an OpenClaw install — nothing more dangerous.
+
+> **Lessons:**
+> - AI-powered Issue triagers **must not have shell execution privileges**
+> - GitHub Actions cache keys **should not be shared** across workflows
+> - Any AI agent receiving user input must have **Prompt Injection protection**
+> - Security disclosures must be **handled immediately**, no delays
+
+---
+
+## Qwen 3.5 Team Collapse: Open Source AI's Biggest Crisis
+
+Alibaba's Qwen team is falling apart. Technical lead **Junyang Lin** abruptly announced his resignation on X: "me stepping down. bye my beloved qwen."
+
+Multiple core members followed:
+
+- **Binyuan Hui**: Led Qwen-Coder series, agent training
+- **Bowen Yu**: Led Qwen post-training research, Instruct series
+- **Kaixin Li**: Core contributor to Qwen 3.5/VL/Coder
+
+According to 36Kr, the trigger was Alibaba hiring a new manager from Google's Gemini team to take over Qwen. Alibaba CEO Eddie Wu attended an emergency all-hands meeting.
+
+This is particularly devastating because **Qwen 3.5 is the most impressive open-source model family in recent memory**. Starting February 17, they released 8 model sizes (397B to 0.8B):
+
+- 27B and 35B excel at coding tasks on Mac
+- The 2B model is just 4.57GB (1.27GB quantized), yet it's a full reasoning + multimodal (vision) model
+- All achieved with far fewer resources than competitors
+
+> If the core members start new projects or join other labs, I'm excited to see what comes next. But if the Qwen team disbands entirely, that will be a huge loss for open-source AI.
+>
+> — Simon Willison
+
+---
+
+## Donald Knuth Recants: Acknowledges AI's Creativity
+
+Computer science patriarch Donald Knuth wrote something that sent shockwaves through the community:
+
+> Shock! Shock! I learned yesterday that an open problem I'd been working on for several weeks had just been solved by Claude Opus 4.6 — Anthropic's hybrid reasoning model released three weeks earlier! It seems I'll have to revise my opinions about "generative AI" one of these days. **What a joy to know that my conjecture has a beautiful solution, and to witness such dramatic advances in automated reasoning and creative problem-solving.**
+>
+> — Donald Knuth, "Claude's Cycles"
+
+Knuth has long held conservative views on AI. His public acknowledgment that Claude Opus 4.6 solved a math problem he was working on is a **landmark endorsement**.
+
+---
+
+## Global Economy: Middle East War Pushes Oil Past $90, US Jobs Plummet
+
+### Middle East Tensions Escalate Sharply
+
+Brent crude broke **$90/barrel** for the first time since the Iran war began. Ship traffic through the Strait of Hormuz has virtually stopped. Key developments:
+
+- **Qatar warns**: War will force the Gulf to stop energy exports "within days," recovery needs "weeks to months"
+- **Tanker rates surge**: US crude exporters forced to use smaller vessels
+- At least 10 ships in the Gulf declared themselves "Chinese" to avoid attack
+- **Russia is helping Iran** target US military assets (FT reporting)
+- Global bonds suffer one of their worst routs in years as energy prices trigger inflation fears
+- Bloomberg analysts discussing whether oil could break **$200/barrel**
+
+### US Jobs Market Shock
+
+The US economy **unexpectedly shed 92,000 jobs in February** — one of the largest single-month declines since the pandemic, far below market expectations. Wall Street was stunned.
+
+### Tariff Chaos
+
+- Judge orders US government to **begin refunding over $130B in illegal tariffs** (Supreme Court ruled Trump's tariffs unlawful)
+- But customs officials are **rejecting refund applications**
+- Nintendo officially **suing the US government** for tariff refunds plus interest
+- Tech industry remains in tariff hell — even with automated refunds, logistics and pricing chaos continues
+
+### Financial Markets
+
+- **BlackRock limits redemptions** on its $26B private credit fund — client withdrawal requests surged to 9.3% of NAV
+- PIMCO warns private debt faces a "full-blown default cycle"
+- Fed Cleveland President Hammack says rates could stay unchanged for a long time
+
+### AWS Historic First: Drone Attack Causes Cloud Outage
+
+Drone attacks in Bahrain and UAE took AWS data centers partially or fully offline — **the first time in history that a military strike caused a cloud service outage**.
+
+---
+
+## Action Items
+
+> **This week's most important signal: Developer tools are shifting from "coding assistance" to "autonomous agent development."**
+
+### Immediate Actions
+
+1. **Audit your GitHub Actions security**: Ensure AI-driven workflows (like auto-pr-review) don't have excessive permissions; cache keys should be separate from release workflows
+2. **Try GPT-5.4**: Especially the Computer Use capability. If it can truly operate GUIs, it's a leap for test automation
+3. **Watch oil prices**: If the Middle East conflict expands, it could impact investment positions and client budgets
+
+### Medium-Term Thinking
+
+1. **Spec-Driven Development**: Consider upgrading to stricter BDD workflows. Future quality gates will be at the spec stage, not code review
+2. **Boris's workflow is the benchmark**: 5 parallel Claude instances, plan mode first, one-shot implementation. Systematize what you're already doing
+3. **Watch Qwen 3.5**: If the team stabilizes, their small models (2B-27B) are valuable for local inference and low-cost applications
+
+### Long-Term Trends
+
+- **AI is mainstream**: 95% of engineers use AI weekly, 56% use AI for 70%+ of work. Non-AI users are becoming the minority
+- **IDEs are dying**: Cursor's data shows cloud agents > tab completion. The future "IDE" is an agent management interface
+- **Knuth's recantation is a weathervane**: Even the most conservative academic authority acknowledges AI creativity. Resistance will only shrink
+
+---
+
+## References
+
+All information in this article comes from the following original sources, synthesized and edited by AI.
+
+### GPT-5.4
+
+- [Introducing GPT-5.4](https://openai.com/index/introducing-gpt-5-4) — OpenAI Blog (03/05)
+- [GPT-5.4 Thinking System Card](https://openai.com/index/gpt-5-4-thinking-system-card) — OpenAI (03/05)
+- [Codex Security: now in research preview](https://openai.com/index/codex-security-now-in-research-preview) — OpenAI (03/06)
+- [Introducing ChatGPT for Excel and new financial data integrations](https://openai.com/index/chatgpt-for-excel) — OpenAI (03/05)
+- [\[AINews\] GPT 5.4: SOTA Knowledge Work -and- Coding -and- CUA Model](https://www.latent.space/p/ainews-gpt-54-sota-knowledge-work) — Latent Space (03/06)
+- [Introducing GPT-5.4](https://simonwillison.net/2026/Mar/5/introducing-gpt54/#atom-everything) — Simon Willison (03/06)
+
+### Anthropic vs Pentagon
+
+- [Anthropic and the Pentagon](https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything) — Simon Willison / Bruce Schneier & Nathan Sanders (03/07)
+- [Claude's consumer growth surge continues after Pentagon deal debacle](https://techcrunch.com/2026/03/06/claudes-consumer-growth-surge-continues-after-pentagon-deal-debacle/) — TechCrunch (03/07)
+- [Anthropic's Pentagon deal is a cautionary tale for startups chasing federal contracts](https://techcrunch.com/video/anthropics-pentagon-deal-is-a-cautionary-tale-for-startups-chasing-federal-contracts/) — TechCrunch (03/07)
+- [Anthropic's Claude found 22 vulnerabilities in Firefox over two weeks](https://techcrunch.com/2026/03/06/anthropics-claude-found-22-vulnerabilities-in-firefox-over-two-weeks/) — TechCrunch (03/07)
+- [Microsoft: Anthropic Claude remains available except Defense Department](https://techcrunch.com/2026/03/06/microsoft-anthropic-claude-remains-available-to-customers-except-the-defense-department/) — TechCrunch (03/07)
+- [\[AINews\] Anthropic @ $19B ARR, Qwen team leaves](https://www.latent.space/p/ainews-anthropic-19b-arr-qwen-team) — Latent Space (03/04)
+- [When AI Companies Go to War, Safety Gets Left Behind](https://www.wired.com/story/when-ai-companies-go-to-war-safety-gets-left-behind/) — Wired (03/07)
+- [OpenAI's "compromise" with the Pentagon is what Anthropic feared](https://www.technologyreview.com/2026/03/02/1133850/openais-compromise-with-the-pentagon-is-what-anthropic-feared/) — MIT Technology Review (03/03)
+
+### Dev Tools: Claude Code Is King
+
+- [AI Tooling for Software Engineers in 2026](https://newsletter.pragmaticengineer.com/p/ai-tooling-2026) — The Pragmatic Engineer (03/04)
+- [Building Claude Code with Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) — The Pragmatic Engineer (03/05)
+
+### Code Review Is Dead
+
+- [How to Kill the Code Review](https://www.latent.space/p/reviews-dead) — Latent Space (03/03)
+- [60 million Copilot code reviews and counting](https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/) — GitHub Blog (03/06)
+- [Anti-patterns: things to avoid](https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/#atom-everything) — Simon Willison (03/05)
+
+### Cursor's Third Era
+
+- [Cursor's Third Era: Cloud Agents](https://www.latent.space/p/cursor-third-era) — Latent Space (03/06)
+
+### Supply Chain Security: Cline Attack
+
+- [Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager](https://simonwillison.net/2026/Mar/6/clinejection/#atom-everything) — Simon Willison / Adnan Khan (03/06)
+- [Agentic manual testing](https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/#atom-everything) — Simon Willison (03/06)
+
+### Qwen 3.5 Team Collapse
+
+- [Something is afoot in the land of Qwen](https://simonwillison.net/2026/Mar/4/qwen/#atom-everything) — Simon Willison (03/04)
+- [Junyang Lin has left Qwen :(](https://www.reddit.com/r/LocalLLaMA/comments/1rjtzyn/junyang_lin_has_left_qwen/) — Reddit r/LocalLLaMA (03/04)
+- [Alibaba CEO: Qwen will remain open-source](https://www.reddit.com/r/LocalLLaMA/comments/1rl6lnl/alibaba_ceo_qwen_will_remain_opensource/) — Reddit r/LocalLLaMA (03/05)
+- [Final Qwen3.5 Unsloth GGUF Update](https://www.reddit.com/r/LocalLLaMA/comments/1rlkptk/final_qwen35_unsloth_gguf_update/) — Reddit r/LocalLLaMA (03/05)
+
+### Donald Knuth Recants
+
+- [Quoting Donald Knuth](https://simonwillison.net/2026/Mar/3/donald-knuth/#atom-everything) — Simon Willison (03/04)
+
+### Global Economy
+
+- [How Much Higher Can Oil Go?](https://www.bloomberg.com/news/videos/2026-03-06/brent-oil-surges-as-middle-east-war-paralyzes-hormuz-traffic) — Bloomberg (03/07)
+- [Oil surges above $90 a barrel for first time in Iran war](https://www.ft.com/content/d3e2c2a1-73aa-4952-b1f1-08c87042b507) — Financial Times (03/07)
+- [Qatar warns war will force Gulf to stop energy exports 'within days'](https://www.ft.com/content/be122b17-e667-478d-be19-89d605e978ea) — Financial Times (03/06)
+- [US economy sheds 92,000 jobs in February in sharp slide](https://www.ft.com/content/6542bd0c-59ca-493b-ab5d-2d69e4e00cae) — Financial Times (03/06)
+- [US Payrolls Shock Wall Street](https://www.bloomberg.com/news/videos/2026-03-06/open-interest-3-6-2026-video) — Bloomberg (03/07)
+- [Ships in Gulf declare themselves Chinese to dodge attack](https://www.ft.com/content/eaecc3ce-ba4e-4e19-9d0a-6cf1536a5aed) — Financial Times (03/07)
+- [Russia is helping Iran to target US military assets in Middle East](https://www.ft.com/content/19be57d7-6299-4a1d-b761-3d699d07de94) — Financial Times (03/07)
+- [Global bonds suffer one of worst routs in years](https://www.ft.com/content/d0b40a4d-9cd8-4904-8c0a-ea14326341b7) — Financial Times (03/07)
+- [BlackRock $26B Private Credit Fund Limits Withdrawals](https://www.bloomberg.com/news/videos/2026-03-06/blackrock-26b-private-credit-fund-limits-withdrawals-video) — Bloomberg (03/07)
+- [Private Debt Should Face 'Full-Blown Default Cycle,' Pimco Says](https://www.bloomberg.com/news/articles/2026-03-06/pimco-says-private-debt-should-face-full-blown-default-cycle) — Bloomberg (03/07)
+- [Fed's Hammack Says She Sees Two-Sided Risks to Interest Rates](https://www.bloomberg.com/news/articles/2026-03-06/fed-s-hammack-says-she-sees-two-sided-risks-to-interest-rates) — Bloomberg (03/07)
+- [Nintendo is suing the US government for a refund of Trump's illegal tariffs](https://www.theverge.com/games/890861/nintendo-lawsuit-tariffs-donald-trump) — The Verge (03/07)
+- [Tech industry is in tariff hell, even if refunds are automated](https://arstechnica.com/tech-policy/2026/03/tech-industry-is-in-tariff-hell-even-if-refunds-are-automated/) — Ars Technica (03/06)
+- [The Pulse: AWS region knocked offline by drone attack in historic first](https://newsletter.pragmaticengineer.com/p/the-pulse-164) — The Pragmatic Engineer (03/06)
+
+### Also Worth Noting
+
+- [Can coding agents relicense open source through a "clean room" implementation?](https://simonwillison.net/2026/Mar/5/chardet/#atom-everything) — Simon Willison (03/06)
+- [Reasoning models struggle to control their chains of thought, and that's good](https://openai.com/index/reasoning-models-chain-of-thought-controllability) — OpenAI (03/05)
+- [LangChain Skills — bumps Claude Code performance from 29% to 95%](https://blog.langchain.com/langchain-skills/) — LangChain Blog (03/05)
+- [The design process is dead — Jenny Wen (head of design at Claude)](https://www.lennysnewsletter.com/p/the-design-process-is-dead) — Lenny's Newsletter (03/01)
+- [We Have 30 AI Agents in Production — Top 5 Issues No One Talks About](https://www.saastr.com/we-have-30-ai-agents-in-production-here-are-the-top-5-issues-no-one-talks-about/) — SaaStr (03/04)
+- [On-device speech toolkit for Apple Silicon — ASR, TTS, diarization in Swift](https://www.reddit.com/r/MachineLearning/comments/1rm7rox/p_ondevice_speech_toolkit_for_apple_silicon_asr/) — Reddit r/MachineLearning (03/06)
+- [Apple unveils M5 Pro and M5 Max — up to 4x faster LLM prompt processing](https://www.reddit.com/r/LocalLLaMA/comments/1rjqsv6/apple_unveils_m5_pro_and_m5_max_citing_up_to_4/) — Reddit r/LocalLLaMA (03/03)
