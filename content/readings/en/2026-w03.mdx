@@ -1,0 +1,109 @@
+---
+title: "Qwen 3.5 Open Source Shocks, AI Engineering Deepens, METR Evaluates AI Productivity"
+date: "2026-01-18"
+week: "2026-W03"
+excerpt: "Alibaba's Qwen 3.5 releases 8 model sizes (397B to 0.8B), METR studies exponential AI productivity timelines, Dylan Patel analyzes $200B AI capex"
+articleCount: 721
+sourceCount: 25
+tags: ["AI", "Open Source Models", "Qwen", "AI Evaluation", "Dev Tools"]
+---
+
+**In this issue:** Qwen 3.5 model family → METR AI productivity evals → Dylan Patel on chip wars → Google AI updates → HuggingFace Modular Diffusers → Code review crisis → References
+
+---
+
+## Qwen 3.5: Open Source AI Milestone (And the Crisis Behind It)
+
+Alibaba's Qwen team densely released **8 model sizes** (397B to 0.8B) over the past few weeks, shaking the open-source community. Highlights:
+
+| Model | Feature |
+|-------|---------|
+| 397B / 235B | Flagship reasoning + multimodal |
+| 27B / 35B | Excellent coding tasks on Mac |
+| 2B | 4.57GB (1.27GB quantized), full reasoning + vision |
+| 0.8B | Ideal for edge devices |
+
+These were achieved with far fewer resources than OpenAI/Google — Simon Willison called it "a remarkable achievement."
+
+However, in the same period, technical lead **Junyang Lin** abruptly announced his resignation on X, followed by multiple core members. The trigger: Alibaba hired a new manager from Google's Gemini team to take over Qwen. **Open source AI's biggest crisis was emerging.**
+
+---
+
+## METR: Exponential AI Productivity Timeline Evaluation
+
+METR's Joel Becker shared their evaluation framework on the Latent Space podcast:
+
+- "Time Horizon Evals": Measuring how long AI can independently complete tasks
+- AI capability ceilings are growing **exponentially**, not linearly
+- Threat model: When AI can independently handle 6-month tasks, the software industry will fundamentally reorganize
+- Currently, AI can autonomously handle tasks in the **30-60 minute range** — and advancing rapidly
+
+> "We need reliable evaluation systems in place before AI capabilities exceed human oversight."
+
+---
+
+## Dylan Patel: $200B AI CapEx — Who's Burning, and Where
+
+SemiAnalysis's Dylan Patel broke down AI industry capital allocation on the Latent Space podcast:
+
+- **$200 billion** in annual AI infrastructure spend (Google, Meta, Microsoft, Amazon)
+- **Chip war core**: HBM memory and CoWoS packaging are the bottlenecks; TSMC is the key
+- **Google may have zero profits by 2027**: AI investment compressing ad margins
+- Blackwell architecture's impact far exceeds Hopper — higher performance, but also more expensive
+
+---
+
+## Google AI February Recap: Nano Banana 2 and AI Mode Canvas
+
+Google summarized February's AI releases, with key highlights:
+
+- **Nano Banana 2**: Best image generation model, outperforming Midjourney v7 on specific benchmarks
+- **AI Mode Canvas**: Document creation and interactive tools directly in Google Search, available to all US users
+- **Gemini Translate update**: New "understand" and "ask" buttons to navigate linguistic complexity
+
+---
+
+## HuggingFace: Modular Diffusers and GGML Merger
+
+Two major HuggingFace developments this week:
+
+1. **Modular Diffusers launch**: Composable diffusion pipeline building blocks — developers can assemble image generation workflows like LEGO
+2. **GGML and llama.cpp join HuggingFace**: Ensuring the long-term progress of local AI; two most important open-source inference libraries now under one roof
+
+---
+
+## Code Quality's New Challenge: AI Acceleration Creates PR Review Pressure
+
+Latent Space published the controversial "Code Review Is Dead" article, with striking data:
+
+- Teams with high AI adoption merge **98% more** PRs
+- But PR review time increased **91%**
+- Humans can no longer read all AI-generated code
+
+Future quality gates lie in **Spec-Driven Development**: Review intent and specifications, not code itself.
+
+---
+
+## References
+
+### Qwen 3.5
+- [Something is afoot in the land of Qwen](https://simonwillison.net/2026/Mar/4/qwen/#atom-everything) — Simon Willison (03/04)
+- [\[AINews\] Anthropic @ $19B ARR, Qwen team leaves](https://www.latent.space/p/ainews-anthropic-19b-arr-qwen-team) — Latent Space (03/04)
+
+### METR Evaluation
+- [METR's Joel Becker on exponential Time Horizon Evals](https://www.latent.space/p/metr) — Latent Space (02/28)
+
+### Dylan Patel
+- [Dylan Patel of SemiAnalysis on the $200B AI CapEx](https://www.latent.space/p/dylanpatel-cooking) — Latent Space (02/28)
+
+### Google AI
+- [The latest AI news we announced in February](https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026/) — Google Blog (03/06)
+- [Nano Banana 2: Combining Pro capabilities with lightning-fast speed](https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/) — Google (02/27)
+- [Use Canvas in AI Mode to get things done](https://blog.google/products-and-platforms/products/search/ai-mode-canvas-writing-coding/) — Google (03/05)
+
+### HuggingFace
+- [Introducing Modular Diffusers](https://huggingface.co/blog/modular-diffusers) — HuggingFace (03/05)
+- [GGML and llama.cpp join HF to ensure the long-term progress of Local AI](https://huggingface.co/blog/ggml-joins-hf) — HuggingFace (02/20)
+
+### Code Review
+- [How to Kill the Code Review](https://www.latent.space/p/reviews-dead) — Latent Space (03/03)

@@ -1,0 +1,106 @@
+---
+title: "科技就業危機、Kotlin 之後的程式語言、AI 客製化 CUDA Kernel"
+date: "2026-02-15"
+week: "2026-W07"
+excerpt: "科技就業顯著比 2008/2020 衰退更糟、Kotlin 語言創始人談下一代語言、Codex 和 Claude 讓任何人都能寫 CUDA Kernel"
+articleCount: 566
+sourceCount: 25
+tags: ["AI", "就業市場", "程式語言", "CUDA", "開發者工具"]
+---
+
+**本期目錄：** 科技就業崩塌 → Kotlin 之後是什麼 → AI 寫 CUDA Kernel → Kent Beck 工程哲學 → Pragmatic Summit 錄影 → 美國關稅混亂 → 參考來源
+
+---
+
+## 科技就業：比 2008 或 2020 衰退都更嚴峻
+
+本週 Hacker News 最多討論的技術話題之一：**科技就業現在顯著比 2008 或 2020 衰退更糟**。
+
+關鍵數據（來自就業市場分析）：
+- 科技職位空缺降幅超過兩次主要衰退的比較期
+- AI 採用加速了部分崗位的縮減
+- Block（前 Square）宣布 **40% 裁員**，官方聲明「與 AI 無關」，但時間點耐人尋味
+- 大企業的「降本增效」在 AI 加速期遇上宏觀不確定性
+
+> Anthropic 研究《Labor market impacts of AI: A new measure and early evidence》提供了早期量化證據——AI 確實在改變勞動市場結構，而非只是提升生產力。
+
+---
+
+## Kotlin 之後的程式語言：JetBrains 的下一步
+
+The Pragmatic Engineer 深度訪談了 Kotlin 語言的創造者，討論下一個程式語言會是什麼：
+
+- Kotlin 的成功來自**務實性**：解決 Java 的痛點，而非追求理論純粹性
+- 下一代語言需要原生支援 AI 協作：型別系統要能讓 LLM 更好地理解和生成程式碼
+- **多平台原生**（KMP）是 Kotlin 的下一個大賭注
+
+---
+
+## AI 讓任何人都能寫 CUDA Kernel
+
+HuggingFace Blog 發布了一篇令人振奮的文章：**Codex 和 Claude 如何讓任何人都能寫客製化 CUDA Kernel**。
+
+過去，寫 CUDA 需要深度 GPU 架構知識，是少數人才能掌握的技能。現在：
+- AI 能根據自然語言描述生成高效的 CUDA 核心
+- 這讓更多研究者能做 GPU 層級的最佳化，不再局限於 PyTorch API
+- HuggingFace 展示了幾個案例：訓練速度提升 2-5x，完全由 AI 生成的 Kernel
+
+---
+
+## Kent Beck 的工程代際哲學
+
+Kent Beck 本週探討了一個敏感話題：
+
+**「代際差距還是只是粗魯？」**（Generation Gap or Just Rude?）：
+- 年輕工程師面對 AI 的態度和資深工程師的分歧
+- 不是年齡問題，而是對不確定性的**容忍度**不同
+- 資深工程師的優勢：能辨別 AI 的輸出什麼時候是錯的
+
+**「Genie Session：Codex for Mac」**：
+- Kent 的個人實驗：用 AI Genie 幫助寫 Mac 應用
+- 發現：AI 最擅長的不是新功能，而是「把你已經知道怎麼做的事加速完成」
+
+---
+
+## Pragmatic Summit 精彩重播
+
+The Pragmatic Engineer 發布了 Pragmatic Summit 的錄影和摘要。核心辯論：
+
+1. **AI 讓工程師人數減少還是增加？** 目前證據兩者都有
+2. **軟體開發的「工廠化」趨勢**：Agent 生產線 vs 工匠文化
+3. **2027 的工程師角色**：更多架構決策，更少實作細節
+
+---
+
+## 美國關稅混亂：法院命令退款，海關拒絕執行
+
+- 法官命令政府退還逾 **$1,300 億非法關稅**
+- 但海關官員正在**拒絕退款申請**
+- Nintendo 正式**起訴美國政府**，要求退還關稅加利息
+- 科技業仍深陷關稅地獄——即使退款自動化，物流和定價混亂仍在持續
+
+---
+
+## 參考來源
+
+### 科技就業
+- Tech employment now significantly worse than the 2008 or 2020 recessions — Hacker News (03/07)
+- [Labor market impacts of AI: A new measure and early evidence](https://www.anthropic.com/research/labor-market-impacts) — Anthropic (03/06)
+- [The Pulse: AWS region knocked offline by drone attack in historic first](https://newsletter.pragmaticengineer.com/p/the-pulse-164) — The Pragmatic Engineer (03/06)
+
+### Kotlin
+- [The programming language after Kotlin – with the creator of Kotlin](https://newsletter.pragmaticengineer.com/p/the-programming-language-after-kotlin) — The Pragmatic Engineer (02/13)
+
+### CUDA Kernel
+- [Custom Kernels for All from Codex and Claude](https://huggingface.co/blog/custom-cuda-kernels-agent-skills) — HuggingFace (02/13)
+
+### Kent Beck
+- [Generation Gap or Just Rude?](https://tidyfirst.substack.com/p/generation-gap-or-just-rude) — TidyFirst (02/11)
+- [Genie Session: Codex for Mac/GPUSortedMap](https://tidyfirst.substack.com/p/genie-session-codex-for-macgpusortedmap) — TidyFirst (02/14)
+
+### Pragmatic Summit
+- [The Pragmatic Summit recordings and summaries](https://newsletter.pragmaticengineer.com/p/the-pragmatic-summit-recordings) — The Pragmatic Engineer (02/17)
+
+### 關稅
+- [Nintendo is suing the US government for a refund of Trump's illegal tariffs](https://www.theverge.com/games/890861/nintendo-lawsuit-tariffs-donald-trump) — The Verge (03/07)
+- [Tech industry is in tariff hell, even if refunds are automated](https://arstechnica.com/tech-policy/2026/03/tech-industry-is-in-tariff-hell-even-if-refunds-are-automated/) — Ars Technica (03/06)

@@ -1,0 +1,94 @@
+---
+title: "Claude Code Tops Dev Tools, Cline Supply Chain Attack, EquipmentShare Goes Public"
+date: "2026-01-25"
+week: "2026-W04"
+excerpt: "900-person survey confirms Claude Code reached #1 in 8 months, Cline's production release compromised via Prompt Injection infecting 4,000 machines, YC portfolio EquipmentShare successfully IPOs"
+articleCount: 684
+sourceCount: 25
+tags: ["AI", "Dev Tools", "Claude Code", "Security", "YC"]
+---
+
+**In this issue:** Claude Code crowned king → Boris Cherny on building Claude Code → Cline supply chain attack → Multi-agent workflow failures → EquipmentShare IPO → References
+
+---
+
+## Claude Code Is King: Zero to #1 in Eight Months
+
+The Pragmatic Engineer's survey of 900+ engineers delivered industry-shaking data:
+
+| Metric | Data |
+|--------|------|
+| Time for Claude Code to reach #1 | **Just 8 months** |
+| Engineers using AI tools weekly | **95%** |
+| Most popular tool: Claude Code | **46%** |
+| Using AI for 70%+ of work | **56%** |
+
+Staff+ engineers are the biggest agent users (63.5%). Smaller companies lean Claude Code; enterprises lean Copilot due to procurement. **Directors and VPs love Claude Code at twice the rate of junior roles.**
+
+---
+
+## Boris Cherny: How Claude Code Was Built
+
+Claude Code creator Boris Cherny shared several mind-bending observations on the podcast:
+
+1. **He ships 20-30 PRs daily using 5 parallel Claude instances** — plan mode to iterate, then one-shot implementation
+2. **Claude Code uses glob and grep** — beats RAG and vector databases. Simple brute force wins.
+3. **PRDs are dead**: The Claude Code team doesn't write requirements docs — heavy prototyping instead
+4. **Claude Cowork built in 10 days** — most engineering effort was in security (classifiers, VM isolation, OS protection)
+5. **Engineers as modern "scribes"?** After the printing press, scribes became authors and the writing market exploded
+
+> **Anthropic culture:** Everyone's title is "Member of Technical Staff" — no PMs, Designers, or EMs. This is key to fast iteration.
+
+---
+
+## Cline Supply Chain Attack: One Issue Title Infected 4,000 Machines
+
+The most disturbing security incident of the week: Cline's production release was compromised via a single Issue title.
+
+Attack chain:
+1. Attacker opened an Issue on Cline's GitHub repo with Prompt Injection hidden in the title
+2. Cline's AI Issue triager executed Bash commands
+3. Injected instructions made Claude install a malicious npm package
+4. Malicious package stuffed 11GB of junk into GitHub Actions Cache
+5. Cache exceeding 10GB triggers auto-eviction — attacker's poisoned cache replaced node_modules
+6. Cline's nightly release workflow shared the same cache key and loaded the poisoned cache
+7. Attacker obtained NPM publish secrets and published cline@2.3.0 (later reverted)
+
+**Lessons**: AI-powered Issue triagers must not have shell execution privileges; GitHub Actions cache keys must not be shared across workflows.
+
+---
+
+## Multi-Agent Workflow Failure Modes
+
+GitHub Blog and Latent Space both focused on multi-agent system reliability:
+
+- Most failures stem from **missing structure**, not model capability gaps
+- Three key engineering patterns: clear agent boundaries, deterministic guardrails (tests/type checks), BDD specs as primary deliverable
+- IBM and UC Berkeley research: a diagnostic framework for why enterprise agents fail (IT-Bench and MAST)
+
+---
+
+## EquipmentShare Goes Public
+
+YC portfolio company **EquipmentShare** successfully went public this week — one of the most notable YC IPOs in recent years, demonstrating the health of B2B SaaS in the current market.
+
+---
+
+## References
+
+### Claude Code
+- [AI Tooling for Software Engineers in 2026](https://newsletter.pragmaticengineer.com/p/ai-tooling-2026) — The Pragmatic Engineer (03/04)
+- [Building Claude Code with Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) — The Pragmatic Engineer (03/05)
+
+### Cline Attack
+- [Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager](https://simonwillison.net/2026/Mar/6/clinejection/#atom-everything) — Simon Willison (03/06)
+
+### Multi-Agent Workflows
+- [Multi-agent workflows often fail. Here's how to engineer ones that don't.](https://github.blog/ai-and-ml/github-copilot/multi-agent-workflows-often-fail-heres-how-to-engineer-ones-that-dont/) — GitHub Blog
+- [IBM and UC Berkeley Diagnose Why Enterprise Agents Fail](https://huggingface.co/blog/ibm-research/itbenchandmast) — HuggingFace (02/19)
+
+### EquipmentShare
+- [Congratulations to EquipmentShare on Going Public](https://www.ycombinator.com/blog/congratulations-to-equipmentshare/) — YC Blog (01/23)
+
+### GitHub Copilot
+- [60 million Copilot code reviews and counting](https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/) — GitHub Blog (03/06)

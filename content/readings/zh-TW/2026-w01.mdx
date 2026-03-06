@@ -1,0 +1,99 @@
+---
+title: "Vercel 生態系爆發、GPT-5.4 出擊、全球供應鏈裂變"
+date: "2026-01-04"
+week: "2026-W01"
+excerpt: "NextJS 與 ai-sdk 稱霸話題榜、OpenAI 推出 GPT-5.4 與 Codex Security、Cloudflare 一週重寫 Next.js、Claude 解決 Knuth 的數學難題"
+articleCount: 740
+sourceCount: 25
+tags: ["AI", "開發者工具", "Vercel", "NextJS", "OpenAI"]
+---
+
+**本期目錄：** Vercel 生態系主導 → OpenAI GPT-5.4 → Codex Security → Cloudflare 重寫 Next.js → Claude 解開 Knuth 難題 → 全球經濟動態 → 參考來源
+
+---
+
+## Vercel 生態系統：本週最大的聲量
+
+本週 AI 工程類話題中，`nextjs`、`frontend`、`ai-sdk` 三個標籤各有 **151 篇**提及，遠超其他話題。Vercel 以單一部落格來源貢獻了 **151 篇**文章，佔整個 digest 近五分之一。
+
+這不是偶然。Vercel 在本週密集發布多項功能：
+
+- **Bun monorepo 支援**：跳過未受影響的專案建置，偵測 Bun lockfile
+- **部署速度提升 15%**：平均節省 1.2 秒，複雜專案最多省 3.7 秒
+- **CDN 全新 Dashboard**：即時流量地圖、快取管理、路由規則，無需重新部署即可更新
+- **Stripe 正式上線 Marketplace**：沙箱轉正式環境零手動配置
+- **GPT-5.4 進駐 AI Gateway**：Vercel 是首批整合新模型的平台之一
+- **v0 一鍵建立 Blob Store**：私有/公開儲存體，支援 Vercel Blob 直接對話操作
+
+> Vercel 正在把自己打造成「AI 應用的 AWS」——基礎設施、SDK、AI 網關三位一體。
+
+---
+
+## OpenAI GPT-5.4：多模態全能模型
+
+OpenAI 在本週發布了 **GPT-5.4**，這是第一個把 Codex 級編程能力融入主線的版本，同時覆蓋：
+
+- 1M token 上下文視窗
+- Computer Use（直接操作 GUI）
+- 投行級試算表分析（87.3% vs GPT-5.2 的 68.4%）
+- SWE-Bench Pro 程式修復 57.7%
+
+同步發布：**Codex Security** 安全 Agent，能分析整個專案上下文來偵測、驗證並修補漏洞；**ChatGPT for Excel** 帶金融數據整合。
+
+值得注意的是，OpenAI 研究顯示**推理模型無法控制自己的思考鏈**，且這被視為一個安全優點——模型無法隱藏推理過程。
+
+---
+
+## Cloudflare 一週重寫 Next.js：AI 顛覆商業開源
+
+The Pragmatic Engineer 報導了一個驚人的案例：**一位 Cloudflare 工程師在一週內用 AI Agent 重寫了 Vercel 的大部分 Next.js**。
+
+這是 AI 破壞既有商業護城河的早期訊號——開源專案的差異化（以及其背後的商業模式）正在面臨前所未有的挑戰。
+
+---
+
+## Claude 解開 Knuth 的數學難題
+
+計算機科學之父 Donald Knuth 寫下：
+
+> **Claude Opus 4.6 解決了我研究了數週的一個開放問題。看來我得修正對『生成式 AI』的看法了。能知道我的猜想有一個漂亮的解答，見證自動推理和創造性問題求解的進步，真是快樂。**
+
+Knuth 向來對 AI 保守。這段話在社群引發巨大迴響。
+
+---
+
+## 全球科技與經濟動態
+
+- **法官命令政府退還逾 $1,300 億非法關稅**（最高法院裁定 Trump 關稅違法）
+- **美國 2 月意外流失 92,000 個工作機會**，疫情以來最大單月降幅
+- **Proton Mail 協助 FBI 揭露匿名抗議者**，引發加密隱私討論
+- **NVIDIA 推動印度 AI 基礎設施**，DGX 工廠進駐多家合作夥伴
+- **YC 公告 AI Stack**（01/17）：集結 Next.js、Supabase、Vercel 的初創套件
+
+---
+
+## 參考來源
+
+### OpenAI
+- [Introducing GPT-5.4](https://openai.com/index/introducing-gpt-5-4) — OpenAI (03/05)
+- [GPT-5.4 Thinking System Card](https://openai.com/index/gpt-5-4-thinking-system-card) — OpenAI (03/05)
+- [Codex Security: now in research preview](https://openai.com/index/codex-security-now-in-research-preview) — OpenAI (03/06)
+- [Introducing ChatGPT for Excel and new financial data integrations](https://openai.com/index/chatgpt-for-excel) — OpenAI (03/05)
+- [Reasoning models struggle to control their chains of thought, and that's good](https://openai.com/index/reasoning-models-chain-of-thought-controllability) — OpenAI (03/05)
+
+### Vercel
+- [Deployment step now 15% faster](https://vercel.com/changelog/deployment-step-now-15-percent-faster) — Vercel Changelog (03/06)
+- [Vercel's CDN gets a new dashboard experience](https://vercel.com/changelog/vercels-cdn-gets-a-new-dashboard-experience) — Vercel (03/05)
+- [GPT 5.4 is now on AI Gateway](https://vercel.com/changelog/gpt-5-4-is-now-on-ai-gateway) — Vercel (03/05)
+- [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe) — Vercel (03/05)
+
+### 思想領袖
+- [Quoting Donald Knuth](https://simonwillison.net/2026/Mar/3/donald-knuth/#atom-everything) — Simon Willison (03/04)
+- [Introducing GPT-5.4](https://simonwillison.net/2026/Mar/5/introducing-gpt54/#atom-everything) — Simon Willison (03/06)
+- [The Pulse: Cloudflare rewrites Next.js as AI rewrites commercial open source](https://newsletter.pragmaticengineer.com/p/the-pulse-164-nextjs) — The Pragmatic Engineer (02/27)
+
+### Y Combinator
+- [Announcing the YC AI Stack](https://www.ycombinator.com/blog/the-yc-ai-student-starter-pack/) — YC Blog (01/17)
+
+### 全球動態
+- [Labor market impacts of AI: A new measure and early evidence](https://www.anthropic.com/research/labor-market-impacts) — Anthropic (03/06)

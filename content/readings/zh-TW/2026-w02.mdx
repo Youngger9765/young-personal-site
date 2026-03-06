@@ -1,0 +1,94 @@
+---
+title: "OpenAI 史上最大融資、Mitchell Hashimoto 的 AI 工作流、Cursor 第三紀元"
+date: "2026-01-11"
+week: "2026-W02"
+excerpt: "OpenAI 完成 $1,100 億融資（史上最大）、Cursor 雲端 Agent 超越 IDE 補全、Mitchell Hashimoto 分享 AI 重塑個人工程師工作方式"
+articleCount: 738
+sourceCount: 25
+tags: ["AI", "開發者工具", "OpenAI", "融資", "Cursor"]
+---
+
+**本期目錄：** OpenAI $1,100 億融資 → Cursor 第三紀元 → Mitchell Hashimoto 的工作流 → Vercel 生態系 → Gemini 3.1 Flash-Lite → Pragmatic Summit 六大預測 → 參考來源
+
+---
+
+## OpenAI 完成史上最大融資：$1,100 億
+
+OpenAI 關閉了一輪由 Amazon、NVIDIA、SoftBank 領頭的 **$1,100 億融資**，估值 $8,400 億——這是創業公司史上最大的一次籌資。
+
+> 「恭喜你拿到了最大的數字。」— Latent Space
+
+這個數字意味著 OpenAI 現在擁有足夠資金打造未來幾年的 AI 基礎設施。競爭對手 Anthropic 的年收入已達 $190 億 ARR，兩大 AI 巨頭的差距正在縮小。
+
+---
+
+## Cursor 宣告「第三紀元」：雲端 Agent 超越 IDE 補全
+
+估值 $500 億的 Cursor 本週宣布：**雲端 Agent 的使用量已超過傳統 IDE tab 補全功能**。他們稱之為「軟體開發的第三紀元」。
+
+三大支柱：
+
+1. **Agent 自己測試**：模型不只寫程式，還會跑測試、修正、交出已驗證的 PR
+2. **影片回顧**：Agent 完成後錄一段操作影片，比讀 diff 直觀得多
+3. **完整遠端控制**：開發者可直接接管 VM、滑鼠點擊、鍵盤輸入
+
+Cursor 同時收購了 Graphite（Git 工具）和 Autotab（Computer Use 先驅）。
+
+> 未來的突破是「把水管變粗」——平行 Agent、Agent 群，不是一個人配一個模型。— Jonas（Cursor 聯合創辦人）
+
+---
+
+## Mitchell Hashimoto：AI 如何重塑工程師的工作方式
+
+HashiCorp 創辦人 Mitchell Hashimoto 分享了他如何用 AI Agent 徹底改變日常工程流程：
+
+- 不再為「如何開始」苦惱——AI 是最好的橡皮鴨
+- Agent 可以探索程式碼庫、找出相關文件、跑測試，讓他專注於架構決策
+- 對比 GitHub Copilot 的「建議」，他更偏好能**自主行動**的 Agent
+
+The Pragmatic Engineer 同期也發布了「AI 工程的六大預測」，整理自 Pragmatic Summit 工作坊：AI 重塑的不是工具，而是整個工程師角色。
+
+---
+
+## Vercel 與前端生態
+
+Vercel Blog 本週仍是最大聲量來源（151 篇），但相比 W01 開始見頂。主要亮點：
+
+- **Streamdown 2.4**：更多自訂化、無障礙功能、Markdown 渲染鉤子
+- **Run cron jobs from deployment summary**：部署後直接啟動排程任務
+- **v0 私有 Blob Store**：對話式 UI 管理儲存
+
+ai-sdk 持續是前端開發者整合 AI 的首選工具，連帶帶動大量技術討論。
+
+---
+
+## Google Gemini 3.1 Flash-Lite：極低成本推理
+
+Google 發布了 **Gemini 3.1 Flash-Lite**，訂價 $0.25/M 輸入、$1.5/M 輸出，是 Gemini 3.1 Pro 的 **1/8 價格**。支援四個思考層級（minimal / low / medium / high），是目前市場上 cost-per-token 最低的多模態模型之一。
+
+Simon Willison 測試了四種思考層級並分享了「四隻不同思考深度的鵜鶘」。
+
+---
+
+## 參考來源
+
+### OpenAI 融資
+- [\[AINews\] OpenAI closes $110B raise from Amazon, NVIDIA, SoftBank](https://www.latent.space/p/ainews-openai-closes-110b-raise-from) — Latent Space (02/28)
+
+### Cursor 第三紀元
+- [Cursor's Third Era: Cloud Agents](https://www.latent.space/p/cursor-third-era) — Latent Space (03/06)
+
+### Mitchell Hashimoto
+- [Mitchell Hashimoto's new way of writing code](https://newsletter.pragmaticengineer.com/p/mitchell-hashimoto) — The Pragmatic Engineer (02/26)
+- [The Future of Software Engineering with AI: Six Predictions](https://newsletter.pragmaticengineer.com/p/the-future-of-software-engineering-with-ai) — The Pragmatic Engineer (02/25)
+
+### Gemini
+- [Gemini 3.1 Flash-Lite: Built for intelligence at scale](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/) — Google AI Blog (03/04)
+- [Gemini 3.1 Flash-Lite](https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/#atom-everything) — Simon Willison (03/04)
+
+### Anthropic
+- [\[AINews\] Anthropic @ $19B ARR, Qwen team leaves](https://www.latent.space/p/ainews-anthropic-19b-arr-qwen-team) — Latent Space (03/04)
+
+### Vercel
+- [Streamdown 2.4: More customization, accessibility and custom rendering](https://vercel.com/changelog/streamdown-2-4) — Vercel (03/05)
+- [Run cron jobs from deployment summary](https://vercel.com/changelog/run-cron-jobs-from-deployment-summary) — Vercel (03/05)

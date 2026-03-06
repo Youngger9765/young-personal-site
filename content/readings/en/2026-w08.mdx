@@ -1,0 +1,111 @@
+---
+title: "How Codex Is Built, GitHub AI Reshapes Developer Choices, GGML Joins HuggingFace"
+date: "2026-02-22"
+week: "2026-W08"
+excerpt: "Pragmatic Engineer deep dives into how OpenAI Codex is built, GitHub Octoverse data reveals AI reshaping technology selection, GGML and llama.cpp join the HuggingFace family"
+articleCount: 527
+sourceCount: 25
+tags: ["AI", "Codex", "Open Source", "GitHub", "Dev Tools"]
+---
+
+**In this issue:** How Codex Is Built → GitHub AI reshapes tech choices → GGML+llama.cpp joins HF → Pragmatic Summit → Middle management trend → NVIDIA healthcare AI → References
+
+---
+
+## How Codex Is Built: Deep Dive into OpenAI's Engineering Culture
+
+The Pragmatic Engineer published an exclusive deep dive into how the OpenAI Codex team builds:
+
+**Technical Architecture**:
+- Codex is a **long-horizon task execution agent** built on GPT-5.4, not a conversational AI
+- Uses sandbox VMs to isolate each task execution environment
+- Core capability: read an entire repo, run tests, iterate fixes, until tests pass
+
+**How Engineers Use Codex**:
+- OpenAI engineers use Codex for **30-50%** of their weekly coding on average
+- Most effective use: treat Codex as an "async engineer" — describe task, wait for results, review diff
+- Not ideal for Codex: rapid interactive debugging, judgments requiring deep context
+
+**Differences from Claude Code**:
+- Codex: better for long-horizon, complex, multi-step tasks
+- Claude Code: better for interactive, real-time, conversational engineering
+
+---
+
+## GitHub Octoverse: How AI Reshapes Developer Technology Choices
+
+GitHub's Octoverse 2025 data revealed an important trend:
+
+> **AI compatibility is becoming the new standard for technology selection.**
+
+Key findings:
+- The quality of AI tool support for languages increasingly influences developer language choice
+- TypeScript continues to grow, partly because AI tools better support its type system
+- Python's dominance in AI/ML is unassailable
+- Rust and Go growth: strong type systems make it easier for AI to generate correct code
+
+---
+
+## GGML and llama.cpp Officially Join HuggingFace
+
+This week's open source AI milestone: **GGML and llama.cpp** (the two cornerstones of local AI inference) officially joined the HuggingFace family.
+
+Significance:
+- Long-term maintenance of local inference has a more solid organizational backing
+- HuggingFace becomes a complete ecosystem from cloud models to local inference
+- Unsloth (quantized fine-tuning tool) simultaneously announced HuggingFace Jobs integration, making free training easier
+
+---
+
+## Middle Management: Fewer but More Flexible Teams?
+
+The Pragmatic Engineer reported an interesting trend: **tech companies' middle management layers are shrinking, but smaller, more flexible teams are rising**.
+
+- Anthropic's "everyone is MTS" culture is influencing other companies
+- Small cross-functional teams + AI agents outperform traditional hierarchical structures in some scenarios
+- But large enterprise procurement and compliance still require traditional management structures
+
+---
+
+## NVIDIA: Healthcare AI ROI Is Now Clear
+
+NVIDIA's second annual "State of AI in Healthcare and Life Sciences" survey shows:
+
+- **Radiology**: AI-assisted diagnosis fully deployed at multiple hospitals, accuracy exceeding human average
+- **Drug discovery**: AI compresses early-stage screening from years to months
+- **Lilly's LillyPod**: World's first pharmaceutical company-owned DGX SuperPOD with DGX B300
+
+---
+
+## The Future of Open Source in 2026
+
+Key points from GitHub Blog's early prediction piece "What to expect for open source in 2026":
+- AI-generated code will constitute a significant portion of open source contributions
+- Licensing issues will become a major topic
+- Maintainer community health is more important than ever — AI can generate code but can't replace community judgment
+
+---
+
+## References
+
+### Codex
+- [How Codex is built](https://newsletter.pragmaticengineer.com/p/how-codex-is-built) — The Pragmatic Engineer (02/18)
+
+### GitHub AI
+- [How AI is reshaping developer choice (and Octoverse data proves it)](https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/) — GitHub Blog (02/20)
+- [What to expect for open source in 2026](https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/) — GitHub Blog (02/19)
+
+### GGML/llama.cpp
+- [GGML and llama.cpp join HF to ensure the long-term progress of Local AI](https://huggingface.co/blog/ggml-joins-hf) — HuggingFace (02/20)
+- [Train AI models with Unsloth and Hugging Face Jobs for FREE](https://huggingface.co/blog/unsloth-jobs) — HuggingFace (02/20)
+- [One-Shot Any Web App with Gradio's gr.HTML](https://huggingface.co/blog/gradio-html-one-shot-apps) — HuggingFace (02/18)
+
+### Middle Management
+- [The Pulse #162: Even fewer middle managers and more flexible teams?](https://newsletter.pragmaticengineer.com/p/the-pulse-162-even-fewer-middle-managers) — The Pragmatic Engineer (02/20)
+
+### NVIDIA Healthcare
+- [From Radiology to Drug Discovery, Survey Reveals AI Is Delivering Clear Return on Investment in Healthcare](https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/) — NVIDIA Blog (02/24)
+- [Now Live: The World's Most Powerful AI Factory for Pharmaceutical Discovery](https://blogs.nvidia.com/blog/lilly-ai-factory-live/) — NVIDIA Blog (02/27)
+
+### IBM Research
+- [IBM and UC Berkeley Diagnose Why Enterprise Agents Fail Using IT-Bench and MAST](https://huggingface.co/blog/ibm-research/itbenchandmast) — HuggingFace (02/19)

@@ -1,0 +1,89 @@
+---
+title: "Anthropic vs Pentagon, AI Tools Survey, Open Source AI and Privacy Wake-Up"
+date: "2026-02-01"
+week: "2026-W05"
+excerpt: "Anthropic rejects Pentagon's $200M contract, 900-person AI tools survey data revealed, Proton Mail assists FBI in unmasking anonymous protester sparking privacy debate"
+articleCount: 648
+sourceCount: 25
+tags: ["AI", "Anthropic", "Privacy", "Dev Tools", "Security"]
+---
+
+**In this issue:** Anthropic rejects Pentagon → Claude's consumer growth → Proton Mail privacy incident → AI engineering anti-patterns → Lenny's insights → BlackRock credit fund limits redemptions → References
+
+---
+
+## Anthropic's Two-Front War: Ethics vs the Pentagon
+
+The biggest Anthropic news this week wasn't technology — it was politics.
+
+The Pentagon officially designated Anthropic a "supply chain risk" after the two sides couldn't agree on AI model control — **the military wanted unrestricted use of Claude, including for autonomous weapons and mass domestic surveillance. Anthropic refused. The $200M contract collapsed.**
+
+> AI models are rapidly commoditizing. Anthropic is positioning itself as the "ethical and trustworthy AI provider" — and that has real market value for both consumers and enterprises. — Bruce Schneier & Nathan Sanders
+
+Ironically, **Claude's consumer growth actually accelerated**. TechCrunch reports Claude App new installs have surpassed ChatGPT, with Anthropic's annual revenue reaching **$19B ARR**.
+
+Meanwhile, OpenAI's "compromise" placed Anthropic in a more complex position: MIT Technology Review reported OpenAI accepted some Pentagon terms — precisely the precedent Anthropic feared.
+
+---
+
+## Proton Mail Privacy Incident: Encryption Doesn't Mean Anonymity
+
+A widely discussed case: **Proton Mail assisted the FBI in unmasking an anonymous "Stop Cop City" protester**.
+
+The core logic: Proton Mail encrypted email content, but IP addresses and backup recovery emails were not in scope. Under legal demands, Proton provided this "metadata."
+
+**This is a reminder: threat models matter. Encrypted content does not equal complete anonymity.**
+
+---
+
+## AI Engineering Anti-Patterns: Simon Willison's Warnings
+
+Simon Willison organized the most common developer mistakes in his "Agentic Engineering Patterns" guide:
+
+- **Inflicting unreviewed code on collaborators**: Don't submit PRs you haven't read yourself
+- **Over-trusting AI test results**: Agents can execute code, but that doesn't mean they understand what the test is testing
+- **No Prompt Injection protection**: Any agent receiving user input must be defended
+- **Sharing cache keys across workflows**: The Cline case lesson (see W04)
+
+---
+
+## Lenny's Newsletter: Multiple PM and Founder Insights
+
+This week Lenny interviewed multiple product and design thought leaders:
+
+- **Aaron Levie (Box CEO)**: "Every Agent Needs a Box" — enterprise AI agents need content management as infrastructure
+- **Jenny Wen (Claude head of design)**: The design process is dead — Claude's designers no longer do wireframes; they prototype directly
+- Multiple pieces on debugging a "team that isn't working" in the AI era
+
+---
+
+## BlackRock $26B Private Credit Fund Limits Redemptions
+
+A notable financial market signal this week: **BlackRock limited redemptions on its $26B private credit fund** — client withdrawal requests surged to 9.3% of NAV.
+
+PIMCO simultaneously warned that private debt faces a "full-blown default cycle." Fed Cleveland President said rates could stay unchanged for a long time.
+
+---
+
+## References
+
+### Anthropic vs Pentagon
+- [Anthropic and the Pentagon](https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything) — Simon Willison (03/07)
+- [Claude's consumer growth surge continues after Pentagon deal debacle](https://techcrunch.com/2026/03/06/claudes-consumer-growth-surge-continues-after-pentagon-deal-debacle/) — TechCrunch (03/07)
+- [When AI Companies Go to War, Safety Gets Left Behind](https://www.wired.com/story/when-ai-companies-go-to-war-safety-gets-left-behind/) — Wired (03/07)
+- [OpenAI's "compromise" with the Pentagon is what Anthropic feared](https://www.technologyreview.com/2026/03/02/1133850/openais-compromise-with-the-pentagon-is-what-anthropic-feared/) — MIT Technology Review (03/03)
+
+### Proton Mail
+- Proton Mail Helped FBI Unmask Anonymous 'Stop Cop City' Protester — Hacker News (03/06)
+
+### AI Engineering Anti-Patterns
+- [Anti-patterns: things to avoid](https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/#atom-everything) — Simon Willison (03/05)
+- [Agentic manual testing](https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/#atom-everything) — Simon Willison (03/06)
+
+### Lenny's Newsletter
+- [Every Agent Needs a Box — Aaron Levie, Box](https://www.latent.space/p/box) — Latent Space (03/05)
+- [The design process is dead — Jenny Wen](https://www.lennysnewsletter.com/p/the-design-process-is-dead) — Lenny's Newsletter (03/01)
+
+### Financial Markets
+- [BlackRock $26B Private Credit Fund Limits Withdrawals](https://www.bloomberg.com/news/videos/2026-03-06/blackrock-26b-private-credit-fund-limits-withdrawals-video) — Bloomberg (03/07)
+- [Private Debt Should Face 'Full-Blown Default Cycle,' Pimco Says](https://www.bloomberg.com/news/articles/2026-03-06/pimco-says-private-debt-should-face-full-blown-default-cycle) — Bloomberg (03/07)

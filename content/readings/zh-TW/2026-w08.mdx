@@ -1,0 +1,111 @@
+---
+title: "How Codex Is Built、GitHub AI 重塑開發者選擇、GGML 加入 HuggingFace"
+date: "2026-02-22"
+week: "2026-W08"
+excerpt: "Pragmatic Engineer 深度解析 OpenAI Codex 的建構方式、GitHub Octoverse 數據揭示 AI 如何重塑技術選型、GGML 和 llama.cpp 加入 HuggingFace 大家庭"
+articleCount: 527
+sourceCount: 25
+tags: ["AI", "Codex", "開源", "GitHub", "開發者工具"]
+---
+
+**本期目錄：** How Codex Is Built → GitHub AI 重塑技術選型 → GGML+llama.cpp 加入 HF → Pragmatic Summit → 中間管理層減少趨勢 → NVIDIA 醫療 AI → 參考來源
+
+---
+
+## How Codex Is Built：OpenAI 工程文化的深度剖析
+
+The Pragmatic Engineer 獨家深度報導了 OpenAI Codex 團隊的建構方式：
+
+**技術架構**：
+- Codex 是基於 GPT-5.4 的**長期任務執行 Agent**，而非對話型 AI
+- 使用 sandbox VM 隔離每個任務執行環境，防止 Agent 互相干擾
+- 核心能力：讀取整個 repo、執行測試、迭代修復，直到測試通過
+
+**工程師如何使用 Codex**：
+- OpenAI 工程師每人每週平均用 Codex 完成 **30-50%** 的程式碼工作
+- 最有效的用法：把 Codex 當「非同步工程師」——描述任務、等結果、review diff
+- 不適合用 Codex 的場景：需要快速交互調試、涉及極度依賴上下文的判斷
+
+**與 Claude Code 的差異**：
+- Codex：更適合長期、複雜、多步驟任務
+- Claude Code：更適合互動、即時、對話式工程
+
+---
+
+## GitHub Octoverse：AI 如何重塑開發者的技術選型
+
+GitHub 的 Octoverse 2025 數據揭示了一個重要趨勢：
+
+> **AI 相容性正在成為技術選型的新標準。**
+
+關鍵發現：
+- AI 工具對語言的支援品質，越來越影響開發者的語言選擇
+- TypeScript 持續增長，部分原因是 AI 工具對其型別系統的支援更好
+- Python 在 AI/ML 領域的地位無可動搖
+- Rust 和 Go 的增長：強型別系統讓 AI 更容易生成正確的程式碼
+
+---
+
+## GGML 和 llama.cpp 正式加入 HuggingFace
+
+本週的開源 AI 里程碑：**GGML 和 llama.cpp**（本地 AI 推理的兩大基石）正式加入 HuggingFace 大家庭。
+
+意義：
+- 本地推理的長期維護有了更穩固的組織支撐
+- HuggingFace 成為從雲端模型到本地推理的完整生態系統
+- Unsloth（量化微調工具）同期宣布 HuggingFace Jobs 整合，讓免費訓練更容易
+
+---
+
+## 中間管理層：更少但更靈活的團隊？
+
+The Pragmatic Engineer 報導了一個有趣趨勢：**科技公司的中間管理層正在減少，但更靈活的小團隊正在崛起**。
+
+- Anthropic 的「所有人都是 MTS」文化正在影響其他公司
+- 小型跨功能團隊 + AI Agent 的組合，在某些場景比傳統分層結構更有效
+- 但大型企業的採購流程、合規需求，仍然需要傳統管理結構
+
+---
+
+## NVIDIA：醫療 AI 的投資回報已經清晰
+
+NVIDIA 的第二年「醫療和生命科學 AI 現況」調查顯示：
+
+- **放射科**：AI 輔助診斷已在多家醫院全面部署，準確率超過人類平均
+- **藥物發現**：AI 把早期篩選時間從數年縮短到數月
+- **Lilly 的 LillyPod**：世界首個製藥公司全資擁有的 DGX SuperPOD，搭載 DGX B300
+
+---
+
+## 2026 年開源的未來
+
+GitHub Blog 年初預測文章《What to expect for open source in 2026》的要點：
+- AI 生成的程式碼將佔開源貢獻的相當比例
+- 授權問題（License）將成為重大議題
+- 維護者社群的健康度比以往更重要，因為 AI 可以生成程式碼但無法替代社群判斷
+
+---
+
+## 參考來源
+
+### Codex
+- [How Codex is built](https://newsletter.pragmaticengineer.com/p/how-codex-is-built) — The Pragmatic Engineer (02/18)
+
+### GitHub AI
+- [How AI is reshaping developer choice (and Octoverse data proves it)](https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/) — GitHub Blog (02/20)
+- [What to expect for open source in 2026](https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/) — GitHub Blog (02/19)
+
+### GGML/llama.cpp
+- [GGML and llama.cpp join HF to ensure the long-term progress of Local AI](https://huggingface.co/blog/ggml-joins-hf) — HuggingFace (02/20)
+- [Train AI models with Unsloth and Hugging Face Jobs for FREE](https://huggingface.co/blog/unsloth-jobs) — HuggingFace (02/20)
+- [One-Shot Any Web App with Gradio's gr.HTML](https://huggingface.co/blog/gradio-html-one-shot-apps) — HuggingFace (02/18)
+
+### 中間管理層
+- [The Pulse #162: Even fewer middle managers and more flexible teams?](https://newsletter.pragmaticengineer.com/p/the-pulse-162-even-fewer-middle-managers) — The Pragmatic Engineer (02/20)
+
+### NVIDIA 醫療
+- [From Radiology to Drug Discovery, Survey Reveals AI Is Delivering Clear Return on Investment in Healthcare](https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/) — NVIDIA Blog (02/24)
+- [Now Live: The World's Most Powerful AI Factory for Pharmaceutical Discovery](https://blogs.nvidia.com/blog/lilly-ai-factory-live/) — NVIDIA Blog (02/27)
+
+### IBM 研究
+- [IBM and UC Berkeley Diagnose Why Enterprise Agents Fail Using IT-Bench and MAST](https://huggingface.co/blog/ibm-research/itbenchandmast) — HuggingFace (02/19)

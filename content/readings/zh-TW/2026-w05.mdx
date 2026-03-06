@@ -1,0 +1,89 @@
+---
+title: "Anthropic 五角大廈風波、AI 工具大調查、開源 AI 與隱私警鐘"
+date: "2026-02-01"
+week: "2026-W05"
+excerpt: "Anthropic 拒絕五角大廈 $2 億合約、900 人 AI 工具大調查數據揭露、Proton Mail 協助 FBI 揭露匿名抗議者引發隱私討論"
+articleCount: 648
+sourceCount: 25
+tags: ["AI", "Anthropic", "隱私", "開發者工具", "安全"]
+---
+
+**本期目錄：** Anthropic 拒絕五角大廈 → Claude 消費者增長 → Proton Mail 隱私事件 → AI 工程反模式 → Lenny 訪談洞察 → BlackRock 信貸基金限贖 → 參考來源
+
+---
+
+## Anthropic 的雙面戰場：道德 vs 五角大廈
+
+本週 Anthropic 最大的新聞不是技術，而是政治。
+
+五角大廈正式將 Anthropic 列為「供應鏈風險」，原因是雙方在 AI 模型控制權上談不攏——**軍方想要無限制使用 Claude，包括自主武器和大規模國內監控，Anthropic 拒絕了。$2 億合約就此破裂。**
+
+> AI 模型正在快速商品化。Anthropic 正在把自己定位為「道德且可信賴的 AI 供應商」——這對消費者和企業客戶都有市場價值。— Bruce Schneier & Nathan Sanders
+
+諷刺的是，**Claude 的消費者增長反而加速了**。TechCrunch 報導 Claude App 的新安裝量已超過 ChatGPT，Anthropic 年收入達 **$190 億 ARR**。
+
+同期，OpenAI 的「妥協」讓 Anthropic 陷入更複雜的位置：MIT Technology Review 報導 OpenAI 接受了五角大廈的部分條件，這正是 Anthropic 所擔心的先例。
+
+---
+
+## Proton Mail 隱私事件：加密不等於匿名
+
+一個引發廣泛討論的案例：**Proton Mail 協助 FBI 揭露了一位匿名的「Stop Cop City」抗議者**。
+
+核心邏輯：Proton Mail 加密了郵件內容，但 IP 位址和帳戶恢復用的備用郵件地址不在加密範圍內。在法律要求下，Proton 提供了這些「元資料」。
+
+**這提醒我們：威脅模型很重要。加密內容 ≠ 完全匿名。**
+
+---
+
+## AI 工程的反模式：Simon Willison 的警告
+
+Simon Willison 在他的「Agentic Engineering Patterns」指南中整理了開發者最常犯的錯誤：
+
+- **把沒審查的程式碼塞給同事**：不要提交你自己沒讀過的 PR
+- **過度信任 AI 測試結果**：Agent 可以執行程式，但不代表它真的理解測試在測什麼
+- **沒有 Prompt Injection 防護**：任何接受使用者輸入的 Agent 都必須設防
+- **Cache key 跨 workflow 共享**：Cline 案例的教訓（詳見 W04）
+
+---
+
+## Lenny's Newsletter：多位 PM 和創辦人的洞察
+
+本週 Lenny 訪談了多位產品和設計思想領袖：
+
+- **Aaron Levie（Box CEO）**：「Every Agent Needs a Box」——企業 AI Agent 需要內容管理作為基礎設施
+- **Jenny Wen（Claude head of design）**：設計流程已死——Claude 的設計師不再做線框圖，而是直接做原型
+- 多篇討論如何在 AI 時代調試一個「不工作的團隊」
+
+---
+
+## BlackRock $260 億私募信貸基金限制贖回
+
+金融市場本週出現值得關注的訊號：**BlackRock 限制其 $260 億私募信貸基金的贖回**——客戶申請贖回量飆至淨資產價值的 9.3%。
+
+PIMCO 同期警告：私募債務將面臨「全面違約週期」。Fed Cleveland 主席表示利率可能長時間維持不變。
+
+---
+
+## 參考來源
+
+### Anthropic 五角大廈
+- [Anthropic and the Pentagon](https://simonwillison.net/2026/Mar/6/anthropic-and-the-pentagon/#atom-everything) — Simon Willison (03/07)
+- [Claude's consumer growth surge continues after Pentagon deal debacle](https://techcrunch.com/2026/03/06/claudes-consumer-growth-surge-continues-after-pentagon-deal-debacle/) — TechCrunch (03/07)
+- [When AI Companies Go to War, Safety Gets Left Behind](https://www.wired.com/story/when-ai-companies-go-to-war-safety-gets-left-behind/) — Wired (03/07)
+- [OpenAI's "compromise" with the Pentagon is what Anthropic feared](https://www.technologyreview.com/2026/03/02/1133850/openais-compromise-with-the-pentagon-is-what-anthropic-feared/) — MIT Technology Review (03/03)
+
+### Proton Mail
+- Proton Mail Helped FBI Unmask Anonymous 'Stop Cop City' Protester — Hacker News (03/06)
+
+### AI 工程反模式
+- [Anti-patterns: things to avoid](https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/#atom-everything) — Simon Willison (03/05)
+- [Agentic manual testing](https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/#atom-everything) — Simon Willison (03/06)
+
+### Lenny's Newsletter
+- [Every Agent Needs a Box — Aaron Levie, Box](https://www.latent.space/p/box) — Latent Space (03/05)
+- [The design process is dead — Jenny Wen](https://www.lennysnewsletter.com/p/the-design-process-is-dead) — Lenny's Newsletter (03/01)
+
+### 金融市場
+- [BlackRock $26B Private Credit Fund Limits Withdrawals](https://www.bloomberg.com/news/videos/2026-03-06/blackrock-26b-private-credit-fund-limits-withdrawals-video) — Bloomberg (03/07)
+- [Private Debt Should Face 'Full-Blown Default Cycle,' Pimco Says](https://www.bloomberg.com/news/articles/2026-03-06/pimco-says-private-debt-should-face-full-blown-default-cycle) — Bloomberg (03/07)

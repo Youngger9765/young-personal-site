@@ -1,0 +1,95 @@
+---
+title: "Claude Code 登頂開發者工具、Cline 供應鏈攻擊、EquipmentShare 上市"
+date: "2026-01-25"
+week: "2026-W04"
+excerpt: "900 人調查確認 Claude Code 八個月登頂、Cline 被 Prompt Injection 攻擊感染 4,000 台電腦、YC 投資組合 EquipmentShare 成功上市"
+articleCount: 684
+sourceCount: 25
+tags: ["AI", "開發者工具", "Claude Code", "資安", "YC"]
+---
+
+**本期目錄：** Claude Code 稱王 → Boris Cherny 談建構 Claude Code → Cline 供應鏈攻擊 → 多 Agent 工作流 → EquipmentShare 上市 → Pragmatic Engineer 六預測 → 參考來源
+
+---
+
+## Claude Code 稱王：八個月從零到第一
+
+The Pragmatic Engineer 對 900+ 工程師的調查數據震撼業界：
+
+| 指標 | 數據 |
+|------|------|
+| Claude Code 登頂耗時 | **僅 8 個月** |
+| 工程師每週使用 AI 工具 | **95%** |
+| 最受歡迎工具：Claude Code | **46%** |
+| 用 AI 完成 70%+ 工作 | **56%** |
+
+Staff+ 工程師是 Agent 最大使用者（63.5%），公司規模小的傾向 Claude Code，企業採購傾向 Copilot。**Director 和 VP 愛 Claude Code 的程度是低階職位的兩倍。**
+
+---
+
+## Boris Cherny：如何建構 Claude Code
+
+Claude Code 的創造者 Boris Cherny 在播客分享了幾個顛覆認知的觀察：
+
+1. **他每天用 5 個平行 Claude 實例發 20-30 個 PR**，先用 plan mode 反覆調整，讓 Claude 一次性實作
+2. **Claude Code 用的是 glob 和 grep**，打敗了 RAG 和向量資料庫——簡單暴力最有效
+3. **PRD 已死**：Claude Code 團隊不寫需求文件，直接大量原型
+4. **Claude Cowork 10 天做出來**，主要工程量在安全性（分類器、VM 隔離、OS 防護）
+5. **工程師是現代「抄寫員」**？印刷術後抄寫員變成作家，書寫市場爆炸增長
+
+> **Anthropic 文化：** 所有人頭銜都是「Member of Technical Staff」——沒有 PM、Designer、EM。這是快速迭代的關鍵。
+
+---
+
+## Cline 供應鏈攻擊：一個 Issue 標題感染 4,000 台電腦
+
+本週最令人不安的安全事件：Cline 的生產版本被攻擊者透過一個 Issue 標題滲透。
+
+攻擊鏈：
+1. 攻擊者在 Cline GitHub repo 開了一個 Issue，標題裡藏了 Prompt Injection
+2. Cline 的 AI Issue 分類器執行了 Bash 命令
+3. 被注入的指令讓 Claude 安裝了惡意 npm 套件
+4. 惡意套件塞了 11GB 垃圾到 GitHub Actions Cache
+5. 快取超過 10GB 自動清除——攻擊者用毒化快取取代了 node_modules
+6. Cline 的夜間發布 workflow 共享同一個 cache key，載入毒化快取
+7. 攻擊者拿到了 NPM 發布的 secret，發布了 cline@2.3.0（後來撤回）
+
+**教訓**：AI 驅動的 Issue 分類器不能有 shell 執行權限，GitHub Actions cache key 不應跨 workflow 共享。
+
+---
+
+## 多 Agent 工作流的失敗模式
+
+GitHub Blog 和 Latent Space 本週都聚焦在 multi-agent 系統的可靠性問題：
+
+- 多數失敗來自**缺少結構**，不是模型能力不足
+- 三個關鍵工程模式：明確定義 Agent 邊界、確定性護欄（測試/型別檢查）、BDD spec 作為主要輸出
+- IBM 和 UC Berkeley 的研究：企業 Agent 失敗的診斷框架（IT-Bench 和 MAST）
+
+---
+
+## EquipmentShare 成功上市
+
+YC 投資組合公司 **EquipmentShare** 在本週成功上市——這是近年來最受矚目的 YC IPO 之一，也展示了 B2B SaaS 在當前市場的健康狀態。
+
+---
+
+## 參考來源
+
+### Claude Code
+- [AI Tooling for Software Engineers in 2026](https://newsletter.pragmaticengineer.com/p/ai-tooling-2026) — The Pragmatic Engineer (03/04)
+- [Building Claude Code with Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) — The Pragmatic Engineer (03/05)
+
+### Cline 攻擊
+- [Clinejection — Compromising Cline's Production Releases just by Prompting an Issue Triager](https://simonwillison.net/2026/Mar/6/clinejection/#atom-everything) — Simon Willison (03/06)
+
+### 多 Agent 工作流
+- [Multi-agent workflows often fail. Here's how to engineer ones that don't.](https://github.blog/ai-and-ml/github-copilot/multi-agent-workflows-often-fail-heres-how-to-engineer-ones-that-dont/) — GitHub Blog
+- [IBM and UC Berkeley Diagnose Why Enterprise Agents Fail](https://huggingface.co/blog/ibm-research/itbenchandmast) — HuggingFace (02/19)
+
+### EquipmentShare
+- [Congratulations to EquipmentShare on Going Public](https://www.ycombinator.com/blog/congratulations-to-equipmentshare/) — YC Blog (01/23)
+
+### GitHub Copilot
+- [60 million Copilot code reviews and counting](https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/) — GitHub Blog (03/06)
+- [What's new with GitHub Copilot coding agent](https://github.blog/changelog/2026-03-06-whats-new-with-github-copilot-coding-agent/) — GitHub Blog (03/06)
