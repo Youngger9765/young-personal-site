@@ -393,7 +393,7 @@
     "title": "精選專案",
     "duotopia": {
       "title": "Duotopia",
-      "subtitle": "D英文APP",
+      "subtitle": "AI 英語口說學習平台",
       "description": "為 6-15 歲學生打造的 AI 英語學習平台。教師可建立三層課程架構、派發朗讀作業並批改；學生透過錄音練習獲得 AI 即時評分（WPM、準確率、流暢度）。採用 FastAPI + React 技術，整合 OpenAI Whisper 語音辨識與 TapPay 訂閱制。",
       "problem": "學校需要大規模派發口說作業並批改，但教師時間不足。",
       "solution": "建立三層課程架構＋AI 口說評分（WPM/準確率/流暢度），自動化派作業與回饋。",

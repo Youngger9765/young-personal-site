@@ -393,7 +393,7 @@
     "title": "Selected Projects",
     "duotopia": {
       "title": "Duotopia",
-      "subtitle": "D English APP",
+      "subtitle": "AI English Speaking Platform",
       "description": "AI-powered English learning platform for students aged 6-15. Teachers create 3-tier course architecture and assign reading assignments; students practice recording and receive instant AI scoring (WPM, accuracy, fluency). Built with FastAPI + React, integrating OpenAI Whisper voice recognition and TapPay subscription system.",
       "problem": "Schools needed a scalable way to assign and grade speaking practice without overloading teachers.",
       "solution": "Built a 3-tier course builder with AI speech scoring (WPM/accuracy/fluency) and automated assignment flows.",
