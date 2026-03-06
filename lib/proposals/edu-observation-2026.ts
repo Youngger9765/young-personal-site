@@ -1,6 +1,6 @@
 // TFT 觀課平台建置整合提案 - 2026年2月版
 export const proposal = {
-  slug: 'tft-classroom-observation',
+  slug: 'edu-observation-2026',
   client: 'TFT 為台灣而教',
   logo: 'https://yt3.googleusercontent.com/ytc/AIdro_nfgUUqE2DBn3TxwpDXiJtgtc4MMgdzQ8cGBZztF5gGf74=s900-c-k-c0x00ffffff-no-rj',
   title: '觀課平台建置整合提案',

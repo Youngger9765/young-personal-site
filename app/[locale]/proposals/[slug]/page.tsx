@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 // import ProposalPasswordGate from '@/components/ProposalPasswordGate';
-import { proposal as tftProposal } from '@/lib/proposals/tft-classroom-observation';
+import { proposal as tftProposal } from '@/lib/proposals/edu-observation-2026';
 import {
   proposal as fkProposal,
   type QuotationProposal,
@@ -12,7 +12,7 @@ import {
 
 // 提案註冊表（支援多種提案類型）
 const proposals: Record<string, typeof tftProposal | typeof fkProposal> = {
-  'tft-classroom-observation': tftProposal,
+  'edu-observation-2026': tftProposal,
   'fresenius-kabi-2026': fkProposal,
 };
 
