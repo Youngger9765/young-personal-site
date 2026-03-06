@@ -33,11 +33,11 @@ const i18n = {
         audience: '全員皆適合，無需技術背景',
         format: '經驗分享 + 現場實作工作坊',
         description:
-          '我如何用 AI 聽說讀寫，同時管理 5 家公司、15 個專案。以真實工作流為基礎，拆解 AI 時代的四大核心能力：聽 — AI 語音辨識與智慧會議摘要（Plaud AI / ChatGPT Whisper）；說 — 語音驅動 AI 即時協作，自然語言下達複雜指令（ChatGPT Voice / Claude）；讀 — 文件智慧解析與企業知識庫建構（NotebookLM / Claude Projects）；寫 — 從數據分析到簡報的自動化產出（Advanced Data Analysis / Gamma）。全程使用免費工具，現場實作，上完課明天就能用。',
+          '我如何用 AI 聽說讀寫，同時管理 5 家公司、15 個專案。以真實工作流為基礎，拆解 AI 時代的四大核心能力：聽 — AI 語音辨識與智慧會議摘要（Plaud AI / ChatGPT Whisper）；說 — Mac 聽寫功能驅動 AI 即時協作，自然語言下達複雜指令（Mac Dictation / Claude）；讀 — 文件智慧解析與企業知識庫建構（NotebookLM / Claude Projects）；寫 — 從數據分析到簡報的自動化產出（Advanced Data Analysis / Gamma）。全程使用免費工具，現場實作，上完課明天就能用。',
         outcomes: [
           '掌握 AI「聽說讀寫」四大核心能力，建立個人 AI 工作流',
           '聽 — 運用 AI 語音辨識自動產出結構化會議記錄與待辦事項',
-          '說 — 學會用自然語言對 AI 下達複雜指令，語音驅動即時協作',
+          '說 — 用 Mac 聽寫功能對 AI 下達複雜指令，語音驅動即時協作',
           '讀 — 用 NotebookLM 即時解析長文件，建立可查詢的知識庫',
           '寫 — 實作從原始數據 → AI 分析 → 自動生成簡報的完整流程',
         ],
@@ -104,11 +104,11 @@ const i18n = {
         audience: 'All staff — no technical background required',
         format: 'Experience sharing + hands-on workshop',
         description:
-          'How I use AI to Listen, Speak, Read, and Write — managing 5 companies and 15 projects simultaneously. Four core AI capabilities based on real workflows: Listen — AI speech recognition and intelligent meeting summarization (Plaud AI / ChatGPT Whisper); Speak — voice-driven AI collaboration, issue complex commands in natural language (ChatGPT Voice / Claude); Read — intelligent document parsing and enterprise knowledge base construction (NotebookLM / Claude Projects); Write — automated pipeline from data analysis to presentation (Advanced Data Analysis / Gamma). All free tools, hands-on practice, ready to use the next day.',
+          'How I use AI to Listen, Speak, Read, and Write — managing 5 companies and 15 projects simultaneously. Four core AI capabilities based on real workflows: Listen — AI speech recognition and intelligent meeting summarization (Plaud AI / ChatGPT Whisper); Speak — voice-driven AI collaboration via Mac Dictation, issue complex commands in natural language (Mac Dictation / Claude); Read — intelligent document parsing and enterprise knowledge base construction (NotebookLM / Claude Projects); Write — automated pipeline from data analysis to presentation (Advanced Data Analysis / Gamma). All free tools, hands-on practice, ready to use the next day.',
         outcomes: [
           'Master the four core AI capabilities — Listen, Speak, Read, Write — to build a personal AI workflow',
           'Listen — Use AI speech recognition to auto-generate structured meeting notes and action items',
-          'Speak — Learn to issue complex commands to AI in natural language for voice-driven collaboration',
+          'Speak — Use Mac Dictation to issue complex commands to AI in natural language for voice-driven collaboration',
           'Read — Parse long documents instantly with NotebookLM and build searchable knowledge bases',
           'Write — Build a complete raw data → AI analysis → auto-generated presentation pipeline',
         ],
@@ -157,10 +157,7 @@ export const proposal = {
     primary: '#d97706', // amber-600
     accent: '#78350f',  // amber-900
   },
-  contact: {
-    email: 'young@example.com',
-    calendar: 'https://calendly.com/young-tsai/ai',
-  },
+  contact: {},
   i18n,
 };
 
