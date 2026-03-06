@@ -185,7 +185,7 @@ export const proposal = {
   slug: 'fresenius-kabi-2026',
   type: 'quotation' as const,
   contactPerson: '',
-  date: '2026/03/05',
+  date: '2026/03/08',
   validDays: 30,
   bundles: [
     { label: '1A + 2', labelEn: '1A + 2', originalPrice: 'NT$20,000', bundlePrice: 'NT$16,000', hours: '3hr', save: 'NT$4,000' },
