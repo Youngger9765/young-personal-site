@@ -69,7 +69,7 @@ export default function ProjectsGalleryPage() {
     'career-creator': '/images/career-creator-hero.png',
 'jutor': '/images/jutor-hero.png',
     'cutor': '/images/cutor-hero.png',
-    'duotopia': '/images/duotopia-hero.png',
+    'duotopia': '/images/duotopia-banner.jpg',
     'ai-square': '/images/hourofai.jpeg',
   };
 
